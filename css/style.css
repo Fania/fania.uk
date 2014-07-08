@@ -109,9 +109,17 @@ Colours:
 		/*font-weight: 300;*/
 	}
 
-	pre.code {
+	pre{
 		font-family: monospace;
 		font-size: 1em;
+	}
+
+	code{
+		font-family: monospace;
+		font-size: 75%;
+		background-color: #f3f6fa;
+		padding: 0 5px;
+		border: solid 1px #e6eefa;
 	}
 
 	sub {
