@@ -34,9 +34,3 @@ puts markdown.to_html
   - [ ] follow up subtask #4321
   - [ ] final subtask cc @mention
 - [ ] a separate task
-
-| Left-Aligned  | Center Aligned  | Right Aligned |
-| :------------ |:---------------:| -----:|
-| col 3 is      | some wordy text | $1600 |
-| col 2 is      | centered        |   $12 |
-| zebra stripes | are neat        |    $1 |
