@@ -1,8 +1,5 @@
 <!DOCTYPE HTML>
-<!--
-	Based on Twenty 1.0 by HTML5 UP - html5up.net | @n33co
-	Because I'm lazy.
--->
+
 <html>
 	<head>
 		<title>Contact</title>
@@ -12,7 +9,6 @@
 		<link rel="shortcut icon" href="images/star.ico" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.dropotron.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
@@ -52,22 +48,45 @@
 				</header>
 					
 				<!-- One -->
-					<section class="wrapper style4 special container small">
-					
-						<!-- Content -->
-							<div class="content">
-								<a href="mailto:me@fania.eu?Subject=fania.uk" class="button special">Email me!</a>
+				<section class="wrapper style4 special container small">
+				
+				<!-- Content -->
+				<div class="content">
+					<!-- <a href="mailto:me@fania.eu?Subject=fania.uk" class="button special">Email me!</a> -->
+					<form method="post" action="http://www.fania.uk/cgi-bin/FormMail.pl" accept-charset="ISO-8859-1" onsubmit="var originalCharset = document.charset; document.charset = 'ISO-8859-1'; window.onbeforeunload = function () {document.charset=originalCharset;};">
+						<div class="row half no-collapse-1">
+							<div class="6u">
+								<input type="text" name="name" placeholder="Name" />
 							</div>
-							
-					</section>
+							<div class="6u">
+								<input type="text" name="email" placeholder="Email" />
+							</div>
+						</div>
+						<div class="row half">
+							<div class="12u">
+								<textarea name="message" placeholder="Message" rows="7"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<ul class="buttons">
+									<li><input  class="button special" type="submit" value="&#xf1b0; Send"/></li>
+									<input type="hidden" name="recipient" value="me@fania.uk" />
+									<input type="hidden" name="subject" value="fania.uk" />
+									<input type="hidden" name="redirect" 
+									value="http://fania.uk/thanks.html" />
+								</ul>
+							</div>
+						</div>
+					</form>
+				</div>
+				</section>
 				
 			</article>
 
 		<!-- Footer -->
 			<footer id="footer">
-							
 				<span class="copyright">Fania - <span title="June 2014 vulg.">Gidouille 142</span>
-			
 			</footer>
 
 	</body>
