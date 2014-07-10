@@ -57,6 +57,53 @@
 		<div class="content">
 		<section>
 			<hr>
+
+### Homebrew
+PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Desktop/PhD_Offline/Git_code
+source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+PYTHONPATH="/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/:${PYTHONPATH}"
+# PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+
+
+# Setting PATH for Python 3.4
+# The orginal version is saved in .bash_profile.pysave
+#PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
+#PYTHONPATH="/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/:${PYTHONPATH}"
+
+### Added by the Heroku Toolbelt
+PATH="/usr/local/heroku/bin:$PATH"
+
+
+export PATH
+
+
+				Show all locations <code>type -a name</code>
+				Show location of name <code>which name</code>
+				Reload startup file <code>source ~/.bash_profile</code>
+
+				<code>mkvirtualenv [-a project_path] [-r requirements_file] ENVNAME</code>
+				List all virtualenvs <code>workon</code> or <code>lsvirtualenv</code>
+				Remove virtualenv <code>deactivate</code> and then <code>rmvirtualenv ENVNAME</code>
+				Activate a virtualenv <code>workon ENVNAME</code>
+				Bin ENVNAME to project <code>setvirtualenvproject [virtualenv_path project_path]</code>
+				Change to project dir <code>cdproject</code>
+
+				<div class="entry">
+				<h2><i class="fa fa-terminal"></i> Workflow</h2>
+				<ul>
+					install python (2.7)
+					install pip (To enable the use of pip from the command line, ensure the Scripts subdirectory of your Python installation is available on the system PATH. (This is not done automatically.)
+					make a virtualenv
+					pip install -r requirements.txt
+				</ul>
+			</div>
 			<div class="entry">
 				<h2><i class="fa fa-terminal"></i> Virtual Env & Pip</h2>
 				<ul>
@@ -65,7 +112,9 @@
 					<li><i class="fa fa-windows fa-fw"></i> Activate <code>name\scripts\activate</code></li>
 					<li>Deactivate <code>deactivate</code></li>
 					<li>To freeze reqs <code>pip freeze --local > requirements.txt</code></li>
+					<li>To freeze reqs <code>pip freeze > requirements.txt</code></li>
 					<li>To install from reqs <code>pip install -r requirements.txt</code></li>
+					<li><code>virtualenv --no-site-packages --distribute .env && source .env/bin/activate && pip install -r requirements.txt</code></li>
 				</ul>
 			</div>
 			<div class="entry">
