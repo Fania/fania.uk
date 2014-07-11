@@ -83,9 +83,17 @@ PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH
 
+<<<<<<< HEAD
 				Show installed packages by pip <code>pip list</code> win
 				Show out-of-date packages by pip <code>pip list --outdated</code> win
 				Upgrade all packages by pip <code>pip install --upgrade PACKAGENAME</code> win
+=======
+#switch the /usr/bin/python link to point to current python link
+cd /usr/bin
+rm -f python
+ln -s /Library/Frameworks/Python.framework/Versions/Current/bin/python python
+
+>>>>>>> origin/master
 
 				Show all locations <code>type -a name</code> mac
 				Show location of name <code>which name</code> mac
@@ -96,7 +104,7 @@ export PATH
 				List all virtualenvs <code>workon</code> or <code>lsvirtualenv</code>
 				Remove virtualenv <code>deactivate</code> and then <code>rmvirtualenv ENVNAME</code>
 				Activate a virtualenv <code>workon ENVNAME</code>
-				Bin ENVNAME to project <code>setvirtualenvproject [virtualenv_path project_path]</code>
+				Bind ENVNAME to project <code>setvirtualenvproject [virtualenv_path project_path]</code>
 				Change to project dir <code>cdproject</code>
 
 				<div class="entry">
