@@ -83,6 +83,11 @@ PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH
 
+#switch the /usr/bin/python link to point to current python link
+cd /usr/bin
+rm -f python
+ln -s /Library/Frameworks/Python.framework/Versions/Current/bin/python python
+
 
 				Show all locations <code>type -a name</code>
 				Show location of name <code>which name</code>
@@ -92,7 +97,7 @@ export PATH
 				List all virtualenvs <code>workon</code> or <code>lsvirtualenv</code>
 				Remove virtualenv <code>deactivate</code> and then <code>rmvirtualenv ENVNAME</code>
 				Activate a virtualenv <code>workon ENVNAME</code>
-				Bin ENVNAME to project <code>setvirtualenvproject [virtualenv_path project_path]</code>
+				Bind ENVNAME to project <code>setvirtualenvproject [virtualenv_path project_path]</code>
 				Change to project dir <code>cdproject</code>
 
 				<div class="entry">
