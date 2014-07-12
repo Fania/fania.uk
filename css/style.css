@@ -372,6 +372,71 @@ Colours:
 
 /* Lists */
 
+
+li.win:before {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	content: "\f17a";
+	color: #9C6793; /*pinkish*/
+	font-size: 1em;
+    /*vertical-align: middle;*/
+	padding-right: 0.5em;
+	opacity: 0.5;
+	width: 25px;
+	display: inline-block;
+}
+
+li.mac:before {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	content: "\f179";
+	color: #9C6793; /*pinkish*/
+	font-size: 1em;
+    /*vertical-align: middle;*/
+	padding-right: 0.5em;
+	opacity: 0.5;
+	width: 25px;
+	display: inline-block;
+}
+
+li.info:before {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	content: "\f013";
+	color: #9C6793; /*pinkish*/
+	font-size: 1em;
+    /*vertical-align: middle;*/
+	padding-right: 0.5em;
+	opacity: 0.5;
+	width: 25px;
+	display: inline-block;
+}
+
+li.null:before {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	content: "";
+	color: #9C6793; /*pinkish*/
+	font-size: 1em;
+    /*vertical-align: middle;*/
+	padding-right: 0.5em;
+	opacity: 0.5;
+	width: 25px;
+	display: inline-block;
+}
+
 	ol.default {
 		list-style: decimal;
 		padding-left: 1.25em;

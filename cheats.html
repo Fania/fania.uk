@@ -58,94 +58,117 @@
 		<section>
 			<hr>
 
-### Homebrew
-PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Desktop/PhD_Offline/Git_code
-source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
-
-# Setting PATH for Python 2.7
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-PYTHONPATH="/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/:${PYTHONPATH}"
-# PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-
-
-# Setting PATH for Python 3.4
-# The orginal version is saved in .bash_profile.pysave
-#PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
-#PYTHONPATH="/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/:${PYTHONPATH}"
-
-### Added by the Heroku Toolbelt
-PATH="/usr/local/heroku/bin:$PATH"
-
-
-export PATH
-
-<<<<<<< HEAD
-				Show installed packages by pip <code>pip list</code> win
-				Show out-of-date packages by pip <code>pip list --outdated</code> win
-				Upgrade all packages by pip <code>pip install --upgrade PACKAGENAME</code> win
-=======
-#switch the /usr/bin/python link to point to current python link
-cd /usr/bin
-rm -f python
-ln -s /Library/Frameworks/Python.framework/Versions/Current/bin/python python
-
->>>>>>> origin/master
-
-				Show all locations <code>type -a name</code> mac
-				Show location of name <code>which name</code> mac
-				Reload startup file <code>source ~/.bash_profile</code> mac
-
-				virtualenvwrapper on mac
-				<code>mkvirtualenv [-a project_path] [-r requirements_file] ENVNAME</code>
-				List all virtualenvs <code>workon</code> or <code>lsvirtualenv</code>
-				Remove virtualenv <code>deactivate</code> and then <code>rmvirtualenv ENVNAME</code>
-				Activate a virtualenv <code>workon ENVNAME</code>
-				Bind ENVNAME to project <code>setvirtualenvproject [virtualenv_path project_path]</code>
-				Change to project dir <code>cdproject</code>
-
-				<div class="entry">
-				<h2><i class="fa fa-terminal"></i> Workflow</h2>
+ 			<!-- <div class="entry">
+				<h2><i class="fa fa-terminal"></i> Heading</h2>
 				<ul>
-					install python (2.7)
-					install pip (To enable the use of pip from the command line, ensure the Scripts subdirectory of your Python installation is available on the system PATH. (This is not done automatically.)
-					make a virtualenv
-					pip install -r requirements.txt
+					<li class="info"><a href=""></a></li>
+					<li class="win"><code></code></li>
+					<li class="mac"><code></code></li>
+					<li class="null"><code></code></li>
 				</ul>
-			</div>
+			</div> -->
+
 			<div class="entry">
-				<h2><i class="fa fa-terminal"></i> Virtual Env & Pip</h2>
+				<h2><i class="fa fa-terminal"></i> Terminal & Command Prompt</h2>
 				<ul>
-					<li>Create a new venv: <code>virtualenv name</code></li>
-					<li><i class="fa fa-apple fa-fw"></i> Activate <code>. name/bin/activate</code></li>
-					<li><i class="fa fa-windows fa-fw"></i> Activate <code>name\scripts\activate</code></li>
-					<li>Deactivate <code>deactivate</code></li>
-					<li>To freeze reqs <code>pip freeze --local > requirements.txt</code></li>
-					<li>To freeze reqs <code>pip freeze > requirements.txt</code></li>
-					<li>To install from reqs <code>pip install -r requirements.txt</code></li>
-					<li><code>virtualenv --no-site-packages --distribute .env && source .env/bin/activate && pip install -r requirements.txt</code></li>
+					<li class="win">'Shift-right-click' folder to open cmd there</li>
+					<li class="mac">Use the 'Open-In-Terminal' script</li>
+					<li class="mac">Show all locations of file <code>type -a NAME</code></li>
+					<li class="mac">Show location of file or folder <code>which NAME</code></li>
+					<li class="win">Show location of file or folder (if virtualenvwrapper-win is installed) <code>whereis &lt;NAME&gt;</code></li>
+					<li class="mac">Reload terminal <code>source ~/.bash_profile</code></li>
+					<li class="win">Reload cmd <code>SET PATH=%PATH%;C:\CmdShortcuts</code> (unconfirmed)</li>
 				</ul>
 			</div>
+
 			<div class="entry">
-				<h2><i class="fa fa-terminal"></i> Open terminal or cmd at location</h2>
+				<h2><i class="fa fa-terminal"></i> Paths</h2>
 				<ul>
-					<li><i class="fa fa-windows fa-fw"></i> 'Shift-right-click' the folder to open cmd there</li>
-					<li><i class="fa fa-apple fa-fw"></i> Use the 'Open-In-Terminal' script</li>
+					<li class="win"><code>C:\Python27;C:\Python27\Scripts;</code></li>
+					<li class="mac">Set folder for virtualenvs <code>export WORKON_HOME=$HOME/.virtualenvs</code></li>
+					<li class="mac">Set folder for virtualenv projects <code>export PROJECT_HOME=$HOME/Desktop/PhD_Offline/Git_code</code></li>
+					<li class="mac"><code>source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh</code></li>
+					<li class="mac"><code>PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"</code></li>
+					<li class="mac"><code>PYTHONPATH="/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/:${PYTHONPATH}"</code></li>
+					<li class="mac"><code>export PATH</code></li>
 				</ul>
 			</div>
+
+			<div class="entry">
+				<h2><i class="fa fa-terminal"></i> Pip</h2>
+				<ul>
+					<li class="info">Reference <a href="https://pip.pypa.io/en/latest/user_guide.html">Pip</a></li>
+					<li class="null">Install NAME <code>pip install NAME</code></li>
+					<li class="null">Install NAME version 1.0.4 <code>pip install NAME==1.0.4</code></li>
+					<li class="null">Uninstall NAME <code>pip uninstall NAME</code></li>
+					<li class="null">Show installed packages <code>pip list</code></li>
+					<li class="null">Show out-of-date packages <code>pip list --outdated</code></li>
+					<li class="null">Upgrade NAME <code>pip install --upgrade NAME</code></li>
+					<li class="null">To freeze local requirements <code>pip freeze --local > requirements.txt</code></li>
+					<li class="null">To freeze requirements <code>pip freeze > requirements.txt</code></li>
+					<li class="null">To install from requirements <code>pip install -r requirements.txt</code></li>
+				</ul>
+			</div>
+
+			<div class="entry">
+				<h2><i class="fa fa-bug"></i> Switch the /usr/bin/python link to point to current python link</h2>
+				<ul>
+					<li class="mac"><code>cd /usr/bin</code></li>
+					<li class="mac"><code>rm -f python</code></li>
+					<li class="mac"><code>ln -s /Library/Frameworks/Python.framework/Versions/Current/bin/python python</code></li>
+				</ul>
+			</div>
+
+			<div class="entry">
+				<h2><i class="fa fa-bug"></i> Virtualenvwrapper-win not finding virtualenv-script.py</h2>
+				<ul>
+					<li class="win">Edit <code>C:\PythonXY\scripts\mkvirtualenv.bat</code> with the following changes on lines 47, 48</li>
+					<li class="win">Line 47 <code>virtualenv.exe %*</code></li>
+					<li class="win">Line 48 <code>REM python.exe "%PYHOME%\Scripts\virtualenv-script.py" %ARGS%</code></li>
+				</ul>
+			</div>
+
+			<div class="entry">
+				<h2><i class="fa fa-terminal"></i> Virtualenv</h2>
+				<ul>
+					<li class="info">Reference <a href="http://virtualenv.readthedocs.org/en/latest/virtualenv.html#usage">Virtualenv</a></li>
+					<li class="null">Create a new venv <code>virtualenv NAME</code></li>
+					<li class="mac">Activate NAME <code>. NAME/bin/activate</code></li>
+					<li class="win">Activate NAME <code>NAME\scripts\activate</code></li>
+					<li class="null">Deactivate <code>deactivate</code></li>
+				</ul>
+			</div>
+
+			<div class="entry">
+				<h2><i class="fa fa-terminal"></i> Virtualenvwrapper</h2>
+				<ul>
+					<li class="info">Reference <a href="https://github.com/davidmarble/virtualenvwrapper-win">Virtualenvwrapper-win</a></li>
+					<li class="info">Reference <a href="http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html">Virtualenvwrapper</a></li>
+					<li class="null">Make a new venv <code>mkvirtualenv ENVNAME</code></li>
+					<li class="null">List all virtualenvs <code>workon</code> or <code>lsvirtualenv</code></li>
+					<li class="null">Activate a virtualenv <code>workon ENVNAME</code></li>
+					<li class="null">Deactivate virtualenv <code>deactivate</code></li>
+					<li class="null">Remove virtualenv <code>deactivate</code> and then <code>rmvirtualenv ENVNAME</code></li>
+					<li class="win">Bind ENVNAME to project <code>setprojectdir &lt;project_path&gt;</code></li>
+					<li class="mac">Bind ENVNAME to project <code>setvirtualenvproject [virtualenv_path project_path]</code></li>
+				</ul>
+			</div>
+
 			<div class="entry">
 				<h2><i class="fa fa-terminal"></i> Git</h2>
 				<ul>
-					<li>Add any new files <code>git add .</code></li>
-					<li>Commit <code>git commit -m 'Message'</code></li>
-					<li>Push <code>git push</code></li>
-					<li>Log <code>git log</code></li>
-					<li>Changes <code>git status</code> or <code>git diff</code></li>
+					<li class="info">Visual <a href="https://raw.githubusercontent.com/nerdgirl/git-cheatsheet-visual/master/gitcheatsheet.png">Git Cheatsheet</a></li>
+					<li class="info">Reference <a href="http://git-scm.com/docs">Git Documentation</a></li>
+					<li class="null">Create repository in folder <code>git init</code></li>
+					<li class="null">Clone existing repository  <code>git clone LINK</code></li>
+					<li class="null">Add any new files <code>git add .</code></li>
+					<li class="null">Commit changes <code>git commit -m 'Message'</code></li>
+					<li class="null">Push changes <code>git push</code></li>
+					<li class="null">See log <code>git log</code></li>
+					<li class="null">See changes <code>git status</code> or <code>git diff</code></li>
 				</ul>
 			</div>
+
 		</section>
 		</div>
 		</section>
