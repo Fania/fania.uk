@@ -158,7 +158,7 @@ Colours:
 		content: '*';
 		color: #756673; /*slightly lighter dark brown purple*/
 	}
-		[title].image:after, .icon:after, #expandList:after, #collapseList:after {
+		[title].image:after, .mk:after, .icon:after, #expandList:after, #collapseList:after {
 			content: '';
 		}
 
@@ -265,6 +265,25 @@ Colours:
 				display: block;
 				width: 100%;
 			}
+.mk {
+	display: inline-block;
+	/*position: relative;*/
+	width: 100%;
+}
+.mk img {
+	width: 100%;
+}
+.mkl {
+	position: relative;
+	float: left;
+	width: 50%;
+}
+.mkr {
+	position: relative;
+	float: right;
+	width: 50%;
+}
+
 
 /* Icon */
 
