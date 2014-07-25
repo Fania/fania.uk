@@ -180,9 +180,16 @@ footer.major {
 
 div.entry {
   border-bottom: solid 0.5em $color-pinkish;
-  padding-top: 2em;
   padding-bottom: 1em;
+  &:hover > .einfo {
+    visibility: visible;
+  }
 }
+
+div.einfo {
+    visibility: hidden;
+    text-align: center;
+  }
 
 /* Image */
 
@@ -210,7 +217,7 @@ div.entry {
   }
   &.feature {
     display: block;
-    margin: 0 0 2em 0;
+    margin: 0 0 1em 0;
     img {
       display: block;
       width: 100%;

@@ -141,8 +141,13 @@ footer.major {
 
 div.entry {
   border-bottom: solid 0.5em #9c6793;
-  padding-top: 2em;
   padding-bottom: 1em; }
+  div.entry:hover > .einfo {
+    visibility: visible; }
+
+div.einfo {
+  visibility: hidden;
+  text-align: center; }
 
 /* Image */
 .image {
@@ -165,7 +170,7 @@ div.entry {
       width: 100%; }
   .image.feature {
     display: block;
-    margin: 0 0 2em 0; }
+    margin: 0 0 1em 0; }
     .image.feature img {
       display: block;
       width: 100%; }
