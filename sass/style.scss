@@ -20,7 +20,7 @@ body.loading * {
 
 body, input, select, textarea {
 	color: $color-gray;
-	font-family: 'Lato', sans-serif;
+	font-family: "Lato", sans-serif;
 	font-size: 1em;  // 15pt;
 	font-weight: 300;
 	letter-spacing: 0.025em;
@@ -37,7 +37,7 @@ a {
 		-moz-osx-font-smoothing: grayscale;
 		-webkit-font-smoothing: antialiased;
 		font-family: FontAwesome;
-		content: ' \f08e';
+		content: " \f08e";
 		color: $color-white;
 	}
 
@@ -45,7 +45,7 @@ a {
 		-moz-osx-font-smoothing: grayscale;
 		-webkit-font-smoothing: antialiased;
 		font-family: FontAwesome;
-		content: ' \f1c1';
+		content: " \f1c1";
 		color: $color-white;
 	}
 
@@ -54,12 +54,12 @@ a {
 	}
 
 	&.h3link {
-		color: #9C6793; /*pinkish*/
+		color: $color-pinkish;
 	}
 	
 	&.h3link:hover {
 		color: white;
-		background: #645862; /*dark brown purple*/
+		background: $color-purpleish;
 	}
 }
 
@@ -137,18 +137,39 @@ hr {
 // NOT WORKING! CHECK FROM HERE
 // NOT WORKING! CHECK FROM HERE
 
-[title]:after {
+// [title]:after {
+// 	-moz-osx-font-smoothing: grayscale;
+// 	-webkit-font-smoothing: antialiased;
+// 	font-family: FontAwesome;
+// 	content: '*';
+// 	color: $color-purpleish;
+
+// 	.image, .mk, .icon, #expandList, #collapseList {
+// 		content: '';
+// 	}
+
+// }
+
+span[type="title"]:after, strong[type="title"]:after {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	font-family: FontAwesome;
-	content: '*';
-	color: $color-purpleish;
+	content: " \f069";
+	color: $color-pinkish;
 
-	.image, .mk, .icon, #expandList, #collapseList {
-		content: '';
+	&.image, &.mk, &.icon, &#expandList, &#collapseList {
+		content: "";
 	}
-
 }
+
+// NOT WORKING! CHECK FROM HERE
+// NOT WORKING! CHECK FROM HERE
+// NOT WORKING! CHECK FROM HERE
+// NOT WORKING! CHECK FROM HERE
+// NOT WORKING! CHECK FROM HERE
+// NOT WORKING! CHECK FROM HERE
+// NOT WORKING! CHECK FROM HERE
+// NOT WORKING! CHECK FROM HERE
 
 blockquote {
 	border-left: solid 0.5em $color-pinkish;
@@ -219,14 +240,8 @@ header {
 	}
 }
 
-footer {
-	> :last-child {
-		margin-bottom: 0;
-	}
-	
-	&.major {
-		padding-top: 3em;
-	}
+footer.major {
+	padding-top: 3em;
 }
 
 div.entry {
@@ -239,7 +254,6 @@ div.entry {
 /* Form */
 
 input[type="text"],
-input[type="password"],
 input[type="email"],
 textarea {
 	@include vendor('transition', 'background-color 0.2s ease-in-out, border-color 0.2s ease-in-out');
@@ -259,7 +273,6 @@ textarea {
 }
 
 input[type="text"],
-input[type="password"],
 input[type="email"] {
 	line-height: 1em;
 }
@@ -293,7 +306,7 @@ input[type="email"] {
 input[type="submit"]{
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-	font-family: FontAwesome, 'Lato', sans-serif;;
+	font-family: FontAwesome, "Lato", sans-serif;;
 	font-style: normal;
 	font-weight: normal;
 }
@@ -306,7 +319,7 @@ input[type="submit"]{
 	
 	&:before {
 		background: none;
-		content: '';
+		content: "";
 		height: 100%;
 		left: 0;
 		position: absolute;
@@ -364,6 +377,14 @@ input[type="submit"]{
 	@include icon;
 	position: relative;
 
+	&:before {
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+	}
+
 	&.circle {
 		@include vendor('transition', 'all 0.2s ease-in-out');
 		border: 0;
@@ -377,55 +398,13 @@ input[type="submit"]{
 		text-decoration: none;
 		top: 0;
 		width: 2.25em;
-	
+
+		background: $color-purpleish;
+		color: white;
+
 		&:hover {
-			top: -0.2em;
+			background: $color-pinkish;
 		}
-	
-		// &.fa-twitter {
-		// 	background: $color-twitter-bg;
-		// 	color: $color-twitter-fg;
-			
-		// 	&:hover {
-		// 		background: lighten($color-twitter-bg, 4);
-		// 	}
-		// }
-	
-		// &.fa-facebook {
-		// 	background: $color-facebook-bg;
-		// 	color: $color-facebook-fg;
-
-		// 	&:hover {
-		// 		background: lighten($color-facebook-bg, 4);
-		// 	}
-		// }
-	
-		// &.fa-google-plus {
-		// 	background: $color-google-plus-bg;
-		// 	color: $color-google-plus-fg;
-
-		// 	&:hover {
-		// 		background: lighten($color-google-plus-bg, 4);
-		// 	}
-		// }
-	
-		// &.fa-github {
-		// 	background: $color-github-bg;
-		// 	color: $color-github-fg;
-
-		// 	&:hover {
-		// 		background: lighten($color-github-bg, 4);
-		// 	}
-		// }
-	
-		// &.fa-dribbble {
-		// 	background: $color-dribbble-bg;
-		// 	color: $color-dribbble-fg;
-
-		// 	&:hover {
-		// 		background: lighten($color-dribbble-bg, 4);
-		// 	}
-		// }
 	}
 	
 	&.feature {
@@ -445,6 +424,80 @@ input[type="submit"]{
 		display: none;
 	}
 }
+
+/* Lists */
+
+.icon.circle.fa-twitter {
+				background: #645862; /*dark brown purple*/
+				color: white;
+			}
+
+				.icon.circle.fa-twitter:hover {
+					background: #9C6793; /*pinkish*/
+				}
+
+			.icon.circle.fa-key {
+				background: #645862; /*dark brown purple*/
+				color: white;
+			}
+
+				.icon.circle.fa-key:hover {
+					background: #9C6793; /*pinkish*/
+				}
+
+			.icon.circle.fa-github {
+				background: #645862; /*dark brown purple*/
+				color: white;
+			}
+
+				.icon.circle.fa-github:hover {
+					background: #9C6793; /*pinkish*/
+				}
+
+			.icon.circle.fa-steam {
+				background: #645862; /*dark brown purple*/
+				color: white;
+			}
+
+				.icon.circle.fa-steam:hover {
+					background: #9C6793; /*pinkish*/
+				}
+
+			.icon.circle.fa-stack-overflow {
+				background: #645862; /*dark brown purple*/
+				color: white;
+			}
+
+				.icon.circle.fa-stack-overflow:hover {
+					background: #9C6793; /*pinkish*/
+				}
+
+			.icon.circle.fa-list-ol {
+				background: #645862; /*dark brown purple*/
+				color: white;
+			}
+
+				.icon.circle.fa-list-ol:hover {
+					background: #9C6793; /*pinkish*/
+				}
+
+		.icon.feature {
+			cursor: default;
+			display: block;
+			margin: 0 0 1.5em 0;
+			opacity: 0.35;
+			text-align: center;
+		}
+
+			.icon.feature:before {
+				font-size: 5em;
+				line-height: 1em;
+			}
+
+		.icon > .label {
+			display: none;
+		}
+
 
 /* Lists */
 
@@ -536,6 +589,135 @@ ul {
 	}
 }
 
+li {
+	.win:before {
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		content: "\f17a";
+		color: $color-pinkish;
+		font-size: 1em;
+	    /*vertical-align: middle;*/
+		padding-right: 0.5em;
+		opacity: 0.5;
+		width: 25px;
+		display: inline-block;
+	}
+
+	.mac:before {
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		content: "\f179";
+		color: $color-pinkish;
+		font-size: 1em;
+	    /*vertical-align: middle;*/
+		padding-right: 0.5em;
+		opacity: 0.5;
+		width: 25px;
+		display: inline-block;
+	}
+
+	.info:before {
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		content: "\f013";
+		color: $color-pinkish;
+		font-size: 1em;
+	    /*vertical-align: middle;*/
+		padding-right: 0.5em;
+		opacity: 0.5;
+		width: 25px;
+		display: inline-block;
+	}
+
+	.null:before {
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		content: "";
+		color: $color-pinkish;
+		font-size: 1em;
+	    /*vertical-align: middle;*/
+		padding-right: 0.5em;
+		opacity: 0.5;
+		width: 25px;
+		display: inline-block;
+	}
+}
+
+/*Collapsable List*/
+
+.listControl {
+	text-align: center;
+	opacity: 0.8;
+}
+
+#expandList:hover {
+	color: black;
+}
+
+#listContainer {
+}
+
+#expList ul {
+	margin: 0 !important;
+}
+
+#expList li {
+	list-style: none;
+	cursor: default;
+	padding: 1em 0;
+	text-align: center;
+}
+
+#expList li li {
+	padding: 1em 0;
+	text-align: left;
+}
+
+#expList .collapsed:before {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	content: "\f067";
+	color: $color-pinkish;
+	font-size: 1em;
+    /*vertical-align: middle;*/
+	padding-right: 0.5em;
+	opacity: 0.5;
+}
+
+#expList .collapsed .collapseList {
+	display: none;
+}
+
+/* NOTE: This class must be located UNDER the collapsed one */
+#expList .expanded:before {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	content: "\f068";
+	color: $color-pinkish;
+	font-size: 1em;
+    /*vertical-align: middle;*/
+	padding-right: 0.5em;
+	opacity: 0.5;
+}
+
 /* Tables */
 
 table {
@@ -590,18 +772,25 @@ table {
 	text-transform: uppercase;
 
 	&:hover {
-		background: rgba(188,202,206,0.15);
+		background: $color-pinkish;
 		border-color: inherit;
 	}
 
 	&.special {
-		background: $color-pinkish;
-		border-color: $color-pinkish;
+		background: $color-lightpurple;
+		border-color: $color-lightpurple;
 		color: $color-white !important;
 		
 		&:hover {
 			background: lighten($color-pinkish, 5) !important;
 			border-color: lighten($color-pinkish, 5) !important;
+		}
+		&.menu .fa-envelope, &.menu:hover .m-text {
+			display: none;
+		}
+		&.menu:hover .fa-envelope {
+			width: 4.12em; /*57px;*/
+			display: inline-block;
 		}
 	}
 	
@@ -623,14 +812,12 @@ table {
 	padding: 5em;
 
 	&.style1 {
-		padding: 0;
+		padding: 4em;
 	}
 
 	&.style2 {
-		background-color: $color-pinkish;
-		background-image: url('images/light-bl.svg'), url('images/light-br.svg');
+		background-color: $color-turqoise;
 		background-position: bottom left, bottom right;
-		background-repeat: no-repeat, no-repeat;
 		background-size: $pattern-background-size, $pattern-background-size;
 		color: $color-white;
 
@@ -642,7 +829,7 @@ table {
 			&.special {
 				background: $color-white;
 				border-color: $color-white;
-				color: $color-pinkish !important;
+				color: $color-turqoise !important;
 				
 				&:hover {
 					border-color: inherit !important;
@@ -711,7 +898,7 @@ table {
 				}
 				
 				a {
-					border: solid 1px transparent;
+					// border: solid 1px transparent;
 					color: inherit;
 					display: inline-block;
 					padding: 0em 0.75em;
@@ -721,7 +908,7 @@ table {
 				.button {
 					font-size: 1em;
 					min-width: 0;
-					width: auto;
+					// width: auto;
 				}
 				
 				&.submenu {
@@ -729,7 +916,7 @@ table {
 						@include icon;
 						
 						&:before {
-							content: '\f107';
+							content: "\f107";
 							margin-right: 0.65em;
 						}
 					}
@@ -739,10 +926,10 @@ table {
 				&:hover {
 					> a {
 						@include vendor('transition', 'all 0.2s ease-in-out');
-						background: rgba(188,202,206,0.15);
+						background: $color-lightblue;
 					}
 				}
-				
+
 				&.current {
 					> a {
 						font-weight: 900;
@@ -773,7 +960,9 @@ table {
 					&.active,
 					&:hover {
 						> a {
-							border: solid 1px;
+							// border: solid 1px;
+							background: $color-lightpurple;
+							// color: white;
 						}
 					}
 				}
@@ -784,53 +973,53 @@ table {
 
 /* Dropotron */
 
-.dropotron {
-	background: #fff;
-	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.075);
-	line-height: 2.25em;
-	min-width: 13em;
-	padding: 1em 0;
-	text-transform: uppercase;
+// .dropotron {
+// 	background: #fff;
+// 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.075);
+// 	line-height: 2.25em;
+// 	min-width: 13em;
+// 	padding: 1em 0;
+// 	text-transform: uppercase;
 
-	&.level-0 {
-		font-size: 0.7em;
-		font-weight: 400;
-		margin-top: 1.5em;
+// 	&.level-0 {
+// 		font-size: 0.7em;
+// 		font-weight: 400;
+// 		margin-top: 1.5em;
 		
-		&:before {
-			border-bottom: solid 0.5em #fff;
-			border-left: solid 0.5em transparent;
-			border-right: solid 0.5em transparent;
-			content: '';
-			left: 0.75em;
-			position: absolute;
-			top: -0.45em;
-		}
-	}
+// 		&:before {
+// 			border-bottom: solid 0.5em #fff;
+// 			border-left: solid 0.5em transparent;
+// 			border-right: solid 0.5em transparent;
+// 			content: '';
+// 			left: 0.75em;
+// 			position: absolute;
+// 			top: -0.45em;
+// 		}
+// 	}
 	
-	> li {
-		border-top: solid 1px $color-border;
+// 	> li {
+// 		border-top: solid 1px $color-border;
 		
-		> a {
-			@include vendor('transition', 'none');
-			color: inherit;
-			text-decoration: none;
-			padding: 0 1em;
-			border: 0;
-		}
+// 		> a {
+// 			@include vendor('transition', 'none');
+// 			color: inherit;
+// 			text-decoration: none;
+// 			padding: 0 1em;
+// 			border: 0;
+// 		}
 
-		&:hover {
-			> a {
-				background: $color-pinkish;
-				color: $color-white;
-			}
-		}
+// 		&:hover {
+// 			> a {
+// 				background: $color-pinkish;
+// 				color: $color-white;
+// 			}
+// 		}
 		
-		&:first-child {
-			border-top: 0;
-		}
-	}
-}
+// 		&:first-child {
+// 			border-top: 0;
+// 		}
+// 	}
+// }
 
 /* Banner */
 
