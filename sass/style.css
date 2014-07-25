@@ -67,10 +67,31 @@ h3 {
   letter-spacing: 0.025em; }
 
 pre {
+  position: relative;
+  width: 100%;
   font-family: monospace;
   font-size: 100%;
   letter-spacing: 0em;
-  overflow: auto; }
+  overflow-x: auto;
+  scrollbar-base-color: #756673;
+  scrollbar-3dlight-color: #e6eefa;
+  scrollbar-highlight-color: #e6eefa;
+  scrollbar-track-color: #645862;
+  scrollbar-arrow-color: white;
+  scrollbar-shadow-color: #e6eefa;
+  scrollbar-dark-shadow-color: #e6eefa; }
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px; }
+
+::-webkit-scrollbar-track {
+  background-color: #e6eefa; }
+
+::-webkit-scrollbar-thumb {
+  height: 50px;
+  background-color: #756673;
+  border-radius: 3px; }
 
 code {
   font-family: monospace;

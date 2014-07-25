@@ -82,16 +82,34 @@ h3 {
 }
 
 pre {
+  position: relative;
+  width: 100%;
   font-family: monospace;
   font-size: 100%;
   letter-spacing: 0em;
-  overflow: auto;
-  // width: 700px;
-  // border: 1px solid red;
-  // margin: auto;
-  // width: 100%;
-  // display: inline-block;
+  overflow-x: auto;
+
+  scrollbar-base-color: $color-lightpurple;
+  scrollbar-3dlight-color: $color-lightblue;
+  scrollbar-highlight-color: $color-lightblue;
+  scrollbar-track-color: $color-purpleish;
+  scrollbar-arrow-color: $color-white;
+  scrollbar-shadow-color: $color-lightblue;
+  scrollbar-dark-shadow-color: $color-lightblue;
 }
+
+::-webkit-scrollbar {
+  width: 8px; height: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: $color-lightblue;
+}
+::-webkit-scrollbar-thumb {
+  height: 50px; 
+  background-color: $color-lightpurple; 
+  border-radius: 3px;
+}
+
 
 code {
   font-family: monospace;

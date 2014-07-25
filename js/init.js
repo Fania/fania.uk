@@ -13,10 +13,8 @@ skel.init({
 		// narrow:		{ range: '-980', href: 'sass/style-narrow.css', containers: '95%', grid: { gutters: 30 } },
 		// narrower:	{ range: '-840', href: 'sass/style-narrower.css', grid: { collapse: 1 } },
 		// mobile:		{ range: '-640', href: 'sass/style-mobile.css', containers: '100%', grid: { gutters: 15, collapse: 2 } }
-		global:		{ range: '*', href: 'sass/style.css', containers: 1400, grid: { gutters: 50 } },
-		wide:		{ range: '-1680', href: 'sass/style-wide.css', containers: 1200, grid: { gutters: 40 } },
-		normal:		{ range: '-1280', href: 'sass/style-normal.css', containers: 960, lockViewport: true },
-		// narrow:		{ range: '-980', href: 'sass/style-narrow.css', containers: '95%', grid: { gutters: 30 } },
+		global:		{ range: '*', href: 'sass/style.css', containers: 1200, grid: { gutters: 50 } },
+		normal:		{ range: '-1280', href: 'sass/style-normal.css', containers: '95%', lockViewport: true },
 		narrower:	{ range: '-750', href: 'sass/style-narrower.css', grid: { collapse: 1 } },
 		mobile:		{ range: '-440', href: 'sass/style-mobile.css', containers: '100%', grid: { gutters: 15, collapse: 2 } }
 	}
@@ -35,8 +33,7 @@ skel.init({
 		// Probably shouldn't mess with these (at least until I've finished the skel-layers documentation).
 			layers: {
 				topPanel: {
-					// states: 'global narrow mobile',
-					states: 'global wide normal narrower mobile',
+					states: 'global normal narrower mobile',
 					position: 'top-center',
 					side: 'top',
 					hidden: true,
@@ -49,14 +46,14 @@ skel.init({
 					orientation: 'vertical'
 				},
 				topButton: {
-					states: 'global wide normal narrower mobile',
+					states: 'global normal narrower mobile',
 					position: 'top-center',
 					width: 50,
 					// height: 50,
 					html: '<span class="toggle" data-action="toggleLayer" data-args="topPanel"></span>'
 				},
 				sidePanel: {
-					states: 'global wide normal narrower',
+					states: 'global normal narrower',
 					position: 'top-left',
 					side: 'left',
 					hidden: true,
@@ -69,7 +66,7 @@ skel.init({
 					orientation: 'vertical'
 				},
 				sideButton: {
-					states: 'global wide normal narrower',
+					states: 'global normal narrower',
 					position: 'top-left',
 					// width: 100,
 					// height: 60,
