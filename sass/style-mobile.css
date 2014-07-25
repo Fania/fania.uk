@@ -51,6 +51,10 @@ ul.feature-icons li .icon {
 ul.buttons {
   text-align: center; }
 
+/* Header */
+#header {
+  display: none; }
+
 /* Wrapper */
 .wrapper {
   margin-bottom: 2.5em;

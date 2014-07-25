@@ -83,8 +83,14 @@ h3 {
 
 pre {
   font-family: monospace;
-  font-size: 1em;
-  // letter-spacing: 0.1em;
+  font-size: 100%;
+  letter-spacing: 0em;
+  overflow: auto;
+  // width: 700px;
+  // border: 1px solid red;
+  // margin: auto;
+  // width: 100%;
+  // display: inline-block;
 }
 
 code {

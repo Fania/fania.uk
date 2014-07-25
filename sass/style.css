@@ -68,7 +68,9 @@ h3 {
 
 pre {
   font-family: monospace;
-  font-size: 1em; }
+  font-size: 100%;
+  letter-spacing: 0em;
+  overflow: auto; }
 
 code {
   font-family: monospace;
