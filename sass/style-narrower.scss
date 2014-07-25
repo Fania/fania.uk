@@ -1,12 +1,6 @@
 @import 'vars';
 @import 'mixins';
 
-/*
-	Twenty 1.0 by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 /* Basic */
 
 	header {
@@ -103,7 +97,7 @@
 		padding: 5em 0;
 
 		.sidebar {
-			border-top: solid 1px transparentize($color-fg, 0.9);
+			border-top: solid 1px transparentize($color-gray, 0.9);
 			padding-top: 3em;
 			
 			section {

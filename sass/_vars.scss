@@ -1,10 +1,10 @@
 
 $color-bg:					#f3f6fa;  // very light blueish white
 $color-lightblue:           #e6eefa;  // light blueish white
-$color-white:				#fff;  // white
+$color-white:				#fff; 	  // white
 $color-gray:				#7c8081;  // gray
 $color-turqoise:			#83d3c9;  // light turqoise
-
+$color-black:				#000000;  // black
 $color-pinkish:				#9C6793;  // pinkish
 $color-purpleish:			#645862;  // dark brown purple
 $color-lightpurple:			#756673;  // slightly lighter dark brown purple
@@ -12,10 +12,5 @@ $color-lightpurple:			#756673;  // slightly lighter dark brown purple
 $color-border:				transparentize($color-gray, 0.8);
 
 $color-header-fg:			inherit;
-$color-header-alt-bg:		transparent;
-$color-banner-bg:			#898786;  // ??
-$color-banner-inner-bg:		#341b2b;  // ??
-$color-footer-bg:			#E8EEF4;  //#e2e5e8; light gray
+$color-footer-bg:			#E8EEF4;  //#e2e5e8; very light gray
 $color-two-fg:				inherit;
-$color-navPanel-bg:			#1c2021;  // ??
-$color-navButton-bg:		rgba(163,169,170,0.75);  // ??
