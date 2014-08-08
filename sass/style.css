@@ -124,7 +124,7 @@ hr {
 [title].image:after {
   content: ""; }
 
-.mk:after, .icon:after, #expandList:after, #collapseList:after {
+.mk:after, .icon:after, #expandList:after, #collapseList:after, #topcontrol:after {
   content: ""; }
 
 blockquote {

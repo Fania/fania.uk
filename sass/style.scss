@@ -150,9 +150,15 @@ hr {
   }
 }
 
-.mk:after, .icon:after, #expandList:after, #collapseList:after {
+.mk:after, .icon:after, #expandList:after, #collapseList:after, #topcontrol:after {
   content: "";
 }
+
+// <div id="topcontrol" title="Scroll to Top" style="position: fixed; bottom: 5px; right: 5px; cursor: pointer; opacity: 1;"><img src="http://i1155.photobucket.com/albums/p559/scrolltotop/arrow64.png"></div>
+
+// #topcontrol {
+//   opacity: 0.5 !important;
+// }
 
 blockquote {
   border-left: solid 0.5em $color-pinkish;
