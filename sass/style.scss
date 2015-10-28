@@ -72,6 +72,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 h2 {
+  color: green;
   font-size: 1.5em;
   letter-spacing: 0.1em;
 }
@@ -105,8 +106,8 @@ pre {
   background-color: $color-lightblue;
 }
 ::-webkit-scrollbar-thumb {
-  height: 50px; 
-  background-color: $color-lightpurple; 
+  height: 50px;
+  background-color: $color-lightpurple;
   border-radius: 3px;
 }
 
