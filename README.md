@@ -2,10 +2,7 @@
 
 
 ## SOLUTIONS LOG
-- how to install nltk Data
-- what to install when installing from scratch
-- remove facebook and tweet buttons
-- add pdf acrobat reader remove tool pane to solutions log
+- [ ] 
 
 
 This is my websites code.
