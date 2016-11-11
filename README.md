@@ -1,5 +1,10 @@
 # Fania.uk
 
+
+## SOLUTIONS LOG
+- [ ] 
+
+
 This is my websites code.
 
 # Heading 1
@@ -24,9 +29,9 @@ puts markdown.to_html
 
 [Link](www.github.com) ~~Strikethrough~~
 
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> are supported 
-- [x] list syntax is required (any unordered or ordered list supported) 
-- [x] this is a complete item 
+- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> are supported
+- [x] list syntax is required (any unordered or ordered list supported)
+- [x] this is a complete item
 - [ ] this is an incomplete item
 
 - [ ] a bigger project
