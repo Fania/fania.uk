@@ -19,6 +19,31 @@ body {
   background-color: #645862;
 }
 
+header{
+  margin: 2em 0;
+}
+
+footer{
+  margin: 2em 0;
+}
+
+.moveme {
+    width: 100px;
+    height: 100px;
+    /*background-color: red;*/
+    position: relative;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    /*animation-direction: alternate;*/
+}
+@keyframes example {
+    0%  {background-color:#645862;}
+    33% {background-color:#59645c;}
+    66% {background-color:#5e647b;}
+    100% {background-color:#645862;}
+}
+
 
 
 
