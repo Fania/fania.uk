@@ -23,27 +23,38 @@ header{
   margin: 2em 0;
 }
 
-footer{
-  margin: 2em 0;
+main{
+  width: 90%;
+  margin: auto;
 }
 
-.moveme {
+footer{
+  margin: 2em 0;
+  text-align: center;
+}
+
+/*.moveme {
     width: 100px;
     height: 100px;
-    /*background-color: red;*/
     position: relative;
     animation-name: example;
     animation-duration: 5s;
     animation-iteration-count: infinite;
-    /*animation-direction: alternate;*/
 }
 @keyframes example {
     0%  {background-color:#645862;}
     33% {background-color:#59645c;}
     66% {background-color:#5e647b;}
     100% {background-color:#645862;}
-}
+}*/
 
+i{
+  padding: 1em;
+  margin: 4px 2px;
+  background-color: #a9adbc;
+  width: 1em;
+  height: 1em;
+}
 
 
 
