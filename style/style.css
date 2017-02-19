@@ -17,45 +17,169 @@ LIGHT
 
 body {
   background-color: #645862;
+  color: #a9adbc;
+  width: 90%;
+  margin: auto;
+  text-align: center;
 }
 
-header{
+header {
   margin: 2em 0;
+  border-bottom: solid 4px #343743;
+  overflow: auto;
+  padding-bottom: 1em;
+
+}
+
+article {
+  clear: both;
+}
+
+h1 {
+  color: #a9adbc;
+  font-size: 2em;
+  font-variant: small-caps;
+}
+
+h2 {
+  margin: 0;
+  font-size: 2em;
+}
+
+h3 {
+  margin: 0;
+}
+
+header h3,
+header p {
+  box-sizing: border-box;
+  margin: 0;
+  color: #9297ab;
+}
+
+.clear {
+  clear: both;
+}
+
+nav {
+  padding: 1em 0;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 0 0.5em;
 }
 
 main{
-  width: 90%;
-  margin: auto;
+  
+}
+
+article {
+  padding-top: 2em;
+}
+
+img {
+  width: 100%;
 }
 
 footer{
   margin: 2em 0;
-  text-align: center;
+  color: #a9adbc;
+
 }
 
-/*.moveme {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    animation-name: example;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
+.frontpage {
+  /*margin: 4px 2px;*/
+  background-color: #a9adbc;
+  width: 200px;
+  height: 135px;
+  text-align: center;
+  padding-top: 65px;
+
+  animation-name: example;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
 @keyframes example {
-    0%  {background-color:#645862;}
-    33% {background-color:#59645c;}
-    66% {background-color:#5e647b;}
-    100% {background-color:#645862;}
-}*/
-
-i{
-  padding: 1em;
-  margin: 4px 2px;
-  background-color: #a9adbc;
-  width: 1em;
-  height: 1em;
+    0%  {color:#645862;}
+    33% {color:#59645c;}
+    66% {color:#5e647b;}
+    100% {color:#645862;}
 }
 
+.menu-icon {
+  display: inline;
+  background-color: #645862;
+  color: #cbe0e7;
+  height: 100%;
+  text-align: center;
+  padding-top: 0;
+  animation-name: none;
+}
+
+
+/* Murakami image halves */
+.mkl {
+  position: relative;
+  float: left;
+  width: 50%; }
+
+.mkr {
+  position: relative;
+  float: right;
+  width: 50%; }
+
+
+
+
+@media screen and (min-width: 480px) {
+
+body {
+  text-align: left;
+}
+
+header {
+}
+
+header h3,
+header p {
+  width: 50%;
+}
+
+header h3 {
+  float: left;
+}
+
+header p {
+  float: right;
+  text-align: right;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+h2 {
+  float: left;
+}
+
+nav {
+  float: right;
+}
+
+nav a {
+  padding: 0 1em;
+}
+
+main {
+  clear: both;
+}
+
+article {
+  clear: both;
+}
+
+}
 
 
 
