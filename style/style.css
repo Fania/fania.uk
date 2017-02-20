@@ -24,11 +24,15 @@ body {
 
 header {
   /*margin: 2em 0;*/
-  border-bottom: solid 4px #343743;
+  border-bottom: solid 4px #70778f;
   overflow: auto;
   padding: 2em 0;
   width: 90%;
   margin: auto;
+}
+
+.noborder {
+  border: none;
 }
 
 h1 {
@@ -107,11 +111,6 @@ section {
   margin: 0;
 }
 
-time {
-  /*font-family: sans-serif;*/
-  font-weight: bold;
-}
-
 pre {
   overflow: hidden;
 }
@@ -135,30 +134,51 @@ img {
 }
 
 footer {
-  border-top: solid 4px #343743;
+  border-top: solid 4px #70778f;
   padding: 1em 0;
   color: #a9adbc;
   width: 90%;
   margin: auto;
 }
 
-.frontpage {
-  /*margin: 4px 2px;*/
-  background-color: #a9adbc;
-  width: 200px;
-  height: 135px;
-  text-align: center;
-  padding-top: 65px;
-
-  animation-name: example;
+.fronticon {
+  padding: 5px;
+  /*animation-name: example;
   animation-duration: 5s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite;*/
 }
-@keyframes example {
+
+/*@keyframes example {
     0%  {color:#645862;}
     33% {color:#59645c;}
     66% {color:#5e647b;}
     100% {color:#645862;}
+}*/
+
+.secret {
+  color: #a9adbc;
+  cursor: default
+}
+
+.blue {
+  color: #b5cce3;
+}
+
+.green {
+  color: #9fc6b9;
+}
+
+.texticon {
+  font-size: 4em;
+  font-weight: bold;
+  padding: 15px;
+  display: inline;
+}
+
+.imgicon {
+  padding: 0 5px;
+  display: inline;
+  width: 70px;
 }
 
 .menu-icon {
