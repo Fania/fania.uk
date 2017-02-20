@@ -18,32 +18,31 @@ LIGHT
 body {
   background-color: #645862;
   color: #a9adbc;
-  width: 90%;
-  margin: auto;
   text-align: center;
+  margin: 0;
 }
 
 header {
-  margin: 2em 0;
+  /*margin: 2em 0;*/
   border-bottom: solid 4px #343743;
   overflow: auto;
-  padding-bottom: 1em;
-
-}
-
-article {
-  clear: both;
+  padding: 2em 0;
+  width: 90%;
+  margin: auto;
 }
 
 h1 {
   color: #a9adbc;
   font-size: 2em;
   font-variant: small-caps;
+  margin: 0.5em 0;
+  /*text-decoration: underline;*/
 }
 
 h2 {
   margin: 0;
   font-size: 2em;
+  font-variant: small-caps;
 }
 
 h3 {
@@ -71,21 +70,76 @@ nav a {
 }
 
 main{
-  
+  width: 90%;
+  margin: auto;
 }
 
 article {
-  padding-top: 2em;
+  padding-top: 1em;
+  margin-bottom: 1em;
+}
+
+section {
+  padding-bottom: 2em;
+}
+
+.links {
+  background-color: #5e647b;
+  padding: 1em;
+  margin: 2em 0;
+}
+
+.links dl {
+  list-style-type: none;
+  padding: 1em 0;
+  margin: 0;
+}
+
+.links dt,
+.links dt a {
+  color: #a9adbc;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.links dd {
+  padding-bottom: 3em;
+  margin: 0;
+}
+
+time {
+  /*font-family: sans-serif;*/
+  font-weight: bold;
+}
+
+pre {
+  overflow: hidden;
+}
+
+p {
+  /*margin: 0;*/
+}
+
+a {
+  color: #e6ffff;
+  text-decoration: none;
 }
 
 img {
   width: 100%;
 }
 
-footer {
-  margin: 2em 0;
-  color: #a9adbc;
+.zalgo {
+  padding: 2em 0;
+  overflow: hidden;
+}
 
+footer {
+  border-top: solid 4px #343743;
+  padding: 1em 0;
+  color: #a9adbc;
+  width: 90%;
+  margin: auto;
 }
 
 .frontpage {
@@ -120,66 +174,175 @@ footer {
 
 /* Murakami image halves */
 .mkl {
-  position: relative;
+  /*position: relative;*/
   float: left;
-  width: 50%; }
+  width: 50%;
+}
 
 .mkr {
-  position: relative;
+  /*position: relative;*/
   float: right;
   width: 50%; }
+
+
+.leftalign {
+  text-align: left;
+}
+
+ul {
+  list-style:none;
+  padding-left: 0;
+}
+
+li.win:before, li.mac:before, li.info:before, li.null:before {
+  font-family: FontAwesome;
+  color: #e6ffff;
+  width: 25px;
+  display: inline-block;
+}
+li.win:before {
+  content: "\f17a"; 
+}
+li.mac:before {
+  content: "\f179"; 
+}
+li.info:before {
+  content: "\f013"; 
+}
+li.null:before {
+  content: ""; 
+}
 
 
 
 
 @media screen and (min-width: 480px) {
 
-body {
-  text-align: left;
+  body {
+    text-align: left;
+  }
+
+  header {
+    /*
+    // fixed header stuff
+    position: fixed;
+    top: 0;
+    left: 5%;
+    width: 90%;
+    background-color: #645862;
+    */
+  }
+
+  header h3,
+  header p {
+    width: 50%;
+  }
+
+  header h3 {
+    float: left;
+  }
+
+  header p {
+    float: right;
+    text-align: right;
+  }
+
+  h1 {
+    font-size: 4em;
+  }
+
+  header h2 {
+    float: left;
+  }
+
+  nav {
+    float: right;
+  }
+
+  nav a {
+    padding: 0 1em;
+  }
+
+  main {
+    clear: both;
+    /*padding-top: 150px; // fixed header */
+  }
+
+  img {
+    /*max-width: 600px;*/
+  }
+
+  /* Murakami image */
+  .murakami {
+    /*max-width: 600px;*/
+  }
+
+  article {
+  }
+
+  .links h1 {
+    text-align: center;
+  }
+
+  .links dl {
+    column-count: 2;
+    text-align: center;
+    /*break-inside: avoid;*/
+  }
+
+  pre {
+    font-family: monospace;
+    font-size: 100%;
+    letter-spacing: 0em;
+    margin: 0;
+    overflow: hidden;
+  }
+
+ul {
+  list-style: none;
+  padding-left: 2em;
 }
 
-header {
+li.win:before, li.mac:before, li.info:before, li.null:before {
+  font-family: FontAwesome;
+  color: #e6ffff;
+  padding-right: 0.5em;
+  /*opacity: 0.5;*/
+  width: 25px;
+  display: inline-block;
 }
 
-header h3,
-header p {
-  width: 50%;
-}
 
-header h3 {
-  float: left;
-}
+} /* screen > 480px */
 
-header p {
-  float: right;
-  text-align: right;
-}
 
-h1 {
-  font-size: 4em;
-}
+@media screen and (min-width: 1024px) {
 
-h2 {
-  float: left;
-}
+  .content {
+    width: 70%;
+    float: left;
+  }
 
-nav {
-  float: right;
-}
+  .links {
+    width: 20%;
+    float: right;
+  }
 
-nav a {
-  padding: 0 1em;
-}
+  .links h1 {
+    font-size: 2em;
+  }
 
-main {
-  clear: both;
-}
+  .links dl {
+    column-count: 1;
+  }
 
-article {
-  clear: both;
-}
 
-}
+  footer {
+    clear: both;
+  }
+
+
+} /* screen > 1024px */
 
 
 
