@@ -212,6 +212,12 @@ footer {
   width: 40px;
 }
 
+.imgiconbig {
+  padding: 0 5px;
+  display: inline;
+  width: 70px;
+}
+
 .imgiconsmall {
   padding: 0 5px;
   display: inline;
