@@ -41,6 +41,15 @@ h1 {
   font-variant: small-caps;
 }
 
+#welcomeheader {
+  font-size: 4em;
+}
+
+.lower {
+  position:relative;
+  top: 10px;
+}
+
 h2 {
   color: #9f939d;
   font-size: 2em;
