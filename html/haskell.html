@@ -5,9 +5,9 @@
 <head>
 	<title>Haskell</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../style/style.css">
-	<link href="../style/style.js">
 </head>
 
 <body>
@@ -19,6 +19,7 @@
 		<a href="uni.html"><i class="menu-icon fa fa-mortar-board"></i></a>
 		<a href="other.html"><i class="menu-icon fa fa-star"></i></a>
 		<a href="images.html"><i class="menu-icon fa fa-camera"></i></a>
+		<a href="cheats.html"><i class="menu-icon fa fa-bug"></i></a>
 	</nav>
 	<h3 class="clear">Frequently Asked Questions</h3>
 	<p>Used for CTEC1901 at DMU.</p>
@@ -253,8 +254,8 @@ fooA x = \y -> x * y
 			<label for="q15">Sections / Partial application</label>
 			<div class="answer">
 				<blockquote>
-					<p>&quot;Partial function application is the ability to take a function of many parameters and apply arguments to some of the parameters to create a new function that needs only the application of the remaining arguments to produce the equivalent of applying all arguments to the original function.&quot; 
-					(<a href="http://rosettacode.org/wiki/Partial_function_application">Source</a> &amp; <a href="http://rosettacode.org/wiki/Partial_function_application#Haskell">Code examples</a>)</p>
+					<p>"Partial function application is the ability to take a function of many parameters and apply arguments to some of the parameters to create a new function that needs only the application of the remaining arguments to produce the equivalent of applying all arguments to the original function." 
+					(<a href="http://rosettacode.org/wiki/Partial_function_application">Source</a> & <a href="http://rosettacode.org/wiki/Partial_function_application#Haskell">Code examples</a>)</p>
 				</blockquote>
 				<p>Consider the following example:</p>
 <pre><code>sumTwo x y = x + y
@@ -269,41 +270,53 @@ addSeven = sumTwo 7
 			</div>
 		</article>
 
-<!--
-	<h2>Tuples and Lists</h2>
 
-<p><strong>What&#39;s the difference between <em>tuples</em> and <em>lists</em>?</strong><br>Lists are sequences of elements of the <strong>same type</strong>. They are enclosed by square brackets and separated by commas. E.g. <code>[1,2,3]</code> or <code>[&#39;a&#39;,&#39;c&#39;,&#39;b&#39;]</code>.<br>It is possible to have <strong>infinite lists</strong>, for example <code>[1,3..]</code> will produce the list of all odd numbers from 1 to infinity. If you type that into your terminal, remember you can interrupt a process by typing <code>ctrl c</code>.</p>
-<p>Tuples are <strong>finite</strong> sequences of elements of possibly different types. They are enclosed by round brackets and separated by commas. E.g. <code>(1, &quot;Hello&quot;)</code> or <code>(True, False)</code>.</p>
-<p>Examples:</p>
-<ul>
-<li><code>[1..9]</code></li>
-<li><code>([1..9], [&#39;a&#39;..&#39;z&#39;])</code></li>
-<li><code>[[1,3,5,7,9], [0,2,4,6,8]]</code></li>
-<li><code>(True, [1..])</code></li>
-<li><code>((1, True), (0, False))</code></li>
-<li><code>[(&#39;a&#39;, 1), (&#39;b&#39;, 2)]</code></li>
-<li><code>(1, 2)</code></li>
-</ul>
+		<br>
+		<h3>Tuples and Lists</h3>
 
+		<article>
+			<input type="checkbox" id="q16">
+			<label for="q16">What's the difference between <em>tuples</em> and <em>lists</em>?</label>
+			<div class="answer">
+				<p>Lists are sequences of elements of the <strong>same type</strong>. They are enclosed by square brackets and separated by commas. E.g. <code>[1,2,3]</code> or <code>['a','c','b']</code>.</p>
+				<p>It is possible to have <strong>infinite lists</strong>, for example <code>[1,3..]</code> will produce the list of all odd numbers from 1 to infinity. If you type that into your terminal, remember you can interrupt a process by typing <code>ctrl c</code>.</p>
+				<p>Tuples are <strong>finite</strong> sequences of elements of possibly different types. They are enclosed by round brackets and separated by commas. E.g. <code>(1, "Hello")</code> or <code>(True, False)</code>.</p>
+				<p>Examples:</p>
+				<ul>
+				<li><code>[1..9]</code></li>
+				<li><code>([1..9], ['a'..'z'])</code></li>
+				<li><code>[[1,3,5,7,9], [0,2,4,6,8]]</code></li>
+				<li><code>(True, [1..])</code></li>
+				<li><code>((1, True), (0, False))</code></li>
+				<li><code>[('a', 1), ('b', 2)]</code></li>
+				<li><code>(1, 2)</code></li>
+				</ul>
+			</div>
+		</article>
 
+		<article>
+			<input type="checkbox" id="q17">
+			<label for="q17">Why do Strings have the type [Char]?</label>
+			<div class="answer">
+				<p>Because in Haskell Strings are interpreted as a <strong>list of characters</strong>. This allows you to perform list functions like <code>head</code> and <code>tail</code> on Strings:</p>
+<pre><code>head "Haskell"
+'H'
+it :: Char
+</code></pre>
 
-					<p><strong>Why do strings have the type [Char]?</strong><br>Because in Haskell strings are interpreted as a <strong>list of characters</strong>. This allows you to perform list functions like <code>head</code> and <code>tail</code> on strings:</p>
-					<pre><code>head</span> <span class="hljs-string">"Haskell"</span>
-					'H'</span>
-					it</span> :: Char</span>
-					</code></pre>
-					<pre><code>tail</span> <span class="hljs-string">"Haskell"</span>
-					<span class="hljs-string">"askell"</span>
-					it</span> :: [Char</span>]
-					</code></pre>
-					<p>Also, this means that if you type in lists of characters into GHCi it will return them as strings of type <code>[Char]</code>.</p>
-					<pre><code>['H'</span>,'a','s','k','e','l','l']
-					<span class="hljs-string">"Haskell"</span>
-					it</span> :: [Char</span>]
-					</code></pre>
--->
+<pre><code>tail "Haskell"
+"askell"
+it :: [Char]
+</code></pre>
+				<p>Also, this means that if you type in lists of characters into GHCi it will return them as strings of type <code>[Char]</code>.</p>
+<pre><code>['H','a','s','k','e','l','l']
+"Haskell"
+it :: [Char]
+</code></pre>
+			</div>
+		</article>
 
-
+<!-- Up to Week 3 done -->
 
 	</section> <!-- end of articles -->
 

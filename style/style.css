@@ -209,7 +209,13 @@ footer {
 .imgicon {
   padding: 0 5px;
   display: inline;
-  width: 70px;
+  width: 40px;
+}
+
+.imgiconsmall {
+  padding: 0 5px;
+  display: inline;
+  width: 20px;
 }
 
 .menu-icon {
@@ -287,14 +293,14 @@ input[type=checkbox]:checked + label + div p {
   opacity: 1;
 }
 
-input:before {
+input::before {
   font-family: FontAwesome;
   content: "\f0fe";
   color: #b5cce3;
   visibility: visible;
 }
 
-input[type=checkbox]:checked:before {
+input[type=checkbox]:checked::before {
   content: "\f146";
 }
 
