@@ -180,45 +180,41 @@ img {
 }
 
 .picture {
-    position: relative;
-    width: 50%;
+  position: relative;
+  width: 400px;
+  height: 170px;
+  overflow: hidden;
+  margin: 1em 0;
 }
 
 .image {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
+  opacity: 0.6;
   transition: .5s ease;
-  backface-visibility: hidden;
-}
-
-.middle {
-  transition: .2s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform: scale(1.2);
 }
 
 .picture:hover .image {
-  opacity: 0.3;
-  /*filter: blur(4px);*/
+  opacity: 1;
+  transform: scale(1);
 }
 
-.picture:hover .middle {
-  opacity: 1;
+.picture:hover .caption {
+  opacity: 0.8;
+  transition: .5s ease;
 }
 
 .caption {
-  background-color: #4B6870; /* rgba(0,128,128,0.7);*/
+  background-color: #563f46;
   color: white;
-  font-size: 16px;
-  padding: 16px 32px;
+  padding: 0.5em;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  font-size: 1em;
 }
 
-.blur {filter: blur(4px);}
+/*.blur {filter: blur(4px);}
 .brightness {filter: brightness(250%);}
 .contrast {filter: contrast(180%);}
 .grayscale {filter: grayscale(100%);}
@@ -227,30 +223,8 @@ img {
 .opacity {filter: opacity(50%);}
 .saturate {filter: saturate(7);}
 .sepia {filter: sepia(100%);}
-.shadow {filter: drop-shadow(8px 8px 10px green);}
+.shadow {filter: drop-shadow(8px 8px 10px green);}*/
 
-/*.photo {
-  position: relative;
-}
-
-.photo img:hover + .caption {
-  opacity: 1;
-  height: 100%;
-  width: 100%;
-  transition: all 1s;
-}
-
-.caption {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  height: 0;
-  width: 0;
-  color: white;
-  text-align: center;
-  background-color: rgba(0,128,128,0.7);
-  
-}*/
 
 
 .zalgo {
