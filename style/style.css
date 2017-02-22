@@ -36,21 +36,23 @@ header {
 }
 
 h1 {
-  color: #a9adbc;
-  font-size: 2em;
-  font-variant: small-caps;
-  margin: 0.5em 0;
-  /*text-decoration: underline;*/
-}
-
-h2 {
   margin: 0;
   font-size: 2em;
   font-variant: small-caps;
+}
+
+h2 {
+  color: #9f939d;
+  font-size: 2em;
+  font-variant: small-caps;
+  margin: 0;
+  padding-bottom: 1em;
+  /*text-decoration: underline;*/
 }
 
 h3 {
   margin: 0;
+  text-decoration: underline;
 }
 
 header h3,
@@ -58,6 +60,8 @@ header p {
   box-sizing: border-box;
   margin: 0;
   color: #9297ab;
+  font-size: 1em;
+  text-decoration: none;
 }
 
 .clear {
@@ -88,10 +92,19 @@ section {
   padding-bottom: 2em;
 }
 
+.content {
+  padding: 1em;
+  margin: 2em 0;
+}
+
 .links {
   background-color: #5e647b;
   padding: 1em;
   margin: 2em 0;
+}
+
+.links h2 {
+  padding: 0;
 }
 
 .links dl {
@@ -108,7 +121,7 @@ section {
 }
 
 .links dd {
-  padding-bottom: 3em;
+  padding-bottom: 2em;
   margin: 0;
 }
 
@@ -263,13 +276,13 @@ input {
   visibility: hidden;
 }
 
-input[type=checkbox]:checked + div {
+input[type=checkbox]:checked + label + div {
   transition: all 1s;
   height: auto;
   opacity: 1;
 }
 
-input[type=checkbox]:checked + div p {
+input[type=checkbox]:checked + label + div p {
   height: auto;
   opacity: 1;
 }
@@ -277,8 +290,6 @@ input[type=checkbox]:checked + div p {
 input:before {
   font-family: FontAwesome;
   content: "\f0fe";
-  position: absolute;
-  left: 35px;
   color: #b5cce3;
   visibility: visible;
 }
@@ -287,10 +298,8 @@ input[type=checkbox]:checked:before {
   content: "\f146";
 }
 
-label h3 {
+label {
   display: inline-block;
-  position: relative;
-  left: 25px;
 }
 
 .answer,
@@ -334,13 +343,19 @@ label h3 {
     text-align: right;
   }
 
-  h1 {
-    font-size: 4em;
-  }
-
-  header h2 {
+  header h1 {
     float: left;
   }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  article {
+    padding: 0;
+    margin: 0.5em 0;
+  }
+
 
   nav {
     float: right;
@@ -367,7 +382,7 @@ label h3 {
   article {
   }
 
-  .links h1 {
+  .links h2 {
     text-align: center;
   }
 
@@ -399,6 +414,12 @@ label h3 {
     display: inline-block;
   }
 
+  label {
+    display: inline-block;
+    position: relative;
+    left: 5px;
+  }
+
 
 } /* screen > 480px */
 
@@ -406,16 +427,16 @@ label h3 {
 @media screen and (min-width: 1024px) {
 
   .content {
-    width: 70%;
+    width: 65%;
     float: left;
   }
 
   .links {
-    width: 20%;
+    width: 25%;
     float: right;
   }
 
-  .links h1 {
+  .links h2 {
     font-size: 2em;
   }
 
