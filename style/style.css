@@ -15,18 +15,36 @@ LIGHT
 
 
 HEX: #c8c3cc light purple
-
 HEX: #563f46 dark purple
-
 HEX: #8ca3a3 light teal
-
 HEX: #484f4f dark teal
+
+BASE
+645862 dark plum
+
+COMPLEMENTARY
+626458 dark olive green
+
+MONOCHROMATIC
+7e5577 bright plum
+
+ANALOGOUS
+64585c brown plum
+605864 purple plum
+
+SPLIT COMPLEMENTARY
+5c6458 olivy green
+646258 browny green
+
+TRIADIC
+58645c greeny
+645f58 browny
 
 */
 
 body {
   background-color: #645862;
-  color: #a9adbc;
+  color: #A299A1;
   text-align: center;
   margin: 0;
 }
@@ -117,6 +135,7 @@ section {
 
 .links {
   background-color: #5e647b;
+  /*background-color: #737C6D;*/
   padding: 1em;
   margin: 2em 0;
 }
@@ -235,7 +254,7 @@ img {
 footer {
   border-top: solid 4px #70778f;
   padding: 1em 0;
-  color: #a9adbc;
+  color: #463B44;
   width: 90%;
   margin: auto;
 }
@@ -357,9 +376,11 @@ input {
 }
 
 input[type=checkbox]:checked + label + div {
-  transition: all 1s;
+  transition: all 0.3s;
   height: auto;
   opacity: 1;
+  margin: 1em 0;
+  padding: 1em;
 }
 
 input[type=checkbox]:checked + label + div p {
@@ -382,6 +403,12 @@ label {
   display: inline-block;
 }
 
+.answer{
+  margin: 0;
+  padding: 0 1em;
+  background-color: rgba( 70, 59, 68, 0.4);
+}
+
 .answer,
 .answer p {
   height: 0;
@@ -390,6 +417,13 @@ label {
   overflow: hidden;
 }
 
+p:first-child {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
 
 
 @media screen and (min-width: 480px) {
@@ -452,6 +486,11 @@ label {
 
   img {
     /*max-width: 600px;*/
+  }
+
+  img.smallimg {
+    max-width: 300px;
+    background-color: white;
   }
 
   /* Murakami image */

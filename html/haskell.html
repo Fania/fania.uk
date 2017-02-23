@@ -56,21 +56,21 @@
 			<div class="answer">
 				<p>You may want to setup a config file on your profile which can save you typing out certain commands every time you start a new session. For example you can put the <code>:set +t</code> command into this file and you will never have to remember it again.</p>
 				<p>To do this, open your home folder on Linux and enable the viewing of hidden files. Find the <code>.ghc</code> folder. You need to create a new file called <code>ghci.conf</code> within that folder. Now, open this file and simply type in <code>:set +t</code> and save.</p>
-				<p>There are various other things you can do with this config file. For example you can change the prompt from <code>Prelude&gt;</code> to your name or the Haskell “logo” lambda (<code>λ</code>) using this command: <code>:set prompt &quot;λ&gt;&quot;</code>.</p>
+				<p>There are various other things you can do with this config file. For example you can change the prompt from <code>Prelude></code> to your name or the Haskell “logo” lambda (<code>λ</code>) using this command: <code>:set prompt "λ>"</code>.</p>
 				<p>If you have installed GHC on your laptop or home computer you may have noticed that <code>:set +t</code> produces slightly different results than on the Gateway Linux lab machines. This is due to the version you are using.</p>
 				<p>In the labs (which use version 7.4.1) you would see something like this:</p>
-<pre><code>&gt; 4 + 6
+<pre><code>> 4 + 6
 10
 it :: Integer</code></pre>
 				<p>If you installed the newest version of GHC (7.10.3) then you will see this instead:</p>
-<pre><code>&gt; 4 + 6
+<pre><code>> 4 + 6
 10
-it :: Num a =&gt; a</code></pre>
+it :: Num a => a</code></pre>
 				<p>Right now this might not mean much to you, so you can change this setting in your <code>ghci.conf</code> file (see above) by adding this command: <code>:set -XMonomorphismRestriction</code>. To change it back to what it was before change the command to: <code>:set -XNoMonomorphismRestriction</code>.</p>
 				<p>An example <code>ghci.conf</code> file can look like this:</p>
 <pre><code>:set +t
 :set -XMonomorphismRestriction
-:set prompt "λ&gt; "</code></pre>
+:set prompt "λ> "</code></pre>
 			</div>
 		</article>
 
@@ -89,7 +89,7 @@ it :: Num a =&gt; a</code></pre>
 			<input type="checkbox" id="q05">
 			<label for="q05">Hoogle</label>
 			<div class="answer">
-				<p>Don’t forget you can check what functions do in <a href="https://www.haskell.org/hoogle/?hoogle=floor">Hoogle: floor</a>. For example, you can also search for functions by their type declarations: <code>String -&gt; Int</code> <a href="https://www.haskell.org/hoogle/?hoogle=String+-%3E+Int">Hoogle: String -&gt; Int</a>.</p>
+				<p>Don’t forget you can check what functions do in <a href="https://www.haskell.org/hoogle/?hoogle=floor">Hoogle: floor</a>. For example, you can also search for functions by their type declarations: <code>String -> Int</code> <a href="https://www.haskell.org/hoogle/?hoogle=String+-%3E+Int">Hoogle: String -> Int</a>.</p>
 			</div>
 		</article>
 
@@ -101,8 +101,8 @@ it :: Num a =&gt; a</code></pre>
 				<p>First you need to make sure your terminal prompt is in the right directory. Use the <code>cd</code> command to enter the folder where you saved the Haskell script. So, if you called your file <code>Script101.hs</code> and saved it in a folder called <code>CTEC1901</code> within your home directory, you need to enter the following commands into your terminal prompt: <code>cd CTEC1901</code>, then <code>ghci</code> and then <code>:load Script101.hs</code>.</p>
 <pre><code>~$ cd CTEC1901
 ~/CTEC1901$ ghci
-Prelude&gt; :load Script101.hs
-*Main&gt;
+Prelude> :load Script101.hs
+*Main>
 </code></pre>
 				<ul>
 				<li>Script names are case sensitive!</li>
@@ -110,7 +110,7 @@ Prelude&gt; :load Script101.hs
 				<li><code>:load</code> or <code>:l</code> to load a script</li>
 				<li>You need to be in the correct directory</li>
 				<li><code>:cd</code> to change directory within GHCi</li>
-				<li>You don&#39;t have to type the file extension <code>.hs</code></li>
+				<li>You don't have to type the file extension <code>.hs</code></li>
 				</ul>
 			</div>
 		</article>
@@ -130,13 +130,13 @@ Prelude&gt; :load Script101.hs
 it :: Integer
 </code></pre>
 				<p>Similarly if your file contained the following code:</p>
-<pre><code>add :: (Int, Int) -&gt; Int
+<pre><code>add :: (Int, Int) -> Int
 add (x,y) = x + y
 </code></pre>
 				<p>Then you need to type the following to call the function:</p>
 <pre><code>add (4,6)
 </code></pre>
-				<p>Note that the first line in your script <code>add :: (Int, Int) -&gt; Int</code> tells you which types of values you need to pass to the function as parameters. In this case the left hand side (before the <code>::</code>) tells you that the function is called <code>add</code> and the right hand side tells you that the function takes a <strong>tuple</strong> of two Integers <code>(Int, Int)</code> as input (before the <code>-&gt;</code>) and that the output of the function is an <code>Int</code> (after the <code>-&gt;</code>).</p>
+				<p>Note that the first line in your script <code>add :: (Int, Int) -> Int</code> tells you which types of values you need to pass to the function as parameters. In this case the left hand side (before the <code>::</code>) tells you that the function is called <code>add</code> and the right hand side tells you that the function takes a <strong>tuple</strong> of two Integers <code>(Int, Int)</code> as input (before the <code>-></code>) and that the output of the function is an <code>Int</code> (after the <code>-></code>).</p>
 			</div>
 		</article>
 
@@ -177,9 +177,9 @@ add (x,y) = x + y
 
 		<article>
 			<input type="checkbox" id="q11">
-			<label for="q11">How does <code>(if 2/=2 then reverse else tail) &quot;abc&quot;</code> work?</label>
+			<label for="q11">How does <code>(if 2/=2 then reverse else tail) "abc"</code> work?</label>
 			<div class="answer">
-				<p>Here, the <code>if</code> statement determines which function to apply to the string <code>&quot;abc&quot;</code>. Since 2 is <em>not</em> not equal to 2, it&#39;s <code>False</code> and the function performs <code>tail &quot;abc&quot;</code> and returns <code>&quot;bc&quot;</code>.</p>
+				<p>Here, the <code>if</code> statement determines which function to apply to the string <code>"abc"</code>. Since 2 is <em>not</em> not equal to 2, it's <code>False</code> and the function performs <code>tail "abc"</code> and returns <code>"bc"</code>.</p>
 			</div>
 		</article>
 
@@ -191,10 +191,10 @@ add (x,y) = x + y
 <pre><code>:t two
 two :: Integer
 </code></pre>
-				<p><code>name</code> is defined as a String <code>&quot;Haskell&quot;</code> (of type<code>[Char]</code>). The function <code>length</code> returns an <code>Int</code> (see <a href="https://www.haskell.org/hoogle/?hoogle=length">here</a>), so <code>length name</code> will return an <code>7</code> of type <code>Int</code>.<br>Now, the multiplication function <code>*</code> requires you to call it with two values of the <strong>same numeric type</strong> (see <a href="https://www.haskell.org/hoogle/?hoogle=%28*%29">here</a>). But we have seen that GHCi interprets the value <code>two</code> as an <code>Integer</code> rather than an <code>Int</code>. Therefore trying to multiply it with  <code>length name</code> (which returns an <code>Int</code>) GHCi will return an error:</p>
-<pre><code>Couldn&#39;t match expected type `Integer&#39; with actual type `Int&#39;
-In the return type of a call of `length&#39;
-In the second argument of `(*)&#39;, namely `length name&#39;
+				<p><code>name</code> is defined as a String <code>"Haskell"</code> (of type<code>[Char]</code>). The function <code>length</code> returns an <code>Int</code> (see <a href="https://www.haskell.org/hoogle/?hoogle=length">here</a>), so <code>length name</code> will return an <code>7</code> of type <code>Int</code>.<br>Now, the multiplication function <code>*</code> requires you to call it with two values of the <strong>same numeric type</strong> (see <a href="https://www.haskell.org/hoogle/?hoogle=%28*%29">here</a>). But we have seen that GHCi interprets the value <code>two</code> as an <code>Integer</code> rather than an <code>Int</code>. Therefore trying to multiply it with  <code>length name</code> (which returns an <code>Int</code>) GHCi will return an error:</p>
+<pre><code>Couldn't match expected type `Integer' with actual type `Int'
+In the return type of a call of `length'
+In the second argument of `(*)', namely `length name'
 In the expression: two * length name
 </code></pre>
 				<p>On the other hand, if you type <code>2 * length name</code> into your terminal it will return <code>14</code> of type <code>Int</code>. That is because manually typing a number into GHCi will default to an <code>Int</code>.</p>
@@ -221,11 +221,11 @@ it:: Int
 			<label for="q13">Curried and uncurried functions</label>
 			<div class="answer">
 				<p><strong>Uncurried</strong> function:</p>
-<pre><code>fooU :: (Int, Int) -&gt; Int
+<pre><code>fooU :: (Int, Int) -> Int
 fooU (x, y) = x * y
 </code></pre>
 				<p><strong>Curried</strong> function:</p>
-<pre><code>fooC :: Int -&gt; Int -&gt; Int
+<pre><code>fooC :: Int -> Int -> Int
 fooC x y = x * y
 </code></pre>
 				<p>The main difference <em>in very simple terms</em> is that the function parameters <code>x</code> and <code>y</code> are given separately in curried functions compared to a tuple in uncurried functions <code>(x,y)</code>.</p>
@@ -241,7 +241,7 @@ fooC x y = x * y
 fooA x = \y -> x * y
 </code></pre>
 				<p>Note that the type signature indicates that the function takes 2 input parameters of type Int, even though in the function expression it only lists 1 of them as <code>x</code>.</p>
-				<!--<p>So, if we supply arguments to the function with an x of 2:<br><code>fooA 2 = \y -&gt; 2 + y</code><br>And a y of 3.<br><code>bar 2 = (\y -&gt; 2 + y) 3</code><br>we get<br><code>5</code>.</p>-->
+				<!--<p>So, if we supply arguments to the function with an x of 2:<br><code>fooA 2 = \y -> 2 + y</code><br>And a y of 3.<br><code>bar 2 = (\y -> 2 + y) 3</code><br>we get<br><code>5</code>.</p>-->
 <pre><code>> let foo x = \y -> x * y
 > foo 2 3
 6
@@ -316,7 +316,429 @@ it :: [Char]
 			</div>
 		</article>
 
-<!-- Up to Week 3 done -->
+		<br>
+		<h3>Types, Polymorphism and Order of Execution</h3>
+
+		<article>
+			<input type="checkbox" id="q18">
+			<label for="q18">What is the meaning of <code>:t</code>?</label>
+			<div class="answer">
+				<p><code>:t</code> is short for <code>:type</code> and returns the type definition of a function. E.g.:</p>
+<pre><code>:t sum
+sum :: Num a => [a] -> a
+</code></pre>
+				<p>This is different from the <code>:set +t</code> command which sets GHCi to automatically return the type of an output from an expression (for the current session only though - so you have to set that every time you restart GHCi).</p>
+			</div>
+		</article>
+
+		<article>
+			<input type="checkbox" id="q19">
+			<label for="q19">What are function types?</label>
+			<div class="answer">
+				<p>In general a function type definition has the following structure.</p>
+				<ul>
+					<li>To the left of the <code>::</code> you find the <strong>name</strong> of the function,</li>
+					<li>to the left of the <code>-></code> arrow you find the given type for the functions <strong>input</strong> parameters and</li>
+					<li>then on the right of the <code>-></code> arrow you find the type of the <strong>output</strong> value</li>
+				</ul>
+				<p><code>functionName :: InputType -> OutputType</code></p>
+			</div>
+		</article>
+
+		<article>
+			<input type="checkbox" id="q20">
+			<label for="q20">What's the difference between <code>add :: Int</code> and <code>add :: Num a => a</code>?</label>
+			<div class="answer">
+				<p>In short, the first is more specific than the second.</p>
+<pre><code>add :: Int -> Int -> Int -> Int
+add x y z = x + y + z
+</code></pre>
+				<p>Calling this function with <code>Ints</code> will work fine:</p>
+<pre><code>add 1 2 3
+6
+it :: Int
+</code></pre>
+				<p>But trying to call it with any other kinds of numbers won't work:</p>
+<pre><code>add 1.4 2.6.3.0
+No instance for (Fractional Int) arising from the literal `1.4'
+In the first argument of `add', namely `1.4'
+In the expression: add 1.4 2.6 3.0
+In an equation for `it': it = add 1.4 2.6 3.0
+</code></pre>
+				<p>If your <code>add</code> function has the specific kind of type definition then trying to run <code>add 1.4 2.6.3.0</code> returns an error for example. This is because you have told Haskell that your function only works with <code>Ints</code>. If you use the more generic (<strong>polymorphic</strong> and <strong>overloaded</strong>) type definition however, then you'd get the result.</p>
+<pre><code>add :: Num a => a -> a -> a -> a
+add x y z = x + y + z
+</code></pre>
+<pre><code>add 1 2 3
+6
+it :: Num a => a
+</code></pre>
+<pre><code>add 1.4 2.6.3.0
+7.0
+it :: Fractional a => a
+</code></pre>
+			</div>
+		</article>
+
+		<article>
+			<input type="checkbox" id="q21">
+			<label for="q21">What are <em>polymorphic</em> and <em>overloaded</em> functions again?</label>
+			<div class="answer">
+				<p>A function is <strong>polymorphic</strong> if it takes values that can have <strong>more than one type</strong>. See David Smallwood's tutorial <a href="https://vle.dmu.ac.uk/bbcswebdav/pid-3025849-dt-content-rid-4603139_1/courses/CTEC1901_2015_Y/tut.pdf#page63">here</a>. For example, <code>length</code> is defined polymorphically. In this case <code>a</code> is a <strong>type variable</strong> and represents any type. The function therefore takes a list of any type of value (<code>[Int]</code>, <code>[[Char]]</code>, <code>[(Double, Bool)]</code>, ...) but then specifically returns an <code>Int</code>.</p>
+<pre><code>length :: [a] -> Int
+</code></pre>
+				<p>A polymorphic function is called <strong>overloaded</strong> if its type contains one or more <strong>class constraints</strong>. For example, the sum function takes a list <code>[a]</code> as input and returns a value of type <code>a</code> but this time <code>a</code> has to be of a <em>class of numeric types</em>. The numeric class (<code>Num</code>) contains all sorts of types: (<code>Int</code>, <code>Integer</code>, <code>Float</code>, <code>Double</code>, <code>Fractional</code>, ...) (See <a href="http://hackage.haskell.org/package/base-4.7.0.2/docs/Prelude.html#t:Num">Prelude#t:Num</a>).</p>
+<pre><code>sum :: Num a => [a] -> a
+</code></pre>
+<pre><code>sum [1,2,3]
+6
+it :: Num a => a
+</code></pre>
+<pre><code>sum [2.5, 3, 4.5]
+10.0
+it :: Fractional a => a
+</code></pre>
+				<ul>
+					<li>To the left of the <code>::</code> you find the <strong>name</strong> of the function, </li>
+					<li>between the <code>::</code> and the <code>=></code> you find the <strong>class constraint</strong>,</li>
+					<li>to the left of the <code>-></code> arrow you find the given type for the functions <strong>input</strong> parameters and </li>
+					<li>then on the right of the <code>-></code> arrow you find the type of the <strong>output</strong> value</li>
+				</ul>
+				<p><code>functionName :: ClassConstraint => InputType -> OutputType</code>.</p>
+				<p>Other type classes include <code>Eq</code> for equality (see <a href="http://hackage.haskell.org/package/base-4.7.0.2/docs/Prelude.html#t:Eq">Prelude#t:Eq</a>) and <code>Ord</code> for orderable datatypes (see <a href="http://hackage.haskell.org/package/base-4.7.0.2/docs/Prelude.html#t:Ord">Prelude#t:Ord</a>). E.g.:</p>
+<pre><code>(+)  :: Num a => a -> a -> a
+(==) :: Eq a => a -> a -> Bool
+(&lt;)  :: Ord a => a -> a -> Bool
+</code></pre>
+				<p>See also the LearnYouAHasekll chapter on types <a href="http://learnyouahaskell.com/types-and-typeclasses">here</a>.</p>
+			</div>
+		</article>
+
+		<article>
+			<input type="checkbox" id="q22">
+			<label for="q22">What is the meaning of <code>'</code> in function names?</label>
+			<div class="answer">
+				<p>Often in the examples you will have encountered functions with a <code>'</code> at the end like <code>add'</code> vs. <code>add</code>. There is no specific meaning to this other than to give the function a slightly different name. We could have equally called it <code>add1</code> or <code>anotherAdd</code> to set it apart from the first <code>add</code> function we defined.<br>You might want to review Haskell <a href="https://wiki.haskell.org/Programming_guidelines#Naming_Conventions">naming conventions</a>.</p>
+			</div>
+		</article>
+
+		<article>
+			<input type="checkbox" id="q23">
+			<label for="q23">In which order is <code>mult x y z</code> evaulated?</label>
+			<div class="answer">
+				<blockquote>
+				<p>"the <code>-></code> operator is right associative, and function application is left associative" (<a href="https://wiki.haskell.org/Partial_application">Source</a>)</p>
+				</blockquote>
+				<p>Because function application is left associative, <code>mult x y z</code> gets evaluated as <code>((mult x) y) z</code>.</p>
+<pre><code>mult :: Int -> Int -> Int -> Int
+mult x y z
+</code></pre>
+				<p>But remeber that the <code>-></code> operator is right associative, hence the function definition really looks something like this.</p>
+<pre><code>mult :: Int -> (Int -> (Int -> Int))
+((mult x) y) z
+</code></pre>
+				<p>You don't have to add these parenthesis, but you should know that this is the default order of evaluation!</p>
+			</div>
+		</article>
+
+		<br>
+		<h3>Writing functions</h3>
+
+		<article>
+			<input type="checkbox" id="q24">
+			<label for="q24">How do I write a function from scratch?</label>
+			<div class="answer">
+				<p>In the first exercise we are asked to write a function that splits a list into two halves. We are given the function's <strong>type signature</strong> as a starting point.</p>
+<pre><code>halve :: [a] -> ([a],[a])
+</code></pre>
+				<p>Let's start filling in the bits we know, e.g. we know the name of the function (<code>halve</code>) and that the output is structured as a <strong>tuple</strong>.</p>
+<pre><code>halve :: [a] -> ([a],[a])
+halve = (   ,   )
+</code></pre>
+				<p><em>Note that this won't run - GHCi will return an error because it's an incomplete function!</em></p>
+				<p>Next, we know the input to the function is a list of polymorphic type, so we know that we will be able to call this function in GHCi like this:  </p>
+<pre><code>halve [1,2,3,4,5,6]
+</code></pre>
+				<p>and it should return a result like this:</p>
+<pre><code>([1,2,3],[4,5,6])
+</code></pre>
+				<p>Because the function is polymorphic we can also call it with <code>Char</code> types for example:</p>
+<pre><code>halve ['a','b','c','d']
+</code></pre>
+				<p>which would return:</p>
+<pre><code>("ab","cd")
+</code></pre>
+				<p>Also, because "lists of <code>Chars</code>" are synonymous to<code>Strings</code> we can call the function with a <code>String</code> like this:</p>
+<pre><code>halve "Haskell"
+</code></pre>
+				<p>which would return:</p>
+<pre><code>("Has","kell")
+</code></pre>
+				<p><strong>Now, let's get back to writing our function by filling in the gaps of <code>halve  = (   ,   )</code>.</strong></p>
+				<p>We know from the <strong>type signature</strong> <code>halve :: [a] -> ([a],[a])</code> that there is one input parameter of type <code>[a]</code> and one output tuple of type <code>([a],[a])</code>.</p>
+				<p><img class="smallimg" src="http://fania.uk/stuff/halve1.gif" alt="halve empty" title="halve function half empty"></p>
+				<p>Let's call the input parameter <code>xs</code>: <em>remember the convention to put an <code>s</code> on variables that represent lists!</em></p>
+<pre><code>halve xs = (   ,   )
+</code></pre>
+				<p>Next, let's think of how to get the <strong>first half</strong> of <code>xs</code>. How do we know what "half" of the input list is? Well, it's the total length of <code>xs</code> divided by <code>2</code>, right?</p>
+<pre><code>length xs `div` 2
+</code></pre>
+				<p>Let's give this value a name (<code>n</code>) so that we can use it in our function by writing it into a <code>where</code> statement in a new line and slightly indented (this is important).</p>
+<pre><code>halve :: [a] -> ([a],[a])
+halve xs = (   ,   )
+  where n = length xs `div` 2
+</code></pre>
+				<p>Now we can define the two halves in our output tuple using the <code>take</code> and <code>drop</code> functions from the <strong>Standard Haskell Prelude</strong> (which is loaded into GHCi by default and we don't have to manually import the library).  </p>
+				<p>Since <code>n</code> now represents the length of half the input list <code>xs</code> we can <strong>"take the first n elements in the list xs"</strong> which translates into Haskell like this: <code>take n xs</code>. Similarly we can <strong>"drop the first n elements from the list xs"</strong> to get the second half: <code>drop n xs</code>.</p>
+				<p>The complete function then looks like this:</p>
+<pre><code>halve :: [a] -> ([a],[a])
+halve xs = ( take n xs , drop n xs )
+	where n = length xs `div` 2
+</code></pre>
+			</div>
+		</article>
+
+		<article>
+			<input type="checkbox" id="q25">
+			<label for="q25">How do I split a list into three parts?</label>
+			<div class="answer">
+				<p>We can use a similar approach to the <code>halve</code> function explained above.</p>
+<pre><code>split3 :: [a] -> ([a],[a],[a])
+split3 xs = (   ,   ,   )
+	where n = length xs `div` 3
+</code></pre>
+				<p>Using <code>take</code> and <code>drop</code> and a variable <code>n</code> which represents a "third" of the length of <code>xs</code> we can create the various parts of our output tuple as such:</p>
+				<p><img src="http://fania.uk/stuff/table.png" alt="take drop table" title="take drop table examples">  </p>
+				<p>So our final solution could be this (note from the table above that there are various options on how to extract the three thirds of the input list):</p>
+<pre><code>split3 :: [a] -> ([a],[a],[a])
+split3 xs = ( take n xs , take n (drop n xs) , drop (n*2) xs )
+	where n = length xs `div` 3
+</code></pre>
+			</div>
+		</article>
+
+		<article>
+			<input type="checkbox" id="q26">
+			<label for="q26">What are the different kinds of techniques for writing functions?</label>
+			<div class="answer">
+				<p>There are various techniques in Haskell for writing functions and expressions. Some of them are fairly similar in style to other languages and others are quite different. Deciding when to use one technique over another depends on the purpose of the function.</p>
+				<ul>
+					<li>Functions <a href="https://vle.dmu.ac.uk/bbcswebdav/pid-3025849-dt-content-rid-4603139_1/courses/CTEC1901_2015_Y/tut.pdf#page=67">link</a></li>
+					<li>Anonymous functions / lambda functions <a href="https://vle.dmu.ac.uk/bbcswebdav/pid-3025849-dt-content-rid-4603139_1/courses/CTEC1901_2015_Y/tut.pdf#page=67">link</a></li>
+					<li>Naming functions <a href="https://vle.dmu.ac.uk/bbcswebdav/pid-3025849-dt-content-rid-4603139_1/courses/CTEC1901_2015_Y/tut.pdf#page=68">link</a></li>
+					<li>Structured Parameters <a href="https://vle.dmu.ac.uk/bbcswebdav/pid-3025849-dt-content-rid-4603139_1/courses/CTEC1901_2015_Y/tut.pdf#page=71">link</a></li>
+					<li>Curried functions / partial function application <a href="https://vle.dmu.ac.uk/bbcswebdav/pid-3025849-dt-content-rid-4603139_1/courses/CTEC1901_2015_Y/tut.pdf#page=72">link</a></li>
+					<li>Associativity <a href="https://vle.dmu.ac.uk/bbcswebdav/pid-3025849-dt-content-rid-4603139_1/courses/CTEC1901_2015_Y/tut.pdf#page=73">link</a></li>
+					<li><code>let</code> / <code>where</code> expressions <a href="https://vle.dmu.ac.uk/bbcswebdav/pid-3025849-dt-content-rid-4603139_1/courses/CTEC1901_2015_Y/tut.pdf#page=75">link</a>
+						<ul>
+							<li><code>let x = 3 in x * x + x</code></li>
+							<li><code>let x = 3 in let y = 4 in x + y</code></li>
+							<li><code>let {x = 3; y = 4} in x + y</code></li>
+							<li><code>let x = not True in if x then x else not x</code></li>
+							<li><code>let {s = "One"; t = "Two"} in length s + length t</code></li>
+							<li><code>f (x,y) = let m = (x + y)/2 in (x-m, y-m)</code></li>
+							<li>
+<pre><code>f (x,y) = s/p
+ where s = x + y
+       p = x * y
+</code></pre></li>
+						</ul></li>
+					<li><code>if</code>/<code>then</code>/<code>else</code> statements
+						<ul>
+							<li><code>if True then "bc" else "de"</code></li>
+							<li><code>1 + if 2/=2 then 3 else 4</code></li>
+							<li><code>(if 2/=2 then reverse else tail) "abc"</code></li>
+						</ul></li>
+					<li>Guarded equations <a href="https://vle.dmu.ac.uk/bbcswebdav/pid-3025849-dt-content-rid-4603139_1/courses/CTEC1901_2015_Y/tut.pdf#page=69">link</a>
+						<ul>
+							<li>
+<pre><code>sign x 
+  | x &lt; 0  = -1
+  | x == 0 = 0
+  | x > 0  = 1
+</code></pre></li>
+							<li><code>sign x | x &lt; 0  = -1 | x == 0 = 0 | x > 0  = 1</code></li>
+						</ul></li>
+					<li><code>case</code> statements <a href="https://vle.dmu.ac.uk/bbcswebdav/pid-3025849-dt-content-rid-4603139_1/courses/CTEC1901_2015_Y/tut.pdf#page=76">link</a>
+						<ul>
+							<li>
+<pre><code>foo a = case a of
+  (0,ys)      -> 0
+  (x,(y:ys))  -> y
+  (x,[])      -> x
+</code></pre></li>
+						</ul></li>
+					<li>Recursion <a href="https://vle.dmu.ac.uk/bbcswebdav/pid-3025849-dt-content-rid-4603139_1/courses/CTEC1901_2015_Y/tut.pdf#page=70">link</a>
+						<ul>
+							<li><code>fib n = if n == 0 then 1 else if n == 1 then 1 else fib (n-1) + fib (n-2)</code></li>
+						</ul></li>
+					<li>Pattern matching <a href="https://vle.dmu.ac.uk/bbcswebdav/pid-3025849-dt-content-rid-4603139_1/courses/CTEC1901_2015_Y/tut.pdf#page=76">link</a>
+						<ul>
+							<li>
+<pre><code>fib 0 = 1
+fib 1 = 1
+fib n = fib (n-1) + fib (n-2)
+</code></pre><pre><code>foo (0,ys) = 0
+foo (x,(y:ys)) = y
+foo (x,[]) = x
+</code></pre></li>
+						</ul></li>
+				</ul>
+			</div>
+		</article>
+
+		<article>
+			<input type="checkbox" id="q27">
+			<label for="q27">Functions</label>
+			<div class="answer">
+				<p>Functions have a name and usually one or more input parameters. There is only ever one output. The type signature of a function is optional when writing functions in a script - Haskell can derive it by itself - but it is good practice to include the type signature as a form of documentation.</p>
+<pre><code>add :: Num a => a -> a > a -> a
+add x y z = x + y + z
+</code></pre>
+<pre><code>add 1 2 3
+6
+</code></pre>
+				<p>E.g.  </p>
+				<p><img class="smallimg" src="http://fania.uk/stuff/type1.gif" alt="types 1" title="types 1"> 
+				<img class="smallimg" src="http://fania.uk/stuff/type2.gif" alt="types 2" title="types 2"> </p>
+				<p>The <strong>class constraint</strong> is optional, and there can be <code>0</code> or more <strong>input parameters</strong> but always one <strong>result</strong>.</p>
+			</div>
+		</article>
+
+		<article>
+			<input type="checkbox" id="q28">
+			<label for="q28">Anonymous functions</label>
+			<div class="answer">
+				<p>Anonymous functions or lambda functions are <strong>nameless</strong> functions. This allows us to declare them on the fly. The structure is as follows.</p>
+				<p><img class="smallimg" src="http://fania.uk/stuff/lamda.gif" alt="Lambda" title="Lambda"> </p>
+				<p>Instead of a function name we now have the <strong>lambda</strong> symbol (a backslash in Haskell) <code>\</code> and instead of the normal <strong>assignment operator</strong> <code>=</code> we use the <code>-></code> symbol.</p>
+				<p>Similar to normal functions, we can use various techniques within a lamda expression and have more than one parameter. For example:</p>
+				<ul>
+					<li><code>\x -> 2 * x</code></li>
+					<li><code>\x y -> x + y</code></li>
+					<li><code>\x y z ->  (x - 1/z) + y</code></li>
+					<li><code>\x y z -> if x then y + z else y - z</code></li>
+				</ul>
+				<p>We can use lamda expressions as inputs for the <code>map</code> function:</p>
+<pre><code>map (\x -> if x == 1 then 0 else 1) [1,0,1,0,0,0,1,1]
+[0,1,0,1,1,1,0,0]
+</code></pre>
+<pre><code>map (\(x,y) -> x + y) [(1,2),(2,3),(4,5)]
+[3,5,9]
+</code></pre>
+			</div>
+		</article>
+
+
+
+<h1 id="list-comprehensions">List comprehensions</h1>
+<p>List comprehensions are defined in the official documentation <a href="https://www.haskell.org/onlinereport/exps.html#sect3.11">here</a> as:</p>
+<p><strong><code>[ e | q1, ..., qn ]</code></strong><br>where <code>n&gt;=1</code> and the <code>qi</code> qualifiers are either</p>
+<ul>
+<li><strong>generators</strong> of the form <code>p &lt;- e</code>, where <code>p</code> is a pattern of type <code>t</code> and <code>e</code> is an expression of type <code>[t]</code></li>
+<li><strong>guards</strong>, which are arbitrary expressions of type <code>Bool</code></li>
+<li><strong>local bindings</strong> that provide new definitions for use in the generated expression e or subsequent guards and generators using <code>let</code> notation.</li>
+</ul>
+<p>See also David&#39;s tutorial on <a href="https://vle.dmu.ac.uk/bbcswebdav/pid-3025849-dt-content-rid-4603139_1/courses/CTEC1901_2015_Y/tut.pdf#page=92">page 84</a>.</p>
+<h3 id="list-comprehensions-vs-loops">List comprehensions vs loops</h3>
+<p>In pseudo C using for-loops:</p>
+<pre><code>for ( int x = 1; x &lt;= 4; x++ )
+{
+   for ( int y = 1; y &lt;= 2; y++ )
+   {
+      //add (x,y) to myList
+   }
+}
+</code></pre><p>In Haskell:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">myList</span> = [(x,y) | x &lt;- [<span class="hljs-number">1.</span><span class="hljs-number">.4</span>], y &lt;- [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]]
+</code></pre>
+<pre><code>ghci&gt; mylist
+[(1,1),(1,2),(2,1),(2,2),(3,1),(3,2),(4,1),(4,2)]
+</code></pre><h3 id="infinite-lists">Infinite lists</h3>
+<p>Example taken from <a href="https://wiki.haskell.org/List_comprehension">haskell.org</a>:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; take <span class="hljs-number">5</span> [ (i,j) | i &lt;- [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>], j &lt;- [<span class="hljs-number">1.</span>.]] 
+[(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>),(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>),(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>),(<span class="hljs-number">1</span>,<span class="hljs-number">4</span>),(<span class="hljs-number">1</span>,<span class="hljs-number">5</span>)]
+</code></pre>
+<blockquote>
+<p>&quot;each successive generator refines the results of the previous generator. Thus, if the second list is infinite, one will never reach the second element of the first list.&quot; <a href="https://wiki.haskell.org/List_comprehension">Source</a></p>
+</blockquote>
+<p>So, because the second generator (the &#39;inner loop&#39;) <code>[1..]</code> produces an infinite list, this list comprehension theoretically creates an infinite list of tuples: <code>[(1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),..</code> etc. The first value of the tuple (<code>i</code>) is never incremented because we infinitely increment the second one (<code>j</code>) first.  </p>
+<p>The whole expression however asks only for the first 5 elements (<code>take 5</code>) of the infinite list that is being generated through the list comprehension. </p>
+<h3 id="set-notation">Set Notation</h3>
+<p>Examples taken from <a href="http://en.wikipedia.org/wiki/List_comprehension#Overview">Wikipedia</a>:</p>
+<p>In mathematics, set notation looks like this:  </p>
+<p><img src="http://upload.wikimedia.org/math/f/d/5/fd5368aa0fcc3e536072a96e0274d30a.png" alt="Set Builder Notation 1" title="Set Builder Notation 1">  </p>
+<p>This means:</p>
+<p><img src="http://upload.wikimedia.org/math/7/9/2/7922febf3582e66e5cdd9eba87a16608.png" alt="Set Builder Notation 2" title="Set Builder Notation 2"></p>
+<p>In <a href="http://en.wikipedia.org/wiki/List_comprehension#Haskell">Haskell</a> this translates directly into:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">s</span> = [ <span class="hljs-number">2</span>*x | x &lt;- [<span class="hljs-number">0.</span>.], x^<span class="hljs-number">2</span> &gt; <span class="hljs-number">3</span>]
+</code></pre>
+<p>This reads something like:<br>&quot;for each x from 0 to infinity: if x^2 is larger than 3 then return 2*x&quot;</p>
+<ul>
+<li><code>2*x</code> is the <strong>output expression</strong></li>
+<li><code>|</code> separates the output expression from the generators, guards and local bindings</li>
+<li><code>x &lt;- [0..]</code> is the <strong>generator</strong></li>
+<li><code>x^2 &gt; 3</code> is the <strong>guard</strong> condition</li>
+</ul>
+<hr>
+<h3 id="more-examples-">More examples:</h3>
+<p><strong>if-then-else statements within the list comprehension:</strong><br>Taken from: <a href="http://learnyouahaskell.com/starting-out#im-a-list-comprehension">http://learnyouahaskell.com/starting-out#im-a-list-comprehension</a></p>
+<pre><code class="lang-haskell"><span class="hljs-title">boomBangs</span> xs = [ <span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">10</span> <span class="hljs-keyword">then</span> <span class="hljs-string">"BOOM!"</span> <span class="hljs-keyword">else</span> <span class="hljs-string">"BANG!"</span> | x &lt;- xs, odd x]
+</code></pre>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; boomBangs [<span class="hljs-number">7.</span><span class="hljs-number">.13</span>]  
+[<span class="hljs-string">"BOOM!"</span>,<span class="hljs-string">"BOOM!"</span>,<span class="hljs-string">"BANG!"</span>,<span class="hljs-string">"BANG!"</span>]
+</code></pre>
+<p><strong>Nested List comprehensions:</strong></p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> xxs = [[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">6</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">6</span>]]  
+<span class="hljs-title">ghci</span>&gt; [ [ x | x &lt;- xs, even x ] | xs &lt;- xxs]  
+[[<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>,<span class="hljs-number">8</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">2</span>,<span class="hljs-number">6</span>,<span class="hljs-number">2</span>,<span class="hljs-number">6</span>]]
+</code></pre>
+<p><strong>Local bindings using let expressions:</strong><br>Taken from: <a href="http://learnyouahaskell.com/syntax-in-functions#let-it-be">http://learnyouahaskell.com/syntax-in-functions#let-it-be</a></p>
+<pre><code class="lang-haskell"><span class="hljs-title">calcBmis</span> :: (<span class="hljs-type">RealFloat</span> a) =&gt; [(a, a)] -&gt; [a]  
+<span class="hljs-title">calcBmis</span> xs = [bmi | (w, h) &lt;- xs, <span class="hljs-keyword">let</span> bmi = w / h ^ <span class="hljs-number">2</span>]
+</code></pre>
+<pre><code class="lang-haskell"><span class="hljs-title">calcBmis</span> :: (<span class="hljs-type">RealFloat</span> a) =&gt; [(a, a)] -&gt; [a]  
+<span class="hljs-title">calcBmis</span> xs = [bmi | (w, h) &lt;- xs, <span class="hljs-keyword">let</span> bmi = w / h ^ <span class="hljs-number">2</span>, bmi &gt;= <span class="hljs-number">25.0</span>]
+</code></pre>
+<hr>
+<h3 id="let-s-look-at-the-example-given-in-the-lecture-">Let&#39;s look at the example given in the lecture.</h3>
+<pre><code class="lang-haskell"><span class="hljs-title">positions</span> :: <span class="hljs-type">Eq</span> a =&gt; a -&gt; [a] -&gt; [<span class="hljs-type">Int</span>]
+<span class="hljs-title">positions</span> x xs =
+   [i | (x’,i) &lt;- zip xs [<span class="hljs-number">0.</span>.n], x == x’]
+   <span class="hljs-keyword">where</span> n = length xs - <span class="hljs-number">1</span>
+</code></pre>
+<p>We can run this function as follows:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; positions <span class="hljs-number">0</span> [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>]
+[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">7</span>]
+</code></pre>
+<p>To understand this function, let&#39;s look at the list comprehension. Remember the expression around the left pointing arrow <code>&lt;-</code> is called a <strong>generator</strong>.  </p>
+<p>The generator of this list comprehension (<code>(x’,i) &lt;- zip xs [0..n]</code>) creates a list of type <code>[(x’,i)]</code> by &#39;zipping&#39; <code>xs</code> and <code>[0..n]</code> together. We are calling the function <code>positions</code> with <code>x</code> as <code>0</code> and <code>xs</code> as <code>[1,0,0,1,0,1,1,0]</code> and <code>n</code> is locally defined using the <code>where</code> notation as the length of our list <code>xs</code> minus <code>1</code>. The length of <code>xs</code> is <code>8</code>, therefore <code>n</code> must be <code>7</code>. This means that the generator will zip these two lists together:  </p>
+<pre><code class="lang-haskell"><span class="hljs-title">zip</span> [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>] [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>]
+</code></pre>
+<p>which returns:</p>
+<pre><code class="lang-haskell">[(<span class="hljs-number">1</span>,<span class="hljs-number">0</span>),(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>),(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>),(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>),(<span class="hljs-number">0</span>,<span class="hljs-number">4</span>),(<span class="hljs-number">1</span>,<span class="hljs-number">5</span>),(<span class="hljs-number">1</span>,<span class="hljs-number">6</span>),(<span class="hljs-number">0</span>,<span class="hljs-number">7</span>)]
+</code></pre>
+<p>Each of those tuples in this list is of type <code>(x&#39;,i)</code>. Now, the list comprehension states that we are only interested in those elements of the list where <code>x</code> is equal to <code>x&#39;</code>. This is called the <strong>guard</strong> expression and is separated from the <strong>generator</strong> by a single comma. Remember that <code>x</code> is <code>0</code>. This means we can delete any elements of the list where <code>x&#39;</code> is not equal to <code>0</code>. We are then left with:</p>
+<pre><code class="lang-haskell">[(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>),(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>),(<span class="hljs-number">0</span>,<span class="hljs-number">4</span>),(<span class="hljs-number">0</span>,<span class="hljs-number">7</span>)]
+</code></pre>
+<p>The list comprehension also states that the type of our output list should be <code>[i]</code> (the bit before <code>|</code> in the list comprehension), that means we can discard all <code>x&#39;</code> in our list of tuples <code>[(x&#39;,i)]</code> so that we are left with only the <code>i</code>:</p>
+<pre><code class="lang-haskell">[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">7</span>]
+</code></pre>
+
+
+
+
+
+
+<!-- Up to Week 5 done -->
+
+
+
+
+
+
+
+
 
 	</section> <!-- end of articles -->
 
@@ -336,7 +758,7 @@ it :: [Char]
 </main>
 
 <footer>
-	<i class="fa fa-copyright"></i> Fania - <span title="February 2017 vulg.">Gueules 143</span>
+	<i class="fa fa-copyright"></i> Fania - <span title="February 2017 vulg.">Gueules 143
 </footer>
 
 </body>
