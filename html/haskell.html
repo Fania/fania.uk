@@ -11,7 +11,12 @@
 	<script type="text/javascript" async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 	<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]},
+											TeX:     {extensions: ["color.js"],
+																Macros:     {RR:    '{\\bf R}',
+												                     bold:  ['{\\bf #1}', 1]}
+															 }
+										 });
 	</script>
 </head>
 
@@ -527,7 +532,12 @@ halve "Haskell"
 </code></pre>
 				<p><strong>Now, let's get back to writing our function by filling in the gaps of <code>halve  = (   ,   )</code>.</strong></p>
 				<p>We know from the <strong>type signature</strong> <code>halve :: [a] -> ([a],[a])</code> that there is one input parameter of type <code>[a]</code> and one output tuple of type <code>([a],[a])</code>.</p>
-				<p><img class="smallimg" src="http://fania.uk/stuff/halve1.gif" alt="halve empty" title="halve function half empty"></p>
+				<p>
+$$
+\definecolor{blue}{RGB}{181,204,227}
+\text{halve} \ {\underbrace{\qquad\qquad\qquad} \atop \color{blue}\small\text{input parameter}} \ = \ ( {\underbrace{\qquad\qquad\qquad} \atop \color{blue}\small\text{first half}} \ , \ {\underbrace{\qquad\qquad\qquad} \atop \color{blue}\small\text{second half}} \ )
+$$
+        </p>
 				<p>Let's call the input parameter <code>xs</code>: <em>remember the convention to put an <code>s</code> on variables that represent lists!</em></p>
 <pre><code>
 halve xs = (   ,   )
@@ -663,9 +673,29 @@ add x y z = x + y + z
 add 1 2 3
 6
 </code></pre>
-				<p>E.g.  </p>
-				<p><img class="smallimg" src="http://fania.uk/stuff/type1.gif" alt="types 1" title="types 1"> 
-				<img class="smallimg" src="http://fania.uk/stuff/type2.gif" alt="types 2" title="types 2"> </p>
+				<p>E.g.</p>
+				<p>
+$$
+\definecolor{blue}{RGB}{181,204,227}
+\underbrace{ \ \text{add} \ }_{\color{blue}\small\text{function name}} ::
+\underbrace{\ \text{Num a} \Rightarrow \ }_{\color{blue}\small\text{class constraint}} 
+\underbrace{\ \text{a} \rightarrow \ }_{\color{blue}\small\text{input 1}} 
+\underbrace{ \ \text{a} \rightarrow \ }_{\color{blue}\small\text{input 2}}
+\underbrace{ \ \text{a} \rightarrow \ }_{\color{blue}\small\text{input 3}}
+\underbrace{ \ \text{a} \ }_{\color{blue}\small\text{output}}
+$$
+        </p>
+				<p>
+$$
+\definecolor{blue}{RGB}{181,204,227}
+\underbrace{ \ \text{add} \ }_{\color{blue}\small\text{function name}} \ 
+\underbrace{ \quad \text{x} \quad }_{\color{blue}\small\text{input 1}} \ 
+\underbrace{ \quad \text{y} \quad }_{\color{blue}\small\text{input 2}} \ 
+\underbrace{ \quad \text{z} \quad }_{\color{blue}\small\text{input 3}} \ 
+\underbrace{ \qquad\quad \text{=} \qquad\quad }_{\color{blue}\small\text{assignment operator}} \ 
+\underbrace{ \ \text{x+y+z} \ }_{\color{blue}\small\text{output}} 
+$$
+        </p>
 				<p>The <strong>class constraint</strong> is optional, and there can be <code>0</code> or more <strong>input parameters</strong> but always one <strong>result</strong>.</p>
 			</div>
 		</article>
@@ -675,7 +705,15 @@ add 1 2 3
 			<label for="q28">Anonymous functions</label>
 			<div class="answer">
 				<p>Anonymous functions or lambda functions are <strong>nameless</strong> functions. This allows us to declare them on the fly. The structure is as follows.</p>
-				<p><img class="smallimg" src="http://fania.uk/stuff/lamda.gif" alt="Lambda" title="Lambda"> </p>
+				<p>
+$$
+\definecolor{blue}{RGB}{181,204,227}
+\underbrace{ \ \text{\\} \ }_{\color{blue}\small\text{lambda}} \ 
+\underbrace{ \quad \text{x} \quad }_{\color{blue}\small\text{input}} \ 
+\underbrace{ \qquad \rightarrow \qquad }_{\color{blue}\small\text{assignment operator}} \ 
+\underbrace{ \ \text{x*2} \ }_{\color{blue}\small\text{output}} 
+$$
+        </p>
 				<p>Instead of a function name we now have the <strong>lambda</strong> symbol (a backslash in Haskell) <code>\</code> and instead of the normal <strong>assignment operator</strong> <code>=</code> we use the <code>-></code> symbol.</p>
 				<p>Similar to normal functions, we can use various techniques within a lamda expression and have more than one parameter. For example:</p>
 				<ul>
@@ -762,9 +800,19 @@ ghci> take 5 [ (i,j) | i <- [1,2], j <- [1..]]
 			<div class="answer">
 				<p>Examples taken from <a href="http://en.wikipedia.org/wiki/List_comprehension#Overview">Wikipedia</a>:</p>
 				<p>In mathematics, set notation looks like this:  </p>
-				<p><img src="http://upload.wikimedia.org/math/f/d/5/fd5368aa0fcc3e536072a96e0274d30a.png" alt="Set Builder Notation 1" title="Set Builder Notation 1">  </p>
+				<p>
+$$
+\definecolor{blue}{RGB}{181,204,227}
+S = \{ \ 2 \cdot x \ | \ x \in \mathbb{N}, \ x^2 > 3 \ \}
+$$
+        </p>
 				<p>This means:</p>
-				<p><img src="http://upload.wikimedia.org/math/7/9/2/7922febf3582e66e5cdd9eba87a16608.png" alt="Set Builder Notation 2" title="Set Builder Notation 2"></p>
+				<p>
+$$
+\definecolor{blue}{RGB}{181,204,227}
+S = \{ \underbrace{ \ 2 \cdot x \ }_{\color{blue}\text{output expr.}} \ | \ \underbrace{ \ x \ }_{\color{blue}\text{variable}} \in \underbrace{ \ \mathbb{N} \ }_{\color{blue}\text{input set}}, \ \underbrace{ \ x^2 > 3 \ }_{\color{blue}\text{predicate}} \}
+$$
+        </p>
 				<p>In <a href="http://en.wikipedia.org/wiki/List_comprehension#Haskell">Haskell</a> this translates directly into:</p>
 <pre><code>
 s = [ 2*x | x <- [0..], x^2 > 3]
@@ -930,9 +978,26 @@ map (+1) [1,2,3,4,5,6]
 [2,3,4,5,6,7]
 </code></pre>
 				<p>It evaluates recursively like this:</p>
-				<p><img src="http://fania.uk/stuff/map.gif" alt="map" title="map"></p>
+<pre class="demo"><code>
+map (+1) [1,2,3,4,5,6]
+= (+1) 1 : map (+1) [2,3,4,5,6]
+= 2 : (+1) 2 : map (+1) [3,4,5,6]
+= 2 : 3 : (+1) 3 : map (+1) [4,5,6]
+= 2 : 3 : 4 : (+1) 4 : map (+1) [5,6]
+= 2 : 3 : 4 : 5 : (+1) 5 : map (+1) [6]
+= 2 : 3 : 4 : 5 : 6 : (+1) 6 : map (+1) []
+= 2 : 3 : 4 : 5 : 6 : 7 : []
+= [2,3,4,5,6,7]
+</code></pre>
 				<p>Note also that when providing the <code>map</code> function with an <strong>anonymous function</strong> as the first input parameter, then we can shorten that as such:</p>
-				<p><img src="http://fania.uk/stuff/maplambda.gif" alt="map lambda" title="map lambda"></p>
+				<p>
+$$
+\definecolor{blue}{RGB}{181,204,227}
+\definecolor{salmon}{RGB}{250, 128, 114}
+\definecolor{normal}{RGB}{162,153,161}
+\text{map} \ (\underbrace{\color{salmon} \backslash x \rightarrow x}_{\color{blue}\text{not needed}} \color{normal} + 7) \ [1..10]
+$$
+        </p>
 				<p><strong>Why does <code>const flip id const 3 id 4</code> return <code>4</code>?</strong><br>Because the expression is evaluated from <strong>left to right</strong> and functions can be input to functions. The three functions are defined as follows:</p>
 <pre><code>
 id    = (\x -> x)
@@ -940,7 +1005,20 @@ const = (\x y -> x)
 flip  = (\f x y -> f y x)
 </code></pre>
 				<p>The expression <code>const flip id const 3 id 4</code> evaluates as such:</p>
-				<p><img src="http://fania.uk/stuff/const.png" alt="const flip id" title="const flip id"></p>
+				<p>
+$$
+\definecolor{blue}{RGB}{181,204,227}
+\definecolor{normal}{RGB}{162,153,161}
+\begin{matrix}
+      & const & flip & id         & const & 3 & id & 4 \\
+= \ & ( \color{blue}const\color{normal} & \underbrace{flip}_{\color{blue}x} & \underbrace{id}_{\color{blue}y}) & const & 3 & id & 4 \\
+= \ & & ( \color{blue}flip\color{normal} & & \underbrace{const}_{\color{blue}f} & \underbrace{3}_{\color{blue}x} & \underbrace{id}_{\color{blue}y}) & 4 \\
+= \ & & & & ( \color{blue}const\color{normal} & \underbrace{id}_{\color{blue}x} & \underbrace{3}_{\color{blue}y}) & 4 \\
+= \ & & & & & & ( \color{blue}id\color{normal} & \underbrace{4}_{\color{blue}x}) \\
+= & & & & & & & 4
+\end{matrix}
+$$
+        </p>
 			</div>
 		</article>
 
