@@ -903,7 +903,7 @@ zip [1,0,0,1,0,1,1,0] [0,1,2,3,4,5,6,7]
 <pre><code>
 sign :: (Ord a, Num a) => a -> Int
 sign x 
-   | x &lt; 0      = -1
+   | x < 0      = -1
    | x == 0     =  0
    | otherwise  =  1
 </code></pre>
@@ -1022,10 +1022,193 @@ $$
 			</div>
 		</article>
 
+		<br>
+		<h3>Compiling Haskell</h3>
 
+		<article>
+			<input type="checkbox" id="q37">
+			<label for="q37">What's a module?</label>
+			<div class="answer">
+				<blockquote>
+				<p>"A Haskell module is a collection of related functions, types and typeclasses. A Haskell program is a collection of modules where the main module loads up the other modules and then uses the functions defined in them to do something."  <a href="http://learnyouahaskell.com/modules">Source</a></p>
+				</blockquote>
+			</div>
+		</article>
 
+		<article>
+			<input type="checkbox" id="q38">
+			<label for="q38">How do I compile a Haskell script?</label>
+			<div class="answer">
+				<p>Running a script within GHCi and compiling a script are two different things.</p>
+				<ul>
+					<li>GHCi <a href="https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/ghci.html#ghci-introduction">introduction</a></li>
+					<li>GHCi <a href="https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/loading-source-files.html">loading scripts</a></li>
+					<li>GHC <a href="https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/using-ghc.html#idp9084480">compiling</a></li>
+				</ul>
+				<p>In your terminal, in the directory where you have saved your Haskell script, type the folowing to compile a script:</p>
+<pre><code>
+ghc redact.hs
+</code></pre>
+				<p>GHC will compile the source file <code>redact.hs</code>, producing an object file <code>redact.o</code> and an interface file <code>redact.hi</code>, and then produce an <strong>executable</strong> called <code>redact</code> on <strong>Unix/Linux/Mac</strong>, or <code>redact.exe</code> on <strong>Windows</strong>. You can then run the executable by typing (on Unix systems):</p>
+<pre><code>
+./redact
+</code></pre>
+				<p>On Windows you can just run the redact.exe file that was created for you when you compiled the script.</p>
+				<p>You can give your executable a different name too by typing the following which will result in an executable called <code>test</code>.</p>
+<pre><code>
+ghc test redact.hs
+</code></pre>
+			</div>
+		</article>
 
-<!-- Up to Week 7 done -->
+		<article>
+			<input type="checkbox" id="q39">
+			<label for="q39">How does the <code>redact</code> program work?</label>
+			<div class="answer">
+				<p>First, we give our <strong>module</strong> a name, by convention that's simply <code>Main</code>.</p>
+<pre><code>
+module Main where
+</code></pre>
+				<p>We need to import <strong>System.Environment</strong> library to use the <code>getArgs</code> function (note that the <code>getContents</code> function is in the <strong>Standard Prelude</strong>) and the <strong>Data.Char</strong> library for the <code>toLower</code> function.</p>
+<pre><code>
+import System.Environment
+import Data.Char
+</code></pre>
+				<p>The <code>main</code> function block is our core program so to speak. The <code>do</code> notation (<code>do</code> is not a function!) <strong>chains several actions in order</strong>. This means that first we do <code>getArgs</code>, then we do <code>getContents</code> and then we <code>putStr</code>. The  <code><-</code> symbol is used to assign a name to the result of an I/O action. </p>
+				<ul>
+					<li><code>getArgs</code> returns a <em>list of Strings</em> of the program's <strong>command line arguments</strong></li>
+					<li><code>getContents</code> returns all <strong>user input</strong> as a <em>single String</em></li>
+					<li><code>putStr</code> writes a <em>String</em> to the standard output</li>
+				</ul>
+<pre><code>
+main = do
+	args <- getArgs   -- ["arg1","arg2",...]
+	xs <- getContents -- "User input sentence..."
+	putStr (redact xs (map lwr args))
+</code></pre>
+				<p>Knowing that <code>putStr</code> prints a <code>String</code> to the terminal means that logically the result of the expression <code>redact xs (map lwr args)</code> should be of type <code>String</code>. </p>
+				<p><code>redact</code> is a function defined as such (note that the  type signature is missing):</p>
+<pre><code>
+redact input ws = unlines [ process line | line <- lines input ]
+  where process line  = unwords [ f word | word <- words line ]
+        f w | lwr w `elem` ws  = replicate (length w) '*'
+            | otherwise = w
+</code></pre>
+				<p>Loading the <code>redact.hs</code> script into GHCi let's us check for the type signature of <code>redact</code> by typing <code>:t redact</code>.</p>
+<pre><code>
+redact :: String -> [[Char]] -> String
+</code></pre>
+				<p>Let's look at the <code>redact</code> function a bit more closely. There are two functions locally defined within the <code>where</code> statement, namely the <code>process</code> function and the <code>f</code> function. Furthermore, the first input parameter for the <code>redact</code> function is called <code>input</code> and the second is called <code>ws</code>. </p>
+				<p>
+$$
+\definecolor{blue}{RGB}{181,204,227}
+\definecolor{normal}{RGB}{162,153,161}
+putStr \ ( \ \underbrace{redact}_{\color{blue}redact} \ \underbrace{xs}_{\color{blue}input} \ \underbrace{( \ map \ lwr \ args \ )}_{\color{blue}ws} \ )
+$$
+        </p>
+				<p>This first line of the function uses a list comprehension to break the input <code>String</code> up into a list of Strings at newline characters using the Prelude <code>lines</code> function and then applies the <code>process</code> function to each line (of type <code>String</code>). The individually processed lines are then put together into one big <code>String</code> again using <code>unlines</code> to be returned as the output of the <code>redact</code> function. </p>
+<pre><code>
+unlines [ process line | line <- lines input ]
+</code></pre>
+				<p>Now, what does <code>process line</code> do? Well, splits each "line" (of type <code>String</code>) into a list of individual words (<code>[String]</code>) and applies the <code>f</code> function to each word and then merges the results back together into one big <code>String</code> using <code>unwords</code>. The type signature of <code>process</code> would look something like this: <code>process :: String -> String</code>.</p>
+<pre><code>
+unwords [ f word | word <- words line ]
+</code></pre>
+				<p>Finally, what does the <code>f</code> function do to each word?<br>The <code>f</code> function is defined using <strong>guarded equations</strong>. It takes a single <code>String</code> <code>w</code> as input. The type signature of <code>f</code> would look something like this: <code>f :: String -> String</code>.</p>
+				<p>The first guard checks if <code>lwr w</code> (the word all in lowercase) is an element of the list of command line arguments <code>ws</code> using the <code>elem</code> function. Note that the list <code>ws</code> is available to the function even though it has not been passed to it as an input parameter because <code>f</code> is locally defined in a <code>where</code> statement within <code>redact</code> and <code>ws</code> is one of the input parameters of that function. <strong>If</strong> <code>lwr w</code> is indeed an element of <code>ws</code> (remember that <code>elem</code> returns a <code>Bool</code>) then we return however many <code>*</code> as there are letters in the word by replicating <code>*</code> exactly (length <code>w</code>) times. <strong>Otherwise</strong> we simply return the word <code>w</code> as it is.</p>
+<pre><code>
+f w | lwr w `elem` ws  = replicate (length w) '*'
+    | otherwise = w
+</code></pre>
+				<p>Now, all that is left is to declare the <code>lwr</code> function which we are using in the <code>f</code> function and the <code>main = do</code> block. We do that by mapping the <code>toLower</code> function (<code>toLower :: Char -> Char</code>) to each letter in the input word. The type signature would be <code>lwr :: String -> String</code>.</p>
+<pre><code>
+lwr xs = map toLower xs
+</code></pre>
+			</div>
+		</article>
+
+		<br>
+		<h3>Recursion</h3>
+
+		<article>
+			<input type="checkbox" id="q40">
+			<label for="q40">Recursion Example</label>
+			<div class="answer">
+				<p><a href="http://www.infinitecat.com/"><img src="https://fania.uk/stuff/infinicat.png"></a></p>
+				<p>First, read <a href="https://vle.dmu.ac.uk/bbcswebdav/pid-3025849-dt-content-rid-4603139_1/courses/CTEC1901_2015_Y/tut.pdf#page=70">David's tutorial file</a> on recursion!</p>
+				<p><a href="http://xkcd.com/1270/"><img src="http://imgs.xkcd.com/comics/functional.png" title="Functional programming combines the flexibility and power of abstract mathematics with the intuitive clarity of abstract mathematics." alt="Functional"></a></p>
+				<p>Second, watch this <em>educational</em> cat video (for science!):  </p>
+				<p><iframe width="420" height="315" src="https://www.youtube.com/embed/04yb-Jq9Kns" frameborder="0" allowfullscreen></iframe>
+				</p>
+				<p>Imagine we want to write a silly little function that reduces a list of cats to a single string of infinite cats.  </p>
+				<p>Let's start by creating some type synonyms.</p>
+<pre><code>
+type Cat = String
+type InfiniteCats = String
+</code></pre>
+				<p>Here is the list of names of the fifty cats in the video above.</p>
+<pre><code>
+cats :: [Cat]
+cats = ["Frankie", "Frankie", "Poozy", "Frankie", "Abby", "Zoot", "Fritz", "Copper", "Hawkeye", "Snowball", "Ninetynine", "Duma", "Tasha", "Datsa", "Eunheui", "Plien", "Brit", "Peaker", "Skinny White Boy", "Farrusko", "Tiger", "Jackie", "Wookie", "KC", "Pixel", "Cat1", "Clyde", "Ugly", "Fumphy", "Brad Kitt", "Spot", "Sammy", "Frida", "Luna", "Bebe", "Chloe", "Torin", "Molly", "Annie", "Wrigley", "Cinnamon", "Jack", "Starbuck", "Kazoo", "Dante", "Percy", "Nora", "Foma", "Fred", "Pearl"]
+</code></pre>
+				<p>Then we can write a function called <code>iCat</code> that takes a list of cats and turns them into an infinite cat string using <strong>recursion</strong>.</p>
+<pre><code>
+iCat :: [Cat] -> InfiniteCats
+iCat [c] = c ++ "."
+iCat (c : cs) = c ++ " looking at " ++ iCat cs
+</code></pre>
+				<p>The first line is our type signature which tells us that the input is a list of cats and the output must be of type <code>InfiniteCats</code>. We then define our <strong>base case</strong> or <strong>edge condition</strong> to make sure the recursive function will eventually terminate. In this case we define a pattern (recursive functions  are written using pattern matching) for when the input list of cats only has one element in it, i.e. only one cat, and tell it to return the cat's name, followed by a full stop: <code>iCat [c] = c ++ "."</code> The next line contains the recursive call to the function itself.  </p>
+				<p>This time our pattern matches a list of more than one <code>Cat</code> in it: <code>(c:cs)</code>. The <code>c</code> stands for the <code>head</code> of the list - the first cat called "Frankie". We return that and concatenate to it the words " looking at ". Then we call the function itself again with the <code>tail</code> of the input list of cats <code>cs</code>. So the list gets smaller by one cat with every step and the resulting output string gets bigger by one "catname looking at " everytime ... until we finally reach the last remaining cat in the list "Pearl".</p>
+<pre><code>
+iCat cats
+"Frankie looking at Frankie looking at Poozy looking at Frankie looking at Abby looking at Zoot looking at Fritz looking at Copper looking at Hawkeye looking at Snowball looking at Ninetynine looking at Duma looking at Tasha looking at Datsa looking at Eunheui looking at Plien looking at Brit looking at Peaker looking at Skinny White Boy looking at Farrusko looking at Tiger looking at Jackie looking at Wookie looking at KC looking at Pixel looking at Cat1 looking at Clyde looking at Ugly looking at Fumphy looking at Brad Kitt looking at Spot looking at Sammy looking at Frida looking at Luna looking at Bebe looking at Chloe looking at Torin looking at Molly looking at Annie looking at Wrigley looking at Cinnamon looking at Jack looking at Starbuck looking at Kazoo looking at Dante looking at Percy looking at Nora looking at Foma looking at Fred looking at Pearl."
+it :: InfiniteCatLoop
+</code></pre>
+			</div>
+		</article>
+
+		<article>
+			<input type="checkbox" id="q41">
+			<label for="q41">Two slightly more serious examples</label>
+			<div class="answer">
+				<p>The "factorial" function can be defined recursively like this:</p>
+<pre><code>
+factorial x
+    | x == 0     = 1
+    | otherwise  = x * factorial (x-1)
+</code></pre>
+				<p>This evaluates something like this:</p>
+				<p>
+$$
+\definecolor{blue}{RGB}{181,204,227}
+\definecolor{normal}{RGB}{162,153,161}
+\begin{align}
+& factorial \ 4 \\
+& = 4 * factorial \ 3 \\
+& = 4 * (3 * factorial \ 2) \\
+& = 4 * (3 * (2 * factorial \ 1)) \\
+& = 4 * (3 * (2 * (1 * factorial \ 0))) \\
+& = 4 * (3 * (2 * (1 * (1)))) \\
+& = 4 * (3 * (2 * 1)) \\
+& = 4 * (3 * 2) \\
+& = 4 * 6 \\
+& = 24
+\end{align}
+$$
+        </p>
+				<p><img src="https://fania.uk/stuff/factorial.png" alt="factorial" title="factorial"></p>
+				<p>Also, remember that the <code>map</code> function is defined using recursion:</p>
+<pre><code>
+map :: (a -> b) -> [a] -> [b]
+map _ []     = []
+map f (x:xs) = f x : map f xs
+</code></pre>
+				<p>This means that executing the expression <code>map (+1) [1,2,3,4,5]</code> would evaluate like this:  </p>
+				<p><img src="https://fania.uk/stuff/map.gif" alt="map" title="Map"></p>
+			</div>
+		</article>
+
+<!-- Up to Week 9 done -->
 
 
 

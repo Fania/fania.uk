@@ -200,6 +200,8 @@ blockquote {
   margin-top: 1em;
   padding: 1em 2em;
   border-left: solid 5px #b5cce3;
+  background-color: rgba(181,204,227,0.4);
+  color: #443c42;
 }
 
 a {
