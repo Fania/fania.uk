@@ -84,6 +84,10 @@ nav {
   padding: 10px;
   grid-template-columns: auto auto auto auto auto;
 }
+.fronticon {
+  text-align: center;
+  font-size: 3em;
+}
 .menutoggle {
   display: grid;
 }
@@ -92,21 +96,3 @@ nav {
 }
 
 /* end menu */
-
-
-
-
-/* grid-container */
-.icon-grid {
-  display: grid;
-  box-sizing: border-box;
-  grid-gap: 10px;
-  padding: 10px;
-  grid-template-columns: auto auto auto auto auto;
-}
-
-/* grid-items */
-.fronticon {
-  text-align: center;
-}
-
