@@ -1,0 +1,104 @@
+/* VARIABLES */
+
+html {
+  /* COLOURS */
+  --dark:   #222D3F;  /* var(--dark); */
+  --darkish:#335941;  /* var(--darkish); */
+  --medium: #4F8C6C;  /* var(--medium); */
+  --bright: #77A756;  /* var(--bright); */
+  --light:  #99BE7F;  /* var(--light); */
+
+
+  /* FONTS */
+  --sf: Garamond,
+        "Garamond Antiqua",
+        serif;
+  --ssf: "Century Gothic",
+         "Avant Garde Gothic",
+         "Avant Garde",
+         sans-serif;
+}
+
+
+
+
+
+/* GLOBAL */
+/* * {
+  box-sizing: border-box;
+} */
+
+body {
+  margin: 0;
+  font-family: var(--ssf);
+}
+
+h1 {
+  /* font-family: var(--sf); */
+  margin: 0;
+  padding: 1em 0;
+}
+
+a, a:visited {
+  color: var(--bright);
+}
+
+main {
+  background-color: var(--light);
+  color: var(--dark);
+  height: 50vh;
+}
+
+aside {
+  background-color: var(--dark);
+  color: var(--light);
+  height: 50vh;
+}
+
+.half {
+  font-size: 5em;
+  padding: 1.5em 0;
+  text-align: center;
+}
+
+
+
+
+
+/* menu */
+#menuicon {
+  font-size: 2em;
+  color: var(--darkish);
+  text-align: center;
+  cursor: pointer;
+}
+nav {
+  display: none;
+  background: var(--darkish);
+}
+.menutoggle {
+  display: flex;
+  flex-direction: column;
+}
+nav a {
+  padding: 1em;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+
+/* grid-container */
+.icon-grid {
+  display: grid;
+  box-sizing: border-box;
+  grid-gap: 10px;
+  padding: 10px;
+  grid-template-columns: auto auto auto auto auto;
+}
+
+/* grid-items */
+.fronticon {
+  text-align: center;
+}
+
