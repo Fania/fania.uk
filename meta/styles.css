@@ -61,7 +61,10 @@ aside {
   text-align: center;
 }
 
-
+footer {
+  text-align: center;
+  color: var(--darkish);
+}
 
 
 
