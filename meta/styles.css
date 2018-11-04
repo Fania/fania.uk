@@ -23,6 +23,36 @@ html {
 
 
 
+header {
+  grid-area: header;
+}
+main {
+  grid-area: main;
+}
+aside {
+  grid-area: aside;
+}
+footer {
+  grid-area: footer;
+}
+
+body {
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header"
+    "main"
+    "aside"
+    "footer";
+}
+
+
+
+
+
+
+
+
 /* GLOBAL */
 /* * {
   box-sizing: border-box;
@@ -94,5 +124,54 @@ nav {
 .hide {
   display: none;
 }
-
 /* end menu */
+
+
+
+
+@media screen and (min-width: 900px) {
+
+  body {
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "main header aside"
+      "footer footer footer";
+  }
+
+  header {
+    background-color: yellow;
+    height: 100vh;
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 100vh;
+  }
+
+  #menudown, #menuup {
+    display: none;
+  }
+
+  .fronticon {
+    font-size: 2em;
+  }
+  
+  main {
+    background-color: var(--dark);
+    color: var(--light);
+    height: 100vh;
+  }
+
+  aside {
+    background-color: var(--light);
+    color: var(--dark);
+    height: 100vh;
+  }
+
+  footer {
+    /* background: green; */
+  }
+}
