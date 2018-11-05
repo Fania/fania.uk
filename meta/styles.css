@@ -23,34 +23,6 @@ html {
 
 
 
-header {
-  grid-area: header;
-}
-main {
-  grid-area: main;
-}
-aside {
-  grid-area: aside;
-}
-footer {
-  grid-area: footer;
-}
-
-body {
-  grid-template-columns: 100%;
-  grid-template-rows: auto;
-  grid-template-areas: 
-    "header"
-    "main"
-    "aside"
-    "footer";
-}
-
-
-
-
-
-
 
 
 /* GLOBAL */
@@ -61,10 +33,15 @@ body {
 body {
   margin: 0;
   font-family: var(--ssf);
+  grid-template-columns: 100%;
+  grid-template-areas: 
+    /* "header" */
+    "main"
+    "content"
+    "footer";
 }
 
 h1 {
-  /* font-family: var(--sf); */
   margin: 0;
   padding: 1em 0;
 }
@@ -73,27 +50,33 @@ a, a:visited {
   color: var(--bright);
 }
 
+.home {
+  height: 50vh;
+}
+header {
+  position: absolute;
+  width: 100%;
+}
 main {
   background-color: var(--light);
   color: var(--dark);
-  height: 50vh;
+  grid-area: main;
 }
-
 aside {
   background-color: var(--dark);
   color: var(--light);
-  height: 50vh;
+  grid-area: content;
 }
-
 .half {
   font-size: 5em;
-  padding: 1.5em 0;
+  /* padding: 1.5em 0; */
+  line-height: 50vh;
   text-align: center;
 }
-
 footer {
   text-align: center;
   color: var(--darkish);
+  grid-area: footer;
 }
 
 
@@ -101,18 +84,23 @@ footer {
 /* menu */
 #menudown, #menuup {
   font-size: 2em;
+  /* background: var(--light); */
   color: var(--darkish);
   text-align: center;
   cursor: pointer;
 }
+#menuup {
+  color: var(--light);
+}
 nav {
   display: none;
+  color: var(--light);
   background: var(--darkish);
   box-sizing: border-box;
   height: 50vh;
   grid-gap: 10px;
   padding: 10px;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 .fronticon {
   text-align: center;
@@ -124,6 +112,12 @@ nav {
 .hide {
   display: none;
 }
+.fa-leaf {
+  display: none;
+}
+.spiral {
+  width: 1.1em;
+}
 /* end menu */
 
 
@@ -133,21 +127,22 @@ nav {
 
   body {
     display: grid;
-    grid-template-columns: 45% 10% 45%;
-    grid-template-rows: auto;
+    /* grid-template-columns: 45% 10% 45%; */
+    grid-template-columns: calc(50% - 60px) 120px calc(50% - 60px);
     grid-template-areas: 
-      "main header aside"
+      "main header content"
       "footer footer footer";
   }
 
   header {
-    background-color: yellow;
     height: 100vh;
+    grid-area: header;
+    position: relative;
   }
 
   nav {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     height: 100vh;
   }
 
@@ -159,6 +154,14 @@ nav {
     font-size: 2em;
   }
   
+  .home {
+    height: 100vh;
+  }
+
+  .half {
+    line-height: 100vh;
+  }
+
   main {
     background-color: var(--dark);
     color: var(--light);
@@ -173,5 +176,9 @@ nav {
 
   footer {
     /* background: green; */
+  }
+
+  .fa-leaf {
+    display: inherit;
   }
 }

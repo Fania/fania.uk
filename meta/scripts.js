@@ -13,6 +13,9 @@ menuup.addEventListener("click", () => {
   menudown.classList.remove("hide");
 });
 
+
+// Pataphysical date for footer
+
 // let now = new Date();
 let lastEdited = new Date("04 November 2018");
 // let pnow = new PataphysicalDate();

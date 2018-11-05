@@ -3,31 +3,54 @@
 <html lang="en">
 
 <head>
-	<title>Uni</title>
+	<title>Fania.eu</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" href="../meta/styles.css">
 </head>
 
 <body>
 
 <header>
-	<h1><i class="menu-icon fa fa-mortar-board"></i> Uni </h1>
-	<nav>
-		<a href="../index.html"><i class="menu-icon fa fa-home"></i></a>
-		<a href="haskell.html"><img class="imgiconsmall" src="../images/Haskell-Logo-small.svg" alt="Haskell Logo"></a>
-		<a href="other.html"><i class="menu-icon fa fa-star"></i></a>
-		<a href="images.html"><i class="menu-icon fa fa-camera"></i></a>
-		<a href="cheats.html"><i class="menu-icon fa fa-bug"></i></a>
-	</nav>
-	<h3 class="clear"><strong>Education</strong> and Work</h3>
-	<p>Things. I do or did. At uni.</p>
+  <div id="menudown"><i class="fas fa-angle-down"></i></div>
+  <nav id="menu">
+    <i class="fronticon fas fa-smile"></i>
+    <a class="fronticon" href="html/other.html"><i class="fas fa-star"></i></a>
+    <i class="fronticon fas fa-heartbeat"></i>
+    <a class="fronticon" href="html/uni.html"><i class="fas fa-graduation-cap"></i></a>
+    <i class="fronticon fas fa-wheelchair"></i>
+    <i class="fronticon fas fa-gamepad"></i>
+    <i class="fronticon fas fa-female"></i>
+    <a class="fronticon" href="https://github.com/fania/teaching"><i class="fas fa-university"></i></a>
+    <i class="fronticon fas fa-puzzle-piece"></i>
+    <i class="fronticon fas fa-plane"></i>
+    <a class="fronticon" href="html/cheats.html"><i class="fas fa-bug"></i></a>
+    <a class="fronticon" href="https://github.com/fania/"><i class="fab fa-github-alt"></i></a>
+    <i class="fronticon fas fa-moon"></i>
+    <i class="fronticon fas fa-music"></i>
+    <i class="fronticon fas fa-suitcase"></i>
+    <i class="fronticon fas fa-bed"></i>
+    <i class="fronticon fab fa-reddit-alien"></i>
+    <i class="fronticon fas fa-tree"></i>
+    <a class="fronticon" href="html/images.html"><i class="fas fa-camera"></i></a>
+    <i class="fronticon fas fa-leaf"></i>
+    <i class="fronticon fas fa-code"></i>
+    <i class="fronticon fas fa-globe"></i>
+    <a class="fronticon" href="http://daveeveritt.org/"><i class="fas fa-heart"></i></a>
+    <i class="fronticon fas fa-snowflake"></i>
+    <i class="fronticon fas fa-frown"></i>
+  </nav>
+  <div id="menuup" class="hide"><i class="fas fa-angle-up"></i></div>
 </header>
 
-<main class="leftalign">
 
-<section class="content">
+
+<main>
+  <h1><strong>Education</strong> and Work</h1>
+	<p>Things. I do or did. At uni.</p>
+
+  <section class="content">
 
 	<h2>Sort-of-CV</h2>	
 
@@ -53,6 +76,11 @@
 		<p>Please note that I don't maintain old resources properly anymore and there are external links I'm not responsible for.</p>
 	</article>
 </section> <!-- CV -->
+
+</main>
+
+<aside>
+  <section class="half">Halb</section>
 
 <section class="links">
 
@@ -91,11 +119,20 @@
 
 </section>
 
-</main>
+</aside>
+
+
+
+
+
 
 <footer>
-	<i class="fa fa-copyright"></i> Fania - <span title="February 2017 vulg.">Gueules 143</span>
+	<p><i class="fas fa-copyright"></i> Fania - <span id="date"></span></p>
 </footer>
+
+
+<script src="../meta/pataphysicalDate.js"></script>
+<script src="../meta/scripts.js"></script>
 
 </body>
 </html>
