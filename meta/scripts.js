@@ -50,6 +50,17 @@ cheats.addEventListener("click", () => {
 
 
 
+  // body {
+  //   display: grid;
+  //   /* grid-template-columns: 45% 10% 45%; */
+  //   grid-template-columns: calc(50% - 60px) 120px calc(50% - 60px);
+  //   grid-template-areas: 
+  //     "main header content"
+  //     "footer footer footer";
+  // }
+
+
+
 
 
 
