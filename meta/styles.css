@@ -150,7 +150,6 @@ nav {
 .brexit {
   --widthImg: 100%;
   width: var(--widthImg);
-  /* padding: calc(50vh - var(--widthImg) / 2) 0; */
 }
 
 
