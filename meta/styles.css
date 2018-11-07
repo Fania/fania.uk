@@ -148,8 +148,7 @@ nav {
 /* end menu */
 
 .brexit {
-  --widthImg: 100%;
-  width: var(--widthImg);
+  width: 100%;
 }
 
 
