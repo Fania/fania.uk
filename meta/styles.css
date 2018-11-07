@@ -53,9 +53,11 @@ header {
 }
 main {
   grid-area: main;
+  box-sizing: border-box;
 }
 aside {
   grid-area: content;
+  box-sizing: border-box;
 }
 .half {
   font-size: 5em;
@@ -146,7 +148,9 @@ nav {
 /* end menu */
 
 .brexit {
-  width: 100%;
+  --widthImg: 100%;
+  width: var(--widthImg);
+  /* padding: calc(50vh - var(--widthImg) / 2) 0; */
 }
 
 
@@ -202,16 +206,14 @@ nav {
     height: 100vh;
   }
 
-  .brexit {
-    /* position: absolute;
-    right: 0;
-    top: 100px;
-    width: 700px; */
-    
-  }
-
   footer {
     /* background: green; */
+  }
+
+  .brexit {
+    --w: 100%;
+    width: var(--w);
+    padding: calc(50vh - var(--w) / 2) 0;
   }
 
   .fa-leaf {
