@@ -1,13 +1,17 @@
 // LOAD ON CORRECT PAGE
 
+const pages = ["home", "uni", "bookmarks", "cheats"];
+
 window.addEventListener("load", function(event) {
-  const pages = ["#home", "#uni", "#bookmarks"];
+  
   const hash = window.location.hash;
-
-  if(pages.includes(hash)) {
-    console.log("yay");
+  let h = hash.slice(1);
+  if(pages.includes(h)) {
+    console.log("yay", h);
+    loadpage();
   }
-
+  
+  // loadpage();
 });
 
 
@@ -29,69 +33,40 @@ menuup.addEventListener("click", () => {
 
 
 // MENU LINKS
-homeM.classList.remove("hide"); homeA.classList.remove("hide");
-bookmarksM.classList.add("hide"); bookmarksA.classList.add("hide");
-uniM.classList.add("hide"); uniA.classList.add("hide");
-cheatsM.classList.add("hide"); cheatsA.classList.add("hide");
+// homeM.classList.remove("hide"); homeA.classList.remove("hide");
+// bookmarksM.classList.add("hide"); bookmarksA.classList.add("hide");
+// uniM.classList.add("hide"); uniA.classList.add("hide");
+// cheatsM.classList.add("hide"); cheatsA.classList.add("hide");
 
-// let loadpage = (button) => {
-//   button.addEventListener("click", () => {
-//     location.replace(`#${button}`);
-//     homeM.classList.remove("hide"); homeA.classList.remove("hide");
-//     bookmarksM.classList.add("hide"); bookmarksA.classList.add("hide");
-//     uniM.classList.add("hide"); uniA.classList.add("hide");
-//     cheatsM.classList.add("hide"); cheatsA.classList.add("hide");
-//     menu.classList.toggle("menutoggle");
-//     menuup.classList.add("hide");
-//     menudown.classList.remove("hide");
-//   });
-// }
+// window.addEventListener("load", loadpage);
+
+// loadpage(home);
+const arr = ["homeM", "homeA", 
+             "bookmarksM", "bookmarksA",
+             "uniM", "uniA",
+             "cheatsM", "cheatsA"];
+
+home.addEventListener("click", loadpage);
+uni.addEventListener("click", loadpage);
+bookmarks.addEventListener("click", loadpage);
+cheats.addEventListener("click", loadpage);
 
 
 
-home.addEventListener("click", () => {
-  location.replace('');
-  homeM.classList.remove("hide"); homeA.classList.remove("hide");
-  bookmarksM.classList.add("hide"); bookmarksA.classList.add("hide");
-  uniM.classList.add("hide"); uniA.classList.add("hide");
-  cheatsM.classList.add("hide"); cheatsA.classList.add("hide");
+function loadpage() {
+  let src = event.srcElement.id;
+  !src ? src = "home" : src;
+  location.replace(`#${src}`);
+  let hides = arr.filter(x => x !== `${src}M` && x !== `${src}A`);
+  let shows = arr.filter(x => x == `${src}M` || x == `${src}A`);
+  hides.map(x => eval(x).classList.add("hide"));
+  shows.map(x => eval(x).classList.remove("hide"));
   menu.classList.remove("showmenu");
   menuup.classList.add("hide");
   menudown.classList.remove("hide");
   window.scrollTo(0, 0);
-});
-uni.addEventListener("click", () => {
-  location.replace('#uni');
-  homeM.classList.add("hide"); homeA.classList.add("hide");
-  bookmarksM.classList.add("hide"); bookmarksA.classList.add("hide");
-  uniM.classList.remove("hide"); uniA.classList.remove("hide");
-  cheatsM.classList.add("hide"); cheatsA.classList.add("hide");
-  menu.classList.remove("showmenu");
-  menuup.classList.add("hide");
-  menudown.classList.remove("hide");
-  window.scrollTo(0, 0);
-});
-bookmarks.addEventListener("click", () => {
-  location.replace('#bookmarks');
-  homeM.classList.add("hide"); homeA.classList.add("hide");
-  bookmarksM.classList.remove("hide"); bookmarksA.classList.remove("hide");
-  uniM.classList.add("hide"); uniA.classList.add("hide");
-  cheatsM.classList.add("hide"); cheatsA.classList.add("hide");
-  menu.classList.remove("showmenu");
-  menuup.classList.add("hide");
-  menudown.classList.remove("hide");
-  window.scrollTo(0, 0);
-});
-cheats.addEventListener("click", () => {
-  homeM.classList.add("hide"); homeA.classList.add("hide");
-  bookmarksM.classList.add("hide"); bookmarksA.classList.add("hide");
-  uniM.classList.add("hide"); uniA.classList.add("hide");
-  cheatsM.classList.remove("hide"); cheatsA.classList.remove("hide");
-  menu.classList.remove("showmenu");
-  menuup.classList.add("hide");
-  menudown.classList.remove("hide");
-  window.scrollTo(0, 0);
-});
+}
+
 
 
 
