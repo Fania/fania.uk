@@ -1,2 +1,3 @@
 - localstorage or url for remembering menu page
 - page layout conditionally for grids (add class to body)
+- reload page refreshes to home page briefly

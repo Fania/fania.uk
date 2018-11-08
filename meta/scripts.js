@@ -3,16 +3,43 @@
 const pages = ["home", "uni", "bookmarks", "cheats"];
 
 window.addEventListener("load", function(event) {
-  
-  const hash = window.location.hash;
-  let h = hash.slice(1);
+  const url = window.location.search;
+  let h = url.slice(6);
   if(pages.includes(h)) {
-    console.log("yay", h);
-    loadpage();
+    loadpage(h);
   }
-  
-  // loadpage();
 });
+
+const arr = ["homeM", "homeA", 
+             "bookmarksM", "bookmarksA",
+             "uniM", "uniA",
+             "cheatsM", "cheatsA"];
+
+home.addEventListener("click", menuload);
+uni.addEventListener("click", menuload);
+bookmarks.addEventListener("click", menuload);
+cheats.addEventListener("click", menuload);
+
+
+function menuload() {
+  let src = event.srcElement.id;
+  !src ? src = "home" : src;
+  location.replace(`${window.location.pathname}?page=${src}`);
+  loadpage(src);
+}
+
+function loadpage(src) {
+  let hides = arr.filter(x => x !== `${src}M` && x !== `${src}A`);
+  let shows = arr.filter(x => x == `${src}M` || x == `${src}A`);
+  hides.map(x => eval(x).classList.add("hide"));
+  shows.map(x => eval(x).classList.remove("hide"));
+  menu.classList.remove("showmenu");
+  menuup.classList.add("hide");
+  menudown.classList.remove("hide");
+  window.scrollTo(0, 0);
+}
+
+
 
 
 
@@ -29,45 +56,6 @@ menuup.addEventListener("click", () => {
   menuup.classList.add("hide");
   menudown.classList.remove("hide");
 });
-
-
-
-// MENU LINKS
-// homeM.classList.remove("hide"); homeA.classList.remove("hide");
-// bookmarksM.classList.add("hide"); bookmarksA.classList.add("hide");
-// uniM.classList.add("hide"); uniA.classList.add("hide");
-// cheatsM.classList.add("hide"); cheatsA.classList.add("hide");
-
-// window.addEventListener("load", loadpage);
-
-// loadpage(home);
-const arr = ["homeM", "homeA", 
-             "bookmarksM", "bookmarksA",
-             "uniM", "uniA",
-             "cheatsM", "cheatsA"];
-
-home.addEventListener("click", loadpage);
-uni.addEventListener("click", loadpage);
-bookmarks.addEventListener("click", loadpage);
-cheats.addEventListener("click", loadpage);
-
-
-
-function loadpage() {
-  let src = event.srcElement.id;
-  !src ? src = "home" : src;
-  location.replace(`#${src}`);
-  let hides = arr.filter(x => x !== `${src}M` && x !== `${src}A`);
-  let shows = arr.filter(x => x == `${src}M` || x == `${src}A`);
-  hides.map(x => eval(x).classList.add("hide"));
-  shows.map(x => eval(x).classList.remove("hide"));
-  menu.classList.remove("showmenu");
-  menuup.classList.add("hide");
-  menudown.classList.remove("hide");
-  window.scrollTo(0, 0);
-}
-
-
 
 
 
