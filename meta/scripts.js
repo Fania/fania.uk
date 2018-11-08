@@ -25,24 +25,36 @@ home.addEventListener("click", () => {
   bookmarksM.classList.add("hide"); bookmarksA.classList.add("hide");
   uniM.classList.add("hide"); uniA.classList.add("hide");
   cheatsM.classList.add("hide"); cheatsA.classList.add("hide");
+  menu.classList.toggle("menutoggle");
+  menuup.classList.add("hide");
+  menudown.classList.remove("hide");
 });
 uni.addEventListener("click", () => {
   homeM.classList.add("hide"); homeA.classList.add("hide");
   bookmarksM.classList.add("hide"); bookmarksA.classList.add("hide");
   uniM.classList.remove("hide"); uniA.classList.remove("hide");
   cheatsM.classList.add("hide"); cheatsA.classList.add("hide");
+  menu.classList.toggle("menutoggle");
+  menuup.classList.add("hide");
+  menudown.classList.remove("hide");
 });
 bookmarks.addEventListener("click", () => {
   homeM.classList.add("hide"); homeA.classList.add("hide");
   bookmarksM.classList.remove("hide"); bookmarksA.classList.remove("hide");
   uniM.classList.add("hide"); uniA.classList.add("hide");
   cheatsM.classList.add("hide"); cheatsA.classList.add("hide");
+  menu.classList.toggle("menutoggle");
+  menuup.classList.add("hide");
+  menudown.classList.remove("hide");
 });
 cheats.addEventListener("click", () => {
   homeM.classList.add("hide"); homeA.classList.add("hide");
   bookmarksM.classList.add("hide"); bookmarksA.classList.add("hide");
   uniM.classList.add("hide"); uniA.classList.add("hide");
   cheatsM.classList.remove("hide"); cheatsA.classList.remove("hide");
+  menu.classList.toggle("menutoggle");
+  menuup.classList.add("hide");
+  menudown.classList.remove("hide");
 });
 
 

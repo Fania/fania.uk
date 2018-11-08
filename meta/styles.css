@@ -17,10 +17,8 @@ html {
          "Avant Garde Gothic",
          "Avant Garde",
          sans-serif;
+
 }
-
-
-
 
 
 
@@ -74,6 +72,30 @@ footer {
   box-sizing: border-box;
   padding: 1em;
 }
+
+article img {
+  width: 100%;
+}
+
+.mkl {
+  width: 50%;
+  float: left;
+}
+.mkr {
+  width: 50%;
+  float: right;
+}
+
+
+#goren {
+  width: 100%;
+}
+#goren text {
+  font-family: monospace;
+  white-space: pre;
+  fill: var(--light);
+}
+
 
 
 /* colours */
@@ -165,7 +187,8 @@ nav {
   }
 
   header {
-    height: 100vh;
+    min-height: 100vh;
+    background-color: var(--darkish);
     grid-area: header;
     position: relative;
   }
@@ -195,13 +218,15 @@ nav {
   main {
     /* background-color: var(--dark);
     color: var(--light); */
-    height: 100vh;
+    min-height: 100vh;
+    /* width: calc(50% - 60px); */
   }
 
   aside {
     /* background-color: var(--light);
     color: var(--dark); */
-    height: 100vh;
+    min-height: 100vh;
+    /* width: calc(50% - 60px); */
   }
 
   footer {
@@ -217,4 +242,9 @@ nav {
   .fa-leaf {
     display: inherit;
   }
+
+  /* #goren text {
+    fill: var(--dark);
+  } */
+
 }
