@@ -1,0 +1,2 @@
+- localstorage or url for remembering menu page
+- page layout conditionally for grids (add class to body)
