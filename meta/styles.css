@@ -37,6 +37,7 @@ body {
     "main"
     "content"
     "footer";
+  /* background-color: var(--dark); */
 }
 h1 {
   margin: 0;
@@ -52,10 +53,12 @@ header {
 main {
   grid-area: main;
   box-sizing: border-box;
+  /* background-color: var(--dark); */
 }
 aside {
   grid-area: content;
   box-sizing: border-box;
+  /* background-color: var(--light); */
 }
 .half {
   font-size: 5em;
@@ -67,6 +70,7 @@ footer {
   text-align: center;
   color: var(--darkish);
   grid-area: footer;
+  /* background-color: white; */
 }
 .spacing {
   box-sizing: border-box;

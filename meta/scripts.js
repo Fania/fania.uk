@@ -1,34 +1,46 @@
-// LOAD ON CORRECT PAGE
+// FIRST LOAD
 
 const pages = ["home", "uni", "bookmarks", "cheats"];
-
-window.addEventListener("load", function(event) {
-  const url = window.location.search;
-  let h = url.slice(6);
-  if(pages.includes(h)) {
-    loadpage(h);
-  }
-});
 
 const arr = ["homeM", "homeA", 
              "bookmarksM", "bookmarksA",
              "uniM", "uniA",
              "cheatsM", "cheatsA"];
 
-home.addEventListener("click", menuload);
-uni.addEventListener("click", menuload);
-bookmarks.addEventListener("click", menuload);
-cheats.addEventListener("click", menuload);
+
+console.log("welcome");
+const url = window.location.search;
+// console.log(url);
+let h = url.slice(6);
+// console.log(h);
+if(pages.includes(h)) {
+  console.log("welcome if");
+  loadpage(h);
+} else {
+  console.log("welcome else");
+  loadpage("home");
+};
 
 
-function menuload() {
-  let src = event.srcElement.id;
-  !src ? src = "home" : src;
-  location.replace(`${window.location.pathname}?page=${src}`);
-  loadpage(src);
-}
+
+// SUBSEQUENT LOADS
+// home.addEventListener("click", menuload);
+home.addEventListener("click", () => {loadpage("home")});
+uni.addEventListener("click", () => {loadpage("uni")});
+bookmarks.addEventListener("click", () => {loadpage("bookmarks")});
+cheats.addEventListener("click", () => {loadpage("cheats")});
+
+
+// function menuload() {
+//   let src = event.srcElement.id;
+//   !src ? src = "home" : src;
+//   location.replace(`${window.location.pathname}?page=${src}`);
+//   console.log("menuload", src);
+//   loadpage(src);
+// }
 
 function loadpage(src) {
+  console.log("loadpage", src, `${src}M`);
   let hides = arr.filter(x => x !== `${src}M` && x !== `${src}A`);
   let shows = arr.filter(x => x == `${src}M` || x == `${src}A`);
   hides.map(x => eval(x).classList.add("hide"));
@@ -38,7 +50,6 @@ function loadpage(src) {
   menudown.classList.remove("hide");
   window.scrollTo(0, 0);
 }
-
 
 
 
