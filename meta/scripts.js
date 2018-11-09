@@ -10,37 +10,67 @@ const arr = ["homeM", "homeA",
 
 console.log("welcome");
 const url = window.location.search;
-// console.log(url);
+// console.log("url", url);
 let h = url.slice(6);
-// console.log(h);
+// console.log("h", h);
 if(pages.includes(h)) {
-  console.log("welcome if");
+  // console.log("welcome if");
   loadpage(h);
 } else {
-  console.log("welcome else");
+  // console.log("welcome else");
   loadpage("home");
 };
+
+  
+// Browser history
+window.addEventListener("popstate", () => {
+  if (history.state) {
+    // console.log("popstate triggered");
+    // console.log(history);
+    loadpage(history.state.id);
+  }
+});
+
 
 
 
 // SUBSEQUENT LOADS
-// home.addEventListener("click", menuload);
-home.addEventListener("click", () => {loadpage("home")});
-uni.addEventListener("click", () => {loadpage("uni")});
-bookmarks.addEventListener("click", () => {loadpage("bookmarks")});
-cheats.addEventListener("click", () => {loadpage("cheats")});
+home.addEventListener("click", menuload);
+uni.addEventListener("click", menuload);
+bookmarks.addEventListener("click", menuload);
+cheats.addEventListener("click", menuload);
 
 
-// function menuload() {
-//   let src = event.srcElement.id;
-//   !src ? src = "home" : src;
-//   location.replace(`${window.location.pathname}?page=${src}`);
-//   console.log("menuload", src);
-//   loadpage(src);
-// }
+// Load page from menu
+function menuload() {
+  let src = event.srcElement.id;
+  !src ? src = "home" : src;
+  // location.replace(`${window.location.pathname}?page=${src}`);
+  // localStorage.setItem("currentPage", src);
+
+  if (history && history.pushState) {
+    // console.log("hisory and pushState work");
+    let stateObj = { id: src };
+    let wl = window.location;
+    let currPage = `${wl.protocol}//${wl.hostname}:${wl.port}`;
+    let newPage = `/${src}.html`;
+    // console.log("src", src);
+    // console.log("currPage", currPage);
+    // console.log("newPage", newPage);
+    let fakeURL = `${currPage}${newPage}`;
+    let realURL = `${currPage}?page=${src}`;
+    // console.log("fakeURL", fakeURL);
+    // console.log("realURL", realURL);
+    history.pushState(stateObj, src, realURL);  // needs web server
+    // var newPage = window.location.href + '#' + evt.target.href.replace(base, '');
+    // window.location.href = fakeURL;  // reloads
+  }
+  // console.log("menuload", src);
+  loadpage(src);
+}
 
 function loadpage(src) {
-  console.log("loadpage", src, `${src}M`);
+  // console.log("loadpage", src, `${src}M`);
   let hides = arr.filter(x => x !== `${src}M` && x !== `${src}A`);
   let shows = arr.filter(x => x == `${src}M` || x == `${src}A`);
   hides.map(x => eval(x).classList.add("hide"));
@@ -50,6 +80,9 @@ function loadpage(src) {
   menudown.classList.remove("hide");
   window.scrollTo(0, 0);
 }
+
+
+ 
 
 
 
