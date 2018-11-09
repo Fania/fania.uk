@@ -50,18 +50,18 @@ function menuload() {
   // localStorage.setItem("currentPage", src);
 
   if (history && history.pushState) {
-    // console.log("hisory and pushState work");
+    console.log("hisory and pushState work");
     let stateObj = { id: src };
     let wl = window.location;
     let currPage = `${wl.protocol}//${wl.hostname}:${wl.port}`;
     let newPage = `/${src}.html`;
-    // console.log("src", src);
-    // console.log("currPage", currPage);
-    // console.log("newPage", newPage);
+    console.log("src", src);
+    console.log("currPage", currPage);
+    console.log("newPage", newPage);
     let fakeURL = `${currPage}${newPage}`;
     let realURL = `${currPage}?page=${src}`;
-    // console.log("fakeURL", fakeURL);
-    // console.log("realURL", realURL);
+    console.log("fakeURL", fakeURL);
+    console.log("realURL", realURL);
     history.pushState(stateObj, src, realURL);  // needs web server
     // var newPage = window.location.href + '#' + evt.target.href.replace(base, '');
     // window.location.href = fakeURL;  // reloads
