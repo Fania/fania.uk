@@ -1,11 +1,12 @@
 // FIRST LOAD
 
-const pages = ["home", "about", "bookmarks", "cheats"];
+const pages = ["home", "about", "bookmarks", "cheats", "imgs"];
 
 const arr = ["homeM", "homeA", 
              "bookmarksM", "bookmarksA",
              "aboutM", "aboutA",
-             "cheatsM", "cheatsA"];
+             "cheatsM", "cheatsA",
+             "imgsM", "imgsA"];
 
 
 // console.log("welcome");
@@ -40,6 +41,7 @@ home.addEventListener("click", menuload);
 about.addEventListener("click", menuload);
 bookmarks.addEventListener("click", menuload);
 cheats.addEventListener("click", menuload);
+imgs.addEventListener("click", menuload);
 
 
 // Load page from menu

@@ -39,12 +39,10 @@ body {
     "footer";
   /* background-color: var(--dark); */
 }
-h1 {
+h1, h2 {
+  font-size: 2em;
   margin: 0;
   padding: 1em 0;
-}
-h2 {
-  margin-top: 32px;
 }
 .home {
   height: 50vh;
@@ -80,7 +78,7 @@ footer {
   padding: 1em;
 }
 
-article img {
+article img, .gallery {
   width: 100%;
 }
 .brexit {
