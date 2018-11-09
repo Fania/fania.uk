@@ -8,8 +8,9 @@ const arr = ["homeM", "homeA",
              "cheatsM", "cheatsA"];
 
 
-console.log("welcome");
+// console.log("welcome");
 const url = window.location.search;
+console.log(window.location);
 // console.log("url", url);
 let h = url.slice(6);
 // console.log("h", h);
