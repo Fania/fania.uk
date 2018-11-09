@@ -43,6 +43,9 @@ h1 {
   margin: 0;
   padding: 1em 0;
 }
+h2 {
+  margin-top: 32px;
+}
 .home {
   height: 50vh;
 }

@@ -1,16 +1,16 @@
 // FIRST LOAD
 
-const pages = ["home", "uni", "bookmarks", "cheats"];
+const pages = ["home", "about", "bookmarks", "cheats"];
 
 const arr = ["homeM", "homeA", 
              "bookmarksM", "bookmarksA",
-             "uniM", "uniA",
+             "aboutM", "aboutA",
              "cheatsM", "cheatsA"];
 
 
 // console.log("welcome");
 const url = window.location.search;
-console.log(window.location);
+// console.log(window.location);
 // console.log("url", url);
 let h = url.slice(6);
 // console.log("h", h);
@@ -35,9 +35,9 @@ window.addEventListener("popstate", () => {
 
 
 
-// SUBSEQUENT LOADS
+// MENU LOADS
 home.addEventListener("click", menuload);
-uni.addEventListener("click", menuload);
+about.addEventListener("click", menuload);
 bookmarks.addEventListener("click", menuload);
 cheats.addEventListener("click", menuload);
 
@@ -45,33 +45,39 @@ cheats.addEventListener("click", menuload);
 // Load page from menu
 function menuload() {
   let src = event.srcElement.id;
-  !src ? src = "home" : src;
-  // location.replace(`${window.location.pathname}?page=${src}`);
-  // localStorage.setItem("currentPage", src);
+  // !src ? src = "home" : src;
 
-  if (history && history.pushState) {
-    console.log("hisory and pushState work");
-    let stateObj = { id: src };
-    let wl = window.location;
-    // let port = wl.port ? `:${wl.port}` : "";
-    let path = wl.pathname == "/" ? "" : wl.pathname;
-    let currPage = `${wl.origin}${path}`;
-    let newPage = `/${src}.html`;
-    console.log("src", src);
-    console.log("currPage", currPage);
-    console.log("newPage", newPage);
-    let fakeURL = `${currPage}${newPage}`;
-    let realURL = `${currPage}?page=${src}`;
-    console.log("fakeURL", fakeURL);
-    console.log("realURL", realURL);
-    history.pushState(stateObj, src, realURL);  // needs web server
-    // var newPage = window.location.href + '#' + evt.target.href.replace(base, '');
-    // window.location.href = fakeURL;  // reloads
+  if(!src) {
+    console.log("undefined src");
   }
-  // console.log("menuload", src);
-  loadpage(src);
+
+  let stateObj = { id: src };
+  let wl = window.location;
+  // let port = wl.port ? `:${wl.port}` : "";
+  let path = wl.pathname == "/" ? "" : wl.pathname;
+  let currPage = `${wl.origin}${path}`;
+  let newPage = `/${src}.html`;
+  // console.log("src", src);
+  // console.log("currPage", currPage);
+  // console.log("newPage", newPage);
+  let fakeURL = `${currPage}${newPage}`;
+  let realURL = `${currPage}?page=${src}`;
+  // console.log("fakeURL", fakeURL);
+  // console.log("realURL", realURL);
+
+  if(src == "home") {
+    history.pushState(stateObj, src, currPage);    
+    loadpage("home");
+  } else {
+    history.pushState(stateObj, src, realURL);  // needs web server
+    // window.location.href = fakeURL;  // reloads
+    // console.log("menuload", src);
+    loadpage(src);
+  }
 }
 
+
+// generic load function
 function loadpage(src) {
   // console.log("loadpage", src, `${src}M`);
   let hides = arr.filter(x => x !== `${src}M` && x !== `${src}A`);
