@@ -54,7 +54,7 @@ function menuload() {
     let stateObj = { id: src };
     let wl = window.location;
     // let port = wl.port ? `:${wl.port}` : "";
-    let path = wl.pathname ? wl.pathname : "";
+    let path = wl.pathname == "/" ? "" : wl.pathname;
     let currPage = `${wl.origin}${path}`;
     let newPage = `/${src}.html`;
     console.log("src", src);
