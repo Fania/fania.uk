@@ -53,7 +53,9 @@ function menuload() {
     console.log("hisory and pushState work");
     let stateObj = { id: src };
     let wl = window.location;
-    let currPage = `${wl.protocol}//${wl.hostname}:${wl.port}`;
+    // let port = wl.port ? `:${wl.port}` : "";
+    let path = wl.pathname ? wl.pathname : "";
+    let currPage = `${wl.origin}${path}`;
     let newPage = `/${src}.html`;
     console.log("src", src);
     console.log("currPage", currPage);
