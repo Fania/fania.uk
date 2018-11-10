@@ -44,12 +44,16 @@ h1, h2 {
   margin: 0;
   padding: 1em 0;
 }
+h3 {
+  display: inline;
+}
 .home {
   height: 50vh;
 }
 header {
   position: absolute;
   width: 100%;
+  padding-top: 5px;
 }
 main {
   grid-area: main;
@@ -99,6 +103,61 @@ article img, .gallery {
   font-family: monospace;
   white-space: pre;
   fill: var(--light);
+}
+
+article {
+  margin-bottom: 3em;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+figcaption {
+  text-align: center;
+  font-style: italic;
+}
+
+.bulletfree {
+  list-style: none;
+  padding: 0;
+}
+.bulletfree li {
+  padding: .5em 0;
+}
+
+
+/* CHEATS SPECIFIC */
+#cheatsM summary{
+  cursor: pointer;
+  margin-top: 2em;
+}
+#cheatsM article {
+  margin-bottom: 2em;
+}
+#cheatsM li {
+  list-style: none;
+}
+li.win::before, li.mac:before, li.info:before, li.null:before {
+  color: inherit;
+  width: 25px;
+  display: inline-block;
+}
+li.win::before {
+  font-family: "Font Awesome 5 Brands";
+  content: "\f17a"; 
+}
+li.mac::before {
+  font-family: "Font Awesome 5 Brands";
+  content: "\f179"; 
+}
+li.info::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f013"; 
+}
+li.null::before {
+  content: ""; 
 }
 
 
