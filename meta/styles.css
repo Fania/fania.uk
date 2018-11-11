@@ -4,7 +4,7 @@ html {
   /* COLOURS */
   --dark:   #222D3F;  /* var(--dark); */
   --darkish:#335941;  /* var(--darkish); */
-  --medium: #4F8C6C;  /* var(--medium); */
+  --medium: #4f8c6c;  /* var(--medium); */
   --bright: #77A756;  /* var(--bright); */
   --light:  #99BE7F;  /* var(--light); */
 
@@ -44,8 +44,9 @@ h1, h2 {
   margin: 0;
   padding: 1em 0;
 }
-h3 {
-  display: inline;
+p {
+  margin: 0;
+  padding: .5em 0;
 }
 .home {
   height: 50vh;
@@ -80,6 +81,9 @@ footer {
   grid-area: footer;
   background-color: white;
 }
+footer p {
+  padding: 1em 0;
+}
 .spacing {
   box-sizing: border-box;
   padding: 1em;
@@ -101,11 +105,16 @@ article img, .gallery {
 }
 #goren {
   width: 100%;
+  padding: 1em 0;
 }
 #goren text {
   font-family: monospace;
   white-space: pre;
   fill: var(--light);
+}
+.zalgo {
+  padding: 2em 0;
+  overflow: hidden;
 }
 
 article {
@@ -115,6 +124,7 @@ article {
 figure {
   margin: 0;
   padding: 0;
+  padding-bottom: 1em;
 }
 figcaption {
   text-align: center;
@@ -130,6 +140,10 @@ figcaption {
 }
 
 /* CHEATS SPECIFIC */
+#cheatsM time {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
 #cheatsM summary{
   cursor: pointer;
   margin-top: 2em;
@@ -139,6 +153,9 @@ figcaption {
 }
 #cheatsM li {
   list-style: none;
+}
+#cheatsM h3 {
+  display: inline;
 }
 li.win::before, li.mac:before, li.info:before, li.null:before {
   color: inherit;
@@ -161,6 +178,42 @@ li.info::before {
 li.null::before {
   content: ""; 
 }
+
+
+/* Bookmarks specific */
+#bookmarksM h3 {
+  background-color: rgba(79, 140, 108, 50%);
+  padding: 1em;
+  margin: 0 -1em;
+}
+#bookmarksM figure {
+  padding: 1em 0;
+}
+/* #bookmarksM article:nth-child(even){
+  background-color: rgba(79, 140, 108, 50%);
+} */
+#bookmarksM ul {
+  list-style: none;
+  padding-left: 0;
+}
+#bookmarksM li.booklink::before {
+  color: inherit;
+  width: 25px;
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  content: "\f0c1"; /* chain icon */
+  font-weight: 900;
+  /* content: "\f35d"; external link icon */
+}
+#bookmarksM li.bookunlink::before {
+  color: inherit;
+  width: 25px;
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  content: "\f127"; /* un-chain icon */
+  font-weight: 900;
+}
+
 
 
 /* colours */
