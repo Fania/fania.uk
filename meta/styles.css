@@ -37,7 +37,7 @@ body {
     "main"
     "content"
     "footer";
-  /* background-color: var(--dark); */
+  background-color: var(--dark);
 }
 h1, h2 {
   font-size: 2em;
@@ -71,11 +71,14 @@ aside {
   line-height: 50vh;
   text-align: center;
 }
+code {
+  background-color: rgba(0,0,0,10%);
+}
 footer {
   text-align: center;
   color: var(--darkish);
   grid-area: footer;
-  /* background-color: white; */
+  background-color: white;
 }
 .spacing {
   box-sizing: border-box;
@@ -126,7 +129,6 @@ figcaption {
   padding: .5em 0;
 }
 
-
 /* CHEATS SPECIFIC */
 #cheatsM summary{
   cursor: pointer;
@@ -159,7 +161,6 @@ li.info::before {
 li.null::before {
   content: ""; 
 }
-
 
 
 /* colours */
