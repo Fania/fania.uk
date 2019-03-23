@@ -1,62 +1,116 @@
-// nothing
+// FIRST LOAD
+
+const pages = ["home", "about", "bookmarks", "cheats", "imgs"];
+
+const arr = ["homeM", "homeA", 
+             "bookmarksM", "bookmarksA",
+             "aboutM", "aboutA",
+             "cheatsM", "cheatsA",
+             "imgsM", "imgsA"];
+
+
+// console.log("welcome");
+const url = window.location.search;
+// console.log(window.location);
+// console.log("url", url);
+let h = url.slice(6);
+// console.log("h", h);
+if(pages.includes(h)) {
+  // console.log("welcome if");
+  loadpage(h);
+} else {
+  // console.log("welcome else");
+  loadpage("home");
+};
+
+  
+// Browser history
+window.addEventListener("popstate", () => {
+  if (history.state) {
+    // console.log("popstate triggered");
+    // console.log(history);
+    loadpage(history.state.id);
+  }
+});
+
+
+
+
+// MENU LOADS
+home.addEventListener("click", menuload);
+about.addEventListener("click", menuload);
+bookmarks.addEventListener("click", menuload);
+cheats.addEventListener("click", menuload);
+imgs.addEventListener("click", menuload);
+
+
+// Load page from menu
+function menuload() {
+  let src = event.srcElement.id;
+  // !src ? src = "home" : src;
+
+  if(!src) {
+    console.log("undefined src");
+  }
+
+  let stateObj = { id: src };
+  let wl = window.location;
+  // let port = wl.port ? `:${wl.port}` : "";
+  let path = wl.pathname == "/" ? "" : wl.pathname;
+  let currPage = `${wl.origin}${path}`;
+  let newPage = `/${src}.html`;
+  // console.log("src", src);
+  // console.log("currPage", currPage);
+  // console.log("newPage", newPage);
+  let fakeURL = `${currPage}${newPage}`;
+  let realURL = `${currPage}?page=${src}`;
+  // console.log("fakeURL", fakeURL);
+  // console.log("realURL", realURL);
+
+  if(src == "home") {
+    history.pushState(stateObj, src, currPage);    
+    loadpage("home");
+  } else {
+    history.pushState(stateObj, src, realURL);  // needs web server
+    // window.location.href = fakeURL;  // reloads
+    // console.log("menuload", src);
+    loadpage(src);
+  }
+}
+
+
+// generic load function
+function loadpage(src) {
+  // console.log("loadpage", src, `${src}M`);
+  let hides = arr.filter(x => x !== `${src}M` && x !== `${src}A`);
+  let shows = arr.filter(x => x == `${src}M` || x == `${src}A`);
+  hides.map(x => eval(x).classList.add("hide"));
+  shows.map(x => eval(x).classList.remove("hide"));
+  menu.classList.remove("showmenu");
+  menuup.classList.add("hide");
+  menudown.classList.remove("hide");
+  window.scrollTo(0, 0);
+}
+
+
+ 
+
+
+
+
 
 // MOBILE MENU
 menudown.addEventListener("click", () => {
-  menu.classList.toggle("menutoggle");
+  menu.classList.add("showmenu");
   menudown.classList.add("hide");
   menuup.classList.remove("hide");
 });
 
 menuup.addEventListener("click", () => {
-  menu.classList.toggle("menutoggle");
+  menu.classList.remove("showmenu");
   menuup.classList.add("hide");
   menudown.classList.remove("hide");
 });
-
-
-// MENU LINKS
-homeM.classList.remove("hide"); homeA.classList.remove("hide");
-bookmarksM.classList.add("hide"); bookmarksA.classList.add("hide");
-uniM.classList.add("hide"); uniA.classList.add("hide");
-cheatsM.classList.add("hide"); cheatsA.classList.add("hide");
-
-home.addEventListener("click", () => {
-  homeM.classList.remove("hide"); homeA.classList.remove("hide");
-  bookmarksM.classList.add("hide"); bookmarksA.classList.add("hide");
-  uniM.classList.add("hide"); uniA.classList.add("hide");
-  cheatsM.classList.add("hide"); cheatsA.classList.add("hide");
-  menu.classList.toggle("menutoggle");
-  menuup.classList.add("hide");
-  menudown.classList.remove("hide");
-});
-uni.addEventListener("click", () => {
-  homeM.classList.add("hide"); homeA.classList.add("hide");
-  bookmarksM.classList.add("hide"); bookmarksA.classList.add("hide");
-  uniM.classList.remove("hide"); uniA.classList.remove("hide");
-  cheatsM.classList.add("hide"); cheatsA.classList.add("hide");
-  menu.classList.toggle("menutoggle");
-  menuup.classList.add("hide");
-  menudown.classList.remove("hide");
-});
-bookmarks.addEventListener("click", () => {
-  homeM.classList.add("hide"); homeA.classList.add("hide");
-  bookmarksM.classList.remove("hide"); bookmarksA.classList.remove("hide");
-  uniM.classList.add("hide"); uniA.classList.add("hide");
-  cheatsM.classList.add("hide"); cheatsA.classList.add("hide");
-  menu.classList.toggle("menutoggle");
-  menuup.classList.add("hide");
-  menudown.classList.remove("hide");
-});
-cheats.addEventListener("click", () => {
-  homeM.classList.add("hide"); homeA.classList.add("hide");
-  bookmarksM.classList.add("hide"); bookmarksA.classList.add("hide");
-  uniM.classList.add("hide"); uniA.classList.add("hide");
-  cheatsM.classList.remove("hide"); cheatsA.classList.remove("hide");
-  menu.classList.toggle("menutoggle");
-  menuup.classList.add("hide");
-  menudown.classList.remove("hide");
-});
-
 
 
 

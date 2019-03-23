@@ -19,7 +19,7 @@
   <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
   <meta name="theme-color" content="#222D3F">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Fania EU">
 
 </head>
@@ -33,26 +33,26 @@
     <img id="home" title="Home" class="fronticon link spiral" src="images/favicons/spiral-static.svg">
     <i id="bookmarks" title="Bookmarks" class="fronticon link fas fa-star"></i>
     <i class="fronticon fas fa-heartbeat"></i>
-    <i id="uni" title="University" class="fronticon link fas fa-graduation-cap"></i>
+    <i id="about" title="About" class="fronticon link fas fa-graduation-cap"></i>
     <i class="fronticon fas fa-wheelchair"></i>
     <i class="fronticon fas fa-gamepad"></i>
     <i class="fronticon fas fa-female"></i>
-    <a class="fronticon" href="https://github.com/fania/teaching"><i class="fas fa-university"></i></a>
+    <a class="fronticon"title="Teaching"  href="https://fania.github.io/teaching" target="_blank"><i class="fas fa-university"></i></a>
     <i class="fronticon fas fa-puzzle-piece"></i>
     <i class="fronticon fas fa-plane"></i>
-    <i id="cheats" class="fronticon link fas fa-bug"></i>
-    <a class="fronticon" href="https://github.com/fania/"><i class="fab fa-github-alt"></i></a>
+    <i id="cheats" title="Cheats" class="fronticon link fas fa-bug"></i>
+    <a class="fronticon" title="GitHub" href="https://github.com/fania/" target="_blank"><i class="fab fa-github-alt"></i></a>
     <i class="fronticon fas fa-moon"></i>
     <i class="fronticon fas fa-music"></i>
     <i class="fronticon fas fa-suitcase"></i>
     <i class="fronticon fas fa-bed"></i>
     <i class="fronticon fab fa-reddit-alien"></i>
     <i class="fronticon fas fa-tree"></i>
-    <a class="fronticon" href="html/images.html"><i class="fas fa-camera"></i></a>
+    <i id="imgs" title="Images" class="fronticon link fas fa-camera"></i>
     <i class="fronticon fas fa-leaf"></i>
     <i class="fronticon fas fa-code"></i>
     <i class="fronticon fas fa-globe"></i>
-    <a class="fronticon" href="http://daveeveritt.org/"><i class="fas fa-heart"></i></a>
+    <a class="fronticon" title="Dave" href="http://daveeveritt.org/" target="_blank"><i class="fas fa-heart"></i></a>
     <i class="fronticon fas fa-snowflake"></i>
     <i class="fronticon fas fa-frown"></i>
   </nav>
@@ -82,57 +82,60 @@
 
 
 <!-- CV ----------------------------------------------------------------- -->
-<main id="uniM" class="spacing light-theme">
+<main id="aboutM" class="hide spacing light-theme">
   <h1>I do, therefore I am.</h1>
-
-	<!--http://interactlabs.co.uk/diary/2014/08/dmu-phd-showcase-->
 
 	<article>
 		<h3>Current</h3>
-		<p>I'm a part-time lecturer at <a href="http://www.dmu.ac.uk/">De Montfort University</a>, teaching <span title="Haskell">'Functional Programming'</span>, 'Research' and 'Front End Web Development'. I also supervise some final year students for their projects.</p>
+		<p>I'm a part-time lecturer at <a href="http://www.dmu.ac.uk/">De Montfort University</a>. Over the last few years I've taught <span title="Haskell">"Functional Programming"</span>, "Research", "Devices and Networks", "Multimedia",  and "Front End Web Development". I've also supervised final year students for their major projects.</p>
 	</article>
 
 	<article>
-		<h3>ReCurrent</h3>
-		<p>I am <span title="==currently">forever</span> approaching the end of my doctoral studies at <a href="http://www.dmu.ac.uk/">De Montfort University</a> under the working title:</p>
-		<p><strong title="Ha-Ha!&#10;No, I'm serious actually.">‘Algorithmic Meta-Creativity.’</strong></p>
-		<p>My research involves studying human and computer creativity and how they are evaluated, the absurd pseudo philosophy pataphysics and its applications, and the development of creative exploratory search algorithms inspired by pataphysical concepts.</p>
-		<p>Code is written in Python. Part of this research has been described in a journal <a href="http://www.tandfonline.com/doi/full/10.1080/14626268.2013.813377#.U6li4_ldV8E">article in Digital Creativity</a> in 2013, and I presented a paper at the <a href="http://cc13.creativityandcognition.com/">Creativity & Cognition conference 2013</a> in Sydney. The prototype pataphysical search tool I created has since been used to generate the libretto 'Amorphous Isle' for an online opera called <a href="http://andrewhugill.com/theimaginaryvoyage/#">'The Imaginary Voyage'</a>.</p>
-	</article>
+		<h3>Un-Current</h3>
+    <p>I have a PhD in Software Engineering/Computer Science from <a href="http://www.dmu.ac.uk/">De Montfort University</a>. The title of my thesis is <strong title="Ha-Ha!&#10;No, I'm serious actually.">Algorithmic Meta-Creativity</strong> and it's available as HTML or PDF at <em><a href="https://dr.physics.wtf" target="_blank">dr.physics.wtf</a></em>.</p>
+		<p>My research interests revolve around studying human and computer creativity and how they are evaluated, the absurd pseudo philosophy pataphysics and its applications, and the development of creative exploratory search algorithms inspired by pataphysical concepts.</p>
+		<p>Although the PhD wasn't classed as "practice-based" research, an artefact <em><a href="https://pata.physics.wtf" target="_blank">pata.physics.wtf</a></em> was submitted alongside the thesis. The software for this was written (mostly) in Python.</p>
 
-	<article>
-		<h3>UnCurrent</h3>
-		<p>My MSc is from <a href="http://www.ioct.dmu.ac.uk/masters/">De Montfort University</a> in 2010. The major project was a publicly showcased passive interactive installation, augmenting a live video stream of users with interactive elements using motion tracking algorithms. Code was written in C++. The project report was delivered in the form of a <a href="http://msc.fania.eu">website</a> for which I received a first.</p>
-		<p>I received a Bachelor of Science from the <a href="http://www2.le.ac.uk/departments/computer-science/undergraduate/bsccomputerscience">University of Leicester</a> in 2007. For the major project I created a Sudoku solver, including a performance comparison between two different algorithms. All code was written in Haskell. See the <a href="images/FaniaBSc.pdf" class="h3link pdf" target="_blank">dissertation document</a> for which I received a first.</p>
-		<p>Please note that I don't maintain old resources properly anymore and there are external links I'm not responsible for.</p>
+		<p>I also have a MSc in Creative Technologies from <a href="http://www.ioct.dmu.ac.uk/masters/">De Montfort University</a>. The major project was a publicly showcased passive interactive installation, augmenting a live video stream of users with interactive elements using motion tracking algorithms. Code was written in C++.</p>
+		
+    <p>And going even further back, I've got a BSc from the <a href="http://www2.le.ac.uk/departments/computer-science/undergraduate/bsccomputerscience">University of Leicester</a>. For the major project I created a Sudoku solver, including a performance comparison between two different algorithms. All code was written in Haskell.
+
+		<p>Please note that I don't necessarily maintain old resources anymore and there may be external links which might 404.</p>
 	</article>
 
 </main>
 
-<aside id="uniA" class="spacing dark-theme">
+<aside id="aboutA" class="hide spacing dark-theme">
 	<h2>Publications</h2>
 
 	<dl>
-		<dt><a href="http://pata.physics.wtf">Pata Search</a></dt>
-		<dd>Pataphysical PhD search and poetry engine</dd>
+		<dt><a href="https://pata.physics.wtf">Pataphysics WTF?</a></dt>
+		<dd>Pataphysical search and poetry engine</dd>
 
-		<dt><a href="http://msc.fania.eu" class="h3link" target="_blank">MSc Website</a></dt>
-		<dd>Project report in form of a website <br>from 2010</dd>
+    <dt><a href="https://dr.physics.wtf">Doctor Physics WTF?</a></dt>
+		<dd>PhD thesis online 2017</dd>
+
+		<dt><a href="http://msc.fania.eu" class="h3link" target="_blank">MSc Dissertation</a></dt>
+		<dd>Project report in form of a website from 2010</dd>
 
 		<dt><a href="images/FaniaBSc.pdf" class="h3link pdf" target="_blank">BSc Report</a></dt>
-		<dd>Dissertation document <br>from 2007</dd>
+		<dd>Dissertation document from 2007</dd>
+
+    <!--http://interactlabs.co.uk/diary/2014/08/dmu-phd-showcase-->
+    <dt><a href="http://interactlabs.co.uk/diary/2014/08/dmu-phd-showcase" class="h3link pdf" target="_blank">DMU PhD Showcase</a></dt>
+		<dd>Interact Labs article on the showcase in 2014</dd>
 
 		<dt><a href="http://www.tandfonline.com/doi/full/10.1080/14626268.2013.813377#.U6li4_ldV8E">DC24:3 Article</a></dt>
-		<dd>'The pataphysics of creativity' <br>Digital Creativity Journal 24:3 2013</dd>
+		<dd>"The pataphysics of creativity" Digital Creativity Journal 24:3 2013</dd>
 
 		<dt><a href="http://dl.acm.org/citation.cfm?id=2466648">C&C13 Paper</a></dt>
-		<dd>'Creative search using pataphysics' <br>Presented at Creativity & Cognition conference in Sydney 2013</dd>
+		<dd>"Creative search using pataphysics" Presented at <a href="http://cc13.creativityandcognition.com/">Creativity & Cognition conference 2013</a> in Sydney</dd>
 
 		<dt><a href="https://www.youtube.com/watch?v=UxYUZMyPE0o">TDC Talk</a></dt>
-		<dd>'The Pataphysics of the Future' <br>Talk at De Montfort University 2013</dd>
+		<dd>"The Pataphysics of the Future" Talk at De Montfort University 2013</dd>
 
 		<dt><a href="http://www.thinkmind.org/index.php?view=article&articleid=content_2011_3_30_60068">CONTENT11 Paper</a></dt>
-		<dd>'A Framework for Creativity in Search Results' <br>CONTENT conference 2011</dd>
+		<dd>"A Framework for Creativity in Search Results" CONTENT conference 2011</dd>
 
 		<dt><a href="http://andrewhugill.com/theimaginaryvoyage/#">The Imaginary Voyage</a></dt>
 		<dd>An online opera by Hugill, Scott, Wake-Walker and the Opera Group.</dd>
@@ -153,35 +156,81 @@
 
 
 <!-- BOOKMARKS ---------------------------------------------------------- -->
-<main id="bookmarksM" class="spacing dark-theme">
+<main id="bookmarksM" class="hide spacing dark-theme">
 	<!-- 
-	<article>
-		<h3>Weekday Day Month Year</h3>
-		<p>Description.</p>
-		<a href="" title=""><img src="images/NAME.jpg" alt="" /></a>
-	</article> 
+  <article>
+    <h3></h3>
+    <p><time></time></p>
+    <figure>
+      <img src="" alt="" title="" />
+      <figcaption></figcaption>
+    </figure>
+    <p></p>
+    <ul>
+      <li class="booklink"><a href="">link</a></li>
+    </ul>
+  </article>
 	-->
 
-	<h2>Bookmarks</h2>
+	<h1>Bookmarks</h1>
 
 	<article>
-		<h3>Thursday 08 November 2018</h3>
-		<p class="textentry">I'm redesigning this site.</p>
+		<h3>November 2018</h3>
+		<p>I'm redesigning this site.</p>
 	</article>
 
-	<article>
-		<h3>Saturday 14 March 2015</h3>
-		<p>I'm a bit fan of Nicolas Bernier's work.</p>
-		<a href="http://www.nicolasbernier.com/page/works.htm#flq" title="Nicolas Bernier: FREQUENCIES (LIGHT QUANTA)&#10;(Image from www.sitno.es)"><img src="images/bernier.jpg" alt="FREQUENCIES (LIGHT QUANTA)" /></a>
-	</article>
+  <article>
+    <h3>Billy Roh: Albers as a Millennial</h3>
+    <p><time>November 2018</time></p>
+    <figure>
+      <img src="../images/albers.png" alt="Billy Roh: Albers as a Millenial" title="Josef Albers - Homage to the Square (by Billy Roh)"
+      />
+      <figcaption>Josef Albers - Homage to the Square (by Billy Roh)</figcaption>
+    </figure>
+    <ul>
+      <li class="booklink"><a href="https://billyroh.com/albers/">billyroh.com/albers</a></li>
+      <li class="booklink"><a href="https://albersfoundation.org/">albersfoundation.org</a></li>
+      <li class="booklink"><a href="https://www.centrepompidou-metz.fr/en/modern-couples">centrepompidou-metz.fr/en/modern-couples</a></li>
+    </ul>
+  </article>
 
-	<article>
-		<h3>Saturday 14 March 2015</h3>
-		<p></p>
-		<a href="http://www.patakosmos.com/tool_pataphysical_search/" title="My PhD project was featured on PataKosmos (at some point in 2014) - what a surprise!"><img src="images/logopiccolo.jpg" alt="PataKosmos" /></a>
-	</article>
+  <article>
+    <h3>Nicolas Bernier</h3>
+    <p><time>November 2018</time>, <time>March 2014</time></p>
+    <figure>
+      <img src="../images/Monolithe04.jpg" alt="Nicholas Bernier: Monolithe 04" title="Nicolas Bernier: Monolithe 04&#10;(Image from nicolasbernier.com)"
+      />
+      <figcaption>Monolithe 04</figcaption>
+    </figure>
+    <figure>
+      <img src="../images/bernier.jpg" alt="Nicholas Bernier: FREQUENCIES (LIGHT QUANTA)" title="Nicolas Bernier: FREQUENCIES (LIGHT QUANTA)&#10;(Image from www.sitno.es)"
+      />
+      <figcaption>Frequencies (Light Quanta)</figcaption>
+    </figure>
+    <ul>
+      <li class="booklink"><a href="http://www.nicolasbernier.com/page/works.htm#flq">nicolasbernier.com</a></li>
+      <li class="booklink"><a href="https://www.phoenix.org.uk/event/visible-bits-audible-bytes/">phoenix.org.uk/event/visible-bits-audible-bytes</a></li>
+      <li class="booklink"><a href="https://www.phoenix.org.uk/event/nicolas-bernier-frequencies-a/">phoenix.org.uk/event/nicolas-bernier-frequencies-a</a></li>
+    </ul>
+  </article>
 
-		<!--<article>
+  <article>
+    <h3>PataKosmos</h3>
+    <p><time>March 2015</time></p>
+    <figure>
+      <img src="images/logopiccolo.jpg" alt="PataKosmos website logo" title="My PhD project was featured on PataKosmos (at some point in 2014) - what a surprise!" />
+      <figcaption>PataKosmos</figcaption>
+    </figure>
+    <ul>
+      <li class="booklink"><a href="http://www.patakosmos.com">patakosmos.com</a></li>
+      <li class="booklink"><a href="http://www.patakosmos.com/tool_pataphysical_search/">patakosmos.com/tool_pataphysical_search</a></li>
+    </ul>
+  </article> 
+
+
+
+  <!-- <article>
+    <h3>Colours</h3>
 		<p> Friday 25 July 2014</h3>
 		<div class="mkl" style="background: #012e40">&nbsp;</div>
 		<div class="mkr" style="background:	#65193F">&nbsp;</div>
@@ -193,7 +242,7 @@
 		<div class="mkr" style="background:	#0A3B1D">&nbsp;</div>
 		<div class="mkl" style="background: #cef2f2">&nbsp;</div>
 		<div class="mkr" style="background:	#1A052C">&nbsp;</div>
-		<br><div style="clear:both"></div><br>
+		<br><br>
 		<div class="mkl" style="background:	#222940">&nbsp;</div>
 		<div class="mkr" style="background:	#d7d2d9">&nbsp;</div>
 		<div class="mkl" style="background:	#3b4859">&nbsp;</div>
@@ -204,7 +253,7 @@
 		<div class="mkr" style="background:	#1d1826">&nbsp;</div>
 		<div class="mkl" style="background:	#8c7f77">&nbsp;</div>
 		<div class="mkr" style="background:	#403131">&nbsp;</div>
-		<br><div style="clear:both"></div><br>
+		<br><br>
 		<div class="mkl" style="background:	#dce4f2">&nbsp;</div>
 		<div class="mkr" style="background:	#40423f">&nbsp;</div>
 		<div class="mkl" style="background:	#152c40">&nbsp;</div>
@@ -215,7 +264,7 @@
 		<div class="mkr" style="background:	#595246">&nbsp;</div>
 		<div class="mkl" style="background:	#698c86">&nbsp;</div>
 		<div class="mkr" style="background:	#262118">&nbsp;</div>
-		<br><div style="clear:both"></div><br>
+		<br><br>
 		<div class="mkl" style="background:	#A40355">&nbsp;</div>
 		<div class="mkr" style="background:	#132B33">&nbsp;</div>
 		<div class="mkl" style="background:	#b1c1c5">&nbsp;</div>
@@ -226,47 +275,99 @@
 		<div class="mkr" style="background:	#400A24">&nbsp;</div>
 		<div class="mkl" style="background:	#201a1f">&nbsp;</div>
 		<div class="mkr" style="background:	#8B1F91">&nbsp;</div>
-		<div style="clear:both"></div>
 		<br>
 	</article> -->
 
 	<article>
-		<h3>Tuesday 29 July 2014</h3>
-		<p></p>
-		<a href="http://phdcomics.com/comics.php?f=1734" title="My limbic system and inferior frontal gyrus must be broken."><img src="images/phd072814s.gif" alt="Neurobiology of Writing" /></a>
+		<h3>Neurobiology of Writing</h3>
+		<p><time>July 2014</time></p>
+    <figure>
+      <img src="images/phd072814s.gif" alt="Neurobiology of Writing" />
+      <figcaption>PHD comics #1734</figcaption>
+    </figure>
+    <ul>
+      <li class="booklink"><a href="http://phdcomics.com">phdcomics.com</a></li>
+      <li class="booklink"><a href="http://phdcomics.com/comics.php?f=1734" title="My limbic system and inferior frontal gyrus must be broken.">phdcomics.com/comics.php?f=1734</a></li>
+    </ul>
 	</article>
 
-	<article>
-		<h3>Monday 14 July 2014</h3>
-		<p></p>
-		<div class="murakami">
-		<div class="mkl">
-		<a href="http://en.gallery-kaikaikiki.com/category/artists/takashi_murakami/" class="image mk" target="_blank" title="Takashi Murakami ^^"><img src="images/murakamil.png" alt="Murakami" /></a>
-		</div>
-		<div class="mkr">
-		<a href="https://octodex.github.com/" class="image mk" target="_blank" title="Also: Notocat, Pythocat and ofc Femalecodertocat.&#10;See GitHub Octodex."><img src="images/murakamir.png" alt="Octocat" /></a>
-		</div>
-		</div>
-		<div style="clear:both"></div>
-	</article>
+  <article>
+    <h3>Murakamicat</h3>
+    <p><time></time></p>
+    <figure>
+      <div class="murakami">
+      <div class="mkl">
+      <a href="http://en.gallery-kaikaikiki.com/category/artists/takashi_murakami/" class="image mk" target="_blank" title="Takashi Murakami ^^"><img src="images/murakamil.png" alt="Murakami" /></a>
+      </div>
+      <div class="mkr">
+      <a href="https://octodex.github.com/" class="image mk" target="_blank" title="Also: Notocat, Pythocat and ofc Femalecodertocat.&#10;See GitHub Octodex."><img src="images/murakamir.png" alt="Octocat" /></a>
+      </div>
+      </div>
+      <figcaption>Octocat number 83 of GitHub</figcaption>
+    </figure>
+    <ul>
+      <li class="booklink"><a href="https://octodex.github.com/">octodex.github.com</a></li>
+      <li class="booklink"><a href="http://en.gallery-kaikaikiki.com/category/artists/takashi_murakami/">en.gallery-kaikaikiki.com/category/artists/takashi_murakami</a></li>
+    </ul>
+  </article> 
 
-	<article>
-		<h3>Tuesday 08 July 2014</h3>
-		<p></p>
-		<a href="http://on1.zkm.de/zkm/e/" title="Nostalgia."><img src="images/rosalie_CHROMA_LUX_ZKM_pic007.jpg" alt="ZKM Karslruhe" /></a>
-	</article>
+  <article>
+    <h3>ZKM Karlsruhe</h3>
+    <p><time>September 2018</time></p>
+    <figure>
+      <img src="images/ZKM.jpg" alt="ZKM Karslruhe" />
+      <figcaption>rosalie: CHROMA_LUX, 2009, ZKM_Foyer</figcaption>
+    </figure>
+    <ul>
+      <li class="booklink"><a href="https://zkm.de/en">zkm.de/en</a></li>
+      <li class="booklink"><a href="http://on1.zkm.de/zkm/e/">zkm.de</a></li>
+      <li class="booklink"><a href="http://at.zkm.de/node/510">rosalie-chrome-lux</a></li>
+      <li class="booklink"><a href="https://zkm.de/de/ausstellung/2017/10/open-codes">open-codes-austellung</a></li>
+      <li class="booklink"><a href="https://zkm.de/de/ausstellung/2018/07/kunst-in-bewegung-100-meisterwerke-mit-und-durch-medien">kunst-in-bewegung-100-meisterwerke-mit-und-durch-medien</a></li>
+    </ul>
+  </article> 
 
-	<article>
-		<h3>Saturday 05 July 2014</h3>
-		<p></p>
-		<a href="http://kentuckyroutezero.com/" title="Just finished episode 3."><img src="images/krz.jpg" alt="Kentucky Route Zero" /></a>
-	</article>
+  <article>
+    <h3>Kentucky Route Zero</h3>
+    <p><time>July 2014</time></p>
+    <figure>
+      <img src="images/krz.jpg" alt="Kentucky Route Zero" title="Kentucky Route Zero" />
+      <figcaption>Kentucky Route Zero - Episode 3</figcaption>
+    </figure>
+    <ul>
+      <li class="booklink"><a href="http://kentuckyroutezero.com/">entuckyroutezero.com</a></li>
+    </ul>
+  </article> 
 
-	<article>
-		<h3>Someday Day June 2014</h3>
-		<p></p>
-		<a href="http://www.bachelormachines.org/stevecalvert_pataphysics.html" title="Newest item on my reading list."><img src="images/MEK-Trial-p6-FXCSR-copy3-oranger444copy.jpg" alt="Steve Calvert's Pataphysics" /></a>
-	</article>
+  <article>
+    <h3>Steve Calvert's Pataphysics</h3>
+    <p><time>June 2014</time></p>
+    <figure>
+      <img src="images/MEK-Trial-p6-FXCSR-copy3-oranger444copy.jpg" alt="Steve Calvert's Pataphysics" title="Steve Calvert's Pataphysics" />
+      <figcaption></figcaption>
+    </figure>
+    <p></p>
+    <ul>
+      <li class="bookunlink"><a href="http://www.bachelormachines.org/stevecalvert_pataphysics.html">bachelormachines.org/stevecalvert_pataphysics.html</a></li>
+    </ul>
+  </article> 
+
+  <!-- CONTINUE EDITING BELOW HERE -->
+
+  <!-- 
+  <article>
+    <h3></h3>
+    <p><time></time></p>
+    <figure>
+      <img src="" alt="" title="" />
+      <figcaption></figcaption>
+    </figure>
+    <p></p>
+    <ul>
+      <li class="booklink"><a href="">link</a></li>
+    </ul>
+  </article> 
+  -->
 
 	<article>
 		<h3>Someday Day June 2014</h3>
@@ -395,74 +496,32 @@ n,0);}main(){S(Q(Ar),a)();}H              Ar;t*ist="Rene Magritte"-(1898-1967);
 
 </main>
 
-<aside id="bookmarksA" class="spacing light-theme">
+<aside id="bookmarksA" class="hide spacing light-theme">
 	<h2>Linky-Winky</h2>
-	<dl>
+  <ul class="bulletfree">
+    <li><a href="https://www.3ammagazine.com/3am/">3am Magazine</a> Whatever it is, I'm against it too.</li>
+    <li><a href="http://ncase.me/trust/">The Evolution of Trust</a> A bit depressing really.</li>
+    <li><a href="http://butdoesitfloat.com/%22">butdoesitfloat</a> More arts stuff. I could get lost in there.</li>
+    <li><a href="http://earth.nullschool.net/#current/wind/surface/level/orthographic=-57.35,-87.84,407">earth.nullschool.net</a> Very relaxing. Screensaver worthy.</li>
+    <li><a href="http://www.windmaedchen.com/">Windmaedchen</a> 2D Animation. Illustration. Game Design. Artist. Sister.</li>
+    <li><a href="http://50watts.com/">50 Watts</a> Book design &amp; illustration.</li>
+    <li><a href="http://www.ubu.com/">Ubu Web</a> Avant-garde, ethnopoetics and outsider art.</li>
+    <li><a href="http://translationparty.com/">Translation Party</a> 翻訳パーティー。 Huh, what?</li>
+    <li><a href="https://www.ukiyoeheroes.com/">Ukiyo-e Heroes</a> Woodblock prints. Japanese style.</li>
+    <li><a href="http://www.streetartutopia.com/">Street Art Utopia</a> I’m running out. Of things to say.</li>
+    <li><a href="http://legacy.python.org/dev/peps/pep-0020/">PEP 20</a> The Zen of Python. Should apply to everything.</li>
+    <li><a href="http://regexcrossword.com/">Regex Crossword</a> Nerd crossword. Happy procrastinating.</li>
+    <li><a href="http://foulomatic.hnldesign.nl/">Foul-o-Matic</a> Insult, swear &amp; curse word generator.</li>
+    <li><a href="http://labs.teehanlax.com/project/painting-with-a-digital-brush">Ascii Street View</a> Real-h3 Ascii Art. Somebody fix this plx!</li>
+    <li><a href="http://www.evergreenreview.com/102/fiction/duo.html">Ballard vs Jarry</a> Considered as an even website race.</li>
+    <li><a href="http://www.jasondavies.com/wordtree/?source=6fb6d66f4f8531c29ba39a541b9d7856&amp;prefix=Ha%20&amp;reverse=0&amp;phrase-line=0">Word Tree</a> Wordtree of Faustroll Ha Ha.</li>
+    <li><a href="http://www.langorigami.com/art/creasepatterns/creasepatterns_gallery.php">Origami</a> Origami crease patterns by Robert Lang.</li>
+    <li><a href="http://sciencevsmagic.net/fractal/#1080,0625,6,3,0,1,1">Fractal Machine</a> Fractals. Beautiful.</li>
+    <li><a href="http://www.koalastothemax.com/">Koalas to the max!</a> MinimalKoala</li>
+    <li><a href="http://algo-rythmics.ms.sapientia.ro/">Algorythmics</a> Algorithms and Music.</li>
+    <li><a href="http://gif-iti.tumblr.com/">Gif-iti</a> Gifs. Grafiti.</li>
+  </ul>
 
-		<dt><a href="http://butdoesitfloat.com/" class="h3link ext" target="_blank">butdoesitfloat</a></dt>
-		<dd>More arts stuff. <br>I could get lost in there.</dd>
-
-		<dt><a href="http://earth.nullschool.net/#current/wind/surface/level/orthographic=-57.35,-87.84,407" class="h3link ext" target="_blank">earth.nullschool.net</a></dt>
-		<dd>Very relaxing. <br>Screensaver worthy.</dd>
-
-		<dt><a href="http://www.windmaedchen.com/" class="h3link ext" target="_blank">Windmaedchen</a></dt>
-		<dd>2D Animation. Illustration. <br>Game Design. Artist. Sister.</dd>
-
-		<dt><a href="http://50watts.com/" class="h3link ext" target="_blank">50 Watts</a></dt>
-		<dd>Book design & illustration.</dd>
-
-		<dt><a href="http://www.ubu.com/" class="h3link ext" target="_blank">Ubu Web</a></dt>
-		<dd>Avant-garde, ethnopoetics <br> & outsider art.</dd>
-
-		<dt><a href="http://translationparty.com/" class="h3link ext" target="_blank">Translation Party</a></dt>
-		<dd>翻訳パーティー。 <br>Huh, what?</dd>
-
-		<dt><a href="https://www.ukiyoeheroes.com/" class="h3link ext" target="_blank">Ukiyo-e Heroes</a></dt>
-		<dd>Woodblock prints. <br>Japanese style.</dd>
-
-		<dt><a href="http://www.streetartutopia.com/" class="h3link ext" target="_blank">Street Art Utopia</a></dt>
-		<dd>I'm running out. <br>Of things to say.</dd>
-
-		<dt><a href="http://legacy.python.org/dev/peps/pep-0020/" class="h3link ext" target="_blank">PEP 20</a></dt>
-		<dd>The Zen of Python. <br>Should apply to everything.</dd>
-
-		<dt><a href="http://regexcrossword.com/" class="h3link ext" target="_blank">Regex Crossword</a></dt>
-		<dd>Nerd crossword. <br>Happy procrastinating.</dd>
-
-		<dt><a href="http://foulomatic.hnldesign.nl/" class="h3link ext" target="_blank">Foul-o-Matic</a></dt>
-		<dd>Insult, swear & curse <br>word generator.</dd>
-
-		<dt><a href="http://labs.teehanlax.com/project/painting-with-a-digital-brush" class="h3link ext" target="_blank">Ascii Street View</a></dt>
-		<dd>Real-h3 Ascii Art. <br>Somebody fix this plx!</dd>
-
-		<dt><a href="http://www.evergreenreview.com/102/fiction/duo.html" class="h3link ext" target="_blank">Ballard vs Jarry</a></dt>
-		<dd>Considered as an even <br>website race.</dd>
-
-		<dt><a href="http://www.jasondavies.com/wordtree/?source=6fb6d66f4f8531c29ba39a541b9d7856&prefix=Ha%20&reverse=0&phrase-line=0" class="h3link ext" target="_blank">Word Tree</a></dt>
-		<dd>Wordtree of Faustroll <br>Ha Ha.</dd>
-
-		<dt><a href="http://www.langorigami.com/art/creasepatterns/creasepatterns_gallery.php" class="h3link ext" target="_blank">Origami</a></dt>
-		<dd>Origami crease patterns <br> by Robert Lang.</dd>
-
-		<dt><a href="http://sciencevsmagic.net/fractal/#1080,0625,6,3,0,1,1" class="h3link ext" target="_blank">Fractal Machine</a></dt>
-		<dd>Fractals. <br>Beautiful.</dd>
-
-		<dt><a href="http://www.koalastothemax.com/" class="h3link ext" target="_blank">Koalas to the max!</a></dt>
-		<dd>Minimal<br>Koala</dd>
-
-		<dt><a href="http://algo-rythmics.ms.sapientia.ro/" class="h3link ext" target="_blank">Algorythmics</a></dt>
-		<dd>Algorithms<br> and Music.</dd>
-
-		<dt><a href="http://gif-iti.tumblr.com/" class="h3link ext" target="_blank">Gif-iti</a></dt>
-		<dd>Gifs. <br>Grafiti.</dd>
-
-		<dt><a href="http://www.koalastothemax.com/" class="h3link ext" target="_blank">Koalas to the max!</a></dt>
-		<dd>Minimal<br>Koala</dd>
-
-		<dt><a href="http://algo-rythmics.ms.sapientia.ro/" class="h3link ext" target="_blank">Algorythmics</a></dt>
-		<dd>Algorithms<br> and Music.</dd>
-
-	</dl>
 </aside>
 <!-- END BOOKMARKS ------------------------------------------------------ -->
 
@@ -478,224 +537,420 @@ n,0);}main(){S(Q(Ar),a)();}H              Ar;t*ist="Rene Magritte"-(1898-1967);
 
 
 <!-- CHEATS ------------------------------------------------------------- -->
-<main id="cheatsM" class="spacing light-theme">
+<main id="cheatsM" class="hide spacing light-theme">
 
-<section class="content">
-
-	<h2>Solutions Log</h2>
+	<h1>Solutions Log</h1>
+  <p>Inspired by the <a href="http://www.ecoconsulting.co.uk/solutions/">infinite solutions log</a> <i class="far fa-thumbs-up"></i></p>
 	<p><strong><a href="http://xkcd.com/979/">DEAR PEOPLE FROM THE FUTURE: Here's what we've figured out so far ...</a></strong></p>
 
-	<!-- <article>
-		<h2><i class="fa fa-terminal"></i> Heading</h2>
-		<ul>
-			<li class="info"><a href=""></a></li>
-			<li class="win"><code></code></li>
-			<li class="mac"><code></code></li>
-			<li class="null"><code></code></li>
-		</ul>
-	</article> -->
+<!--[if IE]>
+  Sections below should be openable and closable <em>(apart from certain well-known much-hated browsers)</em>.
+<![endif]-->
+
+  <!-- 
+  <article>
+    <details>
+      <summary>
+        <h3></h3>
+      </summary>
+      <time></time>
+      <p></p>
+      <ul>
+        <li><a href="">link</a></li>
+        <li class="info"><a href=""></a></li>
+        <li class="win"><code></code></li>
+        <li class="mac"><code></code></li>
+        <li class="null"><code></code></li>
+      </ul>
+    </details>
+  </article>
+  -->
 
 	<!-- https://www.fpcomplete.com/blog/2012/09/ten-things-you-should-know-about-haskell-syntax
 	https://www.haskell.org/onlinereport/decls.html#fixity
 	-->
 
-	<article>
-		<h3><i class="fa fa-terminal"></i> VS Marketplace</h3>
-		<ul>
-			<li class="info"><a href="https://marketplace.visualstudio.com/manage/publishers/fania">Manage published extensions</a></li>
+  <!-- <i class="fa fa-terminal"></i> -->
+
+  <article>
+    <details>
+      <summary>
+        <h3>SSL Certificates</h3>
+      </summary>
+      <time>May 2018</time>
+      <p></p>
+      <ul>
+        <li>generate an SSL certificate <code>certbot certonly</code></li>
+        <li>show certificates and status <code>certbot certificates</code></li>
+        <li>renew certificates <code>certbot renew --force-renewal</code></li>
+        <li>restart nginx too</li>
+      </ul>
+      <pre><code>certbot renew --pre-hook &quot;service nginx stop&quot; --post-hook &quot;service nginx start&quot;</code></pre>
+      <p>cd /etc/letsencrypt/live</p>
+      <p><a href="https://certbot.eff.org/docs/using.html#managing-certificates">Certbot documentation</a></p>
+      <p>service nginx stop<br />
+      service nginx restart<br />
+      nginx -t</p>
+      <p>sudo ln -s name /etc/nginx/sites-enabled/name</p>
+      <p><a href="https://gist.github.com/robbiet480/b1e9a2a22501b8304547">CouchDB Nginx conf</a> <a href="https://www.ssllabs.com/ssltest/">SSL Checker</a></p>
+      <strong id="fix-ssl-labs-server-rating-ubuntu-nginx">fix ssl labs server rating ubuntu nginx</strong>
+      <!-- 1. sudo apt-get install --only-upgrade libssl1.0.0 openssl -->
+      <!-- 2. service nginx upgrade -->
+      <p><a href="https://blog.cloudflare.com/yet-another-padding-oracle-in-openssl-cbc-ciphersuites">link</a></p>
+    </details>
+  </article>
+
+  <article>
+    <details>
+      <summary>
+        <h3>Web Development</h3>
+      </summary>
+      <time>December 2017</time>
+      <p></p>
+      <ul>
+        <li><a href="https://realfavicongenerator.net/">Favicon Generator</a></li>
+        <li><a href="https://github.com/thedaviddias/Front-End-Checklist">Front End Checklist</a></li>
+        <li><a href="http://ogp.me/">Open Graph</a></li>
+        <li><p><a href="http://opengraphcheck.com/">Open Graph Checker</a></p></li>
+        <li><p><a href="https://www.google.com/webmasters/tools/home">Google Search Console / Webmaster</a></p></li>
+        <li><a href="https://search.google.com/test/mobile-friendly">Google Mobile Friendly Test</a></li>
+        <li><a href="https://search.google.com/structured-data/testing-tool">Google Structured Data Test</a></li>
+        <li><p><a href="https://www.google.com/webmasters/markup-helper/?hl=en-GB">Google Structured Markup Test</a></p></li>
+        <li><a href="https://json-ld.org/">JSON Linked Data</a></li>
+        <li><p><a href="https://json-ld.org/playground/">JSON LD Playground</a></p></li>
+        <li><a href="https://rdfa.info/">RDFa Linked Data</a></li>
+        <li><a href="https://rdfa.info/play/">RDFa Playground</a></li>
+        <li><p><a href="https://www.w3.org/TR/rdfa-lite/">RDFa Lite Documentation</a></p></li>
+      </ul>
+    </details>
+  </article>
+
+  <article>
+    <details>
+      <summary>
+        <h3>Server</h3>
+      </summary>
+      <time>November 2015</time>
+      <p></p>
+      <strong id="nginx-config-files">NGINX config files</strong>
+      <p>cd /etc/nginx/sites-available cd /etc/nginx/snippets</p>
+      <p>service nginx stop service nginx restart nginx -t</p>
+      <p>sudo ln -s name /etc/nginx/sites-enabled/name</p>
+      <p><a href="https://gist.github.com/robbiet480/b1e9a2a22501b8304547">CouchDB Nginx conf</a> <a href="https://www.ssllabs.com/ssltest/">SSL Checker</a></p>
+      <strong id="fix-ssl-labs-server-rating-ubuntu-nginx">fix ssl labs server rating ubuntu nginx</strong>
+      <!-- 1. sudo apt-get install --only-upgrade libssl1.0.0 openssl -->
+      <!-- 2. service nginx upgrade -->
+      <p><a href="https://blog.cloudflare.com/yet-another-padding-oracle-in-openssl-cbc-ciphersuites">link</a></p>
+      <strong id="netstat">Netstat</strong>
+      <p>netstat -plutn</p>
+      <strong id="couchdb-config-file">CouchDB config file</strong>
+      <p>nano /etc/couchdb/local.ini</p>
+      <p>/etc/init.d/couchdb stop /etc/init.d/couchdb restart</p>
+      <p>/home/ctec3905</p>
+      <p>Files: /usr/local/var/lib/couchdb</p>
+      <strong id="certbot">CertBot</strong>
+      <ul>
+        <li>generate an SSL certificae certbot certonly</li>
+        <li>show certificates certbot certificates</li>
+      </ul>
+      <strong id="ssl-certificates">SSL certificates</strong>
+      <p>cd /etc/letsencrypt/live</p>
+      <strong id="screen">Screen</strong>
+      <ul>
+        <li>show all running screens screen -ls</li>
+        <li>start new screen with name screen -S name</li>
+        <li>attach to a running session screen -x</li>
+        <li>attach to session name screen -r name <!-- - detaching *Ctrl-a d* --></li>
+      </ul>
+    </details>
+  </article>
+
+  <article>
+    <details>
+      <summary>
+        <h3>Texcount</h3>
+      </summary>
+      <time>October 2017</time>
+      <p>Texcount fix, Perl, Texcount.Perl - Comment out section on win stuff at top</p>
+    </details>
+  </article>
+
+  <article>
+    <details>
+      <summary>
+        <h3>Surface Pro 4</h3>
+      </summary>
+      <time>October 2017</time>
+      <p></p>
+      <ul>
+        <li class="win">Get battery report: <code>powercg /batteryreport</code></li>
+      </ul>
+    </details>
+  </article>
+
+  <article>
+    <details>
+      <summary>
+        <h3>VS Marketplace</h3>
+      </summary>
+      <time>October 2017</time>
+      <p></p>
+      <ul>
+        <li class="info"><a href="https://marketplace.visualstudio.com/manage/publishers/fania">Manage published extensions</a></li>
 			<li class="info"><a href="https://code.visualstudio.com/Docs/extensions/example-hello-world">Extension Tutorial Hello World</a></li>
 			<li class="info"><a href="https://code.visualstudio.com/docs/tools/vscecli">Publishing extensions with vsce</a></li>
 			<li class="win"><code>vsce login fania</code></li>
 			<li class="win"><code>vsce package</code></li>
 			<li class="win"><code>vsce publish minor/major</code></li>
-		</ul>
-	</article>
+      </ul>
+    </details>
+  </article>
 
-	<article>
-		<h3><i class="fa fa-terminal"></i> Useful Links</h3>
-		<ul>
-			<li class="info"><a href="http://www.dillinger.io">Dillinger</a>: For creating, editing and exporting markdown files in html.</li>
-			<li class="info"><a href="https://www.codecogs.com/latex/eqneditor.php">Latex Equation Editor</a>: For creating, editing Latex equations.</li>
-			<li class="info"><a href="http://www.tablesgenerator.com/">Table Generator</a>: For creating, editing tables in Latex, html, markdown, etc.</li>
-		</ul>
-	</article>
+  <article>
+    <details>
+      <summary>
+        <h3>GHCi Lambda Prompt</h3>
+      </summary>
+      <time>October 2017</time>
+      <ul>
+        <li class="info"><a href="http://www.asiteaboutnothing.net/c_haskell.html">Tutorial</a></li>
+        <li class="null">Find "ghci.conf" file and enter: <code>:set prompt "\x03BB> "</code></li>
+      </ul>
+    </details>
+  </article>
 
-	<!-- http://www.asiteaboutnothing.net/c_haskell.html -->
-	<article>
-		<h3><i class="fa fa-terminal"></i> GHCi Lambda Prompt</h3>
-		<ul>
-			<li class="info"><a href="http://www.asiteaboutnothing.net/c_haskell.html">Tutorial</a></li>
-			<li class="null">Find "ghci.conf" file and enter: <code>:set prompt "\x03BB> "</code></li>
-		</ul>
-	</article>
+  <article>
+    <details>
+      <summary>
+        <h3>Acrobat Reader Tool Pane</h3>
+      </summary>
+      <time>October 2017</time>
+      <ul>
+        <li class="info"><a href="https://forums.adobe.com/thread/1817184?tstart=0">Forum Help</a></li>
+        <li class="win">Uncheck preference located under Edit > Preferences > Documents "Open Tool pane for each document"</li>
+      </ul>
+    </details>
+  </article>
 
-	<article>
-		<h3><i class="fa fa-terminal"></i> Acrobat Reader Tool Pane</h3>
-		<ul>
-			<li class="info"><a href="https://forums.adobe.com/thread/1817184?tstart=0">Forum Help</a></li>
-			<li class="win">Uncheck preference located under Edit > Preferences > Documents "Open Tool pane for each document"</li>
-		</ul>
-	</article>
+  <article>
+    <details>
+      <summary>
+        <h3>Heroku</h3>
+      </summary>
+      <p></p>
+      <ul>
+        <li class="info">Dashboard <a href="https://dashboard.heroku.com/account">Login</a></li>
+        <li class="info">Install the <a href="https://toolbelt.heroku.com/">toolbelt</a></li>
+        <li class="info"><a href="https://devcenter.heroku.com/articles/getting-started-with-python">Python Flask Guide</a></li>
+        <li class="null">Login <code>heroku login</code> (needs authenticator code)</li>
+        <li class="win">Git Push <code>git push heroku master</code> only in git bash !</li>
+        <li class="null">make sure reqs.txt is called requirements.txt</li>
+      </ul>
+    </details>
+  </article>
 
-	<article>
-		<h3><i class="fa fa-terminal"></i> Heroku</h3>
-		<ul>
-			<li class="info">Dashboard <a href="https://dashboard.heroku.com/account">Login</a></li>
-			<li class="info">Install the <a href="https://toolbelt.heroku.com/">toolbelt</a></li>
-			<li class="info"><a href="https://devcenter.heroku.com/articles/getting-started-with-python">Python Flask Guide</a></li>
-			<li class="null">Login <code>heroku login</code> (needs authenticator code)</li>
-			<li class="win">Git Push <code>git push heroku master</code> only in git bash !</li>
-			<li class="null">make sure reqs.txt is called requirements.txt</li>
-		</ul>
-	</article>
+  <article>
+    <details>
+      <summary>
+        <h3>SASS</h3>
+      </summary>
+      <p></p>
+      <ul>
+        <li class="info">Reference <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html">SASS</a></li>
+        <li class="info">How to setup <a href="http://sublimetexttips.com/how-to-add-sass-support-in-sublime-text/">Sublime</a></li>
+        <li class="mac">Edit scss file and then <code>Command+B</code> to compile</li>
+        <li class="null">Edit init.js file to use sass or css files; or if scripts are disabled edit individual import statements in html files</li>
+      </ul>
+    </details>
+  </article>
 
-	<article>
-		<h3><i class="fa fa-terminal"></i> SASS</h3>
-		<ul>
-			<li class="info">Reference <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html">SASS</a></li>
-			<li class="info">How to setup <a href="http://sublimetexttips.com/how-to-add-sass-support-in-sublime-text/">Sublime</a></li>
-			<li class="mac">Edit scss file and then <code>Command+B</code> to compile</li>
-			<li class="null">Edit init.js file to use sass or css files; or if scripts are disabled edit individual import statements in html files</li>
-		</ul>
-	</article>
+  <article>
+    <details>
+      <summary>
+        <h3>NLTK</h3>
+      </summary>
+      <time>October 2017</time>
+      <p>WordNet</p>
+      <ul>
+        <li class="info">Reference <a href="http://www.nltk.org/howto/wordnet.html">WordNet Interface for NLTK</a></li>
+        <li class="null">Import wordnet <code>from nltk.corpus import wordnet as wn</code></li>
+        <li class="mac">Loop through lemmas <code>for l in synset.lemmas():</code></li>
+        <li class="mac">Lemma name as string <code>str(lemma.name())</code></li>
+        <li class="mac">Antonyms <code>synset.lemmas()[0].antonyms()</code></li>
+        <li class="null">Install NLTK 3.0.0b1 <code>pip install -Iv https://pypi.python.org/packages/source/n/nltk/nltk-3.0.0b1.tar.gz#md5=f3f67fcda9bc76f57d91811a572c36e4</code></li>
+        <li class="win">Install nltk data: (1) <code>python</code> (2) <code>import nltk</code> (3) <code>nltk.download()</code></li>
+      </ul>
+      <p>Data</p>
+      <ul>
+        <li class="info">Reference <a href="http://www.nltk.org/data.html">NLTK Data</a></li>
+        <li class="win">Install nltk data: (1) <code>python</code> (2) <code>import nltk</code> (3) <code>nltk.download()</code></li>
+      </ul>
+    </details>
+  </article>
 
-	<article>
-		<h3><i class="fa fa-terminal"></i> NLTK WordNet</h3>
-		<ul>
-			<li class="info">Reference <a href="http://www.nltk.org/howto/wordnet.html">WordNet Interface for NLTK</a></li>
-			<li class="null">Import wordnet <code>from nltk.corpus import wordnet as wn</code></li>
-			<li class="mac">Loop through lemmas <code>for l in synset.lemmas():</code></li>
-			<li class="mac">Lemma name as string <code>str(lemma.name())</code></li>
-			<li class="mac">Antonyms <code>synset.lemmas()[0].antonyms()</code></li>
-			<li class="null">Install NLTK 3.0.0b1 <code>pip install -Iv https://pypi.python.org/packages/source/n/nltk/nltk-3.0.0b1.tar.gz#md5=f3f67fcda9bc76f57d91811a572c36e4</code></li>
-			<li class="win">Install nltk data: (1) <code>python</code> (2) <code>import nltk</code> (3) <code>nltk.download()</code></li>
-		</ul>
-	</article>
+  <article>
+    <details>
+      <summary>
+        <h3>Terminal & Command Prompt</h3>
+      </summary>
+      <time>November 2015<time>
+      <p></p>
+      <ul>
+        <li class="win">'Shift-right-click' folder to open cmd there</li>
+        <li class="mac">Use the 'Open-In-Terminal' script</li>
+        <li class="mac">Show all locations of file <code>type -a NAME</code></li>
+        <li class="mac">Show location of file or folder <code>which NAME</code></li>
+        <li class="win">Show location of file or folder (if virtualenvwrapper-win is installed) <code>whereis &lt;NAME&gt;</code></li>
+        <li class="mac">Reload terminal <code>source ~/.bash_profile</code></li>
+        <li class="win">Reload cmd <code>SET PATH=%PATH%;C:\CmdShortcuts</code> (unconfirmed)</li>
+        <li class="win">Open cmd as admin 'Right-click' cmd executable</li>
+        <li class="mac">Edit files with <code>nano</code></li>
+        <li class="info"><a href="https://curl.haxx.se/docs/manpage.html">Curl Manual</a></li>
+      </ul>
+    </details>
+  </article>
 
-	<article>
-		<h3><i class="fa fa-terminal"></i> NLTK Data</h3>
-		<ul>
-			<li class="info">Reference <a href="http://www.nltk.org/data.html">NLTK Data</a></li>
-			<li class="win">Install nltk data: (1) <code>python</code> (2) <code>import nltk</code> (3) <code>nltk.download()</code></li>
-		</ul>
-	</article>
+  <article>
+    <details>
+      <summary>
+        <h3>Paths</h3>
+      </summary>
+      <time>October 2017</time>
+      <ul>
+        <li class="win"><code>C:\Python27;C:\Python27\Scripts;</code></li>
+        <li class="mac">Set folder for virtualenvs <code>export WORKON_HOME=$HOME/.virtualenvs</code></li>
+        <li class="mac">Set folder for virtualenv projects <code>export PROJECT_HOME=$HOME/Desktop/PhD_Offline/Git_code</code></li>
+        <li class="mac"><code>source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh</code></li>
+        <li class="mac"><code>PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"</code></li>
+        <li class="mac"><code>PYTHONPATH="/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/:${PYTHONPATH}"</code></li>
+        <li class="mac"><code>export PATH</code></li>
+      </ul>
+    </details>
+  </article>
 
-	<article>
-		<h3><i class="fa fa-terminal"></i> Terminal & Command Prompt</h3>
-		<ul>
-			<li class="win">'Shift-right-click' folder to open cmd there</li>
-			<li class="mac">Use the 'Open-In-Terminal' script</li>
-			<li class="mac">Show all locations of file <code>type -a NAME</code></li>
-			<li class="mac">Show location of file or folder <code>which NAME</code></li>
-			<li class="win">Show location of file or folder (if virtualenvwrapper-win is installed) <code>whereis &lt;NAME&gt;</code></li>
-			<li class="mac">Reload terminal <code>source ~/.bash_profile</code></li>
-			<li class="win">Reload cmd <code>SET PATH=%PATH%;C:\CmdShortcuts</code> (unconfirmed)</li>
-			<li class="win">Open cmd as admin 'Right-click' cmd executable</li>
-			<li class="mac">Edit files with <code>nano</code></li>
-		</ul>
-	</article>
+  <article>
+    <details>
+      <summary>
+        <h3>Pip</h3>
+      </summary>
+      <time>October 2017</time>
+      <ul>
+        <li class="info">Reference <a href="https://pip.pypa.io/en/latest/user_guide.html">Pip</a></li>
+        <li class="mac">Upgrade pip <code>pip install -U pip</code></li>
+        <li class="win">Upgrade pip <code>python -m pip install -U pip</code></li>
+        <li class="null">Install NAME <code>pip install NAME</code></li>
+        <li class="null">Install NAME version 1.0.4 <code>pip install NAME==1.0.4</code></li>
+        <li class="null">Install specific version <code>pip install -Iv Link-to-tar.gz</code></li>
+        <li class="null">Uninstall NAME <code>pip uninstall NAME</code></li>
+        <li class="null">Show installed packages <code>pip list</code></li>
+        <li class="null">Show out-of-date packages <code>pip list --outdated</code></li>
+        <li class="null">Upgrade NAME <code>pip install --upgrade NAME</code></li>
+        <li class="null">To freeze local requirements <code>pip freeze --local > requirements.txt</code></li>
+        <li class="null">To freeze requirements <code>pip freeze > requirements.txt</code></li>
+        <li class="null">To install from requirements <code>pip install -r requirements.txt</code></li>
+      </ul>
+    </details>
+  </article>
 
-	<article>
-		<h3><i class="fa fa-terminal"></i> Paths</h3>
-		<ul>
-			<li class="win"><code>C:\Python27;C:\Python27\Scripts;</code></li>
-			<li class="mac">Set folder for virtualenvs <code>export WORKON_HOME=$HOME/.virtualenvs</code></li>
-			<li class="mac">Set folder for virtualenv projects <code>export PROJECT_HOME=$HOME/Desktop/PhD_Offline/Git_code</code></li>
-			<li class="mac"><code>source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh</code></li>
-			<li class="mac"><code>PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"</code></li>
-			<li class="mac"><code>PYTHONPATH="/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/:${PYTHONPATH}"</code></li>
-			<li class="mac"><code>export PATH</code></li>
-		</ul>
-	</article>
+  <article>
+    <details>
+      <summary>
+        <h3>Python</h3>
+      </summary>
+      <time>October 2017</time>
+      <p>Switch the /usr/bin/python link to point to current python link:</p>
+      <ul>
+        <li class="mac"><code>cd /usr/bin</code></li>
+        <li class="mac"><code>rm -f python</code></li>
+        <li class="mac"><code>ln -s /Library/Frameworks/Python.framework/Versions/Current/bin/python python</code></li>
+      </ul>
+    </details>
+  </article>
 
-	<article>
-		<h3><i class="fa fa-terminal"></i> Pip</h3>
-		<ul>
-			<li class="info">Reference <a href="https://pip.pypa.io/en/latest/user_guide.html">Pip</a></li>
-			<li class="mac">Upgrade pip <code>pip install -U pip</code></li>
-			<li class="win">Upgrade pip <code>python -m pip install -U pip</code></li>
-			<li class="null">Install NAME <code>pip install NAME</code></li>
-			<li class="null">Install NAME version 1.0.4 <code>pip install NAME==1.0.4</code></li>
-			<li class="null">Install specific version <code>pip install -Iv Link-to-tar.gz</code></li>
-			<li class="null">Uninstall NAME <code>pip uninstall NAME</code></li>
-			<li class="null">Show installed packages <code>pip list</code></li>
-			<li class="null">Show out-of-date packages <code>pip list --outdated</code></li>
-			<li class="null">Upgrade NAME <code>pip install --upgrade NAME</code></li>
-			<li class="null">To freeze local requirements <code>pip freeze --local > requirements.txt</code></li>
-			<li class="null">To freeze requirements <code>pip freeze > requirements.txt</code></li>
-			<li class="null">To install from requirements <code>pip install -r requirements.txt</code></li>
-		</ul>
-	</article>
+  <article>
+    <details>
+      <summary>
+        <h3>Virtualenv</h3>
+      </summary>
+      <time>October 2017</time>
+      <p></p>
+      <ul>
+        <li class="info">Reference <a href="http://virtualenv.readthedocs.org/en/latest/virtualenv.html#usage">Virtualenv</a></li>
+        <li class="null">Create a new venv <code>virtualenv NAME</code></li>
+        <li class="mac">Activate NAME <code>. NAME/bin/activate</code></li>
+        <li class="win">Activate NAME <code>NAME\scripts\activate</code></li>
+        <li class="null">Deactivate <code>deactivate</code></li>
+      </ul>
+    </details>
+  </article>
 
-	<article>
-		<h3><i class="fa fa-bug"></i> Switch the /usr/bin/python link to point to current python link</h3>
-		<ul>
-			<li class="mac"><code>cd /usr/bin</code></li>
-			<li class="mac"><code>rm -f python</code></li>
-			<li class="mac"><code>ln -s /Library/Frameworks/Python.framework/Versions/Current/bin/python python</code></li>
-		</ul>
-	</article>
+  <article>
+    <details>
+      <summary>
+        <h3>Virtualenvwrapper</h3>
+      </summary>
+      <p></p>
+      <ul>
+        <li class="info">Reference <a href="https://github.com/davidmarble/virtualenvwrapper-win">Virtualenvwrapper-win</a></li>
+        <li class="info">Reference <a href="http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html">Virtualenvwrapper</a></li>
+        <li class="null">Make a new venv <code>mkvirtualenv ENVNAME</code></li>
+        <li class="null">List all virtualenvs <code>workon</code> or <code>lsvirtualenv</code></li>
+        <li class="null">Activate a virtualenv <code>workon ENVNAME</code></li>
+        <li class="null">Deactivate virtualenv <code>deactivate</code></li>
+        <li class="null">Remove virtualenv <code>deactivate</code> and then <code>rmvirtualenv ENVNAME</code></li>
+        <li class="win">Bind ENVNAME to project <code>setprojectdir &lt;project_path&gt;</code></li>
+        <li class="mac">Bind ENVNAME to project <code>setvirtualenvproject [virtualenv_path project_path]</code></li>
+      </ul>
+      <p>Virtualenvwrapper-win not finding virtualenv-script.py:</p>
+      <ul>
+        <li class="win">Edit <code>C:\PythonXY\scripts\mkvirtualenv.bat</code> with the following changes on lines 47, 48</li>
+        <li class="win">Line 47 <code>virtualenv.exe %*</code></li>
+        <li class="win">Line 48 <code>REM python.exe "%PYHOME%\Scripts\virtualenv-script.py" %ARGS%</code></li>
+      </ul>
+    </details>
+  </article>
 
-	<article>
-		<h3><i class="fa fa-bug"></i> Virtualenvwrapper-win not finding virtualenv-script.py</h3>
-		<ul>
-			<li class="win">Edit <code>C:\PythonXY\scripts\mkvirtualenv.bat</code> with the following changes on lines 47, 48</li>
-			<li class="win">Line 47 <code>virtualenv.exe %*</code></li>
-			<li class="win">Line 48 <code>REM python.exe "%PYHOME%\Scripts\virtualenv-script.py" %ARGS%</code></li>
-		</ul>
-	</article>
-
-	<article>
-		<h3><i class="fa fa-terminal"></i> Virtualenv</h3>
-		<ul>
-			<li class="info">Reference <a href="http://virtualenv.readthedocs.org/en/latest/virtualenv.html#usage">Virtualenv</a></li>
-			<li class="null">Create a new venv <code>virtualenv NAME</code></li>
-			<li class="mac">Activate NAME <code>. NAME/bin/activate</code></li>
-			<li class="win">Activate NAME <code>NAME\scripts\activate</code></li>
-			<li class="null">Deactivate <code>deactivate</code></li>
-		</ul>
-	</article>
-
-	<article>
-		<h3><i class="fa fa-terminal"></i> Virtualenvwrapper</h3>
-		<ul>
-			<li class="info">Reference <a href="https://github.com/davidmarble/virtualenvwrapper-win">Virtualenvwrapper-win</a></li>
-			<li class="info">Reference <a href="http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html">Virtualenvwrapper</a></li>
-			<li class="null">Make a new venv <code>mkvirtualenv ENVNAME</code></li>
-			<li class="null">List all virtualenvs <code>workon</code> or <code>lsvirtualenv</code></li>
-			<li class="null">Activate a virtualenv <code>workon ENVNAME</code></li>
-			<li class="null">Deactivate virtualenv <code>deactivate</code></li>
-			<li class="null">Remove virtualenv <code>deactivate</code> and then <code>rmvirtualenv ENVNAME</code></li>
-			<li class="win">Bind ENVNAME to project <code>setprojectdir &lt;project_path&gt;</code></li>
-			<li class="mac">Bind ENVNAME to project <code>setvirtualenvproject [virtualenv_path project_path]</code></li>
-		</ul>
-	</article>
-
-	<article>
-		<h3><i class="fa fa-terminal"></i> Git</h3>
-		<ul>
-			<li class="info">Visual <a href="https://raw.githubusercontent.com/nerdgirl/git-cheatsheet-visual/master/gitcheatsheet.png">Git Cheatsheet</a></li>
-			<li class="info">Reference <a href="http://git-scm.com/docs">Git Documentation</a></li>
-			<li class="null">Create repository in folder <code>git init</code></li>
-			<li class="null">Clone existing repository  <code>git clone LINK</code></li>
-			<li class="null">Add any new files <code>git add .</code></li>
-			<li class="null">Commit changes <code>git commit -m 'Message'</code></li>
-			<li class="null">Push changes <code>git push</code></li>
-			<li class="null">See log <code>git log</code></li>
-			<li class="null">See changes <code>git status</code> or <code>git diff</code></li>
-		</ul>
-	</article>
-
-</section> <!-- end of articles -->
+  <article>
+    <details>
+      <summary>
+        <h3>Git</h3>
+      </summary>
+      <time>November 2015</time>
+      <ul>
+        <li class="info"><a href="https://www.atlassian.com/git/tutorials/gitignore">Gitignore Tutorial by Atlassian</a></li>
+        <li class="info">Visual <a href="https://raw.githubusercontent.com/nerdgirl/git-cheatsheet-visual/master/gitcheatsheet.png">Git Cheatsheet</a></li>
+        <li class="info">Reference <a href="http://git-scm.com/docs">Git Documentation</a></li>
+        <li class="null">Create repository in folder <code>git init</code></li>
+        <li class="null">Clone existing repository  <code>git clone LINK</code></li>
+        <li class="null">Add any new files <code>git add .</code></li>
+        <li class="null">Commit changes <code>git commit -m 'Message'</code></li>
+        <li class="null">Push changes <code>git push</code></li>
+        <li class="null">See log <code>git log</code></li>
+        <li class="null">See changes <code>git status</code> or <code>git diff</code></li>
+      </ul>
+    </details>
+  </article>
 
 </main>
 
-<aside id="cheatsA" class="spacing dark-theme">
+<aside id="cheatsA" class="hide spacing dark-theme">
 
 	<h2>Useful Links</h2>
 
-	<ul>
+	<ul class="bulletfree">
+    <li><a href="https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/">Print CSS stylesheets</a></li>
 		<li><a href="https://www.haskell.org/">Haskell.org</a></li>
+    <li><a href="http://www.dillinger.io">Dillinger</a>: For creating, editing and exporting markdown files in html.</li>
+    <li><a href="https://www.codecogs.com/latex/eqneditor.php">Latex Equation Editor</a>: For creating, editing Latex equations.</li>
+    <li><a href="http://www.tablesgenerator.com/">Table Generator</a>: For creating, editing tables in Latex, html, markdown, etc.</li>
+    <li><a href="https://tmtheme-editor.herokuapp.com/#!/editor/theme/Monokai">TextMate Theme Generator</a></li>
+    <li>Icomoon for svg sprites</li>
+    <li>grunt</li>
+    <li>css currentcolor</li>
+    <li>animation snap.svg</li>
+    <li>patterns svgeneration.com</li>
+    <li>fallback svgeezy.js</li>
+
 	</ul>
 
 </aside> <!-- end of links -->
@@ -712,9 +967,34 @@ n,0);}main(){S(Q(Ar),a)();}H              Ar;t*ist="Rene Magritte"-(1898-1967);
 
 
 
+<!-- IMGS --------------------------------------------------------------- -->
+<main id="imgsM" class="hide spacing dark-theme">
+  <h1>Images</h1>
+  <img class="gallery" src="images/iceland.jpg">
+  <img class="gallery" src="images/japan.jpg">
+  <img class="gallery" src="images/sydney.jpg">
+</main>
+
+<aside id="imgsA" class="hide spacing light-theme">
+  <h2>More</h2>
+  <img class="gallery" src="images/people.jpg">
+  <img class="gallery" src="images/stockholm.jpg">
+  <!-- <img src="images/brexit.svg"> -->
+</aside>
+<!-- END IMGS ----------------------------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
 
 <footer>
-	<p><i class="fas fa-copyright"></i> Fania - <span id="date"></span></p>
+	<p>Code & Art & Research  <i class="fas fa-copyright"></i> Fania - <span id="date"></span></p>
 </footer>
 
 
