@@ -18,7 +18,15 @@ new ScrollMagic.Scene({
   duration: 200,
   offset: 40
 })
-// .setClassToggle(".left", "move")
-.setPin(".left")
-.addIndicators({name: "move left"})
+.setClassToggle(".left", "move")
+.addIndicators({name: "move"})
 .addTo(controller2);
+
+const controller = new ScrollMagic.Controller();
+new ScrollMagic.Scene({
+  // triggerElement: "header",
+  duration: 200,
+  offset: 40
+})
+.setClassToggle(".right", "move")
+.addTo(controller);

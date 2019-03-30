@@ -26,84 +26,70 @@
 
 <body>
 
-<header>
-  <!-- <div id="menudown"><i class="fas fa-angle-down"></i></div> -->
-  <div class="left dark-theme">
-    <section class="title">Fania</section>
-    <nav>
-      <i class="fronticon fas fa-smile"></i>
-      <i class="fronticon fas fa-code"></i>
-      <i id="bookmarks" title="Bookmarks" class="fronticon link fas fa-star"></i>
-      <i class="fronticon fas fa-heartbeat"></i>
-      <i class="fronticon fas fa-wheelchair"></i>
-      <i id="about" title="About" class="fronticon link fas fa-graduation-cap"></i>
-      <i class="fronticon fas fa-gamepad"></i>
-      <i class="fronticon fas fa-female"></i>
-      <i class="fronticon fas fa-bed"></i>
-      <i class="fronticon fas fa-puzzle-piece"></i>
-      <i class="fronticon fas fa-plane"></i>
-      <i id="cheats" title="Cheats" class="fronticon link fas fa-bug"></i>
-      <i class="fronticon fas fa-music"></i>
-    </nav>
-  </div>
-  <div class="right light-theme">
-    <nav>
-      <img id="home" title="Home" class="fronticon link spiral" src="images/favicons/spiral-static.svg">
-      <i class="fronticon fas fa-moon"></i>
-      <a class="fronticon" title="GitHub" href="https://github.com/fania/" target="_blank"><i class="fab fa-github-alt"></i></a>
-      <i class="fronticon fas fa-suitcase"></i>
-      <a class="fronticon"title="Teaching"  href="https://fania.github.io/teaching" target="_blank"><i class="fas fa-university"></i></a>
-      <i class="fronticon fab fa-reddit-alien"></i>
-      <i class="fronticon fas fa-tree"></i>
-      <i id="imgs" title="Images" class="fronticon link fas fa-camera"></i>
-      <i class="fronticon fas fa-leaf"></i>
-      <i class="fronticon fas fa-globe"></i>
-      <a class="fronticon" title="Dave" href="http://daveeveritt.org/" target="_blank"><i class="fas fa-heart"></i></a>
-      <i class="fronticon fas fa-snowflake"></i>
-      <i class="fronticon fas fa-frown"></i>
-    </nav>
-    <section class="brexit"><img id="brimg" src="images/brexit.svg"></section>
-  </div>
-  <!-- <div id="menuup" class="hide"><i class="fas fa-angle-up"></i></div> -->
+<div id="menuopen"><i class="fas fa-angle-down"></i></div>
+<header class="left dark-theme">
+  <section class="title">Fania</section>
+  <nav id="leftmenu" class="hide">
+    <i class="fronticon fas fa-smile"></i>
+    <i class="fronticon fas fa-code"></i>
+    <i id="bookmarks" title="Bookmarks" class="fronticon link fas fa-star"></i>
+    <i class="fronticon fas fa-heartbeat"></i>
+    <i class="fronticon fas fa-wheelchair"></i>
+    <i id="about" title="About" class="fronticon link fas fa-graduation-cap"></i>
+    <i class="fronticon fas fa-gamepad"></i>
+    <i class="fronticon fas fa-female"></i>
+    <i class="fronticon fas fa-bed"></i>
+    <i class="fronticon fas fa-puzzle-piece"></i>
+    <i class="fronticon fas fa-plane"></i>
+    <i id="cheats" title="Cheats" class="fronticon link fas fa-bug"></i>
+    <i class="fronticon fas fa-music"></i>
+  </nav>
 </header>
+<header class="right light-theme">
+  <nav id="rightmenu" class="hide">
+    <img id="home" title="Home" class="fronticon link spiral" src="images/favicons/spiral-static.svg">
+    <i class="fronticon fas fa-moon"></i>
+    <a class="fronticon" title="GitHub" href="https://github.com/fania/" target="_blank"><i class="fab fa-github-alt"></i></a>
+    <i class="fronticon fas fa-suitcase"></i>
+    <a class="fronticon"title="Teaching"  href="https://fania.github.io/teaching" target="_blank"><i class="fas fa-university"></i></a>
+    <i class="fronticon fab fa-reddit-alien"></i>
+    <i class="fronticon fas fa-tree"></i>
+    <i id="imgs" title="Images" class="fronticon link fas fa-camera"></i>
+    <i class="fronticon fas fa-leaf"></i>
+    <i class="fronticon fas fa-globe"></i>
+    <a class="fronticon" title="Dave" href="http://daveeveritt.org/" target="_blank"><i class="fas fa-heart"></i></a>
+    <i class="fronticon fas fa-snowflake"></i>
+    <i class="fronticon fas fa-frown"></i>
+  </nav>
+  <section class="brexit"><img id="brimg" src="images/brexit.svg"></section>
+</header>
+<div id="menuclose" class="hide"><i class="fas fa-angle-up"></i></div>
 
 
 
 
+<section id="aboutme">
 
-<section id="interlude">
-</section>
+  <main id="aboutM">
+    <h1>I think, therefore I am.</h1>
 
+    <h3>Current</h3>
+    <p>I'm a part-time lecturer at <a href="http://www.dmu.ac.uk/">De Montfort University</a>. Over the last few years I've taught <span title="Haskell">"Functional Programming"</span>, "Research", "Devices and Networks", "Multimedia",  and "Front End Web Development". I've also supervised final year students for their major projects.</p>
 
+    <h3>Un-Current</h3>
+    <p>I have a PhD in Software Engineering/Computer Science from <a href="http://www.dmu.ac.uk/">De Montfort University</a>. The title of my thesis is <strong title="Ha-Ha!&#10;No, I'm serious actually.">Algorithmic Meta-Creativity</strong> and it's available as HTML or PDF at <em><a href="https://dr.physics.wtf" target="_blank">dr.physics.wtf</a></em>.</p>
+    <p>My research interests revolve around studying human and computer creativity and how they are evaluated, the absurd pseudo philosophy pataphysics and its applications, and the development of creative exploratory search algorithms inspired by pataphysical concepts.</p>
+    <p>Although the PhD wasn't classed as "practice-based" research, an artefact <em><a href="https://pata.physics.wtf" target="_blank">pata.physics.wtf</a></em> was submitted alongside the thesis. The software for this was written (mostly) in Python.</p>
 
+    <p>I also have a MSc in Creative Technologies from <a href="http://www.ioct.dmu.ac.uk/masters/">De Montfort University</a>. The major project was a publicly showcased passive interactive installation, augmenting a live video stream of users with interactive elements using motion tracking algorithms. Code was written in C++.</p>
+    
+    <p>And going even further back, I've got a BSc from the <a href="http://www2.le.ac.uk/departments/computer-science/undergraduate/bsccomputerscience">University of Leicester</a>. For the major project I created a Sudoku solver, including a performance comparison between two different algorithms. All code was written in Haskell.
 
-
-<section id="aboutme" class="">
-
-  <main id="aboutM" class="light-theme">
-    <h1>I do, therefore I am.</h1>
-
-    <article>
-      <h3>Current</h3>
-      <p>I'm a part-time lecturer at <a href="http://www.dmu.ac.uk/">De Montfort University</a>. Over the last few years I've taught <span title="Haskell">"Functional Programming"</span>, "Research", "Devices and Networks", "Multimedia",  and "Front End Web Development". I've also supervised final year students for their major projects.</p>
-    </article>
-
-    <article>
-      <h3>Un-Current</h3>
-      <p>I have a PhD in Software Engineering/Computer Science from <a href="http://www.dmu.ac.uk/">De Montfort University</a>. The title of my thesis is <strong title="Ha-Ha!&#10;No, I'm serious actually.">Algorithmic Meta-Creativity</strong> and it's available as HTML or PDF at <em><a href="https://dr.physics.wtf" target="_blank">dr.physics.wtf</a></em>.</p>
-      <p>My research interests revolve around studying human and computer creativity and how they are evaluated, the absurd pseudo philosophy pataphysics and its applications, and the development of creative exploratory search algorithms inspired by pataphysical concepts.</p>
-      <p>Although the PhD wasn't classed as "practice-based" research, an artefact <em><a href="https://pata.physics.wtf" target="_blank">pata.physics.wtf</a></em> was submitted alongside the thesis. The software for this was written (mostly) in Python.</p>
-
-      <p>I also have a MSc in Creative Technologies from <a href="http://www.ioct.dmu.ac.uk/masters/">De Montfort University</a>. The major project was a publicly showcased passive interactive installation, augmenting a live video stream of users with interactive elements using motion tracking algorithms. Code was written in C++.</p>
-      
-      <p>And going even further back, I've got a BSc from the <a href="http://www2.le.ac.uk/departments/computer-science/undergraduate/bsccomputerscience">University of Leicester</a>. For the major project I created a Sudoku solver, including a performance comparison between two different algorithms. All code was written in Haskell.
-
-      <p>Please note that I don't necessarily maintain old resources anymore and there may be external links which might 404.</p>
-    </article>
+    <p>Please note that I don't necessarily maintain old resources anymore and there may be external links which might 404.</p>
 
   </main>
 
-  <aside id="aboutA" class="dark-theme">
+  <aside id="aboutA">
     <h2>Publications</h2>
 
     <dl>
@@ -168,16 +154,16 @@
 
 
 <footer>
-	<p>Code | Art | Research  <i class="fas fa-copyright"></i> Fania - <span id="date"></span></p>
+	<p><i class="fas fa-copyright"></i> Fania - <span id="date"></span></p>
 </footer>
 
 
 <script src="meta/pataphysicalDate.js"></script>
 <script src="meta/date.js"></script>
-<script src="meta/scrollMagic.min.js"></script>
+<!-- <script src="meta/scrollMagic.min.js"></script>
 <script src="meta/debug.addIndicators.min.js"></script>
-<script src="meta/scroll.js"></script>
-<!-- <script src="meta/scripts.js"></script> -->
+<script src="meta/scroll.js"></script> -->
+<script src="meta/scripts.js"></script>
 
 
 </body>

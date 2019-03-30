@@ -8,6 +8,9 @@ html {
   --bright: #77A756;  /* var(--bright); */
   --light:  #99BE7F;  /* var(--light); */
 
+/* #ADD9F4 */
+/* #ffffff */
+
 
   /* FONTS */
   --sf: Garamond,
@@ -41,37 +44,192 @@ html {
 }
 
 
+
+
+body {
+  margin: 0;
+  font-family: var(--ssf);
+  position: relative;
+  overflow-x: hidden;
+}
+header {
+  position: absolute;
+  height: 50vh;
+}
+.left  { top: 0; }
+.right { top: 50vh; }
+.left, .right {
+  width: 100%;
+  position: absolute;
+}
+.move {
+  transition: all 2s;
+}
+.left.move {
+  transform: translateX(calc(-100% + 85px));
+}
+.right.move {
+  transform: translateX(calc(100% - 85px));
+}
+.left section, .right section {
+  width: 100%;
+  height: 100%;
+}
+#leftmenu, #rightmenu {
+  color: var(--light);
+  background: var(--darkish);
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  z-index: 1;
+}
+.hide, #leftmenu.hide, #rightmenu.hide {
+  display: none;
+}
+#leftmenu {
+  top: 75vh;
+  height: 25vh;
+}
+#rightmenu {
+  top: 0;
+  height: 25vh;
+}
+nav a, nav i {
+  padding: 10px;
+}
+.brexit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.brexit img {
+  width: calc(100% - 60px);
+}
+.title {
+  font-size: 5em;
+  line-height: 50vh;
+  text-align: center;
+}
+.fronticon {
+  text-align: center;
+  font-size: 2em;
+}
+#menuopen, #menuclose {
+  position: absolute;
+  left: 48%;
+  top: 45vh;
+  z-index: 2;
+  font-size: 2em;
+  color: var(--bright);
+  cursor: pointer;
+}
+.link {
+  color: var(--bright);
+  cursor: pointer;
+}
+.spiral {
+  width: 1.1em;
+  margin: 0 auto;
+  animation: spin 4000ms infinite linear;
+}
+@keyframes spin { 
+  from { transform: rotate(360deg); } 
+  to   { transform: rotate(0deg); }
+}
+
+
+#aboutme {
+  display: none;
+  background: azure;
+  /* display: flex; */
+  min-height: 100vh;
+  padding: 2em 8em;
+}
+#aboutme main {
+  
+}
+#aboutme aside {
+}
+
+
+
+footer {
+  padding: 1em;
+  text-align: center;
+  color: var(--darkish);
+  background-color: white;
+}
+footer p {
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 900px) {
 
   body {
     background: beige;
     margin: 0;
     font-family: var(--ssf);
+    position: relative;
+    overflow-x: hidden;
   }
   header {
-    display: flex;
+    position: absolute;
     height: 100vh;
-    background-color: var(--darkish);
-    position: relative;
   }
+  .left  { left: 0; }
+  .right { top: 0; right: 0; }
   .left, .right {
     width: 50%;
     display: flex;
   }
+  .move {
+    transition: all 2s;
+  }
   .left.move {
-    position: absolute;
-    left: -400px;
+    transform: translateX(calc(-100% + 85px));
+  }
+  .right.move {
+    transform: translateX(calc(100% - 85px));
   }
   .left section, .right section {
     width: calc(100% - 60px);
   }
-  .left nav, .right nav {
+  #leftmenu, #rightmenu {
     color: var(--light);
     background: var(--darkish);
     width: 60px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    position: unset;
+  }
+  #leftmenu {
+    top: unset;
+    height: unset;
+  }
+  #rightmenu {
+    top: unset;
+    height: unset;
+  }
+  #menuopen, #menuclose {
+    display: none;
+  }
+  nav a, nav i {
+    padding: 0;
   }
   .brexit {
     display: flex;
@@ -91,9 +249,9 @@ html {
     text-align: center;
     font-size: 2em;
   }
-  #menuup, #menudown {
+  /* #menuup, #menudown {
     display: none;
-  }
+  } */
   .link {
     color: var(--bright);
     cursor: pointer;
@@ -104,60 +262,33 @@ html {
     animation: spin 4000ms infinite linear;
   }
   @keyframes spin { 
-    from { 
-      transform: rotate(360deg); 
-    } to { 
-      transform: rotate(0deg); 
-    }
+    from { transform: rotate(360deg); } 
+    to   { transform: rotate(0deg); }
   }
-
-  #interlude {
-    height: 100vh;
-  }
-
-  .rotate {
-    animation: spin 8000ms 1 linear;
-  }
-
-/* 
-  #homepage {
-    display: flex;
-    min-height: 100vh;
-  }
-  #homepage main {
-    width: calc(50vw - 60px);
-    margin-right: 60px;
-  }
-  #homepage aside {
-    width: calc(50vw - 60px);
-    margin-left: 60px;
-    height: 100vh;
-  } */
-
 
   /* #interlude {
-    height: 50vh;
+    height: 100vh;
   } */
 
-  #aboutme {
-    display: none;
-  }
 
-/* 
   #aboutme {
-    display: flex;
+    background: azure;
+    /* display: flex; */
     min-height: 100vh;
+    padding: 2em 8em;
   }
   #aboutme main {
-    width: calc(50vw + 60px);
+    /* width: calc(50vw + 60px); */
+    
   }
   #aboutme aside {
-    width: calc(50vw - 60px);
-  } */
+    /* width: calc(50vw - 60px); */
+  }
+
+
 
   footer {
     padding: 1em;
-    /* width: 50vw; */
     text-align: center;
     color: var(--darkish);
     background-color: white;

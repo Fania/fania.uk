@@ -1,150 +1,43 @@
-// FIRST LOAD
-
-const pages = ["home", "about", "bookmarks", "cheats", "imgs"];
-
-const arr = ["homeM", "homeA", 
-             "bookmarksM", "bookmarksA",
-             "aboutM", "aboutA",
-             "cheatsM", "cheatsA",
-             "imgsM", "imgsA"];
 
 
-// console.log("welcome");
-const url = window.location.search;
-// console.log(window.location);
-// console.log("url", url);
-let h = url.slice(6);
-// console.log("h", h);
-if(pages.includes(h)) {
-  // console.log("welcome if");
-  loadpage(h);
-} else {
-  // console.log("welcome else");
-  loadpage("home");
-};
-
-  
-// Browser history
-window.addEventListener("popstate", () => {
-  if (history.state) {
-    // console.log("popstate triggered");
-    // console.log(history);
-    loadpage(history.state.id);
-  }
-});
-
-
-
-
-// MENU LOADS
-home.addEventListener("click", menuload);
-about.addEventListener("click", menuload);
-bookmarks.addEventListener("click", menuload);
-cheats.addEventListener("click", menuload);
-imgs.addEventListener("click", menuload);
-
-
-// Load page from menu
-function menuload() {
-  let src = event.srcElement.id;
-  // !src ? src = "home" : src;
-
-  if(!src) {
-    console.log("undefined src");
-  }
-
-  let stateObj = { id: src };
-  let wl = window.location;
-  // let port = wl.port ? `:${wl.port}` : "";
-  let path = wl.pathname == "/" ? "" : wl.pathname;
-  let currPage = `${wl.origin}${path}`;
-  let newPage = `/${src}.html`;
-  // console.log("src", src);
-  // console.log("currPage", currPage);
-  // console.log("newPage", newPage);
-  let fakeURL = `${currPage}${newPage}`;
-  let realURL = `${currPage}?page=${src}`;
-  // console.log("fakeURL", fakeURL);
-  // console.log("realURL", realURL);
-
-  if(src == "home") {
-    history.pushState(stateObj, src, currPage);    
-    loadpage("home");
-  } else {
-    history.pushState(stateObj, src, realURL);  // needs web server
-    // window.location.href = fakeURL;  // reloads
-    // console.log("menuload", src);
-    loadpage(src);
-  }
-}
-
-
-// generic load function
-function loadpage(src) {
-  // console.log("loadpage", src, `${src}M`);
-  let hides = arr.filter(x => x !== `${src}M` && x !== `${src}A`);
-  let shows = arr.filter(x => x == `${src}M` || x == `${src}A`);
-  hides.map(x => eval(x).classList.add("hide"));
-  shows.map(x => eval(x).classList.remove("hide"));
-  menu.classList.remove("showmenu");
-  menuup.classList.add("hide");
-  menudown.classList.remove("hide");
-  window.scrollTo(0, 0);
-}
-
-
- 
 
 
 
 
 
 // MOBILE MENU
-menudown.addEventListener("click", () => {
-  menu.classList.add("showmenu");
-  menudown.classList.add("hide");
-  menuup.classList.remove("hide");
-});
+if (window.matchMedia("(min-width: 900px)").matches) {
 
-menuup.addEventListener("click", () => {
-  menu.classList.remove("showmenu");
-  menuup.classList.add("hide");
-  menudown.classList.remove("hide");
-});
+  // DESKTOP
 
+  leftmenu.classList.remove("hide");
+  rightmenu.classList.remove("hide");
 
-
-
-
-  // body {
-  //   display: grid;
-  //   /* grid-template-columns: 45% 10% 45%; */
-  //   grid-template-columns: calc(50% - 60px) 120px calc(50% - 60px);
-  //   grid-template-areas: 
-  //     "main header content"
-  //     "footer footer footer";
-  // }
+  about.addEventListener("click", ()=> {
+    const l = document.querySelector(".left");
+    const r = document.querySelector(".right");
+    l.classList.add("move");
+    r.classList.add("move");
+  });
 
 
+} else {
+
+  // MOBILE
+  
+  menuopen.addEventListener("click", () => {
+    leftmenu.classList.remove("hide");
+    rightmenu.classList.remove("hide");
+    menuopen.classList.add("hide");
+    menuclose.classList.remove("hide");
+  });
+  menuclose.addEventListener("click", () => {
+    leftmenu.classList.add("hide");
+    rightmenu.classList.add("hide");
+    menuclose.classList.add("hide");
+    menuopen.classList.remove("hide");
+  });
+}
 
 
-
-
-
-
-
-
-
-
-
-// Pataphysical date for footer
-
-// let now = new Date();
-let lastEdited = new Date("04 November 2018");
-// let pnow = new PataphysicalDate();
-let plastEdited = new PataphysicalDate(lastEdited);
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-date.innerHTML = plastEdited;
-date.setAttribute("title", `${lastEdited.getDate()} ${months[lastEdited.getMonth()]} ${lastEdited.getFullYear()} vulg.`);
 
