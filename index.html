@@ -26,35 +26,43 @@
 
 <body>
 
+
+<input type="radio" id="home_button" name="mainnav" checked>
+<input type="radio" id="about_button" name="mainnav">
+<input type="radio" id="bookmarks_button" name="mainnav">
+<input type="radio" id="bugs_button" name="mainnav">
+<input type="radio" id="images_button" name="mainnav">
+
+
 <div id="menuopen"><i class="fas fa-angle-down"></i></div>
 <header class="left dark-theme">
   <section class="title">Fania</section>
   <nav id="leftmenu" class="hide">
     <i class="fronticon fas fa-smile"></i>
     <i class="fronticon fas fa-code"></i>
-    <i id="bookmarks" title="Bookmarks" class="fronticon link fas fa-star"></i>
+    <label for="bookmarks_button"><i id="bookmarks" title="Bookmarks" class="fronticon link fas fa-star"></i></label>
     <i class="fronticon fas fa-heartbeat"></i>
     <i class="fronticon fas fa-wheelchair"></i>
-    <i id="about" title="About" class="fronticon link fas fa-graduation-cap"></i>
+    <label for="about_button"><i id="about" title="About" class="fronticon link fas fa-graduation-cap"></i></label>
     <i class="fronticon fas fa-gamepad"></i>
     <i class="fronticon fas fa-female"></i>
     <i class="fronticon fas fa-bed"></i>
     <i class="fronticon fas fa-puzzle-piece"></i>
     <i class="fronticon fas fa-plane"></i>
-    <i id="cheats" title="Cheats" class="fronticon link fas fa-bug"></i>
+    <label for="bugs_button"><i id="cheats" title="Cheats" class="fronticon link fas fa-bug"></i></label>
     <i class="fronticon fas fa-music"></i>
   </nav>
 </header>
 <header class="right light-theme">
   <nav id="rightmenu" class="hide">
-    <img id="home" title="Home" class="fronticon link spiral" src="images/favicons/spiral-static.svg">
+    <label for="home_button"><img id="home" title="Home" class="fronticon link spiral" src="images/favicons/spiral-static.svg"></label>
     <i class="fronticon fas fa-moon"></i>
     <a class="fronticon" title="GitHub" href="https://github.com/fania/" target="_blank"><i class="fab fa-github-alt"></i></a>
     <i class="fronticon fas fa-suitcase"></i>
     <a class="fronticon"title="Teaching"  href="https://fania.github.io/teaching" target="_blank"><i class="fas fa-university"></i></a>
     <i class="fronticon fab fa-reddit-alien"></i>
     <i class="fronticon fas fa-tree"></i>
-    <i id="imgs" title="Images" class="fronticon link fas fa-camera"></i>
+    <label for="images_button"><i id="imgs" title="Images" class="fronticon link fas fa-camera"></i></label>
     <i class="fronticon fas fa-leaf"></i>
     <i class="fronticon fas fa-globe"></i>
     <a class="fronticon" title="Dave" href="http://daveeveritt.org/" target="_blank"><i class="fas fa-heart"></i></a>
@@ -68,7 +76,13 @@
 
 
 
-<section id="aboutme">
+<section id="interlude_section" class="hide">
+
+</section>
+
+
+
+<section id="about_section" class="hide">
 
   <main id="aboutM">
     <h1>I think, therefore I am.</h1>

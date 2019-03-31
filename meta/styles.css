@@ -47,6 +47,7 @@ html {
 
 
 body {
+  background: var(--darkish);
   margin: 0;
   font-family: var(--ssf);
   position: relative;
@@ -97,9 +98,20 @@ header {
   top: 0;
   height: 25vh;
 }
-nav a, nav i {
+nav label, nav a, nav i {
   padding: 10px;
 }
+
+
+input[type="radio"] {
+  display: none;
+  /* margin-left: 120px; */
+}
+#interlude {
+  min-height: 100vh;
+}
+
+
 .brexit {
   display: flex;
   justify-content: center;
@@ -142,17 +154,17 @@ nav a, nav i {
 }
 
 
-#aboutme {
-  display: none;
-  background: azure;
+#about_section {
+  /* display: none; */
+  /* background: azure; */
   /* display: flex; */
   min-height: 100vh;
   padding: 2em 8em;
 }
-#aboutme main {
+#about_section main {
   
 }
-#aboutme aside {
+#about_section aside {
 }
 
 
@@ -180,6 +192,7 @@ footer p {
 @media screen and (min-width: 900px) {
 
   body {
+    /* background: var(--darkish); */
     background: beige;
     margin: 0;
     font-family: var(--ssf);
@@ -271,17 +284,17 @@ footer p {
   } */
 
 
-  #aboutme {
+  #about_section {
     background: azure;
     /* display: flex; */
     min-height: 100vh;
     padding: 2em 8em;
   }
-  #aboutme main {
+  #about_section main {
     /* width: calc(50vw + 60px); */
     
   }
-  #aboutme aside {
+  #about_section aside {
     /* width: calc(50vw - 60px); */
   }
 
