@@ -26,48 +26,49 @@
 
 <body>
 
-
 <input type="radio" id="home_button" name="mainnav" checked>
-<input type="radio" id="about_button" name="mainnav">
 <input type="radio" id="bookmarks_button" name="mainnav">
-<input type="radio" id="bugs_button" name="mainnav">
+<input type="radio" id="about_button" name="mainnav">
+<input type="radio" id="cheats_button" name="mainnav">
 <input type="radio" id="images_button" name="mainnav">
 
 
+
+
 <div id="menuopen"><i class="fas fa-angle-down"></i></div>
-<header class="left dark-theme">
+<header class="left">
   <section class="title">Fania</section>
   <nav id="leftmenu" class="hide">
-    <i class="fronticon fas fa-smile"></i>
-    <i class="fronticon fas fa-code"></i>
-    <label for="bookmarks_button"><i id="bookmarks" title="Bookmarks" class="fronticon link fas fa-star"></i></label>
-    <i class="fronticon fas fa-heartbeat"></i>
-    <i class="fronticon fas fa-wheelchair"></i>
-    <label for="about_button"><i id="about" title="About" class="fronticon link fas fa-graduation-cap"></i></label>
-    <i class="fronticon fas fa-gamepad"></i>
-    <i class="fronticon fas fa-female"></i>
-    <i class="fronticon fas fa-bed"></i>
-    <i class="fronticon fas fa-puzzle-piece"></i>
-    <i class="fronticon fas fa-plane"></i>
-    <label for="bugs_button"><i id="cheats" title="Cheats" class="fronticon link fas fa-bug"></i></label>
-    <i class="fronticon fas fa-music"></i>
+    <i class="fas fa-smile"></i>
+    <i class="fas fa-code"></i>
+    <label for="bookmarks_button"><a href="#bookmarks"><i id="bookmarks" title="Bookmarks" class="link fas fa-star"></i></a></label>
+    <i class="fas fa-heartbeat"></i>
+    <i class="fas fa-wheelchair"></i>
+    <label for="about_button"><a href="#about"><i title="About" class="link fas fa-graduation-cap"></i></a></label>
+    <i class="fas fa-gamepad"></i>
+    <i class="fas fa-female"></i>
+    <i class="fas fa-bed"></i>
+    <i class="fas fa-puzzle-piece"></i>
+    <i class="fas fa-plane"></i>
+    <label for="bugs_button"><a href="#cheats"><i title="Cheats" class="link fas fa-bug"></i></a></label>
+    <i class="fas fa-music"></i>
   </nav>
 </header>
-<header class="right light-theme">
+<header class="right">
   <nav id="rightmenu" class="hide">
-    <label for="home_button"><img id="home" title="Home" class="fronticon link spiral" src="images/favicons/spiral-static.svg"></label>
-    <i class="fronticon fas fa-moon"></i>
-    <a class="fronticon" title="GitHub" href="https://github.com/fania/" target="_blank"><i class="fab fa-github-alt"></i></a>
-    <i class="fronticon fas fa-suitcase"></i>
-    <a class="fronticon"title="Teaching"  href="https://fania.github.io/teaching" target="_blank"><i class="fas fa-university"></i></a>
-    <i class="fronticon fab fa-reddit-alien"></i>
-    <i class="fronticon fas fa-tree"></i>
-    <label for="images_button"><i id="imgs" title="Images" class="fronticon link fas fa-camera"></i></label>
-    <i class="fronticon fas fa-leaf"></i>
-    <i class="fronticon fas fa-globe"></i>
-    <a class="fronticon" title="Dave" href="http://daveeveritt.org/" target="_blank"><i class="fas fa-heart"></i></a>
-    <i class="fronticon fas fa-snowflake"></i>
-    <i class="fronticon fas fa-frown"></i>
+    <label for="home_button"><a href="#"><img title="Home" class="link spiral" src="images/favicons/spiral-static.svg"></a></label>
+    <i class="fas fa-moon"></i>
+    <a title="GitHub" href="https://github.com/fania/" target="_blank"><i class="fab fa-github-alt"></i></a>
+    <i class="fas fa-suitcase"></i>
+    <a title="Teaching"  href="https://fania.github.io/teaching" target="_blank"><i class="fas fa-university"></i></a>
+    <i class="fab fa-reddit-alien"></i>
+    <i class="fas fa-tree"></i>
+    <label for="images_button"><a href="#images"><i title="Images" class="link fas fa-camera"></i></a></label>
+    <i class="fas fa-leaf"></i>
+    <i class="fas fa-globe"></i>
+    <a title="Dave" href="http://daveeveritt.org/" target="_blank"><i class="fas fa-heart"></i></a>
+    <i class="fas fa-snowflake"></i>
+    <i class="fas fa-frown"></i>
   </nav>
   <section class="brexit"><img id="brimg" src="images/brexit.svg"></section>
 </header>
@@ -76,15 +77,11 @@
 
 
 
-<section id="interlude_section" class="hide">
-
-</section>
 
 
+<section id="about" class="content">
 
-<section id="about_section" class="hide">
-
-  <main id="aboutM">
+  <div>
     <h1>I think, therefore I am.</h1>
 
     <h3>Current</h3>
@@ -101,9 +98,9 @@
 
     <p>Please note that I don't necessarily maintain old resources anymore and there may be external links which might 404.</p>
 
-  </main>
+  </div>
 
-  <aside id="aboutA">
+  <aside>
     <h2>Publications</h2>
 
     <dl>
@@ -154,7 +151,12 @@
 
 
 
-
+<section id="bookmarks" class="content">
+  wkjfnsjdfnslfdlksdm
+  <h1>I think, therefore I am.</h1>
+  <h3>Current</h3>
+  <p>I'm a part-time lecturer at <a href="http://www.dmu.ac.uk/">De Montfort University</a>. Over the last few years I've taught <span title="Haskell">"Functional Programming"</span>, "Research", "Devices and Networks", "Multimedia",  and "Front End Web Development". I've also supervised final year students for their major projects.</p>
+</section>
 
 
 
