@@ -1,7 +1,7 @@
 const pages = ["about", "bookmarks", "cheats", "images"];
 
 // Menu buttons
-window.addEventListener("hashchange", () => {
+const loadPage = () => {
   const url = window.location.hash;
   const page = url.slice(1);
   if(pages.includes(page)) {
@@ -14,11 +14,10 @@ window.addEventListener("hashchange", () => {
     h.checked = true;
     document.title = `Fania.eu`;
   };
-});
+};
 
-
-
-
+window.addEventListener("hashchange", loadPage);
+window.addEventListener("load", loadPage);
 
 
 
