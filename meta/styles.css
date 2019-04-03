@@ -29,7 +29,7 @@ html {
 
 
 body {
-  background: white;
+  background: var(--medium);
   margin: 0;
   font-family: var(--ssf);
   position: relative;
@@ -104,6 +104,7 @@ i[class*="fa-"] {
 .content {
   min-height: 100vh;
   padding: 2em 1em;
+  background: white;
 }
 h1, h2, h3 {
   color: var(--dark);
