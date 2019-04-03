@@ -30,57 +30,65 @@ html {
 
 body {
   /* background: var(--darkish); */
+  background: white;
   margin: 0;
   font-family: var(--ssf);
   position: relative;
   overflow-x: hidden;
 }
-header {
-  position: absolute;
+.title, .brexit {
   height: 50vh;
 }
-.left  { 
-  top: 0; 
+.title { 
   color: var(--light);
   background-color: var(--dark);
 }
-.right { 
-  top: 50vh; 
+.brexit { 
   color: var(--dark);
   background-color: var(--light);
 }
-.left, .right {
-  width: 100%;
-  position: absolute;
-}
-.left section, .right section {
-  width: 100%;
-  height: 100%;
-}
-#leftmenu, #rightmenu {
+.int_menu, .ext_menu {
   color: var(--light);
   background: var(--darkish);
   width: 100%;
-  position: absolute;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  height: 25vh;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
   align-items: center;
+  text-align: center;
   z-index: 1;
+  position: absolute;
+  transition: all 2s;
 }
-/* .hide, #leftmenu.hide, #rightmenu.hide {
-  display: none;
-} */
-#leftmenu {
-  top: 75vh;
-  height: 25vh;
+.int_menu {
+  top: -50vh;
 }
-#rightmenu {
-  top: 0;
-  height: 25vh;
+.ext_menu {
+  top: -25vh;
+}
+.int_menu > *, .ext_menu > * {
+  width: calc(100vw / 7);
+}
+
+i[class*="fa-"] {
+  font-size: 2em;
+}
+.link, a, a:visited {
+  color: var(--bright);
+  cursor: pointer;
+}
+.spiral {
+  width: 2em;
+  animation: spin 4000ms infinite linear;
+}
+@keyframes spin { 
+  from { transform: rotate(360deg); } 
+  to   { transform: rotate(0deg); }
 }
 
 
+
+/* HOMEPAGE */
 .brexit {
   display: flex;
   justify-content: center;
@@ -95,42 +103,19 @@ header {
   line-height: 50vh;
   text-align: center;
 }
-i[class*="fa-"] {
-  text-align: center;
-  font-size: 2em;
-  padding: 10px;
-}
-.link {
-  color: var(--bright);
-  cursor: pointer;
-}
-.link, a, a:visited {
-  color: var(--bright);
-}
-.spiral {
-  width: 2em;
-  margin: 0 auto;
-  padding: 10px;
-  animation: spin 4000ms infinite linear;
-}
-@keyframes spin { 
-  from { transform: rotate(360deg); } 
-  to   { transform: rotate(0deg); }
-}
-
-#about {
+.content:not(#home) {
   min-height: 100vh;
-  padding: 2em 8em;
+  padding: 2em 1em;
 }
-
-
-
-
+h1, h2, h3 {
+  color: var(--dark);
+}
+/* FOOTER */
 footer {
   padding: 1em;
   text-align: center;
-  color: var(--darkish);
-  background-color: white;
+  color: white;
+  background-color: var(--dark);
 }
 footer p {
   margin: 0;
@@ -147,76 +132,52 @@ footer i[class*="fa-"] {
 
 
 
-  /* RADIOBUTTON HACK */
+/* RADIOBUTTON HACK */
 
-  input[type="radio"], input[type="checkbox"] {
-    display: none;
-  }
-  /* show the one that is selected */
-  input[id^='about']:checked ~ [id='about'],
-  input[id^='bookmarks']:checked ~ [id='bookmarks'],
-  input[id^='bugs']:checked ~ [id='bugs'],
-  input[id^='images']:checked ~ [id='images'] {
-    display: block;
-  }
-  /* input[id^='about']:checked ~ header.left,
-  input[id^='about']:checked ~ header.right {
-    display: none;
-  } */
-  /* move menu panels */
-  input[name="mainnav"]:checked ~ header.left {
-    transform: translate(calc(-100% + 85px),0);
-    transition: all 2s;
-  }
-  input[name="mainnav"]:checked ~ header.right {
-    transform: translate(calc(100% - 85px),0);
-    transition: all 2s;
-  }
-  /* close menu panels for home */
-  input[id^='home']:checked ~ header.left {
-    transform: translate(0,0);
-    z-index: 0;
-  }
-  input[id^='home']:checked ~ header.right {
-    transform: translate(0,0);
-    z-index: -1;
-  }
-  /* hide all sections initially */
-  .content {
-    display: none;
-  }
+/* hide all sections initially */
+.content, input[type="radio"], input[type="checkbox"] {
+  display: none;
+}
+/* show the one that is selected */
+input[id^='home']:checked ~ [id='home'],
+input[id^='about']:checked ~ [id='about'],
+input[id^='bookmarks']:checked ~ [id='bookmarks'],
+input[id^='bugs']:checked ~ [id='bugs'],
+input[id^='images']:checked ~ [id='images'] {
+  display: block;
+}
 
- 
 
-  /* hide and show mobile menu */
-  label[for="menu_button"] {
-    position: fixed;
-    left: calc(50vw - 15px);
-    top: 0;
-    z-index: 2;
-    font-size: 3em;
-    color: var(--bright);
-    cursor: pointer;
-    font-family: "Font Awesome 5 Free"; 
-    font-weight: 900; 
-  }
-  #leftmenu, #rightmenu {
-    display: none;
-  }
-  input#menu_button:checked ~ header.left,
-  input#menu_button:checked ~ header.right {
-    display: flex;
-  }
-  input#menu_button:checked ~ header #leftmenu,
-  input#menu_button:checked ~ header #rightmenu {
-    display: flex;
-  }
-  label[for="menu_button"]::before {
-    content: "\f107";  /* arrow_down */
-  }
-  input#menu_button:checked ~ label[for="menu_button"]::before {
-    content: "\f106";  /* arrow_up */
-  }
+/* hide and show mobile menu */
+label[for="menu_button"] {
+  position: absolute;
+  /* left: calc(50vw - 15px); */
+  left: 0;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+  font-size: 3em;
+  color: var(--bright);
+  cursor: pointer;
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  transition: all 2s;
+}
+input#menu_button:checked ~ .int_menu,
+input#menu_button:checked ~ .ext_menu {
+  transform: translate(0,50vh);
+}
+label[for="menu_button"]::before {
+  content: "\f107";  /* arrow_down */
+}
+input#menu_button:checked ~ label[for="menu_button"]::before {
+  content: "\f106";  /* arrow_up */
+}
+input#menu_button:checked ~ label[for="menu_button"] {
+  top: 50vh;
+  /* background: rgba(255,255,255,0.8); */
+}
 
 
 
@@ -258,7 +219,7 @@ footer i[class*="fa-"] {
   .left section, .right section {
     width: calc(100% - 60px);
   }
-  #leftmenu, #rightmenu {
+  .leftmenu, .rightmenu {
     color: var(--light);
     background: var(--darkish);
     width: 60px;
@@ -267,11 +228,11 @@ footer i[class*="fa-"] {
     justify-content: space-evenly;
     position: unset;
   }
-  #leftmenu {
+  .leftmenu {
     top: unset;
     height: unset;
   }
-  #rightmenu {
+  .rightmenu {
     top: unset;
     height: unset;
   }
