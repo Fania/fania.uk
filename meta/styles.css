@@ -29,7 +29,6 @@ html {
 
 
 body {
-  /* background: var(--darkish); */
   background: white;
   margin: 0;
   font-family: var(--ssf);
@@ -85,10 +84,9 @@ i[class*="fa-"] {
   from { transform: rotate(360deg); } 
   to   { transform: rotate(0deg); }
 }
-
-
-
-/* HOMEPAGE */
+.home {
+  transition: all 2s;
+}
 .brexit {
   display: flex;
   justify-content: center;
@@ -103,19 +101,23 @@ i[class*="fa-"] {
   line-height: 50vh;
   text-align: center;
 }
-.content:not(#home) {
+.content {
   min-height: 100vh;
   padding: 2em 1em;
 }
 h1, h2, h3 {
   color: var(--dark);
 }
-/* FOOTER */
+#date {
+  color: var(--medium);
+  font-weight: bold;
+}
 footer {
   padding: 1em;
   text-align: center;
-  color: white;
-  background-color: var(--dark);
+  color: var(--dark);
+  background: white;
+  box-shadow: 0 -10px 20px rgba(79, 140, 108, 0.2);
 }
 footer p {
   margin: 0;
@@ -135,17 +137,21 @@ footer i[class*="fa-"] {
 /* RADIOBUTTON HACK */
 
 /* hide all sections initially */
-.content, input[type="radio"], input[type="checkbox"] {
+.content, [class*='home'], 
+input[type="radio"], input[type="checkbox"] {
   display: none;
 }
 /* show the one that is selected */
-input[id^='home']:checked ~ [id='home'],
+input#home_button:checked ~ [class$=' home'],
 input[id^='about']:checked ~ [id='about'],
 input[id^='bookmarks']:checked ~ [id='bookmarks'],
 input[id^='bugs']:checked ~ [id='bugs'],
 input[id^='images']:checked ~ [id='images'] {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
+
+
 
 
 /* hide and show mobile menu */
@@ -189,91 +195,65 @@ input#menu_button:checked ~ label[for="menu_button"] {
 
 @media screen and (min-width: 900px) {
 
-  body {
-    /* background: var(--darkish); */
-    background: beige;
-    /* margin: 0;
-    font-family: var(--ssf); */
-    position: relative;
-    overflow-x: hidden;
+  input[id^='about']:checked ~ [id='about'],
+  input[id^='bookmarks']:checked ~ [id='bookmarks'],
+  input[id^='bugs']:checked ~ [id='bugs'],
+  input[id^='images']:checked ~ [id='images'] {
+    /* flex-direction: row; */
   }
-  header {
+  [class$=' home'] {
     position: absolute;
+  }
+  .title {
+    display: inline-block;
+    left: 0;
+    width: calc(50% - 60px);
     height: 100vh;
-  }
-  .left  { left: 0; }
-  .right { top: 0; right: 0; }
-  .left, .right {
-    width: 50%;
-    display: flex;
-  }
-  /* .move {
+    line-height: 100vh;
+    margin-right: 60px;
     transition: all 2s;
-  }
-  .left.move {
-    transform: translateX(calc(-100% + 85px));
-  }
-  .right.move {
-    transform: translateX(calc(100% - 85px));
-  } */
-  .left section, .right section {
-    width: calc(100% - 60px);
-  }
-  .leftmenu, .rightmenu {
-    color: var(--light);
-    background: var(--darkish);
-    width: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    position: unset;
-  }
-  .leftmenu {
-    top: unset;
-    height: unset;
-  }
-  .rightmenu {
-    top: unset;
-    height: unset;
   }
   .brexit {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    right: 0;
+    width: calc(50% - 60px);
+    height: 100vh;
+    margin-left: 60px;
+    transition: all 2s;
   }
-  .brexit img {
-    width: calc(100% - 60px);
-  }
-  .title {
-    font-size: 5em;
-    line-height: 100vh;
-    text-align: center;
-  }
-
-
-  /* hide mobile menu button */
-  #menu_button, label[for="menu_button"] {
+  label[for="menu_button"] {
     display: none;
   }
-  /* move menu panels */
-  input[name="mainnav"]:checked ~ header.left {
-    transform: translate(calc(-100% + 85px),0);
-    transition: all 2s;
+  .int_menu, .ext_menu {
+    position: fixed;
+    top: 0;
+    width: 60px;
+    height: 100vh;
+    grid-template-columns: 1fr;
   }
-  input[name="mainnav"]:checked ~ header.right {
-    transform: translate(calc(100% - 85px),0);
-    transition: all 2s;
+  .int_menu {
+    left: calc(50% - 80px);
+    border-left: 20px solid var(--dark);
   }
-  /* close menu panels for home */
-  input[id^='home']:checked ~ header.left {
-    transform: translate(0,0);
-    z-index: 0;
+  .ext_menu {
+    right: calc(50% - 80px);
+    border-right: 20px solid var(--light);
   }
-  input[id^='home']:checked ~ header.right {
-    transform: translate(0,0);
-    z-index: 0;
+  .int_menu > *, .ext_menu > * {
+    width: 60px;
   }
+  input[type="radio"]:checked:not(:default) ~ .int_menu,
+  input[type="radio"]:checked:not(:default) ~ .title {
+    transform: translateX(calc(-50vw + 80px));
+  }
+  input[type="radio"]:checked:not(:default) ~ .ext_menu,
+  input[type="radio"]:checked:not(:default) ~ .brexit {
+    transform: translateX(calc(50vw - 80px));
+  }
+  .content {
+    padding: 2em 8em;
+  }
+
 
 
 }
