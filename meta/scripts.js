@@ -72,20 +72,22 @@ if (window.matchMedia("(min-width: 900px)").matches) {
 
   // MOBILE
 
-  menuopen.addEventListener("click", () => {
-    console.log("open menu");
-    leftmenu.classList.remove("hide");
-    rightmenu.classList.remove("hide");
-    menuopen.classList.add("hide");
-    menuclose.classList.remove("hide");
-  });
-  menuclose.addEventListener("click", () => {
-    console.log("close menu");
-    leftmenu.classList.add("hide");
-    rightmenu.classList.add("hide");
-    menuclose.classList.add("hide");
-    menuopen.classList.remove("hide");
-  });
+  // menuopen.addEventListener("click", () => {
+  //   console.log("open menu");
+  //   leftmenu.classList.remove("hide");
+  //   rightmenu.classList.remove("hide");
+  //   menuopen.classList.add("hide");
+  //   menuclose.classList.remove("hide");
+  // });
+  // menuclose.addEventListener("click", () => {
+  //   console.log("close menu");
+  //   leftmenu.classList.add("hide");
+  //   rightmenu.classList.add("hide");
+  //   menuclose.classList.add("hide");
+  //   menuopen.classList.remove("hide");
+  // });
+
+
 }
 
 

@@ -24,30 +24,12 @@ html {
 }
 
 
-/* colours */
-.dark-theme {
-  color: var(--light);
-  background-color: var(--dark);
-}
-.dark-theme a, .dark-theme a:visited {
-  color: var(--bright);
-}
-.light-theme {
-  color: var(--dark);
-  background-color: var(--light);
-}
-/* .light-theme a, .light-theme a:visited {
-  color: var(--dark);
-} */
-.link, a, a:visited {
-  color: var(--bright);
-}
 
 
 
 
 body {
-  background: var(--darkish);
+  /* background: var(--darkish); */
   margin: 0;
   font-family: var(--ssf);
   position: relative;
@@ -71,15 +53,6 @@ header {
   width: 100%;
   position: absolute;
 }
-/* .move {
-  transition: all 2s;
-}
-.left.move {
-  transform: translateX(calc(-100% + 85px));
-}
-.right.move {
-  transform: translateX(calc(100% - 85px));
-} */
 .left section, .right section {
   width: 100%;
   height: 100%;
@@ -95,9 +68,9 @@ header {
   align-items: center;
   z-index: 1;
 }
-.hide, #leftmenu.hide, #rightmenu.hide {
+/* .hide, #leftmenu.hide, #rightmenu.hide {
   display: none;
-}
+} */
 #leftmenu {
   top: 75vh;
   height: 25vh;
@@ -106,13 +79,6 @@ header {
   top: 0;
   height: 25vh;
 }
-
-input[type="radio"] {
-  display: none;
-}
-/* #interlude {
-  min-height: 100vh;
-} */
 
 
 .brexit {
@@ -134,18 +100,12 @@ i[class*="fa-"] {
   font-size: 2em;
   padding: 10px;
 }
-#menuopen, #menuclose {
-  position: absolute;
-  left: 48%;
-  top: 45vh;
-  z-index: 2;
-  font-size: 2em;
-  color: var(--bright);
-  cursor: pointer;
-}
 .link {
   color: var(--bright);
   cursor: pointer;
+}
+.link, a, a:visited {
+  color: var(--bright);
 }
 .spiral {
   width: 2em;
@@ -187,6 +147,83 @@ footer i[class*="fa-"] {
 
 
 
+  /* RADIOBUTTON HACK */
+
+  input[type="radio"], input[type="checkbox"] {
+    display: none;
+  }
+  /* show the one that is selected */
+  input[id^='about']:checked ~ [id='about'],
+  input[id^='bookmarks']:checked ~ [id='bookmarks'],
+  input[id^='bugs']:checked ~ [id='bugs'],
+  input[id^='images']:checked ~ [id='images'] {
+    display: block;
+  }
+  /* input[id^='about']:checked ~ header.left,
+  input[id^='about']:checked ~ header.right {
+    display: none;
+  } */
+  /* move menu panels */
+  input[name="mainnav"]:checked ~ header.left {
+    transform: translate(calc(-100% + 85px),0);
+    transition: all 2s;
+  }
+  input[name="mainnav"]:checked ~ header.right {
+    transform: translate(calc(100% - 85px),0);
+    transition: all 2s;
+  }
+  /* close menu panels for home */
+  input[id^='home']:checked ~ header.left {
+    transform: translate(0,0);
+    z-index: 0;
+  }
+  input[id^='home']:checked ~ header.right {
+    transform: translate(0,0);
+    z-index: -1;
+  }
+  /* hide all sections initially */
+  .content {
+    display: none;
+  }
+
+ 
+
+  /* hide and show mobile menu */
+  label[for="menu_button"] {
+    position: fixed;
+    left: calc(50vw - 15px);
+    top: 0;
+    z-index: 2;
+    font-size: 3em;
+    color: var(--bright);
+    cursor: pointer;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+  }
+  #leftmenu, #rightmenu {
+    display: none;
+  }
+  input#menu_button:checked ~ header.left,
+  input#menu_button:checked ~ header.right {
+    display: flex;
+  }
+  input#menu_button:checked ~ header #leftmenu,
+  input#menu_button:checked ~ header #rightmenu {
+    display: flex;
+  }
+  label[for="menu_button"]::before {
+    content: "\f107";  /* arrow_down */
+  }
+  input#menu_button:checked ~ label[for="menu_button"]::before {
+    content: "\f106";  /* arrow_up */
+  }
+
+
+
+
+
+
+
 
 
 @media screen and (min-width: 900px) {
@@ -194,8 +231,8 @@ footer i[class*="fa-"] {
   body {
     /* background: var(--darkish); */
     background: beige;
-    margin: 0;
-    font-family: var(--ssf);
+    /* margin: 0;
+    font-family: var(--ssf); */
     position: relative;
     overflow-x: hidden;
   }
@@ -209,7 +246,7 @@ footer i[class*="fa-"] {
     width: 50%;
     display: flex;
   }
-  .move {
+  /* .move {
     transition: all 2s;
   }
   .left.move {
@@ -217,7 +254,7 @@ footer i[class*="fa-"] {
   }
   .right.move {
     transform: translateX(calc(100% - 85px));
-  }
+  } */
   .left section, .right section {
     width: calc(100% - 60px);
   }
@@ -238,12 +275,6 @@ footer i[class*="fa-"] {
     top: unset;
     height: unset;
   }
-  #menuopen, #menuclose {
-    display: none;
-  }
-  /* nav a, nav i {
-    padding: 0;
-  } */
   .brexit {
     display: flex;
     justify-content: center;
@@ -258,46 +289,30 @@ footer i[class*="fa-"] {
     line-height: 100vh;
     text-align: center;
   }
-  /* #menuup, #menudown {
+
+
+  /* hide mobile menu button */
+  #menu_button, label[for="menu_button"] {
     display: none;
-  } */
-
-
-
-  /* RADIOBUTTON HACK */
-
-  /* show the one that is selected */
-  input[id^='about']:checked ~ [id='about'],
-  input[id^='bookmarks']:checked ~ [id='bookmarks'],
-  input[id^='bugs']:checked ~ [id='bugs'],
-  input[id^='images']:checked ~ [id='images'] {
-    display: block;
   }
   /* move menu panels */
-  input:checked ~ [class*='left'] {
-    transform: translateX(calc(-100% + 85px));
+  input[name="mainnav"]:checked ~ header.left {
+    transform: translate(calc(-100% + 85px),0);
     transition: all 2s;
   }
-  input:checked ~ [class*='right'] {
-    transform: translateX(calc(100% - 85px));
+  input[name="mainnav"]:checked ~ header.right {
+    transform: translate(calc(100% - 85px),0);
     transition: all 2s;
   }
   /* close menu panels for home */
-  input[id^='home']:checked ~ [class*='left'] {
-    transform: translateX(0);
+  input[id^='home']:checked ~ header.left {
+    transform: translate(0,0);
+    z-index: 0;
   }
-  input[id^='home']:checked ~ [class*='right'] {
-    transform: translateX(0);
+  input[id^='home']:checked ~ header.right {
+    transform: translate(0,0);
+    z-index: 0;
   }
-  /* hide all sections initially */
-  .content {
-    display: none;
-  }
-
-
-
-
-
 
 
 }
