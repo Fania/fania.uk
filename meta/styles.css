@@ -57,7 +57,7 @@ body {
   text-align: center;
   z-index: 1;
   position: absolute;
-  transition: all 2s;
+  transition: all 1s ease-in-out;
 }
 .int_menu {
   top: -50vh;
@@ -85,7 +85,7 @@ i[class*="fa-"] {
   to   { transform: rotate(0deg); }
 }
 .home {
-  transition: all 2s;
+  transition: all 1s ease-in-out;
 }
 .brexit {
   display: flex;
@@ -95,6 +95,20 @@ i[class*="fa-"] {
 }
 .brexit img {
   width: calc(100% - 60px);
+}
+.brexit #cat {
+  display: none;
+}
+.brexit #cat:hover, 
+.brexit img:hover ~ #cat {
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  top: 39%;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+
 }
 .title {
   font-size: 5em;
@@ -106,12 +120,47 @@ i[class*="fa-"] {
   padding: 2em 1em;
   background: white;
 }
-h1, h2, h3 {
+h1 {
+  text-align: right;
+  color: var(--medium);
+  font-size: 2.5em;
+  border-bottom: 10px solid;
+}
+h2, h3 {
   color: var(--dark);
+  margin-top: 2em;
+}
+p[title^="last"] {
+  text-align: right;
 }
 #date {
   color: var(--medium);
   font-weight: bold;
+}
+
+
+.content img {
+  width: 100%;
+}
+.content figcaption {
+  text-align: center;
+}
+
+.content > div, .content > aside, .content > article {
+  border: 2px solid;
+  border-image-source: linear-gradient(to bottom right, white, 95%, #ccc);
+  border-image-slice: 1;
+}
+
+.murakami {
+  display: flex;
+}
+
+
+.up {
+  text-align: right;
+  margin-top: 10px;
+  color: var(--medium);
 }
 footer {
   padding: 1em;
@@ -169,7 +218,7 @@ label[for="menu_button"] {
   cursor: pointer;
   font-family: "Font Awesome 5 Free"; 
   font-weight: 900; 
-  transition: all 2s;
+  transition: all 1s ease-in-out;
 }
 input#menu_button:checked ~ .int_menu,
 input#menu_button:checked ~ .ext_menu {
@@ -212,7 +261,7 @@ input#menu_button:checked ~ label[for="menu_button"] {
     height: 100vh;
     line-height: 100vh;
     margin-right: 60px;
-    transition: all 2s;
+    transition: all 1s ease-in-out;
   }
   .brexit {
     display: flex;
@@ -220,7 +269,7 @@ input#menu_button:checked ~ label[for="menu_button"] {
     width: calc(50% - 60px);
     height: 100vh;
     margin-left: 60px;
-    transition: all 2s;
+    transition: all 1s ease-in-out;
   }
   label[for="menu_button"] {
     display: none;

@@ -24,4 +24,14 @@ window.addEventListener("hashchange", loadPage);
 window.addEventListener("load", loadPage);
 
 
+// BACK TO TOP BUTTON
 
+// console.log(body.scrollTop);
+const [...ups] = document.getElementsByClassName("up");
+
+ups.forEach( u => {
+  u.addEventListener("click", ()=> {
+    console.log("scroll");
+    window.scroll({top: 0, left: 0, behavior: 'smooth'});
+  });
+});
