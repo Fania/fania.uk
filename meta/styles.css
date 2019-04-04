@@ -92,6 +92,7 @@ i[class*="fa-"] {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  position: relative;
 }
 .brexit img {
   width: calc(100% - 60px);
@@ -104,11 +105,10 @@ i[class*="fa-"] {
   display: inline-block;
   position: absolute;
   border-radius: 50%;
-  top: 39%;
-  width: 180px;
-  height: 180px;
+  top: calc(50% - 80px);
+  width: 160px;
+  height: 160px;
   object-fit: cover;
-
 }
 .title {
   font-size: 5em;
@@ -133,11 +133,38 @@ h2, h3 {
 p[title^="last"] {
   text-align: right;
 }
-#date {
+#date, .date {
   color: var(--medium);
   font-weight: bold;
 }
-
+.date {
+  margin: 0;
+  display: none;
+}
+.zalgo {
+  margin: 4em 2em;
+}
+#goren {
+  width: 90%;
+  padding: 1em 5%;
+}
+#goren text {
+  font-family: monospace;
+  white-space: pre;
+  fill: var(--light);
+}
+/* details[open] summary,
+details[open] summary h3 {
+  background: var(--dark);
+  color: white;
+} */
+summary h3 {
+  display: inline-block;
+  margin: 1em 0;
+}
+summary:focus {
+  outline: none;
+}
 
 .content img {
   width: 100%;
@@ -147,9 +174,7 @@ p[title^="last"] {
 }
 
 .content > div, .content > aside, .content > article {
-  border: 2px solid;
-  border-image-source: linear-gradient(to bottom right, white, 95%, #ccc);
-  border-image-slice: 1;
+  border: 0;
 }
 
 .murakami {
@@ -172,7 +197,7 @@ footer {
 footer p {
   margin: 0;
 }
-footer i[class*="fa-"] {
+footer i[class*="fa-"], i.fa-thumbs-up {
   font-size: 1em;
 }
 
@@ -195,7 +220,7 @@ input[type="radio"], input[type="checkbox"] {
 input#home_button:checked ~ [class$=' home'],
 input[id^='about']:checked ~ [id='about'],
 input[id^='bookmarks']:checked ~ [id='bookmarks'],
-input[id^='bugs']:checked ~ [id='bugs'],
+input[id^='cheats']:checked ~ [id='cheats'],
 input[id^='images']:checked ~ [id='images'] {
   display: flex;
   flex-direction: column;
@@ -247,12 +272,12 @@ input#menu_button:checked ~ label[for="menu_button"] {
 
   input[id^='about']:checked ~ [id='about'],
   input[id^='bookmarks']:checked ~ [id='bookmarks'],
-  input[id^='bugs']:checked ~ [id='bugs'],
+  input[id^='cheats']:checked ~ [id='cheats'],
   input[id^='images']:checked ~ [id='images'] {
     /* flex-direction: row; */
   }
   [class$=' home'] {
-    position: absolute;
+    position: fixed;
   }
   .title {
     display: inline-block;
@@ -303,7 +328,17 @@ input#menu_button:checked ~ label[for="menu_button"] {
   .content {
     padding: 2em 8em;
   }
-
+  .brexit #cat:hover, 
+  .brexit img:hover ~ #cat {
+    top: calc(50% - 90px);
+    width: 180px;
+    height: 180px;
+  }
+  .content > div, .content > aside, .content > article {
+    border: 2px solid;
+    border-image-source: linear-gradient(to bottom right, white, 95%, #ccc);
+    border-image-slice: 1;
+  }
 
 
 }
