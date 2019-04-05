@@ -338,7 +338,34 @@ input#menu_button:checked ~ label[for="menu_button"] {
     border: 2px solid;
     border-image-source: linear-gradient(to bottom right, white, 95%, #ccc);
     border-image-slice: 1;
+    /* position: relative; */
   }
+  /* #uparrow {
+    position: absolute;
+    bottom: 10px;
+    right: -10px;
+    color: #ccc;
+  } */
+
+  /* .content > div:hover::before, 
+  .content > aside:hover::before, 
+  .content > article:hover::before {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f106";
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    color: #ccc;
+    font-size: 2em;
+  } */
+  /* .content > div:hover #uparrow, 
+  .content > aside:hover #uparrow, 
+  .content > article:hover #uparrow {
+    position: absolute;
+    bottom: 200px;
+    right: 200px;
+  } */
 
 
 }
