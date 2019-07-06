@@ -1,4 +1,4 @@
-const pages = ["about", "bookmarks", "cheats", "images"];
+const pages = ["about", "bookmarks", "cheats", "images", "cats"];
 const menu = document.getElementById("menu_button");
 
 
@@ -35,3 +35,11 @@ ups.forEach( u => {
     window.scroll({top: 0, left: 0, behavior: 'smooth'});
   });
 });
+
+
+
+
+
+
+
+

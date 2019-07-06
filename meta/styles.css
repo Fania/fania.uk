@@ -73,6 +73,9 @@ i[class*="fa-"] {
   color: var(--bright);
   cursor: pointer;
 }
+label[for="cats_button"] a {
+  color: var(--light);
+}
 .spiral {
   width: 2em;
   animation: spin 4000ms infinite linear;
@@ -153,6 +156,7 @@ p[title^="last"] {
 
 .content img {
   width: 100%;
+  image-orientation: from-image;
 }
 .content figcaption {
   text-align: center;
@@ -168,9 +172,7 @@ p[title^="last"] {
   display: grid;
   grid-gap: 5px;
 }
-.gallery_img {
 
-}
 
 
 
@@ -263,7 +265,8 @@ input#home_button:checked ~ [class$=' home'],
 input[id^='about']:checked ~ [id='about'],
 input[id^='bookmarks']:checked ~ [id='bookmarks'],
 input[id^='cheats']:checked ~ [id='cheats'],
-input[id^='images']:checked ~ [id='images'] {
+input[id^='images']:checked ~ [id='images'],
+input[id^='cats']:checked ~ [id='cats'] {
   display: flex;
   flex-direction: column;
 }
@@ -301,6 +304,9 @@ input#menu_button:checked ~ label[for="menu_button"] {
   top: 50vh;
   /* background: rgba(255,255,255,0.8); */
 }
+
+
+
 
 
 
