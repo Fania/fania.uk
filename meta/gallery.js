@@ -46,13 +46,13 @@ const images = [
 const grid = document.getElementsByClassName("gallery_grid")[0];
 
 
-images.forEach(img => {
+// images.forEach(img => {
 
-  let tag = `<img class="gallery_img" src="images/gallery/${img}">`
+//   let tag = `<img class="gallery_img" src="images/gallery/${img}">`
 
-  grid.innerHTML += tag;
+//   grid.innerHTML += tag;
 
-});
+// });
 
 
 
