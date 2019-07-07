@@ -192,6 +192,66 @@ p[title^="last"] {
   grid-column: span 1;
 }
 
+/* Image Filters */ 
+
+#images label {
+  padding: 0 10px;
+  margin: 20px 10px;
+  cursor: pointer;
+  line-height: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  display: inline-block;
+}
+#images [class*="filter"] + label {
+  border-radius: 3px;
+  border: 1px solid var(--dark);
+}
+#images [class*="filter"]:checked + label {
+  background-color: var(--dark);
+}
+#images [class*="filter"]:not(:checked) + label {
+  color: var(--dark);
+}
+
+#images .trees,
+#images .water,
+#images .sky,
+#images .sunset,
+#images .people,
+#images .heritage 
+{
+  display: none;
+}
+#images .filter-trees:checked ~ .gallery_grid img[class*="trees"],
+#images .filter-water:checked ~ .gallery_grid img[class*="water"],
+#images .filter-sky:checked ~ .gallery_grid img[class*="sky"],
+#images .filter-sunset:checked ~ .gallery_grid img[class*="sunset"],
+#images .filter-people:checked ~ .gallery_grid img[class*="people"],
+#images .filter-heritage:checked ~ .gallery_grid img[class*="heritage"]
+{
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 details {
