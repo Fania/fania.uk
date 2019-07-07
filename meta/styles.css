@@ -176,7 +176,10 @@ p[title^="last"] {
 }
 .gallery_img {
   object-fit: cover;
-  height: 100%;
+  /* object-fit: contain; */
+  /* height: 100%; */
+  max-height: 90%;
+  max-width: 100%;
 }
 .landscape {
   grid-column: span 1;
@@ -192,8 +195,29 @@ p[title^="last"] {
   grid-column: span 1;
 }
 
-/* Image Filters */ 
 
+/* image modals */
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  z-index: 9999;
+}
+#modal img {
+  width: 90%;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* image filters */ 
 #images label {
   padding: 0 10px;
   margin: 20px 10px;
@@ -215,21 +239,23 @@ p[title^="last"] {
   color: var(--dark);
 }
 
-#images .trees,
-#images .water,
-#images .sky,
-#images .sunset,
-#images .people,
-#images .heritage 
+#images [class*="trees"],
+#images [class*="water"],
+#images [class*="sky"],
+#images [class*="sunset"],
+#images [class*="people"],
+#images [class*="heritage"],
+#images [class*="sydney"]  
 {
   display: none;
 }
-#images .filter-trees:checked ~ .gallery_grid img[class*="trees"],
-#images .filter-water:checked ~ .gallery_grid img[class*="water"],
-#images .filter-sky:checked ~ .gallery_grid img[class*="sky"],
-#images .filter-sunset:checked ~ .gallery_grid img[class*="sunset"],
-#images .filter-people:checked ~ .gallery_grid img[class*="people"],
-#images .filter-heritage:checked ~ .gallery_grid img[class*="heritage"]
+#images .filter-trees:checked ~ .gallery_grid [class*="trees"],
+#images .filter-water:checked ~ .gallery_grid [class*="water"],
+#images .filter-sky:checked ~ .gallery_grid [class*="sky"],
+#images .filter-sunset:checked ~ .gallery_grid [class*="sunset"],
+#images .filter-people:checked ~ .gallery_grid [class*="people"],
+#images .filter-heritage:checked ~ .gallery_grid [class*="heritage"],
+#images .filter-sydney:checked ~ .gallery_grid [class*="sydney"]
 {
   display: block;
 }
