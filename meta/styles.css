@@ -171,13 +171,12 @@ p[title^="last"] {
 .gallery_grid {
   display: grid;
   grid-gap: 5px;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-auto-rows: 100px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 2em;
 }
 .gallery_img {
   object-fit: cover;
-  /* object-fit: contain; */
-  /* height: 100%; */
+  height: 100px;
   max-height: 90%;
   max-width: 100%;
 }
@@ -193,6 +192,12 @@ p[title^="last"] {
 .square {
   grid-row: span 1;
   grid-column: span 1;
+}
+.filter_category {
+  display: inline-block;
+  padding-right: 1em;
+  width: 100px;
+  margin: 0;
 }
 
 
@@ -212,6 +217,7 @@ p[title^="last"] {
 }
 #modal img {
   width: 90%;
+  height: 90%;
   object-fit: contain;
   max-width: 100%;
   max-height: 100%;
@@ -219,18 +225,22 @@ p[title^="last"] {
 
 /* image filters */ 
 #images label {
-  padding: 0 10px;
-  margin: 20px 10px;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  padding: 0 5px;
+  margin: 5px 5px;
   cursor: pointer;
-  line-height: 2em;
+  line-height: 1.5em;
+  font-size: 0.8em;
   text-transform: uppercase;
-  letter-spacing: 2px;
   color: white;
   display: inline-block;
 }
 #images [class*="filter"] + label {
   border-radius: 3px;
   border: 1px solid var(--dark);
+}
+#images label:hover {
+  background-color: var(--medium);
 }
 #images [class*="filter"]:checked + label {
   background-color: var(--dark);
@@ -239,31 +249,42 @@ p[title^="last"] {
   color: var(--dark);
 }
 
-#images [class*="trees"],
-#images [class*="water"],
-#images [class*="sky"],
-#images [class*="sunset"],
-#images [class*="people"],
-#images [class*="heritage"],
-#images [class*="sydney"]  
-{
+/* hide photos first */
+#images [class*="gallery_img"] {
   display: none;
 }
+
+/* but then show selected categories */
 #images .filter-trees:checked ~ .gallery_grid [class*="trees"],
 #images .filter-water:checked ~ .gallery_grid [class*="water"],
 #images .filter-sky:checked ~ .gallery_grid [class*="sky"],
 #images .filter-sunset:checked ~ .gallery_grid [class*="sunset"],
 #images .filter-people:checked ~ .gallery_grid [class*="people"],
 #images .filter-heritage:checked ~ .gallery_grid [class*="heritage"],
-#images .filter-sydney:checked ~ .gallery_grid [class*="sydney"]
+#images .filter-flowers:checked ~ .gallery_grid [class*="flowers"],
+#images .filter-animals:checked ~ .gallery_grid [class*="animals"],
+#images .filter-art:checked ~ .gallery_grid [class*="art"],
+#images .filter-night:checked ~ .gallery_grid [class*="night"],
+#images .filter-city:checked ~ .gallery_grid [class*="city"],
+#images .filter-stone:checked ~ .gallery_grid [class*="stone"],
+#images .filter-beach:checked ~ .gallery_grid [class*="beach"],
+
+#images .filter-y2011:checked ~ .gallery_grid [class*="y2011"],
+#images .filter-y2013:checked ~ .gallery_grid [class*="y2013"],
+#images .filter-y2017:checked ~ .gallery_grid [class*="y2017"],
+#images .filter-y2018:checked ~ .gallery_grid [class*="y2018"],
+#images .filter-y2019:checked ~ .gallery_grid [class*="y2019"],
+
+#images .filter-crete:checked ~ .gallery_grid [class*="crete"],
+#images .filter-sydney:checked ~ .gallery_grid [class*="sydney"],
+#images .filter-iceland:checked ~ .gallery_grid [class*="iceland"],
+#images .filter-england:checked ~ .gallery_grid [class*="england"],
+#images .filter-germany:checked ~ .gallery_grid [class*="germany"],
+#images .filter-japan:checked ~ .gallery_grid [class*="japan"],
+#images .filter-miami:checked ~ .gallery_grid [class*="miami"]
 {
   display: block;
 }
-
-
-
-
-
 
 
 
@@ -518,7 +539,6 @@ input#menu_button:checked ~ label[for="menu_button"] {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-rows: 200px;
   }
-
   .gallery_img {
     object-fit: cover;
     height: 100%;
