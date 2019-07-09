@@ -52,9 +52,17 @@ const years = {
   "y2019": false
 };
 
-const filters = {...categories, ...locations, ...years};
+
+
+const filters = {
+  "show": false,
+  ...categories, 
+  ...locations, 
+  ...years
+};
 
 const boxes = document.querySelectorAll("[class*='filter-']");
+const showhide = document.getElementsByName("show_hide");
 
 let currentFilters = localStorage.getItem("gallery-filters");
 
@@ -74,8 +82,19 @@ if (currentFilters) {
     });
   });
 }
+showhide.forEach(sh => {
+  sh.addEventListener("change", ()=> {
+    updateFilters("show", sh.checked);
+  });
+});
 
 function updateFilters(key, value) {
+  let showFilters = document.querySelector("#show_filters");
+  console.log(showFilters.checked);
+  filters["show"] = showFilters.checked;
+
   filters[key] = value; 
   localStorage.setItem("gallery-filters", JSON.stringify(filters));
 }
+
+
