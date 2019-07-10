@@ -49,52 +49,51 @@ const years = {
   "y2013": false, 
   "y2017": false, 
   "y2018": false, 
-  "y2019": false
+  "y2019": true
 };
 
 
 
-const filters = {
+const newFilters = {
   "show": false,
   ...categories, 
   ...locations, 
   ...years
 };
 
-const boxes = document.querySelectorAll("[class*='filter-']");
-const showhide = document.getElementsByName("show_hide");
+const choices = [
+  ...document.querySelectorAll("[class*='filter-']"), ...document.getElementsByName("show_hide")
+];
 
-let currentFilters = localStorage.getItem("gallery-filters");
-
-if (currentFilters) {
-  let filters = JSON.parse(currentFilters);
-  boxes.forEach(box => {
-    box.checked = filters[box.id];
-    box.addEventListener("change", ()=> {
-      updateFilters(box.id, box.checked);
-    });
-  });
-} else {
-  boxes.forEach(box => {
-    updateFilters(box.id, box.checked);
-    box.addEventListener("change", ()=> {
-      updateFilters(box.id, box.checked);
-    });
-  });
-}
-showhide.forEach(sh => {
-  sh.addEventListener("change", ()=> {
-    updateFilters("show", sh.checked);
+choices.forEach(choice => {
+  const oldFilters = localStorage.getItem("gallery-filters");
+  const filters = JSON.parse(oldFilters);
+  if (oldFilters) {
+    if (choice.id != "show_filters" && choice.id != "hide_filters") {
+      choice.checked = filters[choice.id];
+    } else {
+      document.getElementById("show_filters").checked = filters["show"];
+      document.getElementById("hide_filters").checked = !filters["show"];
+    }
+  }
+  choice.addEventListener("change", () => {
+    if (choice.id != "show_filters" && choice.id != "hide_filters") {
+      updateFilters(choice.id, choice.checked);
+    } else {
+      if (choice.id == "show_filters") { updateFilters("show", true); }
+      if (choice.id == "hide_filters") { updateFilters("show", false); }
+    }
   });
 });
 
 function updateFilters(key, value) {
-  let showFilters = document.querySelector("#show_filters");
-  console.log(showFilters.checked);
-  filters["show"] = showFilters.checked;
-
-  filters[key] = value; 
-  localStorage.setItem("gallery-filters", JSON.stringify(filters));
+  const oldFilters = localStorage.getItem("gallery-filters");
+  if (oldFilters) {
+    let currentFilters = JSON.parse(oldFilters);
+    currentFilters[key] = value;
+    localStorage.setItem("gallery-filters", JSON.stringify(currentFilters));
+  } else {
+    newFilters[key] = value; 
+    localStorage.setItem("gallery-filters", JSON.stringify(newFilters));
+  }
 }
-
-

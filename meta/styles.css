@@ -156,7 +156,6 @@ p[title^="last"] {
 
 .content img {
   width: 100%;
-  image-orientation: from-image;
 }
 .content figcaption {
   text-align: center;
@@ -176,7 +175,7 @@ p[title^="last"] {
 }
 .gallery_img {
   object-fit: cover;
-  height: 100px;
+  height: 250px;
   max-height: 90%;
   max-width: 100%;
 }
@@ -290,7 +289,7 @@ p[title^="last"] {
 
 #images h2 {
   display: inline-block;
-  margin-right: 2em;
+  margin: 0 10px 1em 0;
 }
 
 #images [for="show_filters"],
