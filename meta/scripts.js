@@ -1,4 +1,4 @@
-const pages = ["about", "bookmarks", "cheats", "images", "cats"];
+const pages = ["about", "bookmarks", "cheats", "images", "cats", "secret"];
 const menu = document.getElementById("menu_button");
 
 

@@ -73,8 +73,11 @@ i[class*="fa-"] {
   color: var(--bright);
   cursor: pointer;
 }
-label[for="cats_button"] a {
+label[for="cats_button"] a,
+label[for="secret_button"] a 
+{
   color: var(--light);
+  cursor: default;
 }
 .spiral {
   width: 2em;
@@ -412,7 +415,9 @@ input[id^='about']:checked ~ [id='about'],
 input[id^='bookmarks']:checked ~ [id='bookmarks'],
 input[id^='cheats']:checked ~ [id='cheats'],
 input[id^='images']:checked ~ [id='images'],
-input[id^='cats']:checked ~ [id='cats'] {
+input[id^='cats']:checked ~ [id='cats'],
+input[id^='secret']:checked ~ [id='secret'] 
+{
   display: flex;
   flex-direction: column;
 }
