@@ -1,4 +1,4 @@
 - https://www.cgranade.com/blog/2016/06/06/ssh-keys-in-vscode.html
-- localstorage or url for remembering menu page
 - page layout conditionally for grids (add class to body)
 - reload page refreshes to home page briefly
+- pick fav imgs

@@ -195,14 +195,20 @@ p[title^="last"] {
   grid-row: span 1;
   grid-column: span 1;
 }
-.filter_category {
+#images .filter_category {
   display: inline-block;
   padding-right: 1em;
   width: 100px;
   margin: 0;
   color: var(--medium);
 }
-
+#secret .filter_category {
+  display: inline-block;
+  padding-right: 1em;
+  width: 50px;
+  margin: 0;
+  color: var(--medium);
+}
 
 /* image modals */
 #modal {
@@ -227,7 +233,7 @@ p[title^="last"] {
 }
 
 /* image filters */ 
-#images label {
+#images label, #secret label {
   font-family: 'Arial Narrow', Arial, sans-serif;
   padding: 0 5px;
   margin: 5px 5px;
@@ -238,22 +244,27 @@ p[title^="last"] {
   color: white;
   display: inline-block;
 }
-#images [class*="filter"] + label {
+#images [class*="filter"] + label,
+#secret [class*="filter"] + label {
   border-radius: 3px;
   border: 1px solid var(--dark);
 }
-#images label:hover {
+#images label:hover,
+#secret label:hover {
   background-color: var(--light);
 }
-#images [class*="filter"]:checked + label {
+#images [class*="filter"]:checked + label,
+#secret [class*="filter"]:checked + label {
   background-color: var(--dark);
 }
-#images [class*="filter"]:not(:checked) + label {
+#images [class*="filter"]:not(:checked) + label,
+#secret [class*="filter"]:not(:checked) + label {
   color: var(--dark);
 }
 
 /* hide photos first */
-#images [class*="gallery_img"] {
+#images [class*="gallery_img"],
+#secret [class*="gallery_img"] {
   display: none;
 }
 
@@ -262,7 +273,6 @@ p[title^="last"] {
 #images .filter-water:checked ~ .gallery_grid [class*="water"],
 #images .filter-sky:checked ~ .gallery_grid [class*="sky"],
 #images .filter-sunset:checked ~ .gallery_grid [class*="sunset"],
-#images .filter-people:checked ~ .gallery_grid [class*="people"],
 #images .filter-heritage:checked ~ .gallery_grid [class*="heritage"],
 #images .filter-flowers:checked ~ .gallery_grid [class*="flowers"],
 #images .filter-animals:checked ~ .gallery_grid [class*="animals"],
@@ -277,6 +287,20 @@ p[title^="last"] {
 #images .filter-y2017:checked ~ .gallery_grid [class*="y2017"],
 #images .filter-y2018:checked ~ .gallery_grid [class*="y2018"],
 #images .filter-y2019:checked ~ .gallery_grid [class*="y2019"],
+
+#secret .filter-y03:checked ~ .gallery_grid [class*="y03"],
+#secret .filter-y04:checked ~ .gallery_grid [class*="y04"],
+#secret .filter-y05:checked ~ .gallery_grid [class*="y05"],
+#secret .filter-y06:checked ~ .gallery_grid [class*="y06"],
+#secret .filter-y07:checked ~ .gallery_grid [class*="y07"],
+#secret .filter-y08:checked ~ .gallery_grid [class*="y08"],
+#secret .filter-y09:checked ~ .gallery_grid [class*="y09"],
+#secret .filter-y10:checked ~ .gallery_grid [class*="y10"],
+#secret .filter-y11:checked ~ .gallery_grid [class*="y11"],
+#secret .filter-y13:checked ~ .gallery_grid [class*="y13"],
+#secret .filter-y17:checked ~ .gallery_grid [class*="y17"],
+#secret .filter-y18:checked ~ .gallery_grid [class*="y18"],
+#secret .filter-y19:checked ~ .gallery_grid [class*="y19"],
 
 #images .filter-crete:checked ~ .gallery_grid [class*="crete"],
 #images .filter-sydney:checked ~ .gallery_grid [class*="sydney"],

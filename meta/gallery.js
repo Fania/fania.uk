@@ -45,6 +45,23 @@ const locations = {
 };
 
 const years = {
+  "y03": false,
+  "y04": false,
+  "y05": false,
+  "y06": false,
+  "y07": false,
+  "y08": false,
+  "y09": false,
+  "y10": false,
+  "y11": false,
+  "y12": false,
+  "y13": false,
+  "y14": false,
+  "y15": false,
+  "y16": false,
+  "y17": false,
+  "y18": false,
+  "y19": true,
   "y2011": false, 
   "y2013": false, 
   "y2017": false, 
