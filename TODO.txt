@@ -2,3 +2,4 @@
 - page layout conditionally for grids (add class to body)
 - reload page refreshes to home page briefly
 - pick fav imgs
+- carry over new posts from hakyll
