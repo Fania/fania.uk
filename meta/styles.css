@@ -55,7 +55,7 @@ body {
   text-align: center;
   z-index: 1;
   position: absolute;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .int_menu {
   top: -50vh;
@@ -466,7 +466,7 @@ label[for="menu_button"] {
   cursor: pointer;
   font-family: "Font Awesome 5 Free"; 
   font-weight: 900; 
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 input#menu_button:checked ~ .int_menu,
 input#menu_button:checked ~ .ext_menu {
