@@ -31,7 +31,9 @@ const categories = {
   "animals": false, 
   "art": false, 
   "night": false, 
-  "city": false
+  "city": false,
+  "patterns": false,
+  "faves": false
 };
 
 const locations = {
@@ -114,3 +116,33 @@ function updateFilters(key, value) {
     localStorage.setItem("gallery-filters", JSON.stringify(newFilters));
   }
 }
+
+
+
+// automatically tag portrait and landscape images
+
+images.forEach(img => {
+  if (img.naturalWidth > (img.naturalHeight * 2)) {
+    img.classList.add("panorama");
+  }
+  if (img.naturalWidth > img.naturalHeight) {
+    img.classList.add("landscape");
+  } else {
+    img.classList.add("portrait");
+  }
+});
+
+
+
+
+// extract tags from EXIF data
+
+// images.forEach(img => {
+
+//   EXIF.getData(img, () => {
+//     var all = EXIF.getAllTags(this);
+//     console.log(img, all);
+//   });
+
+// });
+
