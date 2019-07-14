@@ -506,7 +506,7 @@ input#menu_button:checked ~ label[for="menu_button"] {
     height: 100vh;
     line-height: 100vh;
     margin-right: 60px;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
   .brexit {
     display: flex;
@@ -514,7 +514,7 @@ input#menu_button:checked ~ label[for="menu_button"] {
     width: calc(50% - 60px);
     height: 100vh;
     margin-left: 60px;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
   label[for="menu_button"] {
     display: none;
