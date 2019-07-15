@@ -135,14 +135,32 @@ images.forEach(img => {
 
 
 
-// extract tags from EXIF data
 
-// images.forEach(img => {
 
-//   EXIF.getData(img, () => {
-//     var all = EXIF.getAllTags(this);
-//     console.log(img, all);
-//   });
+
+// responsive images
+// const imagez = document.querySelectorAll(".y18");
+// imagez.forEach(img => {
+
+//   const path = img.getAttribute("src");
+//   const rgx = /([\w*_?]*\d{3})\.\w{3,4}/g;
+//   const source = rgx.exec(path)[1];
+//   console.log(source);
+
+//   let resptag = `
+//     <source media="(max-width: 899px)" srcset="${source}_Small.jpg">
+//     <source media="(min-width: 900px)" srcset="${source}.jpg">
+//     <source type="image/webp" srcset="${source}.webp"> 
+//     <img src="${source}.jpg">`;
+
+//   let tag = `<img src="small.jpg" srcset="medium.jpg 900w, large.jpg 1200w"></img>`;
+
+//   let pic = document.createElement("picture");
+//   pic.classList.add(["gallery_img", "lazyload", "y18"]);
+//   pic.innerHTML = resptag;
+//   let parent = img.parent;
+//   parent.replaceChild(pic, img);
 
 // });
+
 
