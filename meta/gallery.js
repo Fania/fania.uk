@@ -120,19 +120,17 @@ function updateFilters(key, value) {
 
 
 // automatically tag portrait and landscape images
-
-images.forEach(img => {
-  if (img.naturalWidth > (img.naturalHeight * 2)) {
-    img.classList.add("panorama");
+document.addEventListener('lazyloaded', function(e){
+  if (e.target.naturalWidth > (e.target.naturalHeight * 2)) {
+    e.target.classList.add("panorama");
   }
-  if (img.naturalWidth > img.naturalHeight) {
-    img.classList.add("landscape");
-  } else {
-    img.classList.add("portrait");
+  if (e.target.naturalWidth > e.target.naturalHeight) {
+    e.target.classList.add("landscape");
+  }
+  if (e.target.naturalWidth < e.target.naturalHeight) {
+    e.target.classList.add("portrait");
   }
 });
-
-
 
 
 
