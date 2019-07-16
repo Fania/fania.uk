@@ -146,19 +146,23 @@ images.forEach(img => {
 //   const rgx = /([\w*_?]*\d{3})\.\w{3,4}/g;
 //   const source = rgx.exec(path)[1];
 //   console.log(source);
+//   const newpath = path.slice(0, -5);
+//   console.log(newpath);
 
 //   let resptag = `
-//     <source media="(max-width: 899px)" srcset="${source}_Small.jpg">
-//     <source media="(min-width: 900px)" srcset="${source}.jpg">
-//     <source type="image/webp" srcset="${source}.webp"> 
-//     <img src="${source}.jpg">`;
+//     <source media="(max-width: 899px)" srcset="${newpath}_Small.jpg">
+//     <source media="(min-width: 900px)" srcset="${newpath}.jpg">
+//     <source type="image/webp" srcset="${newpath}.webp"> 
+//     <img src="${newpath}.jpg">`;
 
 //   let tag = `<img src="small.jpg" srcset="medium.jpg 900w, large.jpg 1200w"></img>`;
 
 //   let pic = document.createElement("picture");
-//   pic.classList.add(["gallery_img", "lazyload", "y18"]);
+//   pic.classList.add("gallery_img", "lazyload", "y18");
 //   pic.innerHTML = resptag;
-//   let parent = img.parent;
+//   let parent = img.parentElement;
+//   console.log(pic);
+//   console.log(parent);
 //   parent.replaceChild(pic, img);
 
 // });

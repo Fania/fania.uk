@@ -20,6 +20,8 @@ version of certbot-auto:
 check certificates:
 `/etc/certbot-auto certificates`
 
+might need to add flag:
+`--no-bootstrap`
 
 
 renew certificates test:
@@ -32,12 +34,15 @@ check crontab:
 edit crontab:
 `crontab -e`
 
+restart cron:
+`sudo /etc/init.d/cron restart`
 
 certbot logs:
 `nano /var/log/letsencrypt/letsencrypt.log`
 
 
-
+https://community.letsencrypt.org/c/help
+https://community.letsencrypt.org/t/auto-renew-failure-manual-renewal-fine/97972
 
 
 

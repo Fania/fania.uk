@@ -176,7 +176,7 @@ p[title^="last"] {
   grid-template-columns: 1fr 1fr;
   margin-top: 2em;
 }
-.gallery_img {
+.gallery_img, .gallery_img img {
   object-fit: cover;
   height: 250px;
   max-height: 90%;
@@ -290,19 +290,19 @@ p[title^="last"] {
 #images .filter-y2018:checked ~ .gallery_grid [src*="2018"],
 #images .filter-y2019:checked ~ .gallery_grid [src*="2019"],
 
-#secret .filter-y03:checked ~ .gallery_grid [src*="2003"],
-#secret .filter-y04:checked ~ .gallery_grid [src*="2004"],
-#secret .filter-y05:checked ~ .gallery_grid [src*="2005"],
-#secret .filter-y06:checked ~ .gallery_grid [src*="2006"],
-#secret .filter-y07:checked ~ .gallery_grid [src*="2007"],
-#secret .filter-y08:checked ~ .gallery_grid [src*="2008"],
-#secret .filter-y09:checked ~ .gallery_grid [src*="2009"],
-#secret .filter-y10:checked ~ .gallery_grid [src*="2010"],
-#secret .filter-y11:checked ~ .gallery_grid [src*="2011"],
-#secret .filter-y13:checked ~ .gallery_grid [src*="2013"],
-#secret .filter-y17:checked ~ .gallery_grid [src*="2017"],
-#secret .filter-y18:checked ~ .gallery_grid [src*="2018"],
-#secret .filter-y19:checked ~ .gallery_grid [src*="2019"],
+#secret .filter-y03:checked ~ .gallery_grid [class*="y03"],
+#secret .filter-y04:checked ~ .gallery_grid [class*="y04"],
+#secret .filter-y05:checked ~ .gallery_grid [class*="y05"],
+#secret .filter-y06:checked ~ .gallery_grid [class*="y06"],
+#secret .filter-y07:checked ~ .gallery_grid [class*="y07"],
+#secret .filter-y08:checked ~ .gallery_grid [class*="y08"],
+#secret .filter-y09:checked ~ .gallery_grid [class*="y09"],
+#secret .filter-y10:checked ~ .gallery_grid [class*="y10"],
+#secret .filter-y11:checked ~ .gallery_grid [class*="y11"],
+#secret .filter-y13:checked ~ .gallery_grid [class*="y13"],
+#secret .filter-y17:checked ~ .gallery_grid [class*="y17"],
+#secret .filter-y18:checked ~ .gallery_grid [class*="y18"],
+#secret .filter-y19:checked ~ .gallery_grid [class*="y19"],
 
 #images .filter-crete:checked ~ .gallery_grid [src*="crete"],
 #images .filter-sydney:checked ~ .gallery_grid [src*="sydney"],
@@ -592,7 +592,7 @@ input#menu_button:checked ~ label[for="menu_button"] {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-rows: 200px;
   }
-  .gallery_img {
+  .gallery_img, .gallery_img img {
     object-fit: cover;
     height: 100%;
   }
