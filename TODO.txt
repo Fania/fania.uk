@@ -1,0 +1,62 @@
+- https://www.cgranade.com/blog/2016/06/06/ssh-keys-in-vscode.html
+- page layout conditionally for grids (add class to body)
+- reload page refreshes to home page briefly
+- pick fav imgs
+
+
+# people
+
+- [x] 2003
+- [ ] 2004
+- [ ] 2005
+- [ ] 2006
+- [ ] 2007
+- [ ] 2008
+- [ ] 2009 ?
+- [ ] 2010 ?
+- [ ] 2011
+- [ ] 2012 ?
+- [ ] 2013
+- [ ] 2014 ?
+- [ ] 2015 ?
+- [ ] 2016 ?
+- [ ] 2017
+- [ ] 2018 ?
+- [ ] 2019
+
+
+
+# images
+
+- [x] 2003
+- [x] 2004
+- [x] 2005
+- [x] 2006
+- [x] 2007
+- [x] 2008
+- [x] 2009
+- [x] 2010
+- [ ] 2011 japan
+- [ ] 2012 prague, wales
+- [x] 2013 iceland, sydney
+- [ ] 2014
+- [ ] 2015 germany, england
+- [ ] 2016 glastonbury, holkam bay, germany
+- [ ] 2017 england, ruby, france, germany, miami
+- [ ] 2018 phd, wedding, england, germany
+- [ ] 2019 crete
+
+
+
+
+
+
+# SSH Dev
+
+https://www.digitalcomet.be/blog/ssh-and-git-on-one-dot-com/
+
+http://toroid.org/git-website-howto
+
+
+`ssh fania.uk@ssh.fania.uk`
+

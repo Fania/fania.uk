@@ -1,10 +1,10 @@
+# Fania
+.ftpconfig
+
 # Compiled source #
 ###################
 *.com
-<<<<<<< HEAD
 *.class
-=======
->>>>>>> refs/remotes/origin/redesign
 *.dll
 *.exe
 *.o
