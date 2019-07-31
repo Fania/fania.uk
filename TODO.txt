@@ -45,3 +45,18 @@
 - [ ] 2017 england, ruby, france, germany, miami
 - [ ] 2018 phd, wedding, england, germany
 - [ ] 2019 crete
+
+
+
+
+
+
+# SSH Dev
+
+https://www.digitalcomet.be/blog/ssh-and-git-on-one-dot-com/
+
+http://toroid.org/git-website-howto
+
+
+`ssh fania.uk@ssh.fania.uk`
+
