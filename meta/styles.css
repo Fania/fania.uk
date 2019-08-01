@@ -374,7 +374,16 @@ summary h3 {
 summary:focus {
   outline: none;
 }
-li.win::before, li.mac:before, 
+
+#cheats code {
+  background: #e1e7de;
+  padding: 0 4px;
+}
+#cheats ul {
+  padding-inline-start: 0;
+}
+
+li.linux:before, li.win::before, li.mac:before, 
 li.info:before, li.null:before {
   color: var(--medium);
   width: 25px;
@@ -387,6 +396,10 @@ li.win::before {
 li.mac::before {
   font-family: "Font Awesome 5 Brands";
   content: "\f179"; 
+}
+li.linux::before {
+  font-family: "Font Awesome 5 Brands";
+  content: "\f17c"; 
 }
 li.info::before {
   font-family: "Font Awesome 5 Free";

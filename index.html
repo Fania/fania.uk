@@ -639,7 +639,8 @@ n,0);}main(){S(Q(Ar),a)();}H              Ar;t*ist="Rene Magritte"-(1898-1967);
       service nginx restart<br>
       nginx -t</p>
       <p>sudo ln -s name /etc/nginx/sites-enabled/name</p>
-      <p><a href="https://gist.github.com/robbiet480/b1e9a2a22501b8304547">CouchDB Nginx conf</a> <a href="https://www.ssllabs.com/ssltest/">SSL Checker</a></p>
+      <p><a href="https://gist.github.com/robbiet480/b1e9a2a22501b8304547">CouchDB Nginx conf</a> <a href="https://www.ssllabs.com/ssltest/">SSL Checker</a>
+      <li class="info"><a href="https://www.ssllabs.com/ssltest/">SSL Checker</a></li></p>
       <strong>fix ssl labs server rating ubuntu nginx</strong>
       <!-- 1. sudo apt-get install --only-upgrade libssl1.0.0 openssl -->
       <!-- 2. service nginx upgrade -->
@@ -674,42 +675,73 @@ n,0);}main(){S(Q(Ar),a)();}H              Ar;t*ist="Rene Magritte"-(1898-1967);
   </article>
 
   <article>
-    <details>
+    <details open>
       <summary>
-        <h3>Server</h3>
+        <h3>Server Management</h3>
       </summary>
-      <p class="date">November 2015</p>
+      <p class="date">August 2019</p>
       <p></p>
-      <strong>NGINX config files</strong>
-      <p>cd /etc/nginx/sites-available cd /etc/nginx/snippets</p>
-      <p>service nginx stop service nginx restart nginx -t</p>
-      <p>sudo ln -s name /etc/nginx/sites-enabled/name</p>
-      <p><a href="https://gist.github.com/robbiet480/b1e9a2a22501b8304547">CouchDB Nginx conf</a> <a href="https://www.ssllabs.com/ssltest/">SSL Checker</a></p>
-      <strong>fix ssl labs server rating ubuntu nginx</strong>
-      <!-- 1. sudo apt-get install --only-upgrade libssl1.0.0 openssl -->
-      <!-- 2. service nginx upgrade -->
-      <p><a href="https://blog.cloudflare.com/yet-another-padding-oracle-in-openssl-cbc-ciphersuites">link</a></p>
-      <strong>Netstat</strong>
-      <p>netstat -plutn</p>
-      <strong id="couchdb-config-file">CouchDB config file</strong>
-      <p>nano /etc/couchdb/local.ini</p>
-      <p>/etc/init.d/couchdb stop /etc/init.d/couchdb restart</p>
-      <p>/home/ctec3905</p>
-      <p>Files: /usr/local/var/lib/couchdb</p>
-      <strong id="certbot">CertBot</strong>
+
+      <strong>NGINX</strong>
       <ul>
-        <li>generate an SSL certificae certbot certonly</li>
-        <li>show certificates certbot certificates</li>
+        <li class="linux">/etc/nginx/sites-available</li>
+        <li class="linux">/etc/nginx/sites-enabled</li>
+        <li class="linux">/etc/nginx/snippets</li>
+        <li class="linux">stop nginx: <code>service nginx stop</code></li>
+        <li class="linux">restart nginx: <code>service nginx restart</code></li>
+        <li class="linux">test settings: <code>nginx -t</code></li>
+        <li class="linux">create symlink from sites-available to sites-enabled: <code>ln -s name /etc/nginx/sites-enabled/name</code></li>
       </ul>
+
       <strong id="ssl-certificates">SSL certificates</strong>
-      <p>cd /etc/letsencrypt/live</p>
+      <ul>
+        <li class="info"><a href="https://letsencrypt.org">Let's Encrypt</a></li>
+        <li class="info"><a href="https://community.letsencrypt.org/c/help">Let's Encrypt community forum</a></li>
+        <li class="info"><a href="https://certbot.eff.org">certbot</a></li>
+        <li class="info"><a href="https://certbot.eff.org/lets-encrypt/debianstretch-nginx">certbot for Nginx on Debian 9 (Stretch)</a></li>
+        <li class="info"><a href="https://certbot.eff.org/lets-encrypt/debianjessie-nginx">certbot-auto for Nginx on Debian 8 (Jessie)</a></li>
+        <li class="info"><a href="https://www.ssllabs.com/ssltest">Test your SSL settings</a></li>
+        <li class="info"><a href="https://crontab.guru/#*/5_*_*_*_*">Crontab help</a></li>
+      </ul>
+
+      <p>Nginx + Debian Jessie 8</p>
+      <ul>
+        <li class="info"><a href="https://community.letsencrypt.org/t/auto-renew-failure-manual-renewal-fine/97972">Forum autorenew question</a></li>
+        <li class="linux">certificates are found in: /etc/letsencrypt/live</li>
+        <li class="linux"><code>wget https://dl.eff.org/certbot-auto</code></li>
+        <li class="linux"><code>chmod a+x certbot-auto</code></li>
+        <li class="linux">check certificates: <code>/etc/certbot-auto certificates</code></li>
+        <li class="linux">might need to add flag:<code>--no-bootstrap</code></li>
+        <li class="linux">renew certificates test:<code>sudo /etc/certbot-auto renew --dry-run</code></li>
+        <li class="linux">check crontab: <code>crontab -l</code></li>
+        <li class="linux">edit crontab: <code>crontab -e</code></li>
+        <li class="linux">restart cron: <code>sudo /etc/init.d/cron restart</code></li>
+        <li class="linux">certbot logs: <code>nano /var/log/letsencrypt/letsencrypt.log</code></li>
+        <li class="linux">cron job for auto-renew: <code>0 0,12 * * * python -c 'import random; import time; time.sleep(random.random() * 3600)' && /etc/certbot-auto renew --pre-hook "service nginx stop" --post-hook "service nginx start"</code></li>
+      </ul>
+
       <strong id="screen">Screen</strong>
       <ul>
-        <li>show all running screens screen -ls</li>
-        <li>start new screen with name screen -S name</li>
-        <li>attach to a running session screen -x</li>
-        <li>attach to session name screen -r name <!-- - detaching *Ctrl-a d* --></li>
+        <li class="linux">show all running screens: <code>screen -ls</code></li>
+        <li class="linux">start new screen with name: <code>screen -S name</code></li>
+        <li class="linux">attach to a running session: <code>screen -x</code></li>
+        <li class="linux">attach to session name: <code>screen -r name</code></li>
+        <li class="linux">detach from a session: Ctrl-a d</li>
+        <li class="linux">kill a screen: <code>screen -S NUMBER -X quit</code></li>
       </ul>
+
+      <strong>Netstat</strong>
+      <p>show ports used: <code>netstat -plutn</code></p>
+
+      <strong id="couchdb-config-file">CouchDB</strong>
+      <ul>
+        <li class="linux">edit config: <code>nano /etc/couchdb/local.ini</code></li>
+        <li class="linux">stop DB: <code>/etc/init.d/couchdb stop</code></li>
+        <li class="linux">restart DB: <code>/etc/init.d/couchdb restart</code></li>
+        <li class="linux">files to backup are in /usr/local/var/lib/couchdb</li>
+        <li class="info"><a href="https://gist.github.com/robbiet480/b1e9a2a22501b8304547">CouchDB Nginx conf</a></li>
+      </ul>
+
     </details>
   </article>
 
