@@ -284,11 +284,11 @@ p[title^="last"] {
 #images .filter-patterns:checked ~ .gallery_grid [class*="patterns"],
 #images .filter-faves:checked ~ .gallery_grid [class*="faves"],
 
-#images .filter-y2011:checked ~ .gallery_grid [src*="2011"],
-#images .filter-y2013:checked ~ .gallery_grid [src*="2013"],
-#images .filter-y2017:checked ~ .gallery_grid [src*="2017"],
-#images .filter-y2018:checked ~ .gallery_grid [src*="2018"],
-#images .filter-y2019:checked ~ .gallery_grid [src*="2019"],
+#images .filter-y2011:checked ~ .gallery_grid [data-src*="2011"],
+#images .filter-y2013:checked ~ .gallery_grid [data-src*="2013"],
+#images .filter-y2017:checked ~ .gallery_grid [data-src*="2017"],
+#images .filter-y2018:checked ~ .gallery_grid [data-src*="2018"],
+#images .filter-y2019:checked ~ .gallery_grid [data-src*="2019"],
 
 #secret .filter-y03:checked ~ .gallery_grid [class*="y03"],
 #secret .filter-y04:checked ~ .gallery_grid [class*="y04"],
@@ -304,14 +304,14 @@ p[title^="last"] {
 #secret .filter-y18:checked ~ .gallery_grid [class*="y18"],
 #secret .filter-y19:checked ~ .gallery_grid [class*="y19"],
 
-#images .filter-crete:checked ~ .gallery_grid [src*="crete"],
-#images .filter-sydney:checked ~ .gallery_grid [src*="sydney"],
-#images .filter-iceland:checked ~ .gallery_grid [src*="iceland"],
-#images .filter-england:checked ~ .gallery_grid [src*="england"],
+#images .filter-crete:checked ~ .gallery_grid [data-src*="crete"],
+#images .filter-sydney:checked ~ .gallery_grid [data-src*="sydney"],
+#images .filter-iceland:checked ~ .gallery_grid [data-src*="iceland"],
+#images .filter-england:checked ~ .gallery_grid [data-src*="england"],
 #images .filter-england:checked ~ .gallery_grid [class*="england"],
-#images .filter-germany:checked ~ .gallery_grid [src*="germany"],
-#images .filter-japan:checked ~ .gallery_grid [src*="japan"],
-#images .filter-miami:checked ~ .gallery_grid [src*="miami"]
+#images .filter-germany:checked ~ .gallery_grid [data-src*="germany"],
+#images .filter-japan:checked ~ .gallery_grid [data-src*="japan"],
+#images .filter-miami:checked ~ .gallery_grid [data-src*="miami"]
 {
   display: block;
 }
