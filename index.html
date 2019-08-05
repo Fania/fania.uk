@@ -645,6 +645,7 @@ n,0);}main(){S(Q(Ar),a)();}H              Ar;t*ist="Rene Magritte"-(1898-1967);
       <!-- 1. sudo apt-get install --only-upgrade libssl1.0.0 openssl -->
       <!-- 2. service nginx upgrade -->
       <p><a href="https://blog.cloudflare.com/yet-another-padding-oracle-in-openssl-cbc-ciphersuites">link</a></p>
+      <!-- https://certbot.eff.org/docs/ -->
     </details>
   </article>
 
@@ -690,7 +691,7 @@ n,0);}main(){S(Q(Ar),a)();}H              Ar;t*ist="Rene Magritte"-(1898-1967);
         <li class="linux">stop nginx: <code>service nginx stop</code></li>
         <li class="linux">restart nginx: <code>service nginx restart</code></li>
         <li class="linux">test settings: <code>nginx -t</code></li>
-        <li class="linux">create symlink from sites-available to sites-enabled: <code>ln -s name /etc/nginx/sites-enabled/name</code></li>
+        <li class="linux">create symlink from sites-available to sites-enabled: <code>ln -s /etc/nginx/sites-available/name /etc/nginx/sites-enabled/name</code></li>
       </ul>
 
       <strong id="ssl-certificates">SSL certificates</strong>
