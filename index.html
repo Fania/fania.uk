@@ -683,11 +683,50 @@ n,0);}main(){S(Q(Ar),a)();}H              Ar;t*ist="Rene Magritte"-(1898-1967);
       <p class="date">August 2019</p>
       <p></p>
 
+      <strong>General</strong>
+      <ul>
+        <li><code>adduser name</code></li>
+        <li class="info"><a href="https://docs.ovh.com/gb/en/vps/tips-for-securing-a-vps/">Securing a VPS</a><li>
+      </ul>
+
+      <strong>Git Deployment</strong>
+      <ul>
+        <li>1. On local machine</li>
+        <li class="linux">add ssh key to server's authorised keys <code>ssh-copy-id -i ~/.ssh/id_rsa.pub user@server</code></li>
+        <li class="win">add ssh key to server's authorised keys <code>ssh-copy-id -i c:\users\name\.ssh\id_rsa.pub user@server</code></li>
+        <br>
+        <li>2. On server</li>
+        <li class="linux">live site: <i>/home/user/site</i></li>
+        <li class="linux">bare repo: <i>/home/user/site.git</i></li>
+        <li class="linux">initialise bare repo: <code>git init --bare</code></li>
+        <li class="linux">enter hooks folder: <code>cd hooks</code></li>
+        <li class="linux">create "post-receive" file: <code>touch post-receive</code></li>
+        <li class="linux">add the following script using <code>nano post-receive</code>: 
+        <pre><code>#!/bin/sh
+git --work-tree=/home/user/site --git-dir=/home/user/site.git checkout -f</code></pre></li>
+        <li>or use the post-receive script mentioned in this article: <a href="https://gist.github.com/noelboss/3fe13927025b89757f8fb12e9066f2fa">Simple automated GIT Deployment using GIT Hooks</a></li>
+        <li class="linux">fix permissions of post-receive script: <code>chmod +x post-receive</code></li>
+        <br>
+        <li>3. On local machine</li>
+        <li class="win">add new remote: <code>git remote add server user@server:site.git</code></li>
+        <li class="win">check remotes: <code>git remote -v</code></li>
+        <li class="win">add the following lines to the local git config file (i.e. in <i>.git/config</i> as opposed to the global config in <i>c:\users\name\.gitconfig</i>):
+        <pre><code>[alias]
+  pushall = git push origin master && git push server master</code></pre>
+        </li>
+        <li class="win">make changes and push to both remotes: <code>git pushall</code></li>
+        <br>
+
+        <li>More info</li>
+        <li class="info"><a href="https://gist.github.com/noelboss/3fe13927025b89757f8fb12e9066f2fa">Simple automated GIT Deployment using GIT Hooks</a></li>
+        <li class="info"><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps">How To Set Up Automatic Deployment with Git with a VPS</a></li>
+      </ul>
+
       <strong>NGINX</strong>
       <ul>
-        <li class="linux">/etc/nginx/sites-available</li>
-        <li class="linux">/etc/nginx/sites-enabled</li>
-        <li class="linux">/etc/nginx/snippets</li>
+        <li class="linux"><i>/etc/nginx/sites-available</i></li>
+        <li class="linux"><i>/etc/nginx/sites-enabled</i></li>
+        <li class="linux"><i>/etc/nginx/snippets</i></li>
         <li class="linux">stop nginx: <code>service nginx stop</code></li>
         <li class="linux">restart nginx: <code>service nginx restart</code></li>
         <li class="linux">test settings: <code>nginx -t</code></li>
