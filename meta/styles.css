@@ -390,6 +390,9 @@ summary:focus {
 #cheats ul {
   padding-inline-start: 0;
 }
+#cheats em {
+  font-weight: bold;
+}
 
 li.linux:before, li.win::before, li.mac:before, 
 li.info:before, li.null:before {
