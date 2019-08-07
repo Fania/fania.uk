@@ -68,13 +68,14 @@ body {
 }
 i[class*="fa-"] {
   font-size: 2em;
+  color: var(--light);
 }
-.link, a, a:visited {
+.link, a, a:visited, a i[class*="fa-"] {
   color: var(--bright);
   cursor: pointer;
 }
-label[for="cats_button"] a,
-label[for="secret_button"] a 
+label[for="cats_button"] a i[class*="fa-"],
+label[for="secret_button"] a i[class*="fa-"] 
 {
   color: var(--light);
   cursor: default;
