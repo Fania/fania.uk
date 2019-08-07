@@ -712,7 +712,7 @@ git --work-tree=/home/user/site --git-dir=/home/user/site.git checkout -f</code>
         <li class="win">check remotes: <code>git remote -v</code></li>
         <li class="win">add the following lines to the local git config file (i.e. in <i>.git/config</i> as opposed to the global config in <i>c:\users\name\.gitconfig</i>):
         <pre><code>[alias]
-  pushall = git push origin master && git push server master</code></pre>
+  pushall = !git push origin master && git push server master</code></pre>
         </li>
         <li class="win">make changes and push to both remotes: <code>git pushall</code></li>
         <br>
