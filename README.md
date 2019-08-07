@@ -1,3 +1,3 @@
-# Fania.uk
+# Fania.eu
 
-This is my website's code.
+My ever-changing personal website code.
