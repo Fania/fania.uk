@@ -2,7 +2,8 @@
 - page layout conditionally for grids (add class to body)
 - reload page refreshes to home page briefly
 - pick fav imgs
-
+https://mostly-adequate.gitbooks.io/mostly-adequate-guide/content/
+https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md
 
 # people
 
