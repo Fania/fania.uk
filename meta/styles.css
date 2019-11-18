@@ -645,4 +645,26 @@ input#menu_button:checked ~ label[for="menu_button"] {
     grid-gap: 10px;
   }
 
+  /* input#home_button:checked ~ [class$=' home'],
+  input[id^='about']:checked ~ [id='about'],
+  input[id^='bookmarks']:checked ~ [id='bookmarks'],
+  input[id^='cheats']:checked ~ [id='cheats'],
+  input[id^='images']:checked ~ [id='images'],
+  input[id^='cats']:checked ~ [id='cats'],
+  input[id^='secret']:checked ~ [id='secret'] 
+  {
+    display: inline-block;
+  }
+
+  .content div, .content aside, .content article {
+    width: 45%;
+    display: inline-block;
+    margin: 2%;
+  }
+
+
+  .up {
+    float: right;
+  } */
+
 }
