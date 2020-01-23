@@ -164,6 +164,9 @@ p[title^="last"] {
 .content figcaption {
   text-align: center;
 }
+.content figure video {
+  width: 100%;
+}
 .content > div, .content > aside, .content > article {
   border: 0;
 }
