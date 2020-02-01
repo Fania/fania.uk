@@ -683,11 +683,12 @@ do
 
   pandoc $file -f markdown -t html -o html/$name.html -s -H styles --quiet
   # --quiet = suppress warning messages
-  # -s = standalone (full html not snippet)
+  # -s = standalone (full htmlm not snippet)
   # -H = include file in header
-
-  git add .
 done
+
+git add .
+echo "... and stage generated html files."
         </code></pre>
       </p>
       <ul>
