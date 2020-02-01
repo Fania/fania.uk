@@ -656,7 +656,50 @@ n,0);}main(){S(Q(Ar),a)();}H              Ar;t*ist="Rene Magritte"-(1898-1967);
   -->
 
 
+<!-- GIT PANDOC HOOKS -->
+<!-- https://medium.com/@TKalippke/all-you-have-to-do-is-type-yourself-494a2c0b2fd6 -->
 
+
+
+
+  <article>
+    <details>
+      <summary>
+        <h3>Pandoc & Git Hooks</h3>
+      </summary>
+      <p>Add the following code to a <code>pre-commit</code> hook in the <code>.git/hooks</code> folder of your repo. This will generate html files from markdown content every time just before you commit.</p>
+      <p>Make sure you add styles inside a <code>&lt;style&gt;</code> block to a file called "styles". See pandoc command in script below.</p>
+      <p>
+        <pre><code>
+#!/bin/sh
+
+echo "Converting markdown files to html with Pandoc..."
+
+for file in markdown/*.md 
+do
+  echo "Processing $file"
+  name=$(basename ${file%%.*})
+  # echo $name
+
+  pandoc $file -f markdown -t html -o html/$name.html -s -H styles --quiet
+  # --quiet = suppress warning messages
+  # -s = standalone (full html not snippet)
+  # -H = include file in header
+
+  git add .
+done
+        </code></pre>
+      </p>
+      <ul>
+        <li class="info"><a href="https://pandoc.org/MANUAL.html">Pandoc User's Guide</a></li>
+        <li class="info"><a href="https://githooks.com/">githooks.com</a></li>
+        <li class="info"><a href="https://medium.com/@TKalippke/all-you-have-to-do-is-type-yourself-494a2c0b2fd6">The automation of documentation</a></li>
+      </ul>
+    </details>
+  </article>
+
+
+<!-- OTHER STUFF -->
 	<!-- https://www.fpcomplete.com/blog/2012/09/ten-things-you-should-know-about-haskell-syntax
 	https://www.haskell.org/onlinereport/decls.html#fixity
   https://github.com/mdn/css-examples
