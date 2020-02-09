@@ -744,8 +744,18 @@ git --work-tree=/home/user/site --git-dir=/home/user/site.git checkout -f</code>
         </li>
         <li class="win">make changes and push to both remotes: <code>git pushall</code></li>
         <br>
-        <li>Specify port: <code>git remote set-url server ssh://user@server:port/absolute/path/to/site.git</code></li>
+        <li><strong>Specify port:</strong> <code>git remote set-url server ssh://user@server:port/absolute/path/to/site.git</code></li>
         <li class="win">(if cmd complains about caching key and you can't click yes, run putty itself so you can click yes there)</li>
+        <br>
+        <li><strong>Multiple users pushing to same repo on server:</strong></li>
+        <li>Create user account for "git": <code>sudo adduser git</code></li>
+        <li><code>su git</code></li>
+        <li><code>cd</code></li>
+        <li><code>mkdir .ssh && chmod 700 .ssh</code></li>
+        <li><code>touch .ssh/authorized_keys && chmod 600 .ssh/authorized_keys</code></li>
+        <li>Each user wanting to push to the server needs to add their public ssh key to the "git" user's authorized_keys file:</li>
+        <li class="linux">From local machine: <code>ssh-copy-id -i ~/.ssh/id_rsa.pub git@server</code></li>
+        <li class="win">From local machine: <code>ssh-copy-id -i c:\users\name\.ssh\id_rsa.pub git@server</code></li>
         <br>
         <li>More info</li>
         <li class="info"><a href="https://gist.github.com/noelboss/3fe13927025b89757f8fb12e9066f2fa">Simple automated GIT Deployment using GIT Hooks</a></li>
@@ -814,7 +824,13 @@ git --work-tree=/home/user/site --git-dir=/home/user/site.git checkout -f</code>
 
       <strong>General</strong>
       <ul>
-        <li><code>adduser name</code></li>
+        <li class="linux"><code>sudo adduser name</code></li>
+        <li class="linux">Change user permissions<code>chown user file</code></li>
+        <li class="linux">Change user permissions for all<code>chown -R user folder</code></li>
+        <li class="linux">Change group permissions<code>chgrp group file</code></li>
+        <li class="linux">Change group permissions for all<code>chgrp -R group folder</code></li>
+        <br>
+        <li class="linux">Edit access rights<code>nano /etc/ssh/sshd_config</code></li>
         <li class="info"><a href="https://docs.ovh.com/gb/en/vps/tips-for-securing-a-vps/">Securing a VPS</a><li>
       </ul>
 
