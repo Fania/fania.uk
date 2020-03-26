@@ -176,6 +176,7 @@ p[title^="last"] {
 }
 .content > div, .content > aside, .content > article {
   border: 0;
+  /* max-width: 800px; */
 }
 .murakami {
   display: flex;
@@ -382,8 +383,31 @@ summary h3 {
   display: inline-block;
   margin: 1em 0;
 }
+/* summary h3::after {
+  content: "§";
+} */
 summary:focus {
   outline: none;
+}
+#cheats summary h3 a {
+  padding-left: .75em;
+}
+#cheats summary h3 a:hover {
+  color: var(--dark);
+}
+#cheats h2 {
+  margin: 1em 0 .5em 0;
+}
+#cheatsNav {
+  display: flex; 
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+}
+#cheatsNav a {
+  padding-right: 1em;
+}
+#cheatsNav a:hover {
+  color: var(--dark);
 }
 
 #cheats pre {
@@ -544,7 +568,19 @@ input#menu_button:checked ~ label[for="menu_button"] {
 
 
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
+
+  /* input#home_button:checked ~ [class$=' home'],
+  input[id^='about']:checked ~ [id='about'],
+  input[id^='bookmarks']:checked ~ [id='bookmarks'],
+  input[id^='cheats']:checked ~ [id='cheats'],
+  input[id^='images']:checked ~ [id='images'],
+  input[id^='cats']:checked ~ [id='cats'],
+  input[id^='secret']:checked ~ [id='secret'] 
+  {
+    max-width: 800px;
+  } */
+
 
   [class$=' home'] {
     position: fixed;
