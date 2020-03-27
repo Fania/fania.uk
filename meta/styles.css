@@ -88,6 +88,9 @@ label[for="secret_button"] a i[class*="fa-"]
   from { transform: rotate(360deg); } 
   to   { transform: rotate(0deg); }
 }
+.haskell {
+  width: 2em;
+}
 .home {
   transition: all 1s ease-in-out;
 }
@@ -414,6 +417,7 @@ summary:focus {
   background: #e1e7de;
   padding: 4px;
   margin-left: 25px;
+  overflow: scroll;
 }
 #cheats li pre {
   margin-left: 25px;
@@ -429,25 +433,35 @@ summary:focus {
   font-weight: bold;
 }
 
-li.linux:before, li.win::before, li.mac:before, 
-li.info:before, li.null:before {
+#cheats li:not(.mac)::before,
+#cheats li:not(.linux)::before,
+#cheats li:not(.win)::before,
+#cheats li:not(.null)::before {
+  width: 25px;
+  color: var(--medium);
+  content: "*"; 
+  display: inline-block;
+}
+
+#cheats li.linux:before, li.win::before, li.mac:before, 
+#cheats li.info:before, li.null:before {
   color: var(--medium);
   width: 25px;
   display: inline-block;
 }
-li.win::before {
+#cheats li.win::before {
   font-family: "Font Awesome 5 Brands";
   content: "\f17a"; 
 }
-li.mac::before {
+#cheats li.mac::before {
   font-family: "Font Awesome 5 Brands";
   content: "\f179"; 
 }
-li.linux::before {
+#cheats li.linux::before {
   font-family: "Font Awesome 5 Brands";
   content: "\f17c"; 
 }
-li.info::before {
+#cheats li.info::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f013"; 
@@ -455,11 +469,10 @@ li.info::before {
 /* li.null::before {
   content: ""; 
 } */
-li.null::before {
+#cheats li.null::before {
   content: "*"; 
   /* list-style-type: disc; */
 }
-
 
 
 
@@ -531,9 +544,11 @@ label[for="menu_button"] {
   font-weight: 900; 
   transition: all 0.5s ease-in-out;
 }
-input#menu_button:checked ~ .int_menu,
-input#menu_button:checked ~ .ext_menu {
+input#menu_button:checked ~ .int_menu {
   transform: translate(0,50vh);
+}
+input#menu_button:checked ~ .ext_menu {
+  transform: translate(0,49vh);
 }
 label[for="menu_button"]::before {
   content: "\f107";  /* arrow_down */
