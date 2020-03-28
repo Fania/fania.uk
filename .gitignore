@@ -1,6 +1,8 @@
 # Fania
 .ftpconfig
 .gitignore
+robots.txt
+/html/dreams.html
 
 # Compiled source #
 ###################

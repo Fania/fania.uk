@@ -6,9 +6,14 @@ html {
   --medium: #4f8c6c;  /* var(--medium); */
   --bright: #77A756;  /* var(--bright); */
   --light:  #99BE7F;  /* var(--light); */
+  /* --dark:   rgb(34, 45, 63); */
+  /* --darkish:rgb(51, 89, 65); */
+  /* --medium: rgb(79, 140, 108); */
+  /* --bright: rgb(119, 167, 86); */
+  /* --light:  rgb(153, 190, 127); */
 
 /* #ADD9F4 */
-/* #ffffff */
+/* #FFFFFF */
 
 
   --sf: Garamond,
@@ -18,7 +23,6 @@ html {
          "Avant Garde Gothic",
          "Avant Garde",
          sans-serif;
-
 }
 
 
@@ -186,6 +190,10 @@ p[title^="last"] {
 }
 
 .gallery_grid {
+  min-height: 100vh;
+  /* background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%); */
+  /* background-image: url("../images/favicons/spiral-gallery.svg"); */
+  /* background-size: calc(217px + 5px) calc(200px + 10px); */
   display: grid;
   grid-gap: 5px;
   grid-template-columns: 1fr 1fr;
@@ -196,6 +204,8 @@ p[title^="last"] {
   height: 250px;
   max-height: 90%;
   max-width: 100%;
+  /* background-image: url("../images/favicons/spiral-gallery.svg"); */
+  /* background-size: 205px 205px; */
 }
 .landscape {
   grid-column: span 1;
@@ -210,6 +220,10 @@ p[title^="last"] {
   grid-row: span 1;
   grid-column: span 1;
 }
+
+
+
+
 #images .filter_category {
   display: inline-block;
   padding-right: 1em;
@@ -710,7 +724,6 @@ input#menu_button:checked ~ label[for="menu_button"] {
     grid-row: span 2;
     grid-column: span 2;
   }
-
 
 }
 

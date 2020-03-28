@@ -1,8 +1,5 @@
 # Todos
 
-- [ ] page layout conditionally for grids (add class to body)
-- [ ] reload page refreshes to home page briefly
-- [ ] pick fav imgs
 - [ ] try native browser lazyload
 
 # people
