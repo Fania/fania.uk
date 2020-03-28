@@ -1175,8 +1175,14 @@ echo "... and stage generated html files."
       <h4>Data</h4>
       <ul>
         <li class="info">Reference <a href="http://www.nltk.org/data.html">NLTK Data</a></li>
-        <li class="win">Install nltk data: (1) <code>python</code> (2) <code>import nltk</code> (3) <code>nltk.download()</code></li>
+        <li class="win">Install nltk data: (1) <code>python</code></li>
+        <li class="win">Install nltk data: (2) <code>import nltk</code></li>
+        <li class="win">Install nltk data: (3) <code>nltk.download()</code></li>
+        <li class="win">or <code>nltk.download('stopwords')</code> and <code>nltk.download('wordnet')</code></li>
         <li class="win">add path of nltk_data folder to system path</li>
+        <li class="win">or better yet add it to the local repo and code:</li>
+        <li class="win"><code>import nltk</code></li>
+        <li class="win"><code>nltk.data.path.append("PATH/TO/nltk_data")</code></li>
       </ul>
     </details>
   </article>
