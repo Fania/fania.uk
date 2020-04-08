@@ -1198,9 +1198,27 @@ echo "... and stage generated html files."
         <h3 id="Python">Python</h3>
       </summary>
       <p class="date">April 2020</p>
+      <p>See also <a href="#cheats?ServerManagement">info on <code>screen</code></a></p>
       <h4>Install Python 3.8</h4>
       <ul>
         <li class="mac"><a href="https://tecadmin.net/install-python-3-8-ubuntu/">How to Install Python 3.8 on Ubuntu, Debian and LinuxMint</a></li>
+        <li class="null">Check current version <code>python -V</code></li>
+        <li class="null">Check current version <code>pip -V</code></li>
+        <li class="null">Check current version <code>python3.8 -V</code></li>
+      </ul>
+      <h4>Python WSGI ('Whiskey') Server</h4>
+      <ul>
+        <li><a href="https://docs.pylonsproject.org/projects/waitress/en/stable/index.html">Waitress documentation</a></li>
+        <li class="null">Set up a "wsgi.py" file: <pre><code>
+from app import app
+from waitress import serve
+if __name__ == "__main__":
+    serve(app, host='127.0.0.1', port=8001)
+
+</code></pre></li>
+        <li class="null">Then run server using <code>python wsgi.py</code></li>
+        <li><a href="http://tarekamr.appspot.com/blog/flask-waitress.html">A Waitress & A Flask</a> Running Flask Web Framework from within a Waitress WSGI Server</li>
+        <li><a href="https://medium.com/brillio-data-science/exposing-your-data-science-project-to-the-world-flask-with-a-waitress-8592f0356b27">Exposing your data science project to the world — Flask with Waitress!</a></li>
       </ul>
       <h4>Switch the /usr/bin/python link to point to current python link</h4>
       <ul>

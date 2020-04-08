@@ -431,7 +431,7 @@ summary:focus {
   background: #e1e7de;
   padding: 4px;
   margin-left: 25px;
-  overflow: scroll;
+  overflow: auto;
 }
 #cheats li pre {
   margin-left: 25px;
