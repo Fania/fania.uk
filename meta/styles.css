@@ -78,32 +78,20 @@ i[class*="fa-"] {
   color: var(--bright);
   cursor: pointer;
 }
-/* a, a:visited {
-  background: linear-gradient(90deg,var(--dark),var(--bright));
+
+.content a:hover {
+  background: linear-gradient(90deg, var(--bright), var(--dark), var(--bright));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  text-shadow: none;
-  font-weight: bold;
-  border-width: 0 0 1px 0;
-  border-style: none none solid none;
-  border-image-source: linear-gradient(to right, var(--dark), var(--bright));
-  border-image-slice: 1;
-} */
-/* a:hover {
-  background: linear-gradient(90deg,var(--bright),var(--dark));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  text-shadow: none;
-  font-weight: bold;
-  border-width: 0 0 1px 0;
-  border-style: none none solid none;
-  border-image-source: linear-gradient(to right, var(--bright), var(--dark));
-  border-image-slice: 1;
-} */
+  background-size: 200% 200%;
+  animation: wave 1s ease-in-out infinite alternate;
+}
+@keyframes wave {
+  0%  { background-position:   0%  50% }
+  100% { background-position:  100%  50% }
+}
+
 label[for="cats_button"] a i[class*="fa-"],
 label[for="secret_button"] a i[class*="fa-"] 
 {
