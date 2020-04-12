@@ -864,8 +864,13 @@ echo "... and stage generated html files."
         <li class="linux"><i>/etc/nginx/snippets</i></li>
         <li class="linux">stop nginx: <code>service nginx stop</code></li>
         <li class="linux">restart nginx: <code>service nginx restart</code></li>
+        <li class="linux">get nginx status (incl pid): <code>service nginx status</code></li>
         <li class="linux">test settings: <code>nginx -t</code></li>
         <li class="linux">create symlink from sites-available to sites-enabled: <code>ln -s /etc/nginx/sites-available/name /etc/nginx/sites-enabled/name</code></li>
+        <li><strong>Nginx not restarting</strong></li>
+        <li class="linux">check running processes of nginx: <code>ps aux | grep [n]ginx</code></li>
+        <li class="linux">kill process: <code>kill -9 1234</code> for each process!</li>
+        <li class="linux">then start nginx again: <code>service nginx start</code></li>
       </ul>
       <h4 id="screen">Screen</h4>
       <ul>
