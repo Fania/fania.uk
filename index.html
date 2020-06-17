@@ -1015,7 +1015,8 @@ echo "... and stage generated html files."
         <li><code>node app.js`</code> or <code>node app`</code> to run app</li>
         <li><code>npm rm XYZ</code> to remove XYZ</li>
         <li><code>npm uninstall XYZ</code> to remove XYZ</li>
-        <li><code>process.stdout.write("Downloading " + data.length + " bytes\r");</code> to print to console in same line as before...</li>
+        <li class="linux"><code>process.stdout.write("Downloading " + data.length + " bytes\r");</code> to print to console in same line as before...</li>
+        <li class="win"><code>process.stdout.write("Downloading " + data.length + " bytes\033[0G");</code> to print to console in same line as before...</li>
       </ul>
     </details>
   </article>
