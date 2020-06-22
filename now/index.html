@@ -1,0 +1,211 @@
+<!doctype html>
+
+<html lang="en-GB">
+
+<head>
+	<title>Fania | now</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+  
+	<link rel="stylesheet" href="../meta/styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <!-- MAP/SPIRAL FAVICONS, PWA -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="../images/favicons/manifest.json">
+  <link rel="mask-icon" href="../images/favicons/safari-pinned-tab.svg" color="#222D3F">
+  <link rel="shortcut icon" href="../images/favicons/favicon.ico">
+  <meta name="msapplication-config" content="../images/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#222D3F">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Fania EU">
+
+  <style>
+
+    html {
+      --length: 4565;
+      --segment: calc(var(--length) / 25);
+      --gap: calc(var(--segment) * 8);
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    svg#square {
+      fill: none;
+      stroke: white;
+      stroke-width: 5px;
+      max-width: 300px;
+      align-self: flex-end;
+    }
+
+    svg#animatedSquare {
+      max-width: 300px;
+    }
+    svg#animatedSquare .lines {
+      stroke-dasharray: 4554;
+      stroke-dashoffset: 4554;
+      animation: dash 50s linear alternate infinite;
+    }
+
+    @keyframes dash {
+      from { stroke-dashoffset: 4554; }
+      to   { stroke-dashoffset: 0;    }
+    }
+
+
+    .num-1  { stroke: #091540; stroke-dasharray: var(--segment) var(--gap); }
+    .num-2  { stroke: #7692FF; stroke-dasharray: var(--segment) var(--gap); stroke-dashoffset: calc(0 - var(--segment)); }
+    .num-3  { stroke: #ABD2FA; stroke-dasharray: var(--segment) var(--gap); stroke-dashoffset: calc(0 - (var(--segment) * 2)); }
+    .num-4  { stroke: #3D518C; stroke-dasharray: var(--segment) var(--gap); stroke-dashoffset: calc(0 - (var(--segment) * 3)); }
+    .num-5  { stroke: #1B2CC1; stroke-dasharray: var(--segment) var(--gap); stroke-dashoffset: calc(0 - (var(--segment) * 4)); }
+    .num-6  { stroke: #012A36; stroke-dasharray: var(--segment) var(--gap); stroke-dashoffset: calc(0 - (var(--segment) * 5)); }
+    .num-7  { stroke: #00A6FB; stroke-dasharray: var(--segment) var(--gap); stroke-dashoffset: calc(0 - (var(--segment) * 6)); }
+    .num-8  { stroke: #1F7A8C; stroke-dasharray: var(--segment) var(--gap); stroke-dashoffset: calc(0 - (var(--segment) * 7)); }
+    .num-9  { stroke: #50C9CE; stroke-dasharray: var(--segment) var(--gap); stroke-dashoffset: calc(0 - (var(--gap))); }
+
+    @media screen and (min-width: 500px) {
+
+      .int_menu {
+        transform: translateX(calc(-50vw + 80px));
+      }
+      .ext_menu {
+        transform: translateX(calc(50vw - 80px));
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<!-- menu radios -->
+<input type="radio" id="home_button" name="mainnav" checked>
+<input type="radio" id="bookmarks_button" name="mainnav">
+<input type="radio" id="about_button" name="mainnav">
+<input type="radio" id="cheats_button" name="mainnav">
+<input type="radio" id="images_button" name="mainnav">
+<input type="radio" id="cats_button" name="mainnav">
+<input type="radio" id="secret_button" name="mainnav">
+
+<!-- mobile menu button -->
+<input type="checkbox" id="menu_button">
+<label for="menu_button"></label>
+
+<!-- menu internal + external -->
+<nav class="int_menu">
+  <label for="home_button"><a href="../index.html"><img title="Home" class="link spiral" src="../images/favicons/spiral-static.svg"></a></label>
+  <i class="fas fa-code"></i>
+  <label for="about_button"><a href="../index.html#about"><i title="About" class="link fas fa-graduation-cap"></i></a></label>
+  <i class="fas fa-heartbeat"></i>
+  <i class="fas fa-wheelchair"></i>
+  <label for="bookmarks_button"><a href="../index.html#bookmarks"><i title="Bookmarks" class="link fas fa-star"></i></a></label>
+  <i class="fas fa-tree"></i>
+  <label for="cats_button"><a href="../index.html#cats"><i class="fas fa-cat"></i></a></label>
+  <label for="images_button"><a href="../index.html#images"><i title="Images" class="link fas fa-camera"></i></a></label>
+  <i class="fas fa-bed"></i>
+  <a title="Haskell" href="../haskell.html"><img title="Haskell" class="link haskell" src="../images/Haskell.svg"></a>
+  <i class="fas fa-hand-spock"></i>
+  <label for="cheats_button"><a href="../index.html#cheats"><i title="Cheats" class="link fas fa-bug"></i></a></label>
+  <i class="fas fa-music"></i>
+</nav>
+<nav class="ext_menu">
+  <label for="secret_button"><a href="../index.html#secret"><i class="fas fa-smile"></i></a></label>
+  <i class="fas fa-moon"></i>
+  <a title="GitHub" href="https://github.com/fania/" target="_blank"><i class="fab fa-github-alt"></i></a>
+  <i class="fas fa-suitcase"></i>
+  <a title="Teaching" href="https://fania.github.io/presents" target="_blank"><i class="fas fa-university"></i></a>
+  <i class="fab fa-reddit-alien"></i>
+  <i class="fas fa-puzzle-piece"></i>
+  <i class="fas fa-gamepad"></i>
+  <a title="Codepen" href="https://codepen.io/fania/" target="_blank"><i class="fab fa-codepen"></i></a>
+  <i class="fas fa-leaf"></i>
+  <i class="fas fa-globe"></i>
+  <a title="Dave" href="http://daveeveritt.org/" target="_blank"><i class="fas fa-heart"></i></a>
+  <i class="fas fa-diagnoses"></i>
+  <i class="fas fa-frown"></i>
+</nav>
+
+
+
+
+
+<!-- MAIN CONTENT BELOW -->
+
+
+
+<main>
+
+<section id="now" class="content">
+<h1>Now</h1>
+
+<p title="last updated"><span id="date">22 June 2020</span></p>
+
+<h2>Currently, I am ...</h2>
+
+<p></p>
+
+
+<p>I'm fairly obsessed with magic squares and am developing software to generate and visualise them (see <a href="https://squares.cubelife.org">squares.cubelife.org</a> and <a href="https://github.com/fania/magic">github/fania/magic</a>) together with my husband <a href="https://daveeveritt.org">Dave</a>.</p>
+
+<p></p>
+
+<div class="">
+<svg id="animatedSquare" viewBox="-30 -30 560 560" xml:space="preserve"><path class="lines" stroke="black" fill="none" stroke-width="4" d="M 0,0 Q 300,100 100,200 Q 400,300 200,400 Q 300,400 100,0 Q 400,100 200,200 Q 0,300 100,300 Q 400,400 200,0 Q 0,100 300,200 Q 400,200 200,300 Q 0,400 300,0 Q 100,100 200,100 Q 0,200 300,300 Q 100,400 400,0 Z" /></svg>
+
+<svg id="square" viewBox="-6 -6 412 412">
+  <path class="num-1" d="M 100,100 Q 0,0 50,200 Q 100,400 250,350 Q 400,300 400,200 Q 400,100 350,150 Q 300,200 300,300 Q 300,400 150,350 Q 0,300 100,350 Q 200,400 250,200 Q 300,0 350,0 Q 400,0 200,50 Q 0,100 50,100 Q 100,100 100,200 Q 100,300 150,300 Q 200,300 150,250 Q 100,200 150,150 Q 200,100 250,100 Q 300,100 200,50 Q 100,0 250,100 Q 400,200 200,300 Q 0,400 0,300 Q 0,200 100,100 Q 200,0 250,150 Q 300,300 350,350 Q 400,400 300,300 Q 200,200 100,100" />
+  <path class="num-2" d="M 100,100 Q 0,0 50,200 Q 100,400 250,350 Q 400,300 400,200 Q 400,100 350,150 Q 300,200 300,300 Q 300,400 150,350 Q 0,300 100,350 Q 200,400 250,200 Q 300,0 350,0 Q 400,0 200,50 Q 0,100 50,100 Q 100,100 100,200 Q 100,300 150,300 Q 200,300 150,250 Q 100,200 150,150 Q 200,100 250,100 Q 300,100 200,50 Q 100,0 250,100 Q 400,200 200,300 Q 0,400 0,300 Q 0,200 100,100 Q 200,0 250,150 Q 300,300 350,350 Q 400,400 300,300 Q 200,200 100,100" />
+  <path class="num-3" d="M 100,100 Q 0,0 50,200 Q 100,400 250,350 Q 400,300 400,200 Q 400,100 350,150 Q 300,200 300,300 Q 300,400 150,350 Q 0,300 100,350 Q 200,400 250,200 Q 300,0 350,0 Q 400,0 200,50 Q 0,100 50,100 Q 100,100 100,200 Q 100,300 150,300 Q 200,300 150,250 Q 100,200 150,150 Q 200,100 250,100 Q 300,100 200,50 Q 100,0 250,100 Q 400,200 200,300 Q 0,400 0,300 Q 0,200 100,100 Q 200,0 250,150 Q 300,300 350,350 Q 400,400 300,300 Q 200,200 100,100 " />
+  <path class="num-4" d="M 100,100 Q 0,0 50,200 Q 100,400 250,350 Q 400,300 400,200 Q 400,100 350,150 Q 300,200 300,300 Q 300,400 150,350 Q 0,300 100,350 Q 200,400 250,200 Q 300,0 350,0 Q 400,0 200,50 Q 0,100 50,100 Q 100,100 100,200 Q 100,300 150,300 Q 200,300 150,250 Q 100,200 150,150 Q 200,100 250,100 Q 300,100 200,50 Q 100,0 250,100 Q 400,200 200,300 Q 0,400 0,300 Q 0,200 100,100 Q 200,0 250,150 Q 300,300 350,350 Q 400,400 300,300 Q 200,200 100,100 " />
+  <path class="num-5" d="M 100,100 Q 0,0 50,200 Q 100,400 250,350 Q 400,300 400,200 Q 400,100 350,150 Q 300,200 300,300 Q 300,400 150,350 Q 0,300 100,350 Q 200,400 250,200 Q 300,0 350,0 Q 400,0 200,50 Q 0,100 50,100 Q 100,100 100,200 Q 100,300 150,300 Q 200,300 150,250 Q 100,200 150,150 Q 200,100 250,100 Q 300,100 200,50 Q 100,0 250,100 Q 400,200 200,300 Q 0,400 0,300 Q 0,200 100,100 Q 200,0 250,150 Q 300,300 350,350 Q 400,400 300,300 Q 200,200 100,100 " />
+  <path class="num-6" d="M 100,100 Q 0,0 50,200 Q 100,400 250,350 Q 400,300 400,200 Q 400,100 350,150 Q 300,200 300,300 Q 300,400 150,350 Q 0,300 100,350 Q 200,400 250,200 Q 300,0 350,0 Q 400,0 200,50 Q 0,100 50,100 Q 100,100 100,200 Q 100,300 150,300 Q 200,300 150,250 Q 100,200 150,150 Q 200,100 250,100 Q 300,100 200,50 Q 100,0 250,100 Q 400,200 200,300 Q 0,400 0,300 Q 0,200 100,100 Q 200,0 250,150 Q 300,300 350,350 Q 400,400 300,300 Q 200,200 100,100 " />
+  <path class="num-7" d="M 100,100 Q 0,0 50,200 Q 100,400 250,350 Q 400,300 400,200 Q 400,100 350,150 Q 300,200 300,300 Q 300,400 150,350 Q 0,300 100,350 Q 200,400 250,200 Q 300,0 350,0 Q 400,0 200,50 Q 0,100 50,100 Q 100,100 100,200 Q 100,300 150,300 Q 200,300 150,250 Q 100,200 150,150 Q 200,100 250,100 Q 300,100 200,50 Q 100,0 250,100 Q 400,200 200,300 Q 0,400 0,300 Q 0,200 100,100 Q 200,0 250,150 Q 300,300 350,350 Q 400,400 300,300 Q 200,200 100,100 " />
+  <path class="num-8" d="M 100,100 Q 0,0 50,200 Q 100,400 250,350 Q 400,300 400,200 Q 400,100 350,150 Q 300,200 300,300 Q 300,400 150,350 Q 0,300 100,350 Q 200,400 250,200 Q 300,0 350,0 Q 400,0 200,50 Q 0,100 50,100 Q 100,100 100,200 Q 100,300 150,300 Q 200,300 150,250 Q 100,200 150,150 Q 200,100 250,100 Q 300,100 200,50 Q 100,0 250,100 Q 400,200 200,300 Q 0,400 0,300 Q 0,200 100,100 Q 200,0 250,150 Q 300,300 350,350 Q 400,400 300,300 Q 200,200 100,100 " />
+  <path class="num-9" d="M 100,100 Q 0,0 50,200 Q 100,400 250,350 Q 400,300 400,200 Q 400,100 350,150 Q 300,200 300,300 Q 300,400 150,350 Q 0,300 100,350 Q 200,400 250,200 Q 300,0 350,0 Q 400,0 200,50 Q 0,100 50,100 Q 100,100 100,200 Q 100,300 150,300 Q 200,300 150,250 Q 100,200 150,150 Q 200,100 250,100 Q 300,100 200,50 Q 100,0 250,100 Q 400,200 200,300 Q 0,400 0,300 Q 0,200 100,100 Q 200,0 250,150 Q 300,300 350,350 Q 400,400 300,300 Q 200,200 100,100 " />
+</svg>
+</div>
+
+
+
+
+<p></p>
+<p></p>
+<a href=""></a>
+
+<p><strong>Please note:</strong> this document was originally compiled for my work at De Montfort University teaching undergrads functional programming in Haskell. It hasn't been updated in a few years.</p>
+
+
+Current
+I'm a lecturer at De Montfort University (DMU) where I've been teaching various modules such as front-end web development, functional programming, and research to a variety of students from different courses across the Faculty of Computing, Engineering, and Media.
+
+I'm a transdisciplinary creative generalist. I have passion for what I do, and what I think is right. Sometimes that involves saying "no".
+
+My sense of purpose is my own - I'm an introvert.
+
+<a href="https://nownownow.com/"></a>
+
+<p><a href="#">back up</a></p>
+
+</section>
+</main>
+
+
+
+
+<script src="meta/pataphysicalDate.min.js"></script>
+<!-- <script src="meta/date.js"></script> -->
+<script src="meta/scripts.js"></script>
+<!-- <script src="meta/lazysizes.min.js"></script> -->
+<!-- <script src="meta/gallery.js"></script> -->
+<!-- <script>lazySizes.init();</script> -->
+
+</body>
+</html>
