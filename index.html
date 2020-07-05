@@ -851,6 +851,7 @@ echo "... and stage generated html files."
       <p class="date">August 2019</p>
       <h4 id="daemons">Daemons</h4>
       <ul>
+        <li class="linux">Show running processes: <code>ps -ef</code></li>
         <li class="info"><a href="https://github.com/foreversd/forever">Forever</a></li>
         <li class="linux">Install Forever: <code>npm i -g forever</code></li>
         <li class="linux">List all processes: <code>forever list</code></li>
@@ -859,17 +860,32 @@ echo "... and stage generated html files."
         <li class="linux">Start a process with logs: <code>forever start -l foreverLog.log -o foreverOutput.log -e foreverErrors.log app.js</code></li>
         <li class="linux">Stop a process: <code>forever stop app.js</code></li>
         <li class="linux">Restart a process: <code>forever restart app.js</code></li>
-        <li class="linux">Start a process via settings.json: <code>forever start settings.json</code><pre><code>{
-    "uid": "app",
+        <li class="linux">Start a process via forever.json: <code>forever start forever.json</code><pre><code>{
+    "uid": "name-of-node-app",
     "append": true,
     "watch": true,
+    "watchIgnore": ["/absolute/path/logs",
+                    "/absolute/path/irrelevant/stuff"],
     "colors": true,
     "script": "server.js",
     "sourceDir": "/absolute/path",
     "logFile": "/absolute/path/logs/forever.log",
-    "outFile": "/absolute/path/logs/out.log",
-    "errFile": "/absolute/path/logs/error.log"
+    "outFile": "/absolute/path/logs/foreverout.log",
+    "errFile": "/absolute/path/logs/forevererror.log"
+}</code></pre> or <pre><code>{
+    "uid": "name-of-python-app",
+    "append": true,
+    "watch": false,
+    "colors": true,
+    "script": "wsgi.py",
+    "command": "venv/bin/python",
+    "sourceDir": "/absolute/path",
+    "logFile": "/absolute/path/logs/forever.log",
+    "outFile": "/absolute/path/logs/foreverout.log",
+    "errFile": "/absolute/path/logs/forevererror.log"
 }</code></pre></li>
+        <li class="linux">Add to git post-receive hook: <code>forever restart uid-of-process</code></li>
+        <li class="linux">Might need to make sure you run these on the same user.</li>
       </ul>
       <h4>General</h4>
       <ul>
