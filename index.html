@@ -851,9 +851,30 @@ echo "... and stage generated html files."
       <p class="date">August 2019</p>
       <h4 id="daemons">Daemons</h4>
       <ul>
-        <li class="linux">Show running processes: <code>ps -ef</code></li>
+        <li class="info"><a href="https://pm2.keymetrics.io/docs/usage/quick-start/">pm2</a></li>
+        <li class="info"><a href="https://github.com/Unitech/pm2">pm2 GitHub source</a></li>
+        <li class="info"><a href="https://pm2.keymetrics.io/docs/usage/application-declaration/">pm2 Ecosystem File</a></li>
+        <li class="linux">Install pm2: <code>npm i -g pm2</code></li>
+        <li class="linux">Start a process via custom config: <code>pm2 start app.json</code><pre><code>{
+  "name": "name-of-app",
+  "script": "name-of-script.js",
+  "cwd": "./",
+  "watch": true,
+  "ignore_watch": ["node_modules", "logs", ".git", "data"],
+  "error_file": "./logs/pm2errors.log",
+  "out_file": "./logs/pm2out.log",
+  "log_date_format": "YYYY-MM-DD HH:mm Z"
+}</code></pre></li>
+        <li class="linux">Start a process: <code>pm2 start app.js</code></li>
+        <li class="linux">List all processes: <code>pm2 list</code></li>
+        <li class="linux">Setup startup script: <code>pm2 startup</code></li>
+        <li class="linux">Stop a process: <code>pm2 stop NUM/NAME</code></li>
+        <li class="linux">Restart a process: <code>pm2 restart NUM/NAME</code></li>
+        <li class="linux">Delete a process: <code>pm2 delete NUM/NAME</code></li>
         <li class="info"><a href="https://github.com/foreversd/forever">Forever</a></li>
         <li class="info"><a href="https://github.com/foreversd/forever-monitor#options-available-when-using-forever-in-nodejs">Example conf file for Forever</a></li>
+        <li class="info"><a href="https://stackabuse.com/running-node-apps-with-forever/">Running Node Apps with Forever</a></li>
+        <li class="info">See also: <a href="https://github.com/zapty/forever-service">forever-service</a></li>
         <li class="linux">Install Forever: <code>npm i -g forever</code></li>
         <li class="linux">List all processes: <code>forever list</code></li>
         <li class="linux">List all configs: <code>forever config</code></li>
@@ -899,6 +920,7 @@ echo "... and stage generated html files."
         <li class="linux">Check free disk space in human readable form <code>df -h</code></li>
         <li class="linux">Check what is using space in human readable form <code>du -h</code></li>
         <li class="linux">As above but as summary  <code>du -h -s *</code></li>
+        <li class="linux">Show running processes: <code>ps -ef</code></li>
       </ul>
       <h4>Users</h4>
         <li class="linux"><code>sudo adduser name</code></li>
