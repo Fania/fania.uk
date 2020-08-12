@@ -77,6 +77,7 @@ i[class*="fa-"] {
 .link, a, a:visited, a i[class*="fa-"] {
   color: var(--bright);
   cursor: pointer;
+  word-break: break-all;
 }
 
 .content a:hover {
@@ -92,6 +93,7 @@ i[class*="fa-"] {
   100% { background-position:  100%  50% }
 }
 
+a i[class*="fa-hand-spock"],
 label[for="cats_button"] a i[class*="fa-"],
 label[for="secret_button"] a i[class*="fa-"] 
 {
@@ -146,6 +148,8 @@ label[for="secret_button"] a i[class*="fa-"]
   min-height: 100vh;
   padding: 2em 1em;
   background: white;
+  max-width: 900px;
+  margin: 0 auto;
 }
 h1 {
   text-align: right;
@@ -188,16 +192,23 @@ p[title^="last"] {
 
 .content img {
   width: 100%;
+  max-width: 700px;
 }
 .content figcaption {
   text-align: center;
 }
 .content figure video {
   width: 100%;
+  max-width: 700px;
 }
 .content > div, .content > aside, .content > article {
   border: 0;
+  /* max-width: 900px; */
+  /* margin: 0 auto; */
   /* max-width: 800px; */
+}
+#cheats.content > article {
+  margin: 0;
 }
 .murakami {
   display: flex;
@@ -746,6 +757,11 @@ input#menu_button:checked ~ label[for="menu_button"] {
 
   .gallery_grid {
     grid-gap: 10px;
+  }
+
+
+  .content > div, .content > aside, .content > article {
+    width: 900px;
   }
 
   /* input#home_button:checked ~ [class$=' home'],
