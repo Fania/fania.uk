@@ -426,10 +426,10 @@ p[title^="last"] {
   margin: 0;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
-  /* object-fit: cover; */
 }
 
 #bookmarks #portfolio figure a img {
+  object-fit: cover;
   height: 280px;
   display: block;
 }
