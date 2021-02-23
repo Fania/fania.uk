@@ -5,6 +5,8 @@ robots.txt
 robots.old
 /stuff/*
 /html/dreams.html
+/images/videos/*
+
 
 # Compiled source #
 ###################
