@@ -450,6 +450,7 @@ git --work-tree=/home/user/site --git-dir=/home/user/site.git checkout -f</code>
       <h4>3. On local machine</h4>
       <ul>
         <li class="win">add new remote: <code>git remote add server user@server:site.git</code></li>
+        <li class="win">add new remote (with port including via git config file setup): <code>git remote add server ssh://user@server/full/path/to/site.git</code></li>
         <li class="win">check remotes: <code>git remote -v</code></li>
         <li class="win">add the following lines to the local git config file (i.e. in <i>.git/config</i> as opposed to the global config in <i>c:\users\name\.gitconfig</i>):
         <pre><code>[alias]
