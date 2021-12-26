@@ -426,9 +426,9 @@
         <li class="null">See log <code>git log</code></li>
         <li class="null">Nicely formatted log <code>log --graph --date=short --pretty=format:"%h%x09%ad%x09%s"</code></li>
         <li class="info">Purge file from commit history with <a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG Repo-Cleaner</a></li>
-      </ul>
         <li class="null">Remove "ignored" files that were added before the gitignore was created <code>git rm -rf --cached .</code> and then <code>git add .</code> (make sure gitignore is uptodate)</li>
         <li class="null">Delete "cached" files that were previously deleted from cache but are still in history <code>git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch "FILENAME"' -f HEAD</code> (DANGEROUS - MAKE BACKUP)</li>
+      </ul>
     </details>
   </article>
 
@@ -658,39 +658,40 @@ echo "... and stage generated html files."
         <li class="linux">Show running processes: <code>ps -ef</code></li>
       </ul>
       <h4>Users</h4>
-        <li class="linux"><code>sudo adduser name</code></li>
-        <li class="linux">Change user permissions <code>chown user file</code></li>
-        <li class="linux">Change user permissions for all <code>chown -R user folder</code></li>
-        <li class="linux">Change group permissions <code>chgrp group file</code></li>
-        <li class="linux">Change group permissions for all <code>chgrp -R group folder</code></li>
-        <li class="linux">Edit access rights <code>nano /etc/ssh/sshd_config</code></li>
-        <li class="linux">Restart ssh client after change <code>/etc/init.d/ssh restart</code></li>
-        <li class="linux">Add user to sudo group <code>usermod -aG sudo username</code></li>
-      </ul>
+        <ul>
+          <li class="linux"><code>sudo adduser name</code></li>
+          <li class="linux">Change user permissions <code>chown user file</code></li>
+          <li class="linux">Change user permissions for all <code>chown -R user folder</code></li>
+          <li class="linux">Change group permissions <code>chgrp group file</code></li>
+          <li class="linux">Change group permissions for all <code>chgrp -R group folder</code></li>
+          <li class="linux">Edit access rights <code>nano /etc/ssh/sshd_config</code></li>
+          <li class="linux">Restart ssh client after change <code>/etc/init.d/ssh restart</code></li>
+          <li class="linux">Add user to sudo group <code>usermod -aG sudo username</code></li>
+        </ul>
       <h4>NGINX</h4>
-      <ul>
-        <li class="linux"><i>/etc/nginx/sites-available</i></li>
-        <li class="linux"><i>/etc/nginx/sites-enabled</i></li>
-        <li class="linux"><i>/etc/nginx/snippets</i></li>
-        <li class="linux">stop nginx: <code>service nginx stop</code></li>
-        <li class="linux">restart nginx: <code>service nginx restart</code></li>
-        <li class="linux">get nginx status (incl pid): <code>service nginx status</code></li>
-        <li class="linux">test settings: <code>nginx -t</code></li>
-        <li class="linux">create symlink from sites-available to sites-enabled: <code>ln -s /etc/nginx/sites-available/name /etc/nginx/sites-enabled/name</code></li>
-        <li><strong>Nginx not restarting</strong></li>
-        <li class="linux">check running processes of nginx: <code>ps aux | grep [n]ginx</code></li>
-        <li class="linux">kill process: <code>kill -9 1234</code> for each process!</li>
-        <li class="linux">then start nginx again: <code>service nginx start</code></li>
-      </ul>
+        <ul>
+          <li class="linux"><i>/etc/nginx/sites-available</i></li>
+          <li class="linux"><i>/etc/nginx/sites-enabled</i></li>
+          <li class="linux"><i>/etc/nginx/snippets</i></li>
+          <li class="linux">stop nginx: <code>service nginx stop</code></li>
+          <li class="linux">restart nginx: <code>service nginx restart</code></li>
+          <li class="linux">get nginx status (incl pid): <code>service nginx status</code></li>
+          <li class="linux">test settings: <code>nginx -t</code></li>
+          <li class="linux">create symlink from sites-available to sites-enabled: <code>ln -s /etc/nginx/sites-available/name /etc/nginx/sites-enabled/name</code></li>
+          <li><strong>Nginx not restarting</strong></li>
+          <li class="linux">check running processes of nginx: <code>ps aux | grep [n]ginx</code></li>
+          <li class="linux">kill process: <code>kill -9 1234</code> for each process!</li>
+          <li class="linux">then start nginx again: <code>service nginx start</code></li>
+        </ul>
       <h4 id="screen">Screen</h4>
-      <ul>
-        <li class="linux">show all running screens: <code>screen -ls</code></li>
-        <li class="linux">start new screen with name: <code>screen -S name</code></li>
-        <li class="linux">attach to a running session: <code>screen -x</code></li>
-        <li class="linux">attach to session name: <code>screen -r name</code></li>
-        <li class="linux">detach from a session: Ctrl-a d</li>
-        <li class="linux">kill a screen: <code>screen -S NUMBER -X quit</code></li>
-      </ul>
+        <ul>
+          <li class="linux">show all running screens: <code>screen -ls</code></li>
+          <li class="linux">start new screen with name: <code>screen -S name</code></li>
+          <li class="linux">attach to a running session: <code>screen -x</code></li>
+          <li class="linux">attach to session name: <code>screen -r name</code></li>
+          <li class="linux">detach from a session: Ctrl-a d</li>
+          <li class="linux">kill a screen: <code>screen -S NUMBER -X quit</code></li>
+        </ul>
       <h4>Netstat</h4>
       <p>show ports used: <code>netstat -plutn</code></p>
     </details>
@@ -717,27 +718,27 @@ echo "... and stage generated html files."
         <li class="info"><img src="images/colortable.jpg" style="width:500px"></li>
       </ul>
       <h4>Open at location</h4>
-      <ul>
-        <li class="win">'Shift-right-click' folder to open CMD there</li>
-        <li class="mac">Use the 'Open-In-Terminal' script</li>
-      </ul>
+        <ul>
+          <li class="win">'Shift-right-click' folder to open CMD there</li>
+          <li class="mac">Use the 'Open-In-Terminal' script</li>
+        </ul>
       <h4>Finding things</h4>
-      <ul>
-        <li class="mac">Show all locations of file <code>type -a NAME</code></li>
-        <li class="mac">Show location of file or folder <code>which NAME</code></li>
-        <li class="win">Show location of file or folder (if virtualenvwrapper-win is installed) <code>whereis &lt;NAME&gt;</code></li>
-      </ul>
+        <ul>
+          <li class="mac">Show all locations of file <code>type -a NAME</code></li>
+          <li class="mac">Show location of file or folder <code>which NAME</code></li>
+          <li class="win">Show location of file or folder (if virtualenvwrapper-win is installed) <code>whereis &lt;NAME&gt;</code></li>
+        </ul>
       <h4>Reloading</h4>
-      <ul>
-        <li class="mac">Reload terminal <code>source ~/.bash_profile</code></li>
-        <li class="win">Reload cmd <code>SET PATH=%PATH%;C:\CmdShortcuts</code> (unconfirmed)</li>
-      </ul>
+        <ul>
+          <li class="mac">Reload terminal <code>source ~/.bash_profile</code></li>
+          <li class="win">Reload cmd <code>SET PATH=%PATH%;C:\CmdShortcuts</code> (unconfirmed)</li>
+        </ul>
       <h4>Running Scripts</h4>
-      <ul>
-        <li class="win">Make sure Execution Policy is set appriately <code>Set-ExecutionPolicy RemoteSigned</code></li>
-        <li class="win">Check Execution Policy with <code>Get-ExecutionPolicy</code></li>
-        <li class="win">See <a href="https://docs.microsoft.com/en-us/previous-versions//bb613481(v=vs.85)?redirectedfrom=MSDN#how-to-allow-scripts-to-run">How to allow scripts to run</a></li>
-      </ul>
+        <ul>
+          <li class="win">Make sure Execution Policy is set appriately <code>Set-ExecutionPolicy RemoteSigned</code></li>
+          <li class="win">Check Execution Policy with <code>Get-ExecutionPolicy</code></li>
+          <li class="win">See <a href="https://docs.microsoft.com/en-us/previous-versions//bb613481(v=vs.85)?redirectedfrom=MSDN#how-to-allow-scripts-to-run">How to allow scripts to run</a></li>
+        </ul>
     </details>
   </article>
 
@@ -809,6 +810,7 @@ echo "... and stage generated html files."
         <h3 id="JavaScript">JavaScript</h3>
       </summary>
       <ul>
+        <li>debug several variables in one console log <code>console.log({x,y,z});</code></li>
         <li><a href="https://mostly-adequate.gitbooks.io/mostly-adequate-guide/content/">Professor Frisby's Mostly Adequate Guide to Function Programming</a> with JavaScript</li>
         <li>You Don't Know JS - A book series on JavaScript <a href="https://github.com/getify/You-Dont-Know-JS/tree/1st-ed">YDKJS</a> by Kyle Simpson</li>
         <li>Document fragment vs innerHTML vs looped appendChild <a href="https://jsperf.com/document-fragment-vs-innerhtml-vs-looped-appendchild/131">jsperf.com</a></li>
@@ -852,7 +854,7 @@ echo "... and stage generated html files."
         <li>A resource of stuff that's <a href="https://free-for.dev/">Free for developers</a></li>
         <li><a href="https://github.com/thedaviddias/Front-End-Checklist">Front End Checklist</a></li>
         <li><a href="https://andreasbm.github.io/web-skills/">Web skills overview</a> see <a href="https://github.com/andreasbm/web-skills">source on GitHub</a></li>
-        <li>Developer Roadmaps at <a href="https://roadmap.sh/">roadmap.sh</a> and <a href="https://github.com/kamranahmedse/developer-roadmap"></a></li>
+        <li>Developer Roadmaps at <a href="https://roadmap.sh/">roadmap.sh</a> and <a href="https://github.com/kamranahmedse/developer-roadmap">dev roadmap</a></li>
         <li>Progressive Web App Demo: <a href="https://whatpwacando.today/">What PWA can do today</a></li>
         <li>Things you can do with a browser in 2020 <a href="https://github.com/luruke/browser-2020"></a>Browser 2020</li>
         <li>Writing todos <a href="https://github.com/todotxt/todo.txt">todo.txt</a></li>
