@@ -554,6 +554,10 @@ echo "... and stage generated html files."
         <li class="info"><a href="https://certbot.eff.org/lets-encrypt/debianjessie-nginx">certbot-auto for Nginx on Debian 8 (Jessie)</a></li>
         <li class="info"><a href="https://www.ssllabs.com/ssltest">Test your SSL settings</a></li>
         <li class="info"><a href="https://crontab.guru/#*/5_*_*_*_*">Crontab help</a></li>
+        <li class="info"><a href="https://letsencrypt.org/docs/certificates-for-localhost/">Certificates for localhost</a><br> <code>openssl req -x509 -out localhost.crt -keyout localhost.key \
+  -newkey rsa:2048 -nodes -sha256 \
+  -subj '/CN=localhost' -extensions EXT -config &lt;( \
+   printf "[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")</code></li>
       </ul>
       <h4>Nginx + Debian Stretch 9</h4>
       <ul>
