@@ -459,6 +459,7 @@
         <li class="linux">live site: <i>/home/user/site</i></li>
         <li class="linux">bare repo: <i>/home/user/site.git</i></li>
         <li class="linux">initialise bare repo: <code>git init --bare</code></li>
+        <li class="linux">alternatively use: <code>git init --shared --separate-git-dir code.git html</code> inside parent folder</li>
         <li class="linux">enter hooks folder: <code>cd hooks</code></li>
         <li class="linux">create "post-receive" file: <code>touch post-receive</code></li>
         <li class="linux">add the following script using <code>nano post-receive</code>: 
@@ -493,6 +494,12 @@ git --work-tree=/home/user/site --git-dir=/home/user/site.git checkout -f</code>
         <li>Each user wanting to push to the server needs to add their public ssh key to the "git" user's authorized_keys file:</li>
         <li class="linux">From local machine: <code>ssh-copy-id -i ~/.ssh/id_rsa.pub git@server</code></li>
         <li class="win">From local machine: <code>ssh-copy-id -i c:\users\name\.ssh\id_rsa.pub git@server</code></li>
+      </ul>
+      <ul>
+        <li>see above</li>
+        <li>then either have the code live in git home directory and all users push to that as git user (ssh://git@server/...)</li>
+        <li>or the code lives in a user home directory and other users of the same git group can push to it (ssh://user@server/...)</li>
+        <li>make sure folder permissions are correct (775/755 for folders/subfolders)</li>
       </ul>
       <h4>More info</h4>
       <ul>
