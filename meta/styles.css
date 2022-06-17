@@ -80,6 +80,8 @@ i[class*="fa-"] {
   word-break: break-all;
 }
 
+
+
 .content a:hover {
   background: linear-gradient(90deg, var(--bright), var(--dark), var(--bright));
   -webkit-background-clip: text;
@@ -87,6 +89,10 @@ i[class*="fa-"] {
   -webkit-box-decoration-break: clone;
   background-size: 200% 200%;
   animation: wave 1s ease-in-out infinite alternate;
+  color: rgba(26, 184, 247, 0.295);
+  color: rgba(26, 96, 247, 0.295);
+  color: rgba(207, 247, 26, 0.295);
+
 }
 @keyframes wave {
   0%  { background-position:   0%  50% }

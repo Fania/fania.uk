@@ -2,7 +2,7 @@
 // Pataphysical date for footer
 
 // let now = new Date();
-let lastEdited = new Date("12 November 2019");
+let lastEdited = new Date("17 June 2022");
 // let pnow = new PataphysicalDate();
 let plastEdited = new PataphysicalDate(lastEdited);
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
