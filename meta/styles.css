@@ -277,12 +277,16 @@ p[title^="last"] {
   left: 0;
   width: 100vw;
   height: 100vh;
-  text-align: center;
+  /* text-align: center; */
   background-color: rgba(0,0,0,0.9);
   justify-content: center;
   align-items: center;
   display: flex;
   z-index: 9999;
+}
+#modal ul {
+  color: white;
+  list-style-type: none;
 }
 #modal img {
   width: 90%;
@@ -349,6 +353,7 @@ p[title^="last"] {
 #images .filter-y2017:checked ~ .gallery_grid [data-src*="2017"],
 #images .filter-y2018:checked ~ .gallery_grid [data-src*="2018"],
 #images .filter-y2019:checked ~ .gallery_grid [data-src*="2019"],
+#images .filter-y2022:checked ~ .gallery_grid [data-src*="2022"],
 
 #secret .filter-y03:checked ~ .gallery_grid [class*="y03"],
 #secret .filter-y04:checked ~ .gallery_grid [class*="y04"],
@@ -363,6 +368,7 @@ p[title^="last"] {
 #secret .filter-y17:checked ~ .gallery_grid [class*="y17"],
 #secret .filter-y18:checked ~ .gallery_grid [class*="y18"],
 #secret .filter-y19:checked ~ .gallery_grid [class*="y19"],
+#secret .filter-y22:checked ~ .gallery_grid [class*="y22"],
 
 #images .filter-crete:checked ~ .gallery_grid [data-src*="crete"],
 #images .filter-sydney:checked ~ .gallery_grid [data-src*="sydney"],

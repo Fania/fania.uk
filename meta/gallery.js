@@ -4,16 +4,42 @@ const images = document.querySelectorAll(".gallery_img");
 for(let i=0; i < images.length; i++){
   images[i].addEventListener("click", toggleModal);
 }
-function toggleModal() {
+function toggleModal(ev) {
   let modal = document.createElement("div");
   document.body.appendChild(modal);
   modal.id = "modal";
-  let img = event.srcElement.cloneNode();
+  let img = ev.target.cloneNode();
+  const classes = img.classList;
+  const keepers = [];
+  const ul = document.createElement("ul");
+  [...classes].forEach(c => {
+    if(c != 'gallery_img'  && 
+       c != 'ls-is-cached' && 
+       c != 'portrait' && 
+       c != 'landscape' && 
+       c != 'panorama' && 
+       c != 'lazyloaded') {
+      keepers.push(c);
+      const li = document.createElement("li");
+      const liText = document.createTextNode(c);
+      ul.appendChild(li);
+      li.appendChild(liText);
+    }
+  })
+  modal.appendChild(ul);
   modal.appendChild(img);
   modal.addEventListener("click", () => {
     document.body.removeChild(modal);
   });
 }
+
+
+  // if(classes.contains('portrait')) {
+  //   console.log('portrait');
+  // } else {
+  //   console.log('landscape');
+
+  // }
 
 
 // save filters to local storage
@@ -63,12 +89,14 @@ const years = {
   "y16": false,
   "y17": false,
   "y18": false,
-  "y19": true,
+  "y19": false,
+  "y22": true,
   "y2011": false, 
   "y2013": false, 
   "y2017": false, 
   "y2018": false, 
-  "y2019": true
+  "y2019": false,
+  "y2022": true
 };
 
 

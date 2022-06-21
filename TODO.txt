@@ -1,6 +1,7 @@
 # Todos
 
 - [ ] try native browser lazyload
+- [ ] additive vs subtractive filters in gallery?
 
 
 # people
@@ -35,13 +36,14 @@
 - [x] 2008
 - [x] 2009
 - [x] 2010
-- [ ] 2011 japan
+- [x] 2011 japan
 - [ ] 2012 prague, wales
 - [x] 2013 iceland, sydney
 - [ ] 2014
-- [ ] 2015 germany, england
-- [ ] 2016 glastonbury, holkam bay, germany
-- [ ] 2017 england, ruby, france, germany, miami
-- [ ] 2018 phd, wedding, england, germany
-- [ ] 2019 crete
+- [x] 2015 germany, england
+- [x] 2016 glastonbury, holkam bay, germany
+- [x] 2017 england, ruby, france, germany, miami
+- [x] 2018 phd, wedding, england, germany
+- [x] 2019 crete
+- [ ] 2022 garden, norway
 
