@@ -1,4 +1,24 @@
 {
+  "connector": {
+    "name": "local"
+  },
+  "formatters": [
+    "stylish",
+    "codeframe"
+  ],
+  "parsers": [
+    "@hint/parser-html",
+    "@hint/parser-css",
+    "@hint/parser-javascript",
+    "@hint/parser-manifest"
+  ],
+  "hints": {},
+  "hintsTimeout": 120000,
+  "extends": [
+    "accessibility",
+    "web-recommended",
+    "progressive-web-apps"
+  ],
   "devDependencies": {
     "hint": "^7.1.3"
   },

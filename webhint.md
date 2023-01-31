@@ -28,23 +28,31 @@
 
 ## Run 
 
-- run webhint with
-  `npm run webhint`
-
-- or pipe to text file with
+- if running a project with a webserver 
+  then run webhint with *puppeteer* connector 
+  and the command `npm run webhint`
+  or pipe to text file with
   `npm run webhint > webhint-report.txt`
+
+- if running a project with local files only
+  then run webhint with *local* connector
+  which starts
 
 
 ## Customize
 
 ### Connectors
 
-- *local* install with `npm i @hint/connector-local`
+- *local* automatically installed.
   and add to both package.json and .hintrc
   ```
   {
       "connector": {
-          "name": "local"
+          "name": "local",
+          "options": {
+            "pattern": ["**", "!.git/**"],
+            "watch": true
+        }
       }
   }
   ```
@@ -93,8 +101,31 @@ package.json and .hintrc
 ```
 
 
+## Extends
+
+All four installed automatically by webhint.
+- *development* analyze local file or directory to get hints on different file types that are not available on websites.
+- *web-recommend* analyze local files or directories before you publishing to your website using http or https.
+- *accessibility* enabling accessibility hints based on axe-core tool.
+- *progressive-web-apps* use for checking progressive web apps (PWAs).
+```
+"extends": [
+  "development",
+  "web-recommended",
+  "accessibility",
+  "progressive-web-apps"
+],
+```
+
+
 ## Hints
 
 Install with `npm i @hint/hint-` and the rest of the name of the hint package name. So e.g. `npm i -D @hint/hint-html-checker`.
 See [WebHint User Guide](https://webhint.io/docs/user-guide/).
 
+    // "content-type": [
+    //   "error",
+    //   {
+    //     ".*\\.js": "application/javascript; charset=utf-8"
+    //   }
+    // ]
