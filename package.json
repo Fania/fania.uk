@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "hint": "^7.1.3"
+  },
+  "dependencies": {
+    "@hint/connector-local": "^3.2.24",
+    "@hint/formatter-codeframe": "^3.1.33",
+    "@hint/formatter-stylish": "^3.1.33",
+    "@hint/parser-css": "^3.0.36",
+    "@hint/parser-html": "^3.1.2",
+    "@hint/parser-javascript": "^3.1.22",
+    "@hint/parser-manifest": "^2.3.16"
+  }
+}
