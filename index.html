@@ -482,6 +482,7 @@
         <li class="info">Purge file from commit history with <a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG Repo-Cleaner</a></li>
         <li class="null">Remove "ignored" files that were added before the gitignore was created <code>git rm -rf --cached .</code> and then <code>git add .</code> (make sure gitignore is uptodate)</li>
         <li class="null">Delete "cached" files that were previously deleted from cache but are still in history <code>git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch "FILENAME"' -f HEAD</code> (DANGEROUS - MAKE BACKUP)</li>
+        <li class="null">Fix diverged branch problem: check <code>git log HEAD..origin/master</code>, then if head is the same (which indicates that indeed branches have diverged at some earlier commits) then <code>git merge origin/master</code> and <code>git commit -m "message"</code> and <code>git push</code></li>
       </ul>
     </details>
   </article>
