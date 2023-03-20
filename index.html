@@ -879,6 +879,37 @@ echo "... and stage generated html files."
         <li class="mac"><a href="https://jekyllrb.com/docs/installation/macos/">Installing Jekyll on a mac</a></li>
         <li class="info">Jekyll <a href="https://cloudcannon.com/cheat-sheets/jekyll/">Cheat sheet</a></li>
       </ul>
+      <p>Jekyll deployment on private server</p>
+      <ul>
+        <li class="info">Install Jekyll on your local machine and setup the project as you want.</li>
+        <li class="info">We want to be pushing only the <code>_site</code> folder with the compiled HTML files to the server, so we don't have to install Jekyll and recompile there, as that just introduces the possibility of errors in the chain of actions.</li>
+        <li class="info">Prepare the server infrastructure ready according to instructions <a href="#GitDeployment">above</a>.</li>
+        <li class="info">Then on your local machine, you need to make you Jekyll project (from now I will call this the <code>root</code> folder) a git repository.</li>
+        <li class="info">You also need to make your <code>_site</code> folder a git repo.</li>
+        <li class="info">In the <code>root</code> repo, create a <code>pre-commit</code> file with the following contents:</li>
+        <li class="mac"><code>
+#!/bin/sh
+cd absolute/path/to/Jekyll/_site
+date
+date +'%d/%m/%Y'
+var=$date
+git add .
+git commit -m "Changes from $var via auto-commit script."
+        </code></li>
+        <li class="info">Make sure this file is executable <code>chmod +x pre-commit</code></li>
+        <li class="info">We also need a <code>pre-push</code> file:</li>
+        <li class="mac"><code>
+#!/bin/sh
+cd absolute/path/to/Jekyll/_site
+git push server master
+        </code></li>
+        <li class="info">Again, make sure the file is executable, using the same command above <code>chmod +x pre-push</code></li>
+        <li class="info">To make the <code>pre-push</code> file work, we need to make sure the git remote for the <code>_site</code> repo is set correctly.</li>
+        <li class="info">So, check it using <code>git remote -v</code></li>
+        <li class="info">If it doesn't list a "server" remote then we need to add it.</li>
+        <li class="info">Add the remote inside the <code>_site</code> repo: <code>git remote add server ssh://user@server/full/path/to/site.git</code></li>
+        <li class="info">At this point, the workflow is ready. You can commit work in your <code>root</code> folder and it gets automatically commited as well in your <code>_site</code> folder. When you are ready to push your source code (to GitHub usually) then your compiled code will also be pushed to the private server of your choice.</li>
+      </ul>
     </details>
   </article>
 
