@@ -887,7 +887,7 @@ echo "... and stage generated html files."
         <li class="info">Then on your local machine, you need to make you Jekyll project (from now I will call this the <code>root</code> folder) a git repository.</li>
         <li class="info">You also need to make your <code>_site</code> folder a git repo.</li>
         <li class="info">In the <code>root</code> repo, create a <code>pre-commit</code> file with the following contents:</li>
-        <li class="mac"><code>
+        <li class="mac"><pre><code>
 #!/bin/sh
 cd absolute/path/to/Jekyll/_site
 date
@@ -895,14 +895,14 @@ date +'%d/%m/%Y'
 var=$date
 git add .
 git commit -m "Changes from $var via auto-commit script."
-        </code></li>
+        </code></pre></li>
         <li class="info">Make sure this file is executable <code>chmod +x pre-commit</code></li>
         <li class="info">We also need a <code>pre-push</code> file:</li>
-        <li class="mac"><code>
+        <li class="mac"><pre><code>
 #!/bin/sh
 cd absolute/path/to/Jekyll/_site
 git push server master
-        </code></li>
+        </code></pre></li>
         <li class="info">Again, make sure the file is executable, using the same command above <code>chmod +x pre-push</code></li>
         <li class="info">To make the <code>pre-push</code> file work, we need to make sure the git remote for the <code>_site</code> repo is set correctly.</li>
         <li class="info">So, check it using <code>git remote -v</code></li>
