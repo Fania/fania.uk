@@ -1,10 +1,12 @@
 # Fania
+.hintrc
 .ftpconfig
 .gitignore
 robots.txt
 robots.old
 /html/dreams.html
 /images/videos/*
+package-lock.json
 
 
 # Compiled source #
@@ -45,3 +47,4 @@ robots.old
 ehthumbs.db
 Thumbs.db
 .DS_Store
+node_modules

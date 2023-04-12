@@ -114,7 +114,7 @@
     <h3><a href="/now/index.html">Current</a></h3>
     <p>I'm a lecturer on sabbatical at <a href="http://www.dmu.ac.uk/">De Montfort University</a> (DMU) where I've been teaching various modules such as front-end web development, functional programming, and research to a variety of students from different courses across the Faculty of Computing, Engineering, and Media.</p>
     <p>I also spend time programming for <a href="http://ecovisum.com">Ecovisum</a>.</p>
-    <p>I'm a transdisciplinary creative generalist. I have passion for what I do, and what I think is right. Sometimes that involves saying "no".</p>
+    <p>I'm a transdisciplinary creative generalist. I have passion for what I do and what I think is right. Sometimes that involves saying "no".</p>
     <p>My sense of purpose is my own - I'm an introvert.</p>
 
     <h3>Un-Current</h3>
@@ -483,6 +483,7 @@
         <li class="info">Purge file from commit history with <a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG Repo-Cleaner</a></li>
         <li class="null">Remove "ignored" files that were added before the gitignore was created <code>git rm -rf --cached .</code> and then <code>git add .</code> (make sure gitignore is uptodate)</li>
         <li class="null">Delete "cached" files that were previously deleted from cache but are still in history <code>git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch "FILENAME"' -f HEAD</code> (DANGEROUS - MAKE BACKUP)</li>
+        <li class="null">Fix diverged branch problem: check <code>git log HEAD..origin/master</code>, then if head is the same (which indicates that indeed branches have diverged at some earlier commits) then <code>git merge origin/master</code> and <code>git commit -m "message"</code> and <code>git push</code></li>
       </ul>
     </details>
   </article>
@@ -551,6 +552,23 @@ git --work-tree=/home/user/site --git-dir=/home/user/site.git checkout -f</code>
         <li class="info"><a href="https://gist.github.com/noelboss/3fe13927025b89757f8fb12e9066f2fa">Simple automated GIT Deployment using GIT Hooks</a></li>
         <li class="info"><a href="https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server">Git on the Server - Setting Up the Server</a></li>
         <li class="info"><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps">How To Set Up Automatic Deployment with Git with a VPS</a></li>
+      </ul>
+    </details>
+  </article>
+
+  <article>  <!-- SSH -->
+    <details>
+      <summary>
+        <h3 id="ssh">SSH</h3>
+      </summary>
+      <!-- <p></p> -->
+      <!-- <p></p> -->
+      <ul>
+        <!-- <li><a href="">link</a></li> -->
+        <!-- <li class="info"><a href=""></a></li> -->
+        <!-- <li class="win"><code></code></li> -->
+        <li class="mac"><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generate SSH key for Mac and add to keychain</a></li>
+        <!-- <li class="null"><code></code></li> -->
       </ul>
     </details>
   </article>
@@ -721,6 +739,7 @@ echo "... and stage generated html files."
       <p class="date">June 2022</p>
       <h4>General</h4>
       <ul>
+        <li class="info"><a href="https://strftime.net">Date and Time Format checker - strftime.net</a></li>
         <li class="info"><a href="https://docs.ovh.com/gb/en/vps/tips-for-securing-a-vps/">Securing a VPS</a></li>
         <li class="info"><a href="https://www.digitalocean.com/community/questions/how-do-i-change-hostname">Changing a VPS hostname</a></li>
         <li class="info">Mozilla server sec checker: <a href="https://observatory.mozilla.org/">observatory.mozilla</a></li>
@@ -739,9 +758,11 @@ echo "... and stage generated html files."
           <li class="linux">Get all users <code>getent passwd</code></li>
           <li class="linux">Get normal users <code>getent passwd {1000..60000}</code></li>
           <li class="linux">Change file permissions <code>chmod XXX file</code></li>
+          <li class="linux">Escalate to root user <code>sudo su</code></li>
           <li class="linux"><code>sudo adduser name</code></li>
+          <li class="linux">Escalate to "user" user <code>su user</code></li>
           <li class="linux">Change user permissions <code>chown user file</code></li>
-          <li class="linux">Change permissions recurively <code>chown -R user:group folder</code></li>
+          <li class="linux">Change permissions recursively <code>chown -R user:group folder</code></li>
           <li class="linux">Change group permissions <code>chgrp group file</code></li>
           <li class="linux">Change group permissions for all <code>chgrp -R group folder</code></li>
           <li class="linux">Edit access rights <code>nano /etc/ssh/sshd_config</code></li>
@@ -803,7 +824,11 @@ echo "... and stage generated html files."
         <li class="win">Close a pane using <code>Ctrl Shift W</code>.</li>
         <li class="win">Customisation config file for new Windows Terminal in <code>Customisation stuff in C:\Users\Fania\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\profiles.json</code></li>
         <li class="win"><a href="https://stackoverflow.com/questions/56839307/adding-git-bash-to-the-new-windows-terminal">Adding Git-Bash to the new Windows Terminal</a></li>
-        <li class="info"><img src="images/colortable.jpg" alt="color table" style="width:500px"></li>
+        <li class="info"><img class="inlineImg" src="images/colortable.jpg" alt="color table"></li>
+        <li class="mac"><a href="https://www.makeuseof.com/customize-zsh-prompt-macos-terminal/">How to Customize the zsh Prompt in the macOS Terminal</a></li>
+        <li class="mac"><code>touch .hushlogin</code> to hide the last login message in terminal</li>
+        <li class="mac">Get mac terminal to startup in repo directory: in terminal preferences, in profiles tab, under shell, then startup, tick "run command" and enter this: <code>cd Documents/GitHub && clear</code></li>
+        <li class="mac">Get mac terminal to startup in repo directory: in terminal preferences, in profiles tab, under shell, then startup, tick "run command" and enter this: <code>cd Documents/GitHub && clear</code></li>
       </ul>
       <h4>Open at location</h4>
         <ul>
@@ -828,6 +853,64 @@ echo "... and stage generated html files."
           <li class="win">Check Execution Policy with <code>Get-ExecutionPolicy</code></li>
           <li class="win">See <a href="https://docs.microsoft.com/en-us/previous-versions//bb613481(v=vs.85)?redirectedfrom=MSDN#how-to-allow-scripts-to-run">How to allow scripts to run</a></li>
         </ul>
+    </details>
+  </article>
+
+  <article> <!-- Finder -->
+    <details>
+      <summary>
+        <h3 id="finder">Finder</h3>
+      </summary>
+      <p class="date">March 2023</p>
+      <ul>
+        <!-- <li><a href="">link</a></li> -->
+        <!-- <li class="info"><a href=""></a></li> -->
+        <li class="mac">Show invisible files <code>Command + Shift + .</code></li>
+      </ul>
+    </details>
+  </article>
+
+  <article> <!-- Jekyll -->
+    <details>
+      <summary>
+        <h3 id="jekyll">Jekyll</h3>
+      </summary>
+      <p class="date">March 2023</p>
+      <ul>
+        <li class="mac"><a href="https://jekyllrb.com/docs/installation/macos/">Installing Jekyll on a mac</a></li>
+        <li class="info">Jekyll <a href="https://cloudcannon.com/cheat-sheets/jekyll/">Cheat sheet</a></li>
+      </ul>
+      <p>Jekyll deployment on private server</p>
+      <ul>
+        <li class="info">Install Jekyll on your local machine and setup the project as you want.</li>
+        <li class="info">We want to be pushing only the <code>_site</code> folder with the compiled HTML files to the server, so we don't have to install Jekyll and recompile there, as that just introduces the possibility of errors in the chain of actions.</li>
+        <li class="info">Prepare the server infrastructure ready according to instructions <a href="https://fania.eu#cheats?GitDeployment">above</a>.</li>
+        <li class="info">Then on your local machine, you need to make you Jekyll project (from now I will call this the <code>root</code> folder) a git repository.</li>
+        <li class="info">You also need to make your <code>_site</code> folder a git repo.</li>
+        <li class="info">In the <code>root</code> repo, create a <code>pre-commit</code> file with the following contents:</li>
+        <li class="mac"><pre><code>
+#!/bin/sh
+cd absolute/path/to/Jekyll/_site
+date
+date +'%d/%m/%Y'
+var=$date
+git add .
+git commit -m "Changes from $var via auto-commit script."
+        </code></pre></li>
+        <li class="info">Make sure this file is executable <code>chmod +x pre-commit</code></li>
+        <li class="info">We also need a <code>pre-push</code> file:</li>
+        <li class="mac"><pre><code>
+#!/bin/sh
+cd absolute/path/to/Jekyll/_site
+git push server master
+        </code></pre></li>
+        <li class="info">Again, make sure the file is executable, using the same command above <code>chmod +x pre-push</code></li>
+        <li class="info">To make the <code>pre-push</code> file work, we need to make sure the git remote for the <code>_site</code> repo is set correctly.</li>
+        <li class="info">So, check it using <code>git remote -v</code></li>
+        <li class="info">If it doesn't list a "server" remote then we need to add it.</li>
+        <li class="info">Add the remote inside the <code>_site</code> repo: <code>git remote add server ssh://user@server/full/path/to/site.git</code></li>
+        <li class="info">At this point, the workflow is ready. You can commit work in your <code>root</code> folder and it gets automatically commited as well in your <code>_site</code> folder. When you are ready to push your source code (to GitHub usually) then your compiled code will also be pushed to the private server of your choice.</li>
+      </ul>
     </details>
   </article>
 
@@ -956,6 +1039,7 @@ echo "... and stage generated html files."
       <ul>
         <li><a href="https://regexr.com/">RegExR</a> Regular Expression Tester</li>
         <li><a href="https://learncssgrid.com/">Learn CSS Grid</a> Learn CSS Grid layout helper</li>
+        <li><a href="https://mycolor.space/">ColorSpace</a> Generate nice Color Palettes & Gradients</li>
         <li><a href="https://www.cssmatic.com/box-shadow">Box Shadow Generator</a> Helps generate box shadows (and other things apparently)</li>
         <li><a href="https://cssgradient.io/">CSS Gradient Generator</a> Helps generate css gradients (and all sorts of other things!)</li>
         <li><a href="https://handbrake.fr/">handbrake.fr</a> open source video editor/trandcoder. lightweight and easy enough to use. multi platform too.</li>
@@ -1033,6 +1117,22 @@ echo "... and stage generated html files."
       <ul>
         <li><a href="https://seeing-theory.brown.edu/">Seeing Theory</a> A visual introduction to probablity and statistics.</li>
         <li><a href="https://www.robertakarobin.com/#resume">Robert a.k.a. Robin</a></li>
+      </ul>
+    </details>
+  </article>
+
+  <article> <!-- WebHint -->
+    <details>
+      <summary>
+        <h3 id="WebHint">WebHint</h3>
+      </summary>
+      <p class="date">January 2023</p>
+      <ul>
+        <li class="info"><a href="https://webhint.io/docs/user-guide/">WebHint User Guide</a></li>
+        <!-- <li class="info"><a href=""></a></li> -->
+        <!-- <li class="win"><code></code></li> -->
+        <!-- <li class="mac"><code></code></li> -->
+        <!-- <li class="null"><code></code></li> -->
       </ul>
     </details>
   </article>
@@ -1171,6 +1271,7 @@ echo "... and stage generated html files."
       </ul>
       <h4>Random Useful Links</h4>
       <ul>
+        <li class="info"><a href="https://strftime.net">Date and Time Format checker - strftime.net</a></li>
         <li class="null"><a href="https://www.digitalocean.com/community/tutorials/processing-incoming-request-data-in-flask">How To Process Incoming Request Data in Flask</a></li>
         <li class="null"><a href="https://www.4r7.ir/">Ascii Art library</a></li>
       </ul>
