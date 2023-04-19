@@ -232,7 +232,7 @@ p[title^="last"] {
   grid-template-columns: 1fr 1fr;
   margin-top: 2em;
 }
-.gallery_img, .gallery_img img {
+.gallery_img, .gallery_img img, picture img, picture source {
   object-fit: cover;
   height: 250px;
   max-height: 90%;

@@ -1,6 +1,7 @@
 
 // modals for all gallery images
 const images = document.querySelectorAll(".gallery_img");
+console.log(images);
 for(let i=0; i < images.length; i++){
   images[i].addEventListener("click", toggleModal);
 }
@@ -9,6 +10,7 @@ function toggleModal(ev) {
   document.body.appendChild(modal);
   modal.id = "modal";
   let img = ev.target.cloneNode();
+  console.log(img);
   const classes = img.classList;
   const keepers = [];
   const ul = document.createElement("ul");
