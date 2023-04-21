@@ -151,17 +151,21 @@ function updateFilters(key, value) {
 
 // automatically tag portrait and landscape images
 document.addEventListener('lazyloaded', function(e){
-  console.log("naturalWidth", e.target.naturalWidth);
-  console.log("naturalHeight", e.target.naturalHeight);
+  // console.log(e);
+  // console.log(e.target);
+  console.log(e.target.children[1]);
+  let item = e.target.children[1];
+  console.log("naturalWidth", item.naturalWidth);
+  console.log("naturalHeight", item.naturalHeight);
 
-  if (e.target.naturalWidth > (e.target.naturalHeight * 2)) {
-    e.target.classList.add("panorama");
+  if (item.naturalWidth > (item.naturalHeight * 2)) {
+    item.classList.add("panorama");
   }
-  if (e.target.naturalWidth > e.target.naturalHeight) {
-    e.target.classList.add("landscape");
+  if (item.naturalWidth > item.naturalHeight) {
+    item.classList.add("landscape");
   }
-  if (e.target.naturalWidth < e.target.naturalHeight) {
-    e.target.classList.add("portrait");
+  if (item.naturalWidth < item.naturalHeight) {
+    item.classList.add("portrait");
   }
 });
 
