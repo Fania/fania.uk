@@ -1,5 +1,7 @@
+
+
       <picture>
-      <img src="((\w+\/?)+\w+)\.(?:jpg|png|jpeg)" data-src="((\w+\/?)+\w+)\.(?:jpg|png|jpeg)" alt="(\w+)" class="((\w+\s?)+)">
+      <img src="((\w+\/?)+\w+)\.(?:jpg|png|jpeg)" data-src="((\w+\/?)+\w+)\.(?:jpg|png|jpeg)" alt="([\w|\-]+)" class="((?:\w+\s?)+)">
       </picture>
 
       <picture class="$6" data-src="$1.webp">
@@ -34,15 +36,15 @@ lazyload                        7
              
 
 FIND
-    <picture>
-      <img src="((\w+\/?)+\w+).jpg" data-src="((\w+\/?)+\w+).jpg" alt="(\w+)" class="((\w+\s?)+)">
-    </picture>
+      <picture>
+      <img src="((\w+\/?)+\w+)\.(?:jpg|png|jpeg)" data-src="((\w+\/?)+\w+)\.(?:jpg|png|jpeg)" alt="([\w|\-]+)" class="((?:\w+\s?)+)">
+      </picture>
 
 REPLACE
-    <picture class="$6" data-src="$1">
-      <source type="image/avif" srcset="$1.avif">
-      <img src="$1.webp" data-src="$1.jpg" alt="$5" class="$6">
-    </picture>
+      <picture class="$6" data-src="$1.webp">
+        <source type="image/avif" srcset="$1.avif">
+        <img src="$1.webp" data-src="$1.webp" alt="$5" class="$6">
+      </picture>
 
 EXAMPLE
     <picture class="gallery_img lazyload y03" data-src="images/gallery/2003/001.webp">
@@ -51,15 +53,20 @@ EXAMPLE
     </picture> 
 
 ORIGINAL
-    <picture>
-      <img src="images/gallery/2017/france_002.jpg" data-src="images/gallery/2017/france_002.jpg" alt="france_002" class="gallery_img lazyload">
-    </picture>
 
-    <picture>
-      <img src="images/gallery/2017/france_002.jpg" data-src="images/gallery/2017/france_002.jpg" alt="france_002" class="gallery_img lazyload">
-    </picture>
+      <picture>
+      <img src="images/gallery/2019/crete/001.jpeg" data-src="images/gallery/2019/crete/001.jpeg" alt="crete-001" class="gallery_img lazyload stone">
+      </picture>
 
-    <picture>
+      <picture>
       <img src="images/gallery/2017/france_002.jpg" data-src="images/gallery/2017/france_002.jpg" alt="france_002" class="gallery_img lazyload">
-    </picture>
+      </picture>
+
+      <picture>
+      <img src="images/gallery/2017/france_002.jpg" data-src="images/gallery/2017/france_002.jpg" alt="france_002" class="gallery_img lazyload">
+      </picture>
+
+      <picture>
+      <img src="images/gallery/2017/france_002.jpg" data-src="images/gallery/2017/france_002.jpg" alt="france_002" class="gallery_img lazyload">
+      </picture>
 
