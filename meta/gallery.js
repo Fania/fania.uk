@@ -151,6 +151,9 @@ function updateFilters(key, value) {
 
 // automatically tag portrait and landscape images
 document.addEventListener('lazyloaded', function(e){
+  console.log("naturalWidth", e.target.naturalWidth);
+  console.log("naturalHeight", e.target.naturalHeight);
+
   if (e.target.naturalWidth > (e.target.naturalHeight * 2)) {
     e.target.classList.add("panorama");
   }
