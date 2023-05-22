@@ -61,8 +61,30 @@ REPLACE
 
 
 
+FIND 
+      <picture class="((?:\w+\s?)+)" data-src="((\w+\/?)+\w+)\.(?:jpg|png|jpeg|webp)">
+
+REPLACE
+      <picture>
 
 
+
+
+
+FIND
+
+<img src="((\w+\/?)+\w+)\.(?:jpg|png|jpeg|webp)" data-src="((\w+\/?)+\w+)\.(?:jpg|png|jpeg|webp)" alt="([\w|\-]+)" class="((?:\w+\s?)+)">
+
+REPLACE
+
+<img data-src="$1.webp" alt="$5" class="$6">
+
+        images/gallery/2017/france_002  1
+        france_00                       2
+        images/gallery/2017/france_002  3
+        france_00                       4
+        france_002                      5
+        gallery_img lazyload            6
 
 
 

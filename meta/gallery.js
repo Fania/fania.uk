@@ -1,6 +1,6 @@
 
 // modals for all gallery images
-const images = document.querySelectorAll(".gallery_img");
+const images = document.querySelectorAll("picture.gallery_img");
 console.log(images);
 for(let i=0; i < images.length; i++){
   images[i].addEventListener("click", toggleModal);
@@ -151,22 +151,21 @@ function updateFilters(key, value) {
 
 // automatically tag portrait and landscape images
 document.addEventListener('lazyloaded', function(e){
-  // console.log(e);
-  // console.log(e.target);
-  console.log(e.target.children[1]);
-  let item = e.target.children[1];
-  console.log("naturalWidth", item.naturalWidth);
-  console.log("naturalHeight", item.naturalHeight);
-
-  if (item.naturalWidth > (item.naturalHeight * 2)) {
-    item.classList.add("panorama");
-  }
-  if (item.naturalWidth > item.naturalHeight) {
-    item.classList.add("landscape");
-  }
-  if (item.naturalWidth < item.naturalHeight) {
-    item.classList.add("portrait");
-  }
+  if(e.target.nodeName == "PICTURE") {
+    let itemPic = e.target;
+    let itemImg = e.target.children[1];
+    // console.log("naturalWidth", itemImg.naturalWidth);
+    // console.log("naturalHeight", itemImg.naturalHeight);
+    if (itemImg.naturalWidth > (itemImg.naturalHeight * 2)) {
+      itemPic.classList.add("panorama");
+    }
+    if (itemImg.naturalWidth > itemImg.naturalHeight) {
+      itemPic.classList.add("landscape");
+    }
+    if (itemImg.naturalWidth < itemImg.naturalHeight) {
+      itemPic.classList.add("portrait");
+    }
+  } 
 });
 
 
