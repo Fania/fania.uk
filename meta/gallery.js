@@ -158,12 +158,15 @@ document.addEventListener('lazyloaded', function(e){
     // console.log("naturalHeight", itemImg.naturalHeight);
     if (itemImg.naturalWidth > (itemImg.naturalHeight * 2)) {
       itemPic.classList.add("panorama");
+      // itemImg.classList.add("panorama");
     }
     if (itemImg.naturalWidth > itemImg.naturalHeight) {
       itemPic.classList.add("landscape");
+      // itemImg.classList.add("landscape");
     }
     if (itemImg.naturalWidth < itemImg.naturalHeight) {
       itemPic.classList.add("portrait");
+      // itemImg.classList.add("portrait");
     }
   } 
 });
