@@ -824,7 +824,7 @@ echo "... and stage generated html files."
         <li class="win">Close a pane using <code>Ctrl Shift W</code>.</li>
         <li class="win">Customisation config file for new Windows Terminal in <code>Customisation stuff in C:\Users\Fania\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\profiles.json</code></li>
         <li class="win"><a href="https://stackoverflow.com/questions/56839307/adding-git-bash-to-the-new-windows-terminal">Adding Git-Bash to the new Windows Terminal</a></li>
-        <li class="info"><img class="inlineImg" src="images/colortable.jpg" alt="color table"></li>
+        <li class="info"><img class="inlineImg" src="images/colortable.png" alt="color table"></li>
         <li class="mac"><a href="https://www.makeuseof.com/customize-zsh-prompt-macos-terminal/">How to Customize the zsh Prompt in the macOS Terminal</a></li>
         <li class="mac"><code>touch .hushlogin</code> to hide the last login message in terminal</li>
         <li class="mac">Get mac terminal to startup in repo directory: in terminal preferences, in profiles tab, under shell, then startup, tick "run command" and enter this: <code>cd Documents/GitHub && clear</code></li>
@@ -1040,6 +1040,7 @@ git push server master
       <ul>
         <li>General Web.dev Guide to <a href="https://web.dev/learn/css/">Learn CSS!</a></li>
         <li>Code prettifier <a href="https://prettier.io/playground/">prettier.io</a></li>
+        <li>Code minifier <a href="https://www.npmjs.com/package/terser">Terser</a> e.g.:<br><code>terser meta/script.js -c -m -o meta/script.min.js</code></li>
         <li>A resource of stuff that's <a href="https://free-for.dev/">Free for developers</a></li>
         <li><a href="https://github.com/thedaviddias/Front-End-Checklist">Front End Checklist</a></li>
         <li><a href="https://andreasbm.github.io/web-skills/">Web skills overview</a> see <a href="https://github.com/andreasbm/web-skills">source on GitHub</a></li>
@@ -4720,9 +4721,9 @@ if __name__ == "__main__":
 
 
 <script src="meta/pataphysicalDate.min.js"></script>
-<script src="meta/date.js"></script>
-<script src="meta/scripts.js"></script>
-<script src="meta/gallery.js"></script>
+<script src="meta/date.min.js"></script>
+<script src="meta/scripts.min.js"></script>
+<script src="meta/gallery.min.js"></script>
 
 </body>
 </html>
