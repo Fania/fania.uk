@@ -236,7 +236,7 @@ p[title^="last"] {
 img.gallery_img {
   object-fit: cover;
   height: 250px;
-  max-height: 90%;
+  max-height: 100%;
   max-width: 100%;
   /* background-image: url("../images/favicons/spiral-gallery.svg"); */
   /* background-size: 205px 205px; */
@@ -414,14 +414,14 @@ img.gallery_img {
 {
   display: none;
 }
-.lazyload,
+/* .lazyload,
 .lazyloading {
 	opacity: 0;
 }
 .lazyloaded {
 	opacity: 1;
 	transition: opacity 300ms;
-}
+} */
 
 
 

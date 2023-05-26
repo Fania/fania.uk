@@ -1,7 +1,7 @@
 
 // modals for all gallery images
 const images = document.querySelectorAll("picture.gallery_img");
-console.log(images);
+// console.log(images);
 for(let i=0; i < images.length; i++){
   images[i].addEventListener("click", toggleModal);
 }
@@ -150,25 +150,44 @@ function updateFilters(key, value) {
 
 
 // automatically tag portrait and landscape images
-document.addEventListener('lazyloaded', function(e){
-  if(e.target.nodeName == "PICTURE") {
-    let itemPic = e.target;
-    let itemImg = e.target.children[1];
-    // console.log("naturalWidth", itemImg.naturalWidth);
-    // console.log("naturalHeight", itemImg.naturalHeight);
-    if (itemImg.naturalWidth > (itemImg.naturalHeight * 2)) {
-      itemPic.classList.add("panorama");
-      // itemImg.classList.add("panorama");
-    }
-    if (itemImg.naturalWidth > itemImg.naturalHeight) {
-      itemPic.classList.add("landscape");
-      // itemImg.classList.add("landscape");
-    }
-    if (itemImg.naturalWidth < itemImg.naturalHeight) {
-      itemPic.classList.add("portrait");
-      // itemImg.classList.add("portrait");
-    }
-  } 
+// document.addEventListener('lazyloaded', function(e){
+document.addEventListener('DOMContentLoaded', function(e){
+  // console.log(e);
+  // console.log(e.target);
+  // console.log(e.target.images);
+
+  const images = [...(e.target.images)].filter(i => i.classList.contains('gallery_img'));
+  console.log(images);
+
+  // const images2 = document.querySelectorAll("picture.gallery_img");
+  // console.log(images2);
+
+  images.forEach(itemImg => {
+      console.dir(itemImg);
+      console.dir(itemImg.naturalWidth);
+      console.dir(itemImg.width);
+    // if(e.target.nodeName == "PICTURE") {
+    //   console.log("inside picture if statement");
+      let itemPic = itemImg.parentElement;
+      // console.log(itemPic);
+      // let itemImg = e.target.children[1];
+      console.log("naturalWidth", itemImg.naturalWidth);
+      console.log("naturalHeight", itemImg.naturalHeight);
+      if (itemImg.naturalWidth > (itemImg.naturalHeight * 2)) {
+        itemPic.classList.add("panorama");
+        // itemImg.classList.add("panorama");
+      }
+      if (itemImg.naturalWidth > itemImg.naturalHeight) {
+        itemPic.classList.add("landscape");
+        // itemImg.classList.add("landscape");
+      }
+      if (itemImg.naturalWidth < itemImg.naturalHeight) {
+        itemPic.classList.add("portrait");
+        // itemImg.classList.add("portrait");
+      }
+
+  });
+
 });
 
 
