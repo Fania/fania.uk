@@ -1,6 +1,6 @@
 # Todos
 
-- [ ] try native browser lazyload
+- [x] try native browser lazyload
 - [ ] additive vs subtractive filters in gallery?
 
 
