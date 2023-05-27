@@ -1,3 +1,9 @@
+'use strict';
+
+// Register Service Worker
+navigator.serviceWorker.register('sw.js');
+
+
 const pages = ["about", "portfolio", "images", "cats", "secret"];
 const menu = document.getElementById("menu_button");
 
