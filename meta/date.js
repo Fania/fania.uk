@@ -4,7 +4,7 @@
 // let now = new Date();
 console.log(document.lastModified);
 
-let lastMod = document.lastModified;
+let lastMod = new Date(document.lastModified);
 
 let curDay = lastMod.getDate();
 let curMonth = lastMod.getMonth();
