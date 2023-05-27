@@ -13,9 +13,9 @@ let curDay = lastMod.getDate();
 let curMonth = lastMod.getMonth();
 let curYear = lastMod.getFullYear();
 
-console.log(`${curDay} ${months[curMonth]} ${curYear}`);
+// console.log(`${curDay} ${months[curMonth]} ${curYear}`);
 
-let lastEdited = new Date("27 May 2023");
+let lastEdited = `${curDay} ${months[curMonth]} ${curYear}`;
 // let pnow = new PataphysicalDate();
 let plastEdited = new PataphysicalDate(lastEdited);
 
