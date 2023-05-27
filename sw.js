@@ -42,18 +42,32 @@ const cacheName = 'fania-v1.0.0';
 
 
 // Stale-while-revalidate
+// self.addEventListener('fetch', (event) => {
+//   if (event.request.destination === 'image') {
+//     event.respondWith(caches.open(cacheName).then((cache) => {
+//       return cache.match(event.request).then((cachedResponse) => {
+//         const fetchedResponse = fetch(event.request).then((networkResponse) => {
+//           cache.put(event.request, networkResponse.clone());
+//           return networkResponse;
+//         });
+//         return cachedResponse || fetchedResponse;
+//       });
+//     }));
+//   } else {
+//     return;
+//   }
+// });
 self.addEventListener('fetch', (event) => {
-  if (event.request.destination === 'image') {
-    event.respondWith(caches.open(cacheName).then((cache) => {
-      return cache.match(event.request).then((cachedResponse) => {
-        const fetchedResponse = fetch(event.request).then((networkResponse) => {
-          cache.put(event.request, networkResponse.clone());
-          return networkResponse;
-        });
-        return cachedResponse || fetchedResponse;
-      });
-    }));
-  } else {
-    return;
-  }
+  event.respondWith(
+    caches.open(cacheName)
+      .then((cache) => {
+        return cache.match(event.request)
+          .then((cachedResponse) => {
+            return cachedResponse || fetch(event.request).then((response) => {
+              cache.put(event.request, response.clone());
+              return response;
+            });
+          });
+      })
+  );
 });

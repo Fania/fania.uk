@@ -3,6 +3,33 @@
 // Register Service Worker
 // navigator.serviceWorker.register('sw.js');
 
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('./sw.js', { scope: '/' })
+    .then(() => {
+      console.log('ServiceWorker registration successful');
+    })
+    .catch(err => {
+      console.log('ServiceWorker registration failed', err);
+    });
+  navigator.serviceWorker.ready.then(() => {
+    console.log('sw ready success');
+    // fetch('http://jsonplaceholder.typicode.com/posts')
+    //   .then(response => response.text())
+    //   .then(data => {
+    //     console.log(data === 'Hello!');
+    //   })
+  })
+}
+
+
+
+
+
+
+
+
+
+
 
 const pages = ["about", "portfolio", "images", "cats", "secret"];
 const menu = document.getElementById("menu_button");
