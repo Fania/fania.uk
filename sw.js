@@ -32,31 +32,8 @@ const cacheName = 'fania-v1.0.0';
 //   '/images/favicons/maskable_icon.png'
 // ];
 
-// self.addEventListener('install', (event) => {
-//   // Precache assets on install
-//   event.waitUntil(caches.open(cacheName).then((cache) => {
-//     return cache.addAll(precachedAssets);
-//   }));
-// });
-
-
 
 // Stale-while-revalidate
-// self.addEventListener('fetch', (event) => {
-//   if (event.request.destination === 'image') {
-//     event.respondWith(caches.open(cacheName).then((cache) => {
-//       return cache.match(event.request).then((cachedResponse) => {
-//         const fetchedResponse = fetch(event.request).then((networkResponse) => {
-//           cache.put(event.request, networkResponse.clone());
-//           return networkResponse;
-//         });
-//         return cachedResponse || fetchedResponse;
-//       });
-//     }));
-//   } else {
-//     return;
-//   }
-// });
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.open(cacheName)

@@ -1,5 +1,9 @@
 {
-    "name": "Fania.uk",
+    "name": "Fania.eu",
+    "short_name": "Fania.eu",
+    "start_url": ".",
+    "display": "standalone",
+    "description": "Fania's personal website/portfolio/playground.",
     "icons": [
         {
             "src": "images/favicons/android-chrome-192x192.png",
