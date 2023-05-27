@@ -1,7 +1,7 @@
 'use strict';
 
 // Register Service Worker
-navigator.serviceWorker.register('/sw.js');
+// navigator.serviceWorker.register('sw.js');
 
 
 const pages = ["about", "portfolio", "images", "cats", "secret"];
