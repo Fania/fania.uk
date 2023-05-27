@@ -2,7 +2,8 @@
 
 - [x] try native browser lazyload
 - [ ] additive vs subtractive filters in gallery?
-- [ ] minification
+- [x] minification
+- [x] gzipping
 
 
 # people
