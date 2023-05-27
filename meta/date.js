@@ -5,7 +5,7 @@
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-console.log(document.lastModified);
+// console.log(document.lastModified);
 
 let lastMod = new Date(document.lastModified);
 
@@ -21,5 +21,5 @@ let plastEdited = new PataphysicalDate(lastEdited);
 
 
 date.innerHTML = plastEdited;
-date.setAttribute("title", `${lastEdited.getDate()} ${months[lastEdited.getMonth()]} ${lastEdited.getFullYear()} vulg.`);
+date.setAttribute("title", `${curDay} ${months[curMonth]} ${curYear} vulg.`);
 
