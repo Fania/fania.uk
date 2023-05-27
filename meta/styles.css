@@ -414,27 +414,18 @@ img.gallery_img {
 {
   display: none;
 }
-/* .lazyload,
-.lazyloading {
-	opacity: 0;
-}
-.lazyloaded {
-	opacity: 1;
-	transition: opacity 300ms;
-} */
 
 
 
+/* PORTFOLIO */
 
-/* BOOKMARKS / PORTFOLIO */
-
-#bookmarks #portfolio {
+#portfolio #portfolio_inner {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-#bookmarks #portfolio article {
+#portfolio #portfolio_inner article {
   width: 95%;
   height: 500px;
   border: none;
@@ -442,7 +433,7 @@ img.gallery_img {
   background: var(--dark);
   margin: 10px;
 }
-#bookmarks #portfolio figure {
+#portfolio #portfolio_inner figure {
   width: 100%;
   height: 280px;
   margin: 0;
@@ -450,13 +441,13 @@ img.gallery_img {
   overflow: hidden;
 }
 
-#bookmarks #portfolio figure a img {
+#portfolio #portfolio_inner figure a img {
   object-fit: cover;
   height: 280px;
   display: block;
 }
 
-#bookmarks #portfolio figcaption {
+#portfolio #portfolio_inner figcaption {
   box-sizing: border-box;
   line-height: 1.5em;
   padding: .25em;
@@ -472,18 +463,18 @@ img.gallery_img {
   line-clamp: 5; */
 }
 
-#bookmarks #portfolio figure:hover figcaption {
+#portfolio #portfolio_inner figure:hover figcaption {
   transform: translateY(-100%);
   /* transition: all .5s; */
 }
 
 
-#bookmarks #portfolio h3 {
+#portfolio #portfolio_inner h3 {
   color: var(--light);
   text-align: center;
   margin: .5em;
 }
-#bookmarks #portfolio p {
+#portfolio #portfolio_inner p {
   color: #ccc;
   margin: .5em;
 }
@@ -655,7 +646,7 @@ input[type="radio"], input[type="checkbox"] {
 /* show the one that is selected */
 input#home_button:checked ~ [class$=' home'],
 input[id^='about']:checked ~ [id='about'],
-input[id^='bookmarks']:checked ~ [id='bookmarks'],
+input[id^='portfolio']:checked ~ [id='portfolio'],
 input[id^='cheats']:checked ~ [id='cheats'],
 input[id^='images']:checked ~ [id='images'],
 input[id^='cats']:checked ~ [id='cats'],
@@ -727,7 +718,7 @@ input#menu_button:checked ~ label[for="menu_button"] {
 
   /* input#home_button:checked ~ [class$=' home'],
   input[id^='about']:checked ~ [id='about'],
-  input[id^='bookmarks']:checked ~ [id='bookmarks'],
+  input[id^='portfolio']:checked ~ [id='portfolio'],
   input[id^='cheats']:checked ~ [id='cheats'],
   input[id^='images']:checked ~ [id='images'],
   input[id^='cats']:checked ~ [id='cats'],
@@ -858,7 +849,7 @@ input#menu_button:checked ~ label[for="menu_button"] {
 
 @media screen and (min-width: 1000px) {
 
-  #bookmarks #portfolio article {
+  #portfolio #portfolio_inner article {
     width: 47%;
   }
 
@@ -878,7 +869,7 @@ input#menu_button:checked ~ label[for="menu_button"] {
 
   /* input#home_button:checked ~ [class$=' home'],
   input[id^='about']:checked ~ [id='about'],
-  input[id^='bookmarks']:checked ~ [id='bookmarks'],
+  input[id^='portfolio']:checked ~ [id='portfolio'],
   input[id^='cheats']:checked ~ [id='cheats'],
   input[id^='images']:checked ~ [id='images'],
   input[id^='cats']:checked ~ [id='cats'],
