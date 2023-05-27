@@ -10,7 +10,7 @@ function toggleModal(ev) {
   document.body.appendChild(modal);
   modal.id = "modal";
   let img = ev.target.cloneNode();
-  console.log(img);
+  // console.log(img);
   const classes = img.classList;
   const keepers = [];
   const ul = document.createElement("ul");
@@ -157,22 +157,22 @@ document.addEventListener('DOMContentLoaded', function(e){
   // console.log(e.target.images);
 
   const images = [...(e.target.images)].filter(i => i.classList.contains('gallery_img'));
-  console.log(images);
+  // console.log(images);
 
   // const images2 = document.querySelectorAll("picture.gallery_img");
   // console.log(images2);
 
   images.forEach(itemImg => {
-      console.dir(itemImg);
-      console.dir(itemImg.naturalWidth);
-      console.dir(itemImg.width);
+      // console.dir(itemImg);
+      // console.dir(itemImg.naturalWidth);
+      // console.dir(itemImg.width);
     // if(e.target.nodeName == "PICTURE") {
     //   console.log("inside picture if statement");
       let itemPic = itemImg.parentElement;
       // console.log(itemPic);
       // let itemImg = e.target.children[1];
-      console.log("naturalWidth", itemImg.naturalWidth);
-      console.log("naturalHeight", itemImg.naturalHeight);
+      // console.log("naturalWidth", itemImg.naturalWidth);
+      // console.log("naturalHeight", itemImg.naturalHeight);
       if (itemImg.naturalWidth > (itemImg.naturalHeight * 2)) {
         itemPic.classList.add("panorama");
         // itemImg.classList.add("panorama");
