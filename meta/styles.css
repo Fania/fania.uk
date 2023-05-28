@@ -77,9 +77,13 @@ i[class*="fa-"] {
   color: var(--light);
 }
 .link, a, a:visited, a i[class*="fa-"] {
-  color: var(--bright);
+  /* color: var(--bright); */
+  color: #435D2C;
   cursor: pointer;
   word-break: break-all;
+}
+a i[class*="fa-"] {
+  color: var(--bright);
 }
 
 
