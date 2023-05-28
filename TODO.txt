@@ -1,9 +1,9 @@
 # Todos
 
 - [ ] responsive images
-- [ ] gallery some webp images not showing
-- [ ] gallery some webp images rotation wrong
 - [ ] additive vs subtractive filters in gallery?
+- [x] gallery some webp images rotation wrong
+- [x] gallery some webp images not showing
 - [x] fuckthiscat autoplay on iOS
 - [x] cheats show hide topics list like in images filters
 - [x] gallery modal captions below image
