@@ -594,7 +594,7 @@ summary:focus {
 #cheats em {
   font-weight: bold;
 }
-#cheats img.inlineImg {
+#cheats .inlineImg img {
   width: 500px;
 }
 
