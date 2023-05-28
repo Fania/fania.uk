@@ -59,14 +59,14 @@ window.addEventListener("load", loadPage);
 // BACK TO TOP BUTTON
 
 // console.log(body.scrollTop);
-const [...ups] = document.getElementsByClassName("up");
+// const [...ups] = document.getElementsByClassName("up");
 
-ups.forEach( u => {
-  u.addEventListener("click", ()=> {
-    // console.log("scroll");
-    window.scroll({top: 0, left: 0, behavior: 'smooth'});
-  });
-});
+// ups.forEach( u => {
+//   u.addEventListener("click", ()=> {
+//     // console.log("scroll");
+//     window.scroll({top: 0, left: 0, behavior: 'smooth'});
+//   });
+// });
 
 
 // add bookmark links to individual cheats and populate sub nav
