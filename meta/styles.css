@@ -307,7 +307,7 @@ img.gallery_img {
 }
 
 /* image filters */ 
-#images label, #secret label {
+#images label, #secret label, #cheats label {
   font-family: 'Arial Narrow', Arial, sans-serif;
   padding: 0 5px;
   margin: 5px 5px;
@@ -533,13 +533,18 @@ summary:focus {
 #cheats summary h3 a:hover {
   color: var(--dark);
 }
+#cheats header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
 #cheats h2 {
-  margin: 1em 0 .5em 0;
+  margin: 1em 10px .5em 0;
 }
 #cheatsNav {
   display: flex;
   flex-wrap: wrap;
-  /* gap: 10px; */
+  justify-content: space-between;
   margin-bottom: 2em;
 }
 #cheatsNav a {
@@ -548,6 +553,26 @@ summary:focus {
 }
 #cheatsNav a:hover {
   color: var(--dark);
+}
+#cheats label,
+#cheats label[for="show_cheatsNa"],
+#cheats label[for="hide_cheatsNav"] {
+  color: gray;
+  margin-bottom: -10px;
+}
+#cheats #show_cheatsNav:checked + label, 
+#cheats #hide_cheatsNav:checked + label
+{
+  color: var(--dark);
+  text-decoration: underline;
+}
+#cheats #show_cheatsNav:checked ~ #cheatsNav
+{
+  display: flex;
+}
+#cheats #hide_cheatsNav:checked ~ #cheatsNav
+{
+  display: none;
 }
 
 #cheats pre {

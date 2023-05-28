@@ -512,9 +512,16 @@
 
 	<p><strong><a href="http://xkcd.com/979/">DEAR PEOPLE FROM THE FUTURE: Here's what we've figured out so far ...</a></strong></p>
 
-  <h2>Topics:</h2>
-  <nav id="cheatsNav"></nav>
+  <header>
+    <h2>Topics:</h2>
 
+    <input id="show_cheatsNav" type="radio" name="show_hide_cheatsNav"/>
+    <label for="show_cheatsNav">show</label>
+    <input id="hide_cheatsNav" type="radio" name="show_hide_cheatsNav" checked />
+    <label for="hide_cheatsNav">hide</label>
+    <nav id="cheatsNav"></nav>
+  </header>
+  
   <!-- 
   <article>
     <details>
@@ -1523,7 +1530,7 @@ if __name__ == "__main__":
   <h1>Images</h1>
 
   <div>
-    <h2>Category Filters</h2>
+    <h2>Category Filters:</h2>
 
     <input id="show_filters" type="radio" name="show_hide"/>
     <label for="show_filters">show</label>
