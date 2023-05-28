@@ -536,13 +536,14 @@ summary:focus {
   margin: 1em 0 .5em 0;
 }
 #cheatsNav {
-  display: flex; 
+  display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  /* gap: 10px; */
   margin-bottom: 2em;
 }
 #cheatsNav a {
   padding-right: 1em;
+  padding: 10px;
 }
 #cheatsNav a:hover {
   color: var(--dark);
