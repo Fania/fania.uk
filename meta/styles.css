@@ -538,6 +538,7 @@ summary:focus {
 #cheatsNav {
   display: flex; 
   flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 2em;
 }
 #cheatsNav a {
