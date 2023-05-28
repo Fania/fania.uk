@@ -1042,7 +1042,8 @@ git push server master
       <ul>
         <li class="info"><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types">Image file type and format guide</a></li>
         <li class="info">ImageMagick <a href="https://imagemagick.org/script/command-line-processing.php">Anatomy of the Command-line</a></li>
-        <li class="info">Use <a href="http://www.imagemagick.org/script/mogrify.php">'mogrify'</a> to convert from jpg to webp: <code>magick mogrify -format webp *.jpg</code></li>
+        <li class="info">Convert from png to webp: <code>magick input.png output.webp</code></li>
+        <li class="info">Use <a href="http://www.imagemagick.org/script/mogrify.php">'mogrify'</a> to convert serveral images from jpg to webp: <code>magick mogrify -format webp *.jpg</code></li>
         <li class="mac">Install 'ffmpeg': <code>brew install ffmpeg</code></li>
         <li class="mac">Use 'ffmpeg' to convert from gif to webp: <code>ffmpeg -i file.gif -c vp9 -b:v 0 -crf 40 file.webm</code></li>
         <li class="mac">Use 'ffmpeg' to convert from gif to mp4: <code>ffmpeg -i file.gif -movflags +faststart -pix_fmt yuv420p \
