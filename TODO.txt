@@ -1,7 +1,13 @@
 # Todos
 
-- [x] try native browser lazyload
+- [ ] responsive images
+- [ ] fuckthiscat autoplay on iOS
+- [ ] gallery some webp images not showing
+- [ ] gallery some webp images rotation wrong
+- [ ] cheats show hide topics list like in images filters
 - [ ] additive vs subtractive filters in gallery?
+- [x] gallery modal captions below image
+- [x] try native browser lazyload
 - [x] minification
 - [x] gzipping
 
