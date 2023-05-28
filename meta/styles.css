@@ -23,6 +23,8 @@ html {
          "Avant Garde Gothic",
          "Avant Garde",
          sans-serif;
+
+  scroll-behavior: smooth;
 }
 
 
