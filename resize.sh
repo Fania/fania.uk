@@ -1,11 +1,15 @@
 #!/bin/sh
 
-# call script by passing it the path to folder for images
+# Call script by passing it the path to folder for images
 # e.g. 
 # ./resize.sh images/gallery/2003
 
+echo "\n"
+echo "==================================="
+echo "Creating responsive image sizes in:"
 cd $1
 echo $(pwd)
+echo "-----------------------------------"
 
 function imageLoop() {
   for i in $(pwd)/*; do
@@ -29,5 +33,7 @@ function imageLoop() {
     fi
 
   done
+  echo "==================================="
+  echo "\n"
 }
 imageLoop
