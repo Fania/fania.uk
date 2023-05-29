@@ -26,10 +26,10 @@ function imageLoop() {
         if [[ "${BASH_REMATCH[2]}" == ".mp4" || 
               "${BASH_REMATCH[2]}" == ".webm" ]]; then 
           # VIDEOS
-          ffmpeg -i $i scale=iw/5:-1 $name20
-          ffmpeg -i $i scale=iw/2.5:-1 $name40
-          ffmpeg -i $i scale=iw/1.67:-1 $name60
-          ffmpeg -i $i scale=iw/1.25:-1 $name80
+          ffmpeg -i $i -vf scale=iw/5:-2    $name20 -nostats -loglevel 0
+          ffmpeg -i $i -vf scale=iw/2.5:-2  $name40 -nostats -loglevel 0
+          ffmpeg -i $i -vf scale=iw/1.68:-2 $name60 -nostats -loglevel 0
+          ffmpeg -i $i -vf scale=iw/1.25:-2 $name80 -nostats -loglevel 0
         else
           # IMAGES
           magick $i -resize 20% $name20
