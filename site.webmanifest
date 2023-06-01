@@ -1,8 +1,6 @@
 {
     "name": "Fania.eu",
     "short_name": "Fania.eu",
-    "start_url": ".",
-    "display": "standalone",
     "description": "Fania's personal website/portfolio/playground.",
     "icons": [
         {
@@ -24,5 +22,6 @@
     ],
     "theme_color": "#335941",
     "background_color": "#4f8c6c",
-    "display": "standalone"
+    "display": "standalone",
+    "start_url": "."
 }
