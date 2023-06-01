@@ -1,4 +1,4 @@
-console.log('testing gallery script');
+// console.log('testing gallery script');
 
 
 // modals for all gallery images
