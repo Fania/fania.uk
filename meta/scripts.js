@@ -79,3 +79,13 @@ summaries.forEach(item => {
   `);
 });
 
+
+
+const show_hide_cheatsNav = document.querySelector('[name="show_hide_cheatsNav"]').checked;
+console.log(show_hide_cheatsNav);
+let cheats_filter_status = show_hide_cheatsNav;
+console.log(cheats_filter_status);
+localStorage.setItem("cheats-filter", cheats_filter_status);
+const show_cheatsNav = document.querySelector('#show_cheatsNav');
+const hide_cheatsNav = document.querySelector('#hide_cheatsNav');
+
