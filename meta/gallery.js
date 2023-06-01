@@ -1,3 +1,5 @@
+console.log('testing gallery script');
+
 
 // modals for all gallery images
 const images = document.querySelectorAll("picture.gallery_img");
@@ -150,7 +152,8 @@ function updateFilters(key, value) {
 // automatically tag portrait and landscape images
 // document.addEventListener('lazyloaded', function(e){
 document.addEventListener('DOMContentLoaded', function(e){
-  // console.log(e);
+  console.log('inside DOMContentLoaded event listener for event: ');
+  console.log(e);
   // console.log(e.target);
   // console.log(e.target.images);
 
@@ -161,13 +164,13 @@ document.addEventListener('DOMContentLoaded', function(e){
   // console.log(images2);
 
   images.forEach(itemImg => {
-      // console.dir(itemImg);
+      console.dir(itemImg);
       // console.dir(itemImg.naturalWidth);
       // console.dir(itemImg.width);
     // if(e.target.nodeName == "PICTURE") {
     //   console.log("inside picture if statement");
       let itemPic = itemImg.parentElement;
-      // console.log(itemPic);
+      console.log(itemPic);
       // let itemImg = e.target.children[1];
       // console.log("naturalWidth", itemImg.naturalWidth);
       // console.log("naturalHeight", itemImg.naturalHeight);
