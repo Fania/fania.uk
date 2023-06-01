@@ -175,25 +175,25 @@ document.addEventListener('DOMContentLoaded', function(e){
         console.log("page is fully loaded");
         console.log("naturalWidth", itemImg.naturalWidth);
         console.log("naturalHeight", itemImg.naturalHeight);
+        console.log(itemPic);
+
+        // let itemImg = e.target.children[1];
+        // console.log("naturalWidth", itemImg.naturalWidth);
+        // console.log("naturalHeight", itemImg.naturalHeight);
+        if (itemImg.naturalWidth > (itemImg.naturalHeight * 2)) {
+          itemPic.classList.add("panorama");
+          // itemImg.classList.add("panorama");
+        }
+        if (itemImg.naturalWidth > itemImg.naturalHeight) {
+          itemPic.classList.add("landscape");
+          // itemImg.classList.add("landscape");
+        }
+        if (itemImg.naturalWidth < itemImg.naturalHeight) {
+          itemPic.classList.add("portrait");
+          // itemImg.classList.add("portrait");
+        }
+
       });
-
-      console.log(itemPic);
-      // let itemImg = e.target.children[1];
-      console.log("naturalWidth", itemImg.naturalWidth);
-      console.log("naturalHeight", itemImg.naturalHeight);
-      if (itemImg.naturalWidth > (itemImg.naturalHeight * 2)) {
-        itemPic.classList.add("panorama");
-        // itemImg.classList.add("panorama");
-      }
-      if (itemImg.naturalWidth > itemImg.naturalHeight) {
-        itemPic.classList.add("landscape");
-        // itemImg.classList.add("landscape");
-      }
-      if (itemImg.naturalWidth < itemImg.naturalHeight) {
-        itemPic.classList.add("portrait");
-        // itemImg.classList.add("portrait");
-      }
-
   });
 
 });
