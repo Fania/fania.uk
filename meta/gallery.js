@@ -170,6 +170,11 @@ document.addEventListener('DOMContentLoaded', function(e){
     // if(e.target.nodeName == "PICTURE") {
     //   console.log("inside picture if statement");
       let itemPic = itemImg.parentElement;
+
+      itemImg.addEventListener("load", (event) => {
+        console.log("page is fully loaded");
+      });
+
       console.log(itemPic);
       // let itemImg = e.target.children[1];
       console.log("naturalWidth", itemImg.naturalWidth);
