@@ -164,22 +164,9 @@ document.addEventListener('DOMContentLoaded', function(e){
   // console.log(images2);
 
   images.forEach(itemImg => {
-      console.dir(itemImg);
-      // console.dir(itemImg.naturalWidth);
-      // console.dir(itemImg.width);
-    // if(e.target.nodeName == "PICTURE") {
-    //   console.log("inside picture if statement");
       let itemPic = itemImg.parentElement;
-
-      itemImg.addEventListener("load", (event) => {
-        console.log("page is fully loaded");
-        console.log("naturalWidth", itemImg.naturalWidth);
-        console.log("naturalHeight", itemImg.naturalHeight);
-        console.log(itemPic);
-
+      itemImg.addEventListener("load", () => {
         // let itemImg = e.target.children[1];
-        // console.log("naturalWidth", itemImg.naturalWidth);
-        // console.log("naturalHeight", itemImg.naturalHeight);
         if (itemImg.naturalWidth > (itemImg.naturalHeight * 2)) {
           itemPic.classList.add("panorama");
           // itemImg.classList.add("panorama");
@@ -192,10 +179,8 @@ document.addEventListener('DOMContentLoaded', function(e){
           itemPic.classList.add("portrait");
           // itemImg.classList.add("portrait");
         }
-
       });
   });
-
 });
 
 
