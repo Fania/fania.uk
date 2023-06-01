@@ -451,6 +451,7 @@ img.gallery_img {
 #portfolio #portfolio_inner figure a img {
   object-fit: cover;
   height: 280px;
+  max-height: 280px;
   display: block;
 }
 
@@ -462,7 +463,7 @@ img.gallery_img {
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   transform: translateY(0);
-  transition: all .5s;
+  transition: transform .5s;
   /* the below is awaiting full CSS support */
   /* display: -webkit-box;
   -webkit-box-orient: vertical;

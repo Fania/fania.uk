@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    img,
+    picture img {
+      /* width: 100%; */
+      object-fit: contain;
+      border: 1px solid black;
+    }
+    img.vmin {
+      width: 100vmin;
+      height: auto;
+    }
+    img.v100 {
+      width: 100%;
+      height: auto;
+    }
+    img.vmax {
+      width: 100vmax;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Responsive Images</h1>
+
+<h2>Width Descriptor</h2>
+<img src="http://placehold.jp/3840x3840.png"
+     srcset="http://placehold.jp/3840x3840.png 3840w,
+             http://placehold.jp/2048x2048.png 2048w,
+             http://placehold.jp/1920x1920.png 1920w,
+             http://placehold.jp/1200x1200.png 1200w,
+             http://placehold.jp/1080x1080.png 1080w,
+             http://placehold.jp/828x828.png 828w,
+             http://placehold.jp/750x750.png 750w,
+             http://placehold.jp/640x640.png 640w"
+     sizes="100vw"
+>
+
+<br>
+
+<h2>Pixel Density Descriptor</h2>
+
+<img 
+    height="640"
+    width="640"
+    src="http://placehold.jp/640x640.png"
+    srcset="http://placehold.jp/640x640.png 1x,
+             http://placehold.jp/750x750.png 2x,
+             http://placehold.jp/828x828.png 3x"
+>
+
+<br>
+
+<h2>VMIN & VMAX</h2>
+
+<br>
+
+<img class="vmin" src="images/portfolio/classes.webp">
+<img class="v100" src="images/portfolio/classes.webp">
+<img class="vmax" src="images/portfolio/classes.webp">
+
+<br>
+
+<h2>Kitten responsive picture</h2>
+
+<picture>
+  <source media="(min-width: 650px)" srcset="stuff/kitten-large.png">
+  <source media="(min-width: 465px)" srcset="stuff/kitten-medium.png">
+  <img src="stuff/kitten-small.png" alt="Cute kitten">
+</picture>
+
+<br>
+
+https://ericportis.com/posts/2014/srcset-sizes/
+
+http://udacity.github.io/responsive-images/examples/2-06/backgroundImageConditional/
+
+http://udacity.github.io/responsive-images/examples/2-06/backgroundImageAlternative/
+
+http://udacity.github.io/responsive-images/examples/2-06/imageSet
+
+<p>---------------------------------------------------</p>
+<br>
+
+<img
+ src="images/portfolio/classes.webp"
+ alt="A description of the image."
+ loading="lazy"
+ decoding="async"
+ sizes="100vw"
+ srcset="
+  images/portfolio/classes@200w.webp 200w,
+  images/portfolio/classes@400w.webp 400w,
+  images/portfolio/classes@600w.webp 600w,
+  images/portfolio/classes@800w.webp 800w
+  ">
+
+<picture>
+  <source type="image/avif" sizes="100vw" srcset="
+  images/portfolio/classes@200w.avif 200w, 
+  images/portfolio/classes@400w.avif 400w, 
+  images/portfolio/classes@600w.avif 600w, 
+  images/portfolio/classes@800w.avif 800w, 
+  images/portfolio/classes.avif 1000x">
+  <img loading="lazy" sizes="100vw" srcset="
+  images/portfolio/classes@200w.webp 200w, 
+  images/portfolio/classes@400w.webp 400w, 
+  images/portfolio/classes@600w.webp 600w, 
+  images/portfolio/classes@800w.webp 800w" src="
+  images/portfolio/classes.webp 1000w" alt="Magic Squares">
+</picture>
+
+
+<picture>
+  <source 
+    srcset="
+      baby-zoomed-out-2x.jpg 2x,
+      images/portfolio/classes.webp
+    "
+    media="(min-width: 1000px)"
+  />
+  <img 
+    srcset="
+      baby-zoomed-out-2x.jpg 2x
+    "
+    src="baby-zoomed-out.jpg"
+    alt="Baby Sleeping"
+  />
+</picture>
+  
+<picture>
+  <source srcset="images/portfolio/classes.webp 1x" media="(min-width: 1200px)">
+  <source srcset="images/portfolio/classes@600w.webp 1x, images/portfolio/classes.webp 2x" media="(min-width: 800px)">
+  <img src="images/portfolio/classes@200w.webp" alt="A description of the image." loading="lazy" decoding="async"
+    srcset="images/portfolio/classes@200w.webp 1x, images/portfolio/classes@600w.webp 2x, images/portfolio/classes.webp 3x">
+</picture>
+
+
+</body>
+</html>

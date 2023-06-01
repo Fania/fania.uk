@@ -19,8 +19,7 @@ function toggleModal(ev) {
        c != 'ls-is-cached' && 
        c != 'portrait' && 
        c != 'landscape' && 
-       c != 'panorama' && 
-       c != 'lazyloaded') {
+       c != 'panorama') {
       keepers.push(c);
       const li = document.createElement("li");
       const liText = document.createTextNode(c);
@@ -163,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function(e){
   // console.log(images2);
 
   images.forEach(itemImg => {
-      // console.dir(itemImg);
+      console.dir(itemImg);
       // console.dir(itemImg.naturalWidth);
       // console.dir(itemImg.width);
     // if(e.target.nodeName == "PICTURE") {

@@ -201,9 +201,13 @@
       <figure>
         <a href="https://squares.cubelife.org">
           <picture>
-            <source type="image/avif" srcset="images/portfolio/classes.avif">
-            <img loading="lazy" srcset="images/portfolio/classes.webp", elva-fairy-480w.jpg 1.5x, elva-fairy-640w.jpg 2x" src="images/portfolio/classes.webp" alt="Magic Squares">
+            <source type="image/avif" srcset="images/portfolio/classes@20x.avif 1.5x, images/portfolio/classes@40x.avif 2x, images/portfolio/classes@60x.avif 3x, images/portfolio/classes@80x.avif 4x, images/portfolio/classes.avif 1x">
+            <img loading="lazy" srcset="images/portfolio/classes@20x.webp 1.5x, images/portfolio/classes@40x.webp 2x, images/portfolio/classes@60x.webp 3x, images/portfolio/classes@80x.webp 4x" src="images/portfolio/classes.webp 1x" alt="Magic Squares">
           </picture>
+          <!-- <picture>
+            <source type="image/avif" srcset="images/portfolio/classes.avif">
+            <img loading="lazy" src="images/portfolio/classes.webp" alt="Magic Squares">
+          </picture> -->
         </a>
         <figcaption>Classes of magic squares shown in overlapping sets</figcaption>
       </figure>
@@ -1041,6 +1045,8 @@ git push server master
       <!-- <p></p> -->
       <ul>
         <li class="info"><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types">Image file type and format guide</a></li>
+        <li class="info"><a href="http://web.simmons.edu/~grovesd/comm328/modules/responsive-media/overview">Responsive Images Overview</a></li>
+        <li class="info">Get Pixel Device Ratio: <code>window.devicePixelRatio</code></li>
         <li class="info">ImageMagick <a href="https://imagemagick.org/script/command-line-processing.php">Anatomy of the Command-line</a></li>
         <li class="info">Convert from png to webp: <code>magick input.png output.webp</code></li>
         <li class="info">Use <a href="http://www.imagemagick.org/script/mogrify.php">'mogrify'</a> to convert serveral images from jpg to webp: <code>magick mogrify -format webp *.jpg</code></li>
@@ -1195,6 +1201,7 @@ git push server master
       </ul>
       <h4>Icons</h4>
       <ul>
+        <li><a href="https://symbl.cc/en/">SYMBL</a>WHEN TEXT IS NOT ENOUGH</li>
         <li><a href="https://yoksel.github.io/url-encoder/">SVG to URL for CSS converter</a></li>
         <li><a href="https://tablericons.com/">Tablericons</a></li>
         <li><a href="http://fontello.com/">Fontello</a> Icon Fonts Generator</li>
