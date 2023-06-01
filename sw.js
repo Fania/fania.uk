@@ -8,7 +8,7 @@ const cacheName = 'fania-v1.0.0';
 // ===================================================================
 // Stale-while-revalidate
 self.addEventListener('fetch', (event) => {
-  console.log(`${event.request.destination}: ${event.request.url}`);
+  // console.log(`${event.request.destination}: ${event.request.url}`);
   if (event.request.destination === 'image' ||
       event.request.destination === 'audio' ||
       event.request.destination === 'font' ||
