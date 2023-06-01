@@ -152,8 +152,8 @@ function updateFilters(key, value) {
 // automatically tag portrait and landscape images
 // document.addEventListener('lazyloaded', function(e){
 document.addEventListener('DOMContentLoaded', function(e){
-  console.log('inside DOMContentLoaded event listener for event: ');
-  console.log(e);
+  // console.log('inside DOMContentLoaded event listener for event: ');
+  // console.log(e);
   // console.log(e.target);
   // console.log(e.target.images);
 

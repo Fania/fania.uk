@@ -86,6 +86,7 @@ console.log(cheats_filter_Items);
 
 const prev_cheats_filter_status = localStorage.getItem("cheats-filters");
 console.log('prev_cheats_filter_status', prev_cheats_filter_status);
+console.log(typeof prev_cheats_filter_status);
 let show_cheatsNav = document.querySelector('#show_cheatsNav');
 let hide_cheatsNav = document.querySelector('#hide_cheatsNav');
 
