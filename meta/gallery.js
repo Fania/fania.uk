@@ -173,6 +173,8 @@ document.addEventListener('DOMContentLoaded', function(e){
 
       itemImg.addEventListener("load", (event) => {
         console.log("page is fully loaded");
+        console.log("naturalWidth", itemImg.naturalWidth);
+        console.log("naturalHeight", itemImg.naturalHeight);
       });
 
       console.log(itemPic);
