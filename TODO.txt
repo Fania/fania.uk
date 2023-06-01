@@ -1,5 +1,6 @@
 # Todos
 
+- [ ] put cheats filter toggle into localstorage
 - [ ] responsive images
 - [ ] additive vs subtractive filters in gallery?
 - [x] gallery some webp images rotation wrong
