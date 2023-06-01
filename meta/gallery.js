@@ -16,7 +16,6 @@ function toggleModal(ev) {
   const ul = document.createElement("ul");
   [...classes].forEach(c => {
     if(c != 'gallery_img'  && 
-       c != 'ls-is-cached' && 
        c != 'portrait' && 
        c != 'landscape' && 
        c != 'panorama') {

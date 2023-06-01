@@ -23,6 +23,7 @@ const cacheName = 'fania-v1.0.0';
 // ===================================================================
 // Cache first, falling back to network
 self.addEventListener('fetch', (event) => {
+  console.log(event);
   // audio, document, font, image, manifest, object, script, style, video
   if (event.request.destination === 'image' ||
       event.request.destination === 'audio' ||
