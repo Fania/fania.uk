@@ -91,7 +91,7 @@ console.log(typeof Boolean(prev_cheats_filter_status));
 let show_cheatsNav = document.querySelector('#show_cheatsNav');
 let hide_cheatsNav = document.querySelector('#hide_cheatsNav');
 
-if(prev_cheats_filter_status == true) {
+if(Boolean(prev_cheats_filter_status) == true) {
   show_cheatsNav.checked = true;
 } else {
   hide_cheatsNav.checked = true;
