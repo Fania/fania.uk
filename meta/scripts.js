@@ -81,6 +81,9 @@ summaries.forEach(item => {
 
 
 
+const cheats_filter_Items = document.querySelectorAll('[name="show_hide_cheatsNav"]');
+console.log(cheats_filter_Items);
+
 const cheats_filter_status = document.querySelector('[name="show_hide_cheatsNav"]').checked;
 console.log(cheats_filter_status);
 localStorage.setItem("cheats-filter", cheats_filter_status);
