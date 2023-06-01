@@ -172,8 +172,8 @@ document.addEventListener('DOMContentLoaded', function(e){
       let itemPic = itemImg.parentElement;
       console.log(itemPic);
       // let itemImg = e.target.children[1];
-      // console.log("naturalWidth", itemImg.naturalWidth);
-      // console.log("naturalHeight", itemImg.naturalHeight);
+      console.log("naturalWidth", itemImg.naturalWidth);
+      console.log("naturalHeight", itemImg.naturalHeight);
       if (itemImg.naturalWidth > (itemImg.naturalHeight * 2)) {
         itemPic.classList.add("panorama");
         // itemImg.classList.add("panorama");
