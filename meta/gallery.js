@@ -190,6 +190,7 @@ const [...portfolioImgs] = document.querySelectorAll("#portfolio picture img");
 console.log(portfolioImgs);
 portfolioImgs.forEach(itemImg => {
   itemImg.addEventListener("load", () => {
+    console.dir(itemImg);
     console.log(itemImg);
     console.log(itemImg.currentSrc);
   });
