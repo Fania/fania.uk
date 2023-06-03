@@ -186,10 +186,13 @@ document.addEventListener('DOMContentLoaded', function(e){
 
 
 
-const portfolioImgs = document.querySelectorAll("#portfolio picture img");
+const [...portfolioImgs] = document.querySelectorAll("#portfolio picture img");
 console.log(portfolioImgs);
 portfolioImgs.forEach(itemImg => {
-  console.log(itemImg.currentSrc);
+  // itemImg.addEventListener("load", () => {
+    console.log(itemImg);
+    console.log(itemImg.currentSrc);
+  // });
 });
 
 
