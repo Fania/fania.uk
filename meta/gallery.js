@@ -13,6 +13,7 @@ function toggleModal(ev) {
   modal.id = "modal";
   let img = ev.target.cloneNode();
   // console.log(img);
+  console.log('currentSrc: ', img.currentSrc);
   const classes = img.classList;
   const keepers = [];
   const ul = document.createElement("ul");
@@ -182,6 +183,15 @@ document.addEventListener('DOMContentLoaded', function(e){
       });
   });
 });
+
+
+
+const portfolioImgs = document.querySelectorAll("#portfolio picture img");
+console.log(portfolioImgs);
+portfolioImgs.forEach(itemImg => {
+  console.log(itemImg.currentSrc);
+});
+
 
 
 
