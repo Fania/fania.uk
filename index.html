@@ -201,8 +201,26 @@
       <figure>
         <a href="https://squares.cubelife.org">
           <picture>
-            <source type="image/avif" srcset="images/portfolio/classes@20x.avif 1.5x, images/portfolio/classes@40x.avif 2x, images/portfolio/classes@60x.avif 3x, images/portfolio/classes@80x.avif 4x, images/portfolio/classes.avif 1x">
-            <img loading="lazy" srcset="images/portfolio/classes@20x.webp 1.5x, images/portfolio/classes@40x.webp 2x, images/portfolio/classes@60x.webp 3x, images/portfolio/classes@80x.webp 4x" src="images/portfolio/classes.webp 1x" alt="Magic Squares">
+            <source type="image/avif" srcset="
+              images/portfolio/classes@426w.avif 426w, 
+              images/portfolio/classes@640w.avif 640w, 
+              images/portfolio/classes@720w.avif 720w, 
+              images/portfolio/classes@960w.avif 960w,
+              images/portfolio/classes.avif 1280w
+              ">
+            <img loading="lazy" srcset="
+              images/portfolio/classes@426w.webp 426w, 
+              images/portfolio/classes@640w.webp 640w, 
+              images/portfolio/classes@720w.webp 720w, 
+              images/portfolio/classes@960w.webp 960w,
+              images/portfolio/classes@1280w.webp 1280w" src="
+              images/portfolio/classes.webp" alt="Magic Squares"
+              sizes="
+              (min-width: 700px) 640px,
+              (min-width: 1000px) 960px,
+              (min-width: 1200px) 1000px,
+              100vw
+              ">
           </picture>
           <!-- <picture>
             <source type="image/avif" srcset="images/portfolio/classes.avif">
