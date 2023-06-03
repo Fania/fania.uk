@@ -186,12 +186,14 @@ document.addEventListener('DOMContentLoaded', function(e){
 
 
 
+
+// Print Current Portfolio Image Source for Testing of Responsive Images
 const [...portfolioImgs] = document.querySelectorAll("#portfolio picture img");
-console.log(portfolioImgs);
+// console.log(portfolioImgs);
 portfolioImgs.forEach(itemImg => {
   itemImg.addEventListener("load", () => {
-    console.dir(itemImg);
-    console.log(itemImg);
+    // console.dir(itemImg);
+    // console.log(itemImg);
     console.log(itemImg.currentSrc);
   });
 });
