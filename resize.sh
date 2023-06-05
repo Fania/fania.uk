@@ -29,8 +29,8 @@ cd $1
 echo $(pwd)
 echo "-----------------------------------"
 
-if [[ ! -d 'rspnvs' ]]; then
-  mkdir 'rspnvs'
+if [[ ! -d 'rspnsvs' ]]; then
+  mkdir 'rspnsvs'
 fi
 
 
@@ -50,11 +50,11 @@ function resizeLoop() {
         # echo "0: ${BASH_REMATCH[0]}"
         # echo "1: ${BASH_REMATCH[1]}"
         # echo "2: ${BASH_REMATCH[2]}"
-        name640="rspnvs/${BASH_REMATCH[1]}@640w${BASH_REMATCH[2]}"
-        name960="rspnvs/${BASH_REMATCH[1]}@960w${BASH_REMATCH[2]}"
-        name1280="rspnvs/${BASH_REMATCH[1]}@1280w${BASH_REMATCH[2]}"
-        name1920="rspnvs/${BASH_REMATCH[1]}@1920w${BASH_REMATCH[2]}"
-        name2560="rspnvs/${BASH_REMATCH[1]}@2560w${BASH_REMATCH[2]}"
+        name640="rspnsvs/${BASH_REMATCH[1]}@640w${BASH_REMATCH[2]}"
+        name960="rspnsvs/${BASH_REMATCH[1]}@960w${BASH_REMATCH[2]}"
+        name1280="rspnsvs/${BASH_REMATCH[1]}@1280w${BASH_REMATCH[2]}"
+        name1920="rspnsvs/${BASH_REMATCH[1]}@1920w${BASH_REMATCH[2]}"
+        name2560="rspnsvs/${BASH_REMATCH[1]}@2560w${BASH_REMATCH[2]}"
 
         if [[ "${BASH_REMATCH[2]}" == ".mp4" || 
               "${BASH_REMATCH[2]}" == ".webm" ]]; then 
@@ -78,7 +78,8 @@ function resizeLoop() {
         echo 'regex didnt work'
       fi
     elif [[ -d $i ]]; then
-      break
+      # break
+      echo 'subfolder - doing nothing'
     fi
 
   done
