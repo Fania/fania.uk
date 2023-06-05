@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# set -o rematchpcre
-
 # Call script by passing it the path to folder for images
 # e.g. 
 # ./resize.sh images/gallery/2003
@@ -42,13 +40,13 @@ function resizeLoop() {
     # echo "inside imageLoop"
     if [[ -f $i ]]; then
       # echo "item is a file"
-      re='([\-a-z_A-Z0-9]+\.[a-z0-9]{3,4})'  # works
+      # re='([\-a-z_A-Z0-9]+)(\.[a-z0-9]{3,4})'  # works
       # if [[ $i =~ ([\-a-z_A-Z0-9]+\.[a-z0-9]{3,4}) ]]; then 
-      if [[ $i =~ $re ]]; then 
+      # if [[ $i =~ $re ]]; then 
+      if [[ $i =~ ([\-a-z_A-Z0-9]+)(\.[a-z0-9]{3,4}) ]]; then 
 # /Users/fania/Documents/GitHub/fania.uk/images/portfolio/qpoems.webm
 # /Users/fania/Documents/GitHub/fania.uk/images/portfolio/responsive-spiral.avif
-        echo 'test'
-        echo "matches: ${BASH_REMATCH}"
+        # echo "matches: ${BASH_REMATCH}"
         # echo "0: ${BASH_REMATCH[0]}"
         # echo "1: ${BASH_REMATCH[1]}"
         # echo "2: ${BASH_REMATCH[2]}"
