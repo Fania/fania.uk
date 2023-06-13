@@ -72,18 +72,21 @@ body {
 .int_menu > *, .ext_menu > * {
   width: calc(100vw / 7);
 }
-i[class*="fa-"] {
+svg[class*="fa-"] {
   font-size: 2em;
-  color: var(--light);
+  fill: var(--light);
+  stroke: var(--light);
 }
-.link, a, a:visited, a i[class*="fa-"] {
+.link, a, a:visited, a i[class*="fa-"], a svg[class*="fa-"] {
   /* color: var(--bright); */
   color: #435D2C;
   cursor: pointer;
   word-break: break-all;
 }
-a i[class*="fa-"] {
+a i[class*="fa-"], a svg[class*="fa-"]  {
   color: var(--bright);
+  fill: var(--bright);
+  stroke: var(--bright);
 }
 
 
@@ -107,11 +110,13 @@ a i[class*="fa-"] {
   100% { background-position:  100%  50% }
 }
 
-a i[class*="fa-hand-spock"],
-label[for="cats_button"] a i[class*="fa-"],
-label[for="secret_button"] a i[class*="fa-"] 
+a i[class*="fa-hand-spock"], a svg[class*="fa-hand-spock"],
+label[for="cats_button"] a svg[class*="fa-"],
+label[for="secret_button"] a svg[class*="fa-"] 
 {
   color: var(--light);
+  stroke: var(--light);
+  fill: var(--light);
   cursor: default;
 }
 .spiral {
@@ -659,7 +664,10 @@ footer {
 footer p {
   margin: 0;
 }
-footer i[class*="fa-"], i.fa-thumbs-up {
+footer i[class*="fa-"],
+footer svg[class*="fa-"], 
+i.fa-thumbs-up,
+svg.fa-thumbs-up {
   font-size: 1em;
 }
 
