@@ -1343,8 +1343,9 @@ git push server master
         <li class="info">Use <a href="http://www.imagemagick.org/script/mogrify.php">'mogrify'</a> to convert serveral images from jpg to webp: <code>magick mogrify -format webp *.jpg</code></li>
         <li class="mac">Install 'ffmpeg': <code>brew install ffmpeg</code></li>
         <li class="mac">Use 'ffmpeg' to convert from gif to webp: <code>ffmpeg -i file.gif -c vp9 -b:v 0 -crf 40 file.webm</code></li>
-        <li class="mac">Use 'ffmpeg' to convert from gif to mp4: <code>ffmpeg -i file.gif -movflags +faststart -pix_fmt yuv420p \
-       -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" file.mp4</code></li>
+        <li class="mac">Use 'ffmpeg' to convert from gif to mp4: <code>ffmpeg -i file.gif -movflags +faststart -pix_fmt yuv420p \ -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" file.mp4</code></li>
+        <li class="mac">Use 'ffmpeg' to convert from mov to webm: <code>ffmpeg -i input.mov -c:v libvpx -pix_fmt yuva420p -b:v 2M -auto-alt-ref 0 output.webm</code></li>
+        <li class="mac">Use 'ffmpeg' to convert from mov to webm: <code>ffmpeg -i input.mov -vcodec h264 -acodec mp2 output.mp4</code></li>
       </ul>
     </details>
   </article>
