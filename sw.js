@@ -21,7 +21,13 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(caches.open(cacheName).then((cache) => {
       return cache.match(event.request).then((cachedResponse) => {
         const fetchedResponse = fetch(event.request).then((networkResponse) => {
-          cache.put(event.request, networkResponse.clone());
+          const fullurl = new URL(event.request.url);
+          const urlOri = fullurl.origin;
+          // only adds new resources in, not updates out-of-date ones?
+          // this line avoids things like "chrome-extension://xyz"
+          if((urlOri.startsWith('http')) || (urlOri.startsWith('https'))){
+            cache.put(event.request, networkResponse.clone());
+          }
           return networkResponse;
         });
         return cachedResponse || fetchedResponse;

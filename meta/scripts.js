@@ -16,12 +16,12 @@ const pages = ["about", "portfolio", "images", "cats", "secret"];
 const menu = document.getElementById("menu_button");
 
 
+const url = window.location.hash;
+const re = /#(\w+)\??(\w+)?/;
+const found = url.match(re);
+let page = found===null ? "home" : found[1];
 // Menu buttons
 const loadPage = () => {
-  const url = window.location.hash;
-  const re = /#(\w+)\??(\w+)?/;
-  const found = url.match(re);
-  let page = found===null ? "home" : found[1];
   if(page === "cheats") {
     const r = document.getElementById("cheats_button");
     r.checked = true;  // check correct page radio
@@ -81,22 +81,27 @@ summaries.forEach(item => {
 
 
 
-const cheats_filter_Items = document.querySelectorAll('[name="show_hide_cheatsNav"]');
-// console.log(cheats_filter_Items);
-const prev_cheats_filter_status = Boolean(!localStorage.getItem("cheats-filters"));
-// console.log('prev_cheats_filter_status', prev_cheats_filter_status);
-// console.log(typeof prev_cheats_filter_status);
-let show_cheatsNav = document.querySelector('#show_cheatsNav');
-let hide_cheatsNav = document.querySelector('#hide_cheatsNav');
-if(prev_cheats_filter_status == true) {
-  show_cheatsNav.checked = true;
-} else {
-  hide_cheatsNav.checked = true;
-}
-cheats_filter_Items.forEach(choice => {
-  choice.addEventListener("change", () => {
-    const cheats_filter_status = document.querySelector('[name="show_hide_cheatsNav"]').checked;
-    // console.log(cheats_filter_status);
-    localStorage.setItem("cheats-filter", cheats_filter_status);
+
+if(page === "cheats") {
+
+  const cheats_filter_Items = document.querySelectorAll('[name="show_hide_cheatsNav"]');
+  // console.log(cheats_filter_Items);
+  const prev_cheats_filter_status = Boolean(!localStorage.getItem("cheats-filters"));
+  // console.log('prev_cheats_filter_status', prev_cheats_filter_status);
+  // console.log(typeof prev_cheats_filter_status);
+  let show_cheatsNav = document.querySelector('#show_cheatsNav');
+  let hide_cheatsNav = document.querySelector('#hide_cheatsNav');
+  if(prev_cheats_filter_status == true) {
+    show_cheatsNav.checked = true;
+  } else {
+    hide_cheatsNav.checked = true;
+  }
+  cheats_filter_Items.forEach(choice => {
+    choice.addEventListener("change", () => {
+      const cheats_filter_status = document.querySelector('[name="show_hide_cheatsNav"]').checked;
+      // console.log(cheats_filter_status);
+      localStorage.setItem("cheats-filter", cheats_filter_status);
+    });
   });
-});
+
+}
