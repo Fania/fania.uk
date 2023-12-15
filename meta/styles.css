@@ -77,6 +77,10 @@ svg[class*="fa-"] {
   fill: var(--light);
   stroke: var(--light);
 }
+svg[class*="fa-glitch"] {
+  fill: unset;
+  stroke: unset;
+}
 .link, a, a:visited, a i[class*="fa-"], a svg[class*="fa-"] {
   /* color: var(--bright); */
   color: #435D2C;
@@ -88,7 +92,10 @@ a i[class*="fa-"], a svg[class*="fa-"]  {
   fill: var(--bright);
   stroke: var(--bright);
 }
-
+a svg[class*="fa-glitch"]  {
+  fill: unset;
+  stroke: unset;
+}
 
 
 .content a:hover {
