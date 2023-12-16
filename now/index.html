@@ -38,44 +38,41 @@
   <meta name="description" content="Fania's personal website/portfolio/playground.">
 
   <style>
-
     html {
       --length: 4565;
       --segment: calc(var(--length) / 25);
       --gap: calc(var(--segment) * 8);
     }
-
     .content {
       display: flex;
       flex-direction: column;
     }
-
     h2 {
       margin-top: 0;
     }
-
+    .magicsquares {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     .magicsquares svg, .magicsquares img {
       max-width: 280px;
     }
-
     svg#square {
       fill: none;
       stroke: white;
       stroke-width: 5px;
-      align-self: flex-end;
+      /* align-self: flex-end; */
     }
-
     svg#animatedSquare .lines {
       stroke-dasharray: 16545;
       stroke-dashoffset: 16545;
       animation: dash 50s linear alternate infinite;
     }
-
     @keyframes dash {
       from { stroke-dashoffset: 16545; }
       to   { stroke-dashoffset: 0;    }
     }
-
     .num-1  { stroke: #091540; stroke-dasharray: var(--segment) var(--gap); }
     .num-2  { stroke: #7692FF; stroke-dasharray: var(--segment) var(--gap); stroke-dashoffset: calc(0 - var(--segment)); }
     .num-3  { stroke: #ABD2FA; stroke-dasharray: var(--segment) var(--gap); stroke-dashoffset: calc(0 - (var(--segment) * 2)); }
@@ -85,8 +82,6 @@
     .num-7  { stroke: #00A6FB; stroke-dasharray: var(--segment) var(--gap); stroke-dashoffset: calc(0 - (var(--segment) * 6)); }
     .num-8  { stroke: #1F7A8C; stroke-dasharray: var(--segment) var(--gap); stroke-dashoffset: calc(0 - (var(--segment) * 7)); }
     .num-9  { stroke: #50C9CE; stroke-dasharray: var(--segment) var(--gap); stroke-dashoffset: calc(0 - (var(--gap))); }
-
-
     .num-1x  { fill: #091540; stroke: #091540; }
     .num-2x  { fill: #7692FF; stroke: #7692FF; }
     .num-3x  { fill: #ABD2FA; stroke: #ABD2FA; }
@@ -103,20 +98,22 @@
     .num-14x { fill: #5E548E; stroke: #5E548E; }
     .num-15x { fill: #419D78; stroke: #419D78; }
     .num-16x { fill: #654597; stroke: #654597; }
-
     @media screen and (min-width: 500px) {
-
       .int_menu {
         transform: translateX(calc(-50vw + 80px));
       }
       .ext_menu {
         transform: translateX(calc(50vw - 80px));
       }
-
+      .magicsquares {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+      }
     }
-
   </style>
-
 </head>
 
 <body>
