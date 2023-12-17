@@ -2,7 +2,22 @@
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers
 
-const cacheName = 'fania-v1.0.1';
+const cacheName = 'fania-v1.0.2';
+
+const resources = [
+  "/index.html",
+  "/haskell.html",
+  "/now/index.html",
+  "/hedgehog/index.html",
+  "/starlings/index.html",
+  "/meta/style.css",
+  "/meta/scripts.js",
+  "/meta/date.js",
+  "/meta/gallery.js",
+  "/meta/pataphysicalDate.min.js",
+  "/favicon.ico",
+  "/site.webmanifest"
+];
 
 const deleteCache = async (key) => {
   await caches.delete(key);
@@ -15,20 +30,26 @@ const deleteOldCaches = async () => {
   await Promise.all(cachesToDelete.map(deleteCache));
 };
 
-self.addEventListener("activate", (event) => {
-  event.waitUntil(deleteOldCaches());
-});
-
-// --------------------------------------------------------------------------
-
 const addResourcesToCache = async (resources) => {
   const cache = await caches.open(cacheName);
-  await cache.addAll(resources);
+  // await cache.addAll(resources);
+  for (let i = 0; i < resources.length; i++) {
+    try {
+      ok = await cache.add(i);
+      console.log('sw log: cache.add',resources[i]);
+    } catch (err) {
+      console.warn('sw error: cache.add',resources[i]);
+    }
+  }
 };
 
 const putInCache = async (request, response) => {
   const cache = await caches.open(cacheName);
-  await cache.put(request, response);
+  const fullurl = new URL(request.url)
+  const urlOri = fullurl.origin;
+  if((urlOri.startsWith('http')) || (urlOri.startsWith('https'))){
+    await cache.put(request, response);
+  }
 };
 
 const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
@@ -78,26 +99,12 @@ const enableNavigationPreload = async () => {
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(enableNavigationPreload());
+  event.waitUntil(deleteOldCaches());
 });
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    addResourcesToCache([
-      "/",
-      "/index.html",
-      "/haskell.html",
-      "/now/index.html",
-      "/hedgehog/index.html",
-      "/starlings/index.html",
-      "/meta/style.css",
-      "/meta/gallery.css",
-      "/meta/scripts.js",
-      "/meta/date.js",
-      "/meta/gallery.js",
-      "/meta/pataphysicalDate.min.js",
-      "/favicon.ico",
-      "/site.webmanifest"
-    ]),
+    addResourcesToCache(resources),
   );
 });
 
@@ -110,5 +117,3 @@ self.addEventListener("fetch", (event) => {
     }),
   );
 });
-
-
