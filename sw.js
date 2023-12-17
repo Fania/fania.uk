@@ -9,7 +9,7 @@ const deleteCache = async (key) => {
 };
 
 const deleteOldCaches = async () => {
-  const cacheKeepList = ["fania-v1.0.0"];
+  const cacheKeepList = [cacheName];
   const keyList = await caches.keys();
   const cachesToDelete = keyList.filter((key) => !cacheKeepList.includes(key));
   await Promise.all(cachesToDelete.map(deleteCache));
