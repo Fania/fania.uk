@@ -2,7 +2,7 @@
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers
 
-const cacheName = 'fania-v1.0.2';
+const cacheName = 'fania-v1.0.3';
 
 const resources = [
   "/index.html",
@@ -36,9 +36,9 @@ const addResourcesToCache = async (resources) => {
   for (let i = 0; i < resources.length; i++) {
     try {
       ok = await cache.add(i);
-      console.log('sw log: cache.add',resources[i]);
+      // console.log('sw log: cache.add',resources[i]);
     } catch (err) {
-      console.warn('sw error: cache.add',resources[i]);
+      // console.warn('sw error: cache.add',resources[i]);
     }
   }
 };
@@ -62,7 +62,7 @@ const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
   // Next try to use (and cache) the preloaded response, if it's there
   const preloadResponse = await preloadResponsePromise;
   if (preloadResponse) {
-    console.info("using preload response", preloadResponse);
+    // console.info("using preload response", preloadResponse);
     putInCache(request, preloadResponse.clone());
     return preloadResponse;
   }
