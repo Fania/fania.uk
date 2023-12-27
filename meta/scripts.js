@@ -16,12 +16,12 @@ const pages = ["about", "portfolio", "images", "cats", "secret"];
 const menu = document.getElementById("menu_button");
 
 
-const url = window.location.hash;
-const re = /#(\w+)\??(\w+)?/;
-const found = url.match(re);
-let page = found===null ? "home" : found[1];
 // Menu buttons
 const loadPage = () => {
+  const url = window.location.hash;
+  const re = /#(\w+)\??(\w+)?/;
+  const found = url.match(re);
+  let page = found===null ? "home" : found[1];
   console.log(`loading page ${page}`);
   if(page === "cheats") {
     const r = document.getElementById("cheats_button");
@@ -82,6 +82,12 @@ summaries.forEach(item => {
 
 
 
+
+
+const url = window.location.hash;
+const re = /#(\w+)\??(\w+)?/;
+const found = url.match(re);
+let page = found===null ? "home" : found[1];
 
 if(page === "cheats") {
 
