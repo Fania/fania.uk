@@ -1,15 +1,15 @@
 'use strict';
 
 // Register Service Worker
-if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('./sw.js', { scope: './' })
-    .then(() => {
-      // console.log('ServiceWorker registration successful');
-    })
-    .catch(err => {
-      // console.log('ServiceWorker registration failed', err);
-    });
-}
+// if (navigator.serviceWorker) {
+//   navigator.serviceWorker.register('./sw.js', { scope: './' })
+//     .then(() => {
+//       // console.log('ServiceWorker registration successful');
+//     })
+//     .catch(err => {
+//       // console.log('ServiceWorker registration failed', err);
+//     });
+// }
 
 
 const pages = ["about", "portfolio", "images", "cats", "secret"];
@@ -22,6 +22,7 @@ const found = url.match(re);
 let page = found===null ? "home" : found[1];
 // Menu buttons
 const loadPage = () => {
+  console.log(`loading page ${page}`);
   if(page === "cheats") {
     const r = document.getElementById("cheats_button");
     r.checked = true;  // check correct page radio
