@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="meta/styles.css">
+</head>
+<body>
+  
+<template id="mytable">
+  <style>
+    table {
+      border-collapse: collapse;
+      margin-bottom: 1em;
+      color: #666;
+    }
+    th {
+      width: 300px;
+      background: #eee;
+    }
+    th,
+    td {
+      border: 2px solid #ccc;
+      padding: 0.25em;
+    }
+  </style>
+  <table>
+    <tr>
+      <th><slot name='title-1'></slot></th>
+      <th><slot name='title-2'></slot></th>
+    </tr>
+    <tr>
+      <td><slot name='value-1.1'></slot></td>
+      <td><slot name='value-1.2'></slot></td>
+    </tr>
+    <tr>
+      <td><slot name='value-2.1'></slot></td>
+      <td><slot name='value-2.2'></slot></td>
+    </tr>
+  </table>
+</template>
+
+
+
+<template id="portfolio_template">
+  <style>
+    article {
+      width: 95%;
+      height: 500px;
+      border: none;
+      border-radius: 5px;
+      background: var(--dark);
+      margin: 10px;
+    }
+    figure {
+      width: 100%;
+      height: 280px;
+      margin: 0;
+      border-radius: 5px 5px 0 0;
+      overflow: hidden;
+    }
+    figure a img {
+      object-fit: cover;
+      height: 280px;
+      max-height: 280px;
+      display: block;
+    }
+    figcaption {
+      box-sizing: border-box;
+      line-height: 1.5em;
+      padding: .25em;
+      background: rgba( 255, 255, 255, .6 );
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      transform: translateY(0);
+      transition: transform .5s;
+      /* the below is awaiting full CSS support */
+      /* display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      line-clamp: 5; */
+    }
+    figure:hover figcaption {
+      transform: translateY(-100%);
+      /* transition: all .5s; */
+    }
+    h3 {
+      color: var(--light);
+      text-align: center;
+      margin: .5em;
+    }
+    p {
+      color: #ccc;
+      margin: .5em;
+    }
+  </style>
+  <article>
+    <figure>
+      <a href='<slot name="pf_img_link"></slot>'>
+        <picture>
+          <source type="image/avif" srcset="
+            images/portfolio/rspnsvs/<slot name='pf_img_name'></slot>@640w.avif 640w, 
+            images/portfolio/rspnsvs/<slot name='pf_img_name'></slot>@960w.avif 960w,
+            images/portfolio/rspnsvs/<slot name='pf_img_name'></slot>@1280w.avif 1280w,
+            images/portfolio/rspnsvs/<slot name='pf_img_name'></slot>@1920w.avif 1920w,
+            images/portfolio/rspnsvs/<slot name='pf_img_name'></slot>@2560w.avif 2560w,
+            images/portfolio/<slot name='pf_img_name'></slot>.avif
+            ">
+          <img loading="lazy" srcset="
+            images/portfolio/rspnsvs/<slot name='pf_img_name'></slot>@640w.webp 640w, 
+            images/portfolio/rspnsvs/<slot name='pf_img_name'></slot>@960w.webp 960w,
+            images/portfolio/rspnsvs/<slot name='pf_img_name'></slot>@1280w.webp 1280w,
+            images/portfolio/rspnsvs/<slot name='pf_img_name'></slot>@1920w.webp 1920w,
+            images/portfolio/rspnsvs/<slot name='pf_img_name'></slot>@2560w.webp 2560w" src="
+            images/portfolio/<slot name='pf_img_name'></slot>.webp" alt='<slot name="pf_img_alt"></slot>'
+            sizes="
+            (min-width: 700px) 60vw,
+            (min-width: 1000px) 40vw,
+            100vw">
+        </picture>
+      </a>
+      <figcaption><slot name="pf_img_caption"></slot></figcaption>
+    </figure>
+    <h3><slot name="pf_heading"></slot></h3>
+    <!-- <p><slot name="pf_date"></slot></p> -->
+    <p><slot name="pf_paragraph"></slot></p>
+  </article>
+</template>
+
+
+
+
+
+
+
+<div class="table_test">
+  <span slot='title-1'>Table 1 title A</span>
+  <span slot='title-2'>Table 1 title B</span>
+  <span slot='value-1.1'>Table 1 slot A.1</span>
+  <span slot='value-1.2'>Table 1 slot A.2</span>
+  <span slot='value-2.1'>Table 1 slot B.1</span>
+  <span slot='value-2.2'>Table 1 slot B.2</span>
+</div>
+<div class="table_test">
+  <span slot='title-1'>something else</span>
+  <span slot='title-2'>can you read this</span>
+  <span slot='value-1.1'>whatever</span>
+  <span slot='value-1.2'>suck my</span>
+  <span slot='value-2.1'>more stuff</span>
+  <span slot='value-2.2'>you know</span>
+</div>
+
+
+
+
+<div class="port_test">
+  <span slot="pf_img_link">https://fania.uk</span>
+  <span slot="pf_img_name">images/portfolio/classes</span>
+  <span slot="pf_img_alt">Classes alt</span>
+  <span slot="pf_img_caption">Classes test</span>
+  <span slot="pf_heading">My Classes heading</span>
+  <span slot="pf_date">December 2023</span>
+  <span slot="pf_paragraph">First Para</span>
+  <span slot="pf_paragraph">Second Para</span>
+</div>
+
+
+
+<section id="myportfolios"></section>
+
+
+<script>
+// // Create with javascript
+// const newPortfolio = document.createElement('portfolio');
+// // Add it to the page
+// document.body.appendChild(newPortfolio);
+// // Attach event listeners
+// document.querySelector('portfolio').addEventListener('open', ()=> {
+//   console.log('test');
+// });
+
+let templateCont = document.querySelector('#mytable').content;
+let templatePort = document.querySelector('#portfolio_template').content;
+let tabdivs = document.querySelectorAll('.table_test');
+let portdivs = document.querySelectorAll('.port_test');
+
+tabdivs.forEach( d => {
+  d.attachShadow({  mode: 'open' }).appendChild(
+    templateCont.cloneNode(true))
+});
+
+portdivs.forEach( p => {
+  p.attachShadow({  mode: 'open' }).appendChild(
+    templatePort.cloneNode(true))
+});
+
+
+
+</script>
+
+<script src="meta/components.js"></script>
+<script type="module">
+
+  const response = await fetch("html/template.html");
+  const respText = await response.text();
+  console.log(respText);
+  const doc = new DOMParser().parseFromString(respText, 'text/html');
+  console.log(doc);
+  // console.dir(doc);
+  console.log(doc.all[3]);
+  const temp = doc.all[3];
+
+</script>
+
+</body>
+</html>
