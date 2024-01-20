@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="meta/styles.css">
+
+  <script>
+
+// class CustomImgLink extends HTMLElement {
+//   constructor() {
+//     super();
+//     this.showInfo = true;
+//     this.attachShadow({ mode: 'open' });
+//     let template = document.getElementById("templatePort");
+//     this.shadowRoot.appendChild(template.content.cloneNode(true));
+//     this.shadowRoot.querySelector('a').href= this.dataset.href;
+//   }
+// }
+// window.customElements.define('custom_img_link', CustomImgLink);
+
+
+  </script>
 </head>
 <body>
   
@@ -130,10 +147,6 @@
 
 
 
-
-
-
-
 <div class="table_test">
   <span slot='title-1'>Table 1 title A</span>
   <span slot='title-2'>Table 1 title B</span>
@@ -152,11 +165,9 @@
 </div>
 
 
-
-
 <div class="port_test">
   <span slot="pf_img_link">https://fania.uk</span>
-  <span slot="pf_img_name">images/portfolio/classes</span>
+  <span slot="pf_img_name">classes</span>
   <span slot="pf_img_alt">Classes alt</span>
   <span slot="pf_img_caption">Classes test</span>
   <span slot="pf_heading">My Classes heading</span>
@@ -166,8 +177,8 @@
 </div>
 
 
+<!-- <custom_img_link data_href="https://fania.uk"></custom_img_link> -->
 
-<section id="myportfolios"></section>
 
 
 <script>
@@ -195,21 +206,56 @@ portdivs.forEach( p => {
     templatePort.cloneNode(true))
 });
 
+// show template port on page
+document.body.appendChild(templatePort);
+
+
+
+
+
+
+
+
+
+// <custom_img_name data_name="classes"></custom_img_name>
+// <custom_img_alt data_alt="Classes alt"></custom_img_alt>
+
+
+
+
+// // https://stackoverflow.com/questions/68185283/how-to-embed-a-link-in-a-custom-component-as-a-slot
+// class CustomAnimLink extends HTMLElement {
+//   constructor() {
+//     super();
+//     this.showInfo = true;
+//     this.attachShadow({ mode: 'open' });
+//     let template = document.getElementById("github-link-template");
+//     this.shadowRoot.appendChild(template.content.cloneNode(true));
+//     this.shadowRoot.querySelector('a').href= this.dataset.href;
+//   }
+// }
+// window.customElements.define('custom-anim-link', CustomAnimLink);
+
+// // and then 
+// <custom-anim-link data-href="https://www.yahoo.com"></custom-anim-link>
+
+
+
 
 
 </script>
 
-<script src="meta/components.js"></script>
+<!-- <script src="meta/components.js"></script> -->
 <script type="module">
 
-  const response = await fetch("html/template.html");
-  const respText = await response.text();
-  console.log(respText);
-  const doc = new DOMParser().parseFromString(respText, 'text/html');
-  console.log(doc);
-  // console.dir(doc);
-  console.log(doc.all[3]);
-  const temp = doc.all[3];
+  // const response = await fetch("html/template.html");
+  // const respText = await response.text();
+  // console.log(respText);
+  // const doc = new DOMParser().parseFromString(respText, 'text/html');
+  // console.log(doc);
+  // // console.dir(doc);
+  // console.log(doc.all[3]);
+  // const temp = doc.all[3];
 
 </script>
 
