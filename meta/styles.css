@@ -240,6 +240,13 @@ p[title^="last"] {
   display: flex;
 }
 
+.content .rowOf8 {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+
 .gallery_grid {
   min-height: 100vh;
   /* background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%); */
