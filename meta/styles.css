@@ -383,6 +383,8 @@ img.gallery_img {
 #images .filter-y2018:checked ~ .gallery_grid [src*="2018"],
 #images .filter-y2019:checked ~ .gallery_grid [src*="2019"],
 #images .filter-y2022:checked ~ .gallery_grid [src*="2022"],
+#images .filter-y2023:checked ~ .gallery_grid [src*="2023"],
+#images .filter-y2024:checked ~ .gallery_grid [src*="2024"],
 
 #secret .filter-y03:checked ~ .gallery_grid [class*="y03"],
 #secret .filter-y04:checked ~ .gallery_grid [class*="y04"],
@@ -398,6 +400,8 @@ img.gallery_img {
 #secret .filter-y18:checked ~ .gallery_grid [class*="y18"],
 #secret .filter-y19:checked ~ .gallery_grid [class*="y19"],
 #secret .filter-y22:checked ~ .gallery_grid [class*="y22"],
+#secret .filter-y23:checked ~ .gallery_grid [class*="y23"],
+#secret .filter-y24:checked ~ .gallery_grid [class*="y24"],
 
 #images .filter-crete:checked ~ .gallery_grid [src*="crete"],
 #images .filter-sydney:checked ~ .gallery_grid [src*="sydney"],
