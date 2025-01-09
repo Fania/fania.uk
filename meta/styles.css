@@ -30,7 +30,9 @@ html {
 
 
 
-
+/* @view-transition {
+  navigation: auto;
+} */
 
 body {
   background: var(--medium);
