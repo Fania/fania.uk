@@ -30,9 +30,11 @@ html {
 
 
 
-/* @view-transition {
+@view-transition {
   navigation: auto;
-} */
+}
+
+
 
 body {
   background: var(--medium);
@@ -67,9 +69,11 @@ body {
 }
 .int_menu {
   top: -50vh;
+  view-transition-name: int_menu;
 }
 .ext_menu {
   top: -25vh;
+  view-transition-name: ext_menu;
 }
 .int_menu > *, .ext_menu > * {
   width: calc(100vw / 7);

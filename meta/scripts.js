@@ -53,8 +53,8 @@ const loadPage = () => {
   };
 };
 
-window.addEventListener("hashchange", loadPage);
-window.addEventListener("load", loadPage);
+// window.addEventListener("hashchange", loadPage);
+// window.addEventListener("load", loadPage);
 
 
 // BACK TO TOP BUTTON
