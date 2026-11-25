@@ -77,10 +77,14 @@ svg[class*="fa-"] {
   fill: var(--light);
   stroke: var(--light);
 }
-svg[class*="fa-glitch"] {
+/* #svg_logo {
+  width: 2em;
+  height: 2em;
+} */
+/* svg[class*="fa-glitch"] {
   fill: unset;
   stroke: unset;
-}
+} */
 .link, a, a:visited, a i[class*="fa-"], a svg[class*="fa-"] {
   /* color: var(--bright); */
   color: #435D2C;
@@ -246,6 +250,17 @@ p[title^="last"] {
 }
 
 
+.groupImgs {
+  display: flex;
+  
+}
+
+.groupImgs img {
+  --wdth: 19vw;
+  width: var(--wdth);
+  height: var(--wdth);
+  object-fit: cover;
+}
 
 .gallery_grid {
   min-height: 100vh;
