@@ -250,18 +250,6 @@ p[title^="last"] {
 }
 
 
-.groupImgs {
-  display: flex;
-  
-}
-
-.groupImgs img {
-  --wdth: 19vw;
-  width: var(--wdth);
-  height: var(--wdth);
-  object-fit: cover;
-}
-
 .gallery_grid {
   min-height: 100vh;
   /* background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%); */

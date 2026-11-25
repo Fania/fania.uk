@@ -55,9 +55,20 @@
       flex-direction: column;
       align-items: center;
     }
+    .groupImgs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
     .magicsquares svg, .magicsquares img {
       max-width: 280px;
     }
+    .groupImgs img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+
     svg#square {
       fill: none;
       stroke: white;
@@ -111,6 +122,11 @@
         align-items: center;
         justify-content: center;
         gap: 30px;
+      }
+      .groupImgs img {
+        --grpWdth: 180px;
+        width: var(--grpWdth);
+        height: var(--grpWdth);
       }
     }
   </style>
@@ -219,11 +235,10 @@
 <p>...working on various interactive SVG based artworks - including my long term <a href="https://squares.cubelife.org/">magic square project</a>. I like bringing exhisting art to life, e.g. <a href="https://marc.fania.uk">Franz Marc</a>, <a href="https://kandinsky.fania.uk">Kandinsky</a>, <a href="https://klee.fania.uk">Klee</a>, and <a href="https://isolation.fania.uk/">Dave Everitt</a>.</p>
 
 <section class="groupImgs">
-  <img src="../images/portfolio/new/fawn_mandrill.png" alt="Franz Marc mix of two images">
-  <img src="../images/portfolio/new/klee.jpeg" alt="Paul Klee screenshot">
-  <img src="../images/portfolio/new/boat.jpeg" alt="Kandinsky screenshot">
-  <img src="../images/portfolio/new/dave_original.jpeg" alt="Dave Everitt Isolation">
-  <!-- <img src="../images/portfolio/new/dave_small.jpeg" alt="Dave Everitt Isolation small"> -->
+  <a href="https://marc.fania.uk"><img src="../images/portfolio/new/fawn_mandrill.png" alt="Franz Marc mix of two images"></a>
+  <a href="https://klee.fania.uk"><img src="../images/portfolio/new/klee.jpeg" alt="Paul Klee screenshot"></a>
+  <a href="https://kandinsky.fania.uk/improvisation_29"><img src="../images/portfolio/new/boat.jpeg" alt="Kandinsky screenshot"></a>
+  <a href="https://isolation.fania.uk/"><img src="../images/portfolio/new/dave_original.jpeg" alt="Dave Everitt Isolation"></a>
 </section>
 
 <p>I'm also usually teaching at <a href="https://www.dmu.ac.uk">De Montfort University</a>. I'm also external examiner at the <a href="https://www.herts.ac.uk/">University of Hertfordshire</a>.</p>
